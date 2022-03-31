@@ -1,0 +1,38 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon src/app.js --exec  \"npm run lint && node\"",
+        "lint": "eslint src/**/*.js",
+        "lint:fix": "eslint src/**/*.js  --fix",
+        "seed": "node seed"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt-nodejs": "0.0.3",
+        "bluebird": "^3.7.2",
+        "body-parser": "^1.19.2",
+        "cors": "^2.8.5",
+        "express": "^4.17.3",
+        "joi": "^17.6.0",
+        "jsonwebtoken": "^8.5.1",
+        "morgan": "^1.10.0",
+        "mysql2": "^2.3.3",
+        "sequelize": "^6.17.0",
+        "sqlite3": "^5.0.2"
+    },
+    "devDependencies": {
+        "eslint": "^7.32.0",
+        "eslint-config-standard": "^16.0.3",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^5.2.0",
+        "eslint-plugin-standard": "^3.0.1",
+        "eslint-plugin-vue": "^8.5.0",
+        "nodemon": "^1.11.0"
+    }
+}
