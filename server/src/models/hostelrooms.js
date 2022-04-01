@@ -1,6 +1,6 @@
 /* eslint-disable */
 module.exports = (sequelize, DataTypes) => {
-    return sequelize.define("hostelrooms", {
+    const User = sequelize.define("hostelrooms", {
         hostelName: {
             type: DataTypes.STRING,
         },
@@ -21,4 +21,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.BOOLEAN,
         },
     });
+
+    return User;
 };

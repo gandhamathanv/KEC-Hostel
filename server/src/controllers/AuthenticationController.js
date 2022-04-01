@@ -1,10 +1,9 @@
 /* eslint-disable */
 const {
-    User,
-    UserInfo,
-    BookingStats,
-    StaffLogin,
-    StaffInformation,
+    staffInfo,
+    staffLogin,
+    studentInfo,
+    studentLogin,
 } = require("../models");
 const jwt = require("jsonwebtoken");
 const config = require("../config/config");
@@ -16,10 +15,10 @@ function jwtSignUser(user) {
     });
 }
 module.exports = {
-    async register(req, res) {
+    async studentRegister(req, res) {
         console.log(req.body);
         try {
-            const user = await User.create(req.body);
+            const user = await studentLogin.create(req.body);
             res.status(200).send(user.toJSON());
         } catch (err) {
             console.log(err);
@@ -31,7 +30,7 @@ module.exports = {
     async staffRegister(req, res) {
         console.log(req.body);
         try {
-            const user = await StaffLogin.create(req.body);
+            const user = await staffLogin.create(req.body);
             res.status(200).send(user.toJSON());
         } catch (err) {
             console.log(err);
@@ -40,11 +39,11 @@ module.exports = {
             });
         }
     },
-    async login(req, res) {
+    async studentLogin(req, res) {
         try {
             const { rollnumber, password } = req.body;
 
-            const user = await User.findOne({
+            const user = await studentLogin.findOne({
                 where: {
                     rollnumber: rollnumber,
                 },
@@ -61,7 +60,7 @@ module.exports = {
                     error: "password Incorrect",
                 });
             } else {
-                const userInfo = await UserInfo.findOne({
+                const userInfo = await studentInfo.findOne({
                     where: {
                         rollnumber: rollnumber,
                     },
@@ -83,7 +82,7 @@ module.exports = {
         try {
             console.log(req);
             const { mailId, password } = req.body;
-            const user = await StaffLogin.findOne({
+            const user = await staffLogin.findOne({
                 where: {
                     mailId: mailId,
                 },
@@ -91,7 +90,7 @@ module.exports = {
             console.log("haii");
             if (!user) {
                 res.status(403).send({
-                    error: "user Rollnumber incorrect",
+                    error: "user mail ID is incorrect",
                 });
             }
             const isPasswordValid = await user.comparePassword(password);
@@ -101,7 +100,7 @@ module.exports = {
                     error: "password Incorrect",
                 });
             } else {
-                const userInfo = await StaffInformation.findOne({
+                const userInfo = await staffInfo.findOne({
                     where: {
                         identityNumber: user.identityNumber,
                     },
@@ -112,26 +111,6 @@ module.exports = {
                     token: jwtSignUser(userJson),
                 });
             }
-        } catch (err) {
-            console.log(err);
-            res.status(500).send({
-                error: "Error in server",
-            });
-        }
-    },
-    async BookingStats(req, res) {
-        try {
-            const { hostelName } = req.body;
-            console.log(req.body);
-            const data = await BookingStats.findAll({
-                where: {
-                    hostelName: hostelName,
-                },
-            });
-            res.status(200).send({
-                status: "success",
-                data,
-            });
         } catch (err) {
             console.log(err);
             res.status(500).send({

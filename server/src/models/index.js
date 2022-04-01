@@ -24,6 +24,10 @@ fs.readdirSync(__dirname)
         );
         db[model.name] = model;
     });
+// db.hostelrooms.belongsTo(db.hostelinfo, {
+//     foreignKey: "fk_hostel",
+//     targetKey: "hostelName",
+// });
 // console.log(db);
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

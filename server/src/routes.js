@@ -3,12 +3,12 @@ const AuthenticationController = require("./controllers/AuthenticationController
 const AuthenticationControllerPolicy = require("./policies/AunthenticationcontrollerPolicy");
 module.exports = (app) => {
     app.post(
-            "/register",
-            AuthenticationControllerPolicy.register,
-            AuthenticationController.register
+            "/studentRegister",
+            AuthenticationControllerPolicy.studentRegister,
+            AuthenticationController.studentRegister
         ),
         app.post("/staffRegister", AuthenticationController.staffRegister),
-        app.post("/login", AuthenticationController.login),
+        app.post("/studentLogin", AuthenticationController.studentLogin),
         app.post("/staffLogin", AuthenticationController.staffLogin);
     // app.post("/getRooms", AuthenticationController.BookingStats);
     app.get("/getRooms", (req, res) => {
