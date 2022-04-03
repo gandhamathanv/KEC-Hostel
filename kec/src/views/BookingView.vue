@@ -1,13 +1,16 @@
 <template>
   <div class="body">
-    <div>
+    <div v-if="hostelName != null">
       <label> Select a hostel</label>
-
-      <button @click="hst('DEERAN')">DHEERAN</button>
-      <button @click="hst('AMARAVATHI')">AMARAVATHI</button>
-      <button @click="hst('KAMBAN')">KAMBAN</button>
+      <button
+        v-for="name in hostelName"
+        :key="name"
+        @click="getData(name.hostelName)"
+      >
+        {{ name.hostelName }}
+      </button>
     </div>
-    <div class="floor">
+    <div v-if="data != null" class="floor">
       <label> Select a Floor:</label>
 
       <button @click="flr(0)">Ground Floor</button>
@@ -15,38 +18,43 @@
       <button @click="flr(2)">Second Floor</button>
       <button @click="flr(3)">Third Floor</button>
     </div>
-
-    <ul class="showcase">
-      <li>
-        <div class="bed"></div>
-        <small>Available</small>
-      </li>
-      <li>
-        <div class="bed selected"></div>
-        <small>Selected</small>
-      </li>
-      <li>
-        <div class="bed sold"></div>
-        <small>Booked</small>
-      </li>
-    </ul>
-    <div class="con1">
-      <div v-for="room in rooms" :key="room.roomNumber">
-        <fieldset class="room" @click="book(room)">
-          <span>{{ room.roomNumber }}</span>
-          <span class="washroom" v-if="room.attachedBathRoom"> AB</span>
-          <div class="row">
-            <div
-              v-for="bed in room.capacity - room.availability"
-              :key="bed"
-              class="bed sold"
-            ></div>
-            <div v-for="bed in room.availability" :key="bed" class="bed"></div>
-          </div>
-        </fieldset>
+    <div v-if="rooms != null">
+      <ul class="showcase">
+        <li>
+          <div class="bed"></div>
+          <small>Available</small>
+        </li>
+        <li>
+          <div class="bed selected"></div>
+          <small>Selected</small>
+        </li>
+        <li>
+          <div class="bed sold"></div>
+          <small>Booked</small>
+        </li>
+      </ul>
+      <div class="con1">
+        <div v-for="room in rooms" :key="room">
+          <fieldset class="room" @click="book(room)">
+            <span>{{ room.roomNumber }}</span>
+            <span class="washroom" v-if="room.attachedBathRoom"> AB</span>
+            <div class="row">
+              <div
+                v-for="bed in room.capacity - room.availability"
+                :key="bed"
+                class="bed sold"
+              ></div>
+              <div
+                v-for="bed in room.availability"
+                :key="bed"
+                class="bed"
+              ></div>
+            </div>
+          </fieldset>
+        </div>
       </div>
+      <button @click="bk" type="button" class="book-button">Book</button>
     </div>
-    <button @click="bk" type="button" class="book-button">Book</button>
   </div>
 </template>
 
@@ -57,42 +65,337 @@ export default {
   name: "bookingView",
   data() {
     return {
-      rooms: null,
-      booked: null,
-      data: null,
-      hostelName: null,
+      rooms: [
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+        {
+          attachedBathroom: false,
+          availability: 3,
+          capacity: 5,
+          createdAt: null,
+          floor: 0,
+          hostelName: "KAMBAN",
+          roomNumber: "KBN001",
+          updatedAt: null,
+        },
+      ],
+      booked: [],
+      data: [],
+      hostelName: "KAMBAN",
     };
   },
 
   methods: {
+    setHostel(data) {
+      this.hostelName = data;
+      console.log(this.hostelName);
+    },
     book(n) {
       this.booked = n.roomNumber;
     },
     flr(n) {
       this.rooms = this.data.filter((da) => {
-        return da.floorNumber == n;
+        return da.floor == n;
       });
-    },
-    hst(n) {
-      this.hostelName = n;
-      this.getData();
+      console.log(this.rooms);
     },
     bk() {
       alert(`you have booked ${this.booked} `);
     },
-    async getData() {
+    async getData(n) {
       try {
-        console.log("getting data");
-        console.log(this.hostelName);
+        console.log("getting data for ", n);
         const room = await HostelService.getRooms({
-          params: {
-            hostelName: this.hostelName,
-          },
+          hostelName: n,
         });
-        //  const response = await AuthenticationService.login({
-        //   rollnumber: this.student.rollnumber,
-        //   password: this.student.password,
-        // });
         console.log(room);
         this.data = room.data.data;
       } catch (error) {
@@ -100,10 +403,28 @@ export default {
       }
     },
   },
+
+  async created() {
+    const hostels = await HostelService.getHostels({
+      year: this.$store.state.user.year,
+      gender: this.$store.state.user.gender,
+    });
+    // console.log(hostels);
+    if (hostels.data.status == "Closed") {
+      console.log("booking closed");
+    } else if (hostels.data.status == "Success") {
+      // console.log(hostels.data.data);
+      this.setHostel(hostels.data.data);
+    }
+  },
+  async mounted() {},
 };
 </script>
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+[v-cloak] {
+  display: none;
+}
 * {
   box-sizing: border-box;
 }
@@ -170,6 +491,7 @@ export default {
 **/
 .bed:not(.sold):hover {
   cursor: pointer;
+  background-color: green;
   transform: scale(1.2);
 }
 

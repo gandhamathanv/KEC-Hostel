@@ -6,8 +6,8 @@ export default {
         return Api().post("register", Credentials);
     },
 
-    login(Credentials) {
-        return Api().post("login", Credentials);
+    studentLogin(Credentials) {
+        return Api().post("studentLogin", Credentials);
     },
     staffLogin(Credentials) {
         return Api().post("staffLogin", Credentials);

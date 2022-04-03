@@ -20,11 +20,5 @@ module.exports = (sequelize, DataTypes) => {
         facility: {
             type: DataTypes.STRING,
         },
-        gender: {
-            type: DataTypes.STRING,
-        },
-        year: {
-            type: DataTypes.INTEGER,
-        },
     });
 };

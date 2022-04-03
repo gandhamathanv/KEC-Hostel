@@ -1,20 +1,14 @@
 /* eslint-disable */
-const { BookingStats } = require("../models");
+const { hostelinfo, hostelrooms, hostelfor } = require("../models");
 const jwt = require("jsonwebtoken");
 const config = require("../config/config");
 
-function jwtSignUser(user) {
-    const ONE_WEEK = 60 * 60 * 24 * 7;
-    return jwt.sign(user, config.authentication.jwtSecret, {
-        expiresIn: ONE_WEEK,
-    });
-}
 module.exports = {
-    async BookingStats(req, res) {
+    async getRooms(req, res) {
         try {
             const { hostelName } = req.body;
             console.log(req.body);
-            const data = await BookingStats.findAll({
+            const data = await hostelrooms.findAll({
                 where: {
                     hostelName: hostelName,
                 },
@@ -23,6 +17,36 @@ module.exports = {
                 status: "success",
                 data,
             });
+        } catch (err) {
+            console.log(err);
+            res.status(500).send({
+                error: "Error in server",
+            });
+        }
+    },
+    async getHostels(req, res) {
+        try {
+            const { year, gender } = req.body;
+            console.log(year, gender);
+            const user = await hostelfor.findAll({
+                where: {
+                    year,
+                    gender,
+                },
+                attributes: ["hostelName"],
+            });
+            const isbooking = true;
+            if (!isbooking) {
+                console.log("booking");
+                res.status(200).send({
+                    status: "Closed",
+                });
+            } else {
+                res.status(200).send({
+                    status: "Success",
+                    data: user,
+                });
+            }
         } catch (err) {
             console.log(err);
             res.status(500).send({

@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 require("./routes")(app);
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync().then(() => {
     app.listen(config.PORT || 3000);
     console.log(`server started on port ${config.PORT}`);
 });

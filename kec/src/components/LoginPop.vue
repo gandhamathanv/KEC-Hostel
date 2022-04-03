@@ -93,8 +93,7 @@ export default {
 
     async studentLogin() {
       try {
-        console.log("login");
-        const response = await AuthenticationService.login({
+        const response = await AuthenticationService.studentLogin({
           rollnumber: this.student.rollnumber,
           password: this.student.password,
         });

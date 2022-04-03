@@ -41,6 +41,7 @@ module.exports = {
     },
     async studentLogin(req, res) {
         try {
+            console.log(req);
             const { rollnumber, password } = req.body;
 
             const user = await studentLogin.findOne({
