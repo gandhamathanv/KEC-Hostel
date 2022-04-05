@@ -6,19 +6,8 @@ export default createStore({
     state: {
         token: null,
         user: null,
+        viewer: null,
         isUserLoggedIn: false,
-        isbook: {
-            dheeran: false,
-            valluvar: false,
-            kamban: false,
-            ilango: false,
-            bharathi: false,
-            ponnar: false,
-            sankar: false,
-            amaravathi: false,
-            kaveri: false,
-            bhavani: false,
-        },
     },
     getters: {},
     mutations: {

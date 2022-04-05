@@ -13,4 +13,6 @@ module.exports = (app) => {
         app.post("/staffLogin", AuthenticationController.staffLogin),
         app.post("/getRooms", HostelController.getRooms); //get
     app.post("/getHostels", HostelController.getHostels); //get
+    app.post("/getMenu", HostelController.getMenu); //get
+    app.get("/getNotification", HostelController.getNoti); //get
 };

@@ -9,7 +9,16 @@
         <button @click="navigateTo({ name: 'BookingView' })" class="book-now">
           book now
         </button>
-        <i class="fa fa-bell noti-icon"></i>
+        <span @click="toggleNoti" class="fa fa-bell noti-icon"></span>
+        <div v-if="notiPop" class="notification-div">
+          <p class="noti-head">
+            Notification <span>{{ notification.length }}</span>
+          </p>
+          <p v-for="no in notification" :key="no.id">
+            {{ no.by }}
+            <span>{{ no.message }}</span>
+          </p>
+        </div>
 
         <div class="profile" @click="togglePop">
           <p>
@@ -33,11 +42,15 @@
 </template>
 
 <script type="text/javascript">
+import HostelService from "@/services/HostelServices";
+
 export default {
   name: "dashboardNav",
   data() {
     return {
-      pop: false,
+      menuPop: false,
+      notiPop: false,
+      notification: null,
     };
   },
   methods: {
@@ -45,7 +58,10 @@ export default {
       this.$router.push(route);
     },
     togglePop() {
-      this.pop = !this.pop;
+      this.menuPop = !this.menuPop;
+    },
+    toggleNoti() {
+      this.notiPop = !this.notiPop;
     },
     logout() {
       this.$store.dispatch("setToken", null);
@@ -54,6 +70,10 @@ export default {
         name: "home",
       });
     },
+  },
+  async created() {
+    const noti = await HostelService.getNoti();
+    this.notification = noti.data.data;
   },
 };
 </script>
@@ -256,5 +276,79 @@ export default {
   display: flex;
   margin: 11px 0px;
   gap: 20px;
+}
+/* nitification pop */
+
+.notification-div {
+  background-color: white;
+  width: 240px;
+  border: 1px solid #ddd;
+  padding: 10px 0px;
+  right: 16%;
+  border-radius: 5px;
+  top: 12%;
+  position: absolute;
+  z-index: 9;
+  display: block;
+}
+
+.notification-div:after {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background-color: white;
+  top: -6px;
+  border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  transform: rotate(45deg);
+  right: 10%;
+}
+
+.noti-head {
+  display: block;
+  margin: 0px;
+  color: #6c7293;
+}
+
+.noti-head:hover {
+  background-color: white !important;
+  color: #6c7293 !important;
+}
+
+.noti-head span {
+  position: absolute;
+  right: 8%;
+  top: 10%;
+  background-color: #5643ff;
+  padding: 1px 5px;
+  color: white;
+  border-radius: 20px;
+}
+
+.hr {
+  margin: 0px;
+  border: none;
+  background-color: #ddd;
+  height: 1px;
+}
+
+.notification-div p {
+  margin: 0px;
+  padding: 10px 20px;
+  color: #6c7293;
+}
+
+.notification-div p span {
+  font-size: 11px;
+  display: block;
+}
+
+.notification-div p:hover {
+  margin: 0px;
+  padding: 10px 20px;
+  background-color: #5643ff;
+  border-radius: 0px;
+  color: white;
 }
 </style>

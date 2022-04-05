@@ -1,5 +1,11 @@
 /* eslint-disable */
-const { hostelinfo, hostelrooms, hostelfor } = require("../models");
+const {
+    hostelinfo,
+    hostelrooms,
+    hostelfor,
+    foodmenu,
+    notification,
+} = require("../models");
 const jwt = require("jsonwebtoken");
 const config = require("../config/config");
 
@@ -47,6 +53,34 @@ module.exports = {
                     data: user,
                 });
             }
+        } catch (err) {
+            console.log(err);
+            res.status(500).send({
+                error: "Error in server",
+            });
+        }
+    },
+    async getMenu(req, res) {
+        try {
+            res.status(200).send({
+                status: "Success",
+                menu,
+            });
+        } catch (err) {
+            console.log(err);
+            res.status(500).send({
+                error: "Error in server",
+            });
+        }
+    },
+    async getNoti(req, res) {
+        try {
+            const data = await notification.findAll({});
+
+            res.status(200).send({
+                status: "Success",
+                data,
+            });
         } catch (err) {
             console.log(err);
             res.status(500).send({

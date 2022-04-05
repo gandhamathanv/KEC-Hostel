@@ -5,7 +5,8 @@ import LoginPop from "../components/LoginPop.vue";
 import StudentInfo from "../components/StudentInfo.vue";
 import BookingView from "../views/BookingView.vue";
 import Dashboard from "../views/dashBoard.vue";
-// import Dashboard from "../components/dashboard/dashboardBegin.vue";
+import Dashboard2 from "../components/dashboard/booBoo.vue";
+import changePassword from "../components/resetPassword.vue";
 
 const routes = [{
         path: "/",
@@ -31,6 +32,16 @@ const routes = [{
         path: "/dash",
         name: "homeview",
         component: Dashboard,
+    },
+    {
+        path: "/booboo",
+        name: "homeview",
+        component: Dashboard2,
+    },
+    {
+        path: "/changePassword",
+        name: "changePassword",
+        component: changePassword,
     },
 ];
 

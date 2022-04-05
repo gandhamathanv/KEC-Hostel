@@ -45,20 +45,35 @@
         <div class="box-1">
           <div class="content-box-1">
             <p class="head-1">today's menu</p>
-            <br />
-            <div class="m-box active">
-              <p>semiyaa<br /><span class="no-1">breakfast</span></p>
-              <span class="no">+2343</span>
-            </div>
-
-            <div class="m-box">
-              <p>sapadu<br /><span class="no-1">Lunch</span></p>
-              <span class="no">+2343</span>
-            </div>
-
-            <div class="m-box">
-              <p>parotta<br /><span class="no-1">dinner</span></p>
-              <span class="no">+2343</span>
+            <div v-if="todaysMenu != null">
+              <div class="m-box">
+                <p>
+                  {{ todaysMenu.breakfast }}<br /><span class="no-1"
+                    >breakfast</span
+                  >
+                </p>
+                <span class="no">7:30</span>
+              </div>
+              <div class="m-box">
+                <p>
+                  {{ todaysMenu.lunch }}<br /><span class="no-1">lunch</span>
+                </p>
+                <span class="no">12:30</span>
+              </div>
+              <div class="m-box">
+                <p>
+                  {{ todaysMenu.eveningSnacks }}<br /><span class="no-1"
+                    >evening Snacks</span
+                  >
+                </p>
+                <span class="no">4:00</span>
+              </div>
+              <div class="m-box">
+                <p>
+                  {{ todaysMenu.dinner }}<br /><span class="no-1">dinner</span>
+                </p>
+                <span class="no">07:00</span>
+              </div>
             </div>
           </div>
         </div>
@@ -156,8 +171,35 @@
 </template>
 
 <script>
+import HostelService from "@/services/HostelServices";
+const weekday = [
+  "SUNDAY",
+  "MONDAY",
+  "TUESDAY",
+  "WEDNESDAY",
+  "THURSDAY",
+  "FRIDAY",
+  "SATURDAY",
+];
+
+const date = new Date();
+const day = weekday[date.getDay()];
 export default {
   name: "HomeView",
+  data() {
+    return {
+      notification: null,
+      todaysMenu: null,
+    };
+  },
+  async created() {
+    const menu = await HostelService.getMenu({
+      day,
+    });
+
+    this.todaysMenu = menu.data.menu[0];
+    console.log(this.todaysMenu);
+  },
 };
 </script>
 <style scoped>
