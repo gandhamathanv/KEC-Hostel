@@ -5,11 +5,11 @@
 
       <div v-if="viewer == 'staff'" class="input-box">
         <i class="fa fa-envelope-o"></i>
-        <input type="email" placeholder="Email Id" v-model="email" />
+        <input type="email" placeholder="Email Id" v-model="id" />
       </div>
       <div v-if="viewer == 'student'" class="input-box">
         <i class="fa fa-envelope-o"></i>
-        <input type="text" placeholder="Rollnumber" v-model="rollnumber" />
+        <input type="text" placeholder="Rollnumber" v-model="id" />
       </div>
       <div class="input-box">
         <i class="fa fa-key"></i>
@@ -17,11 +17,11 @@
           type="password"
           placeholder="Current Password"
           v-model="currentPassword"
-          id="myInput"
+          class="myInput"
         />
         <span class="eye1" onclick="myfunction()">
-          <i id="hide1" class="fa fa-eye"></i>
-          <i id="hide2" class="fa fa-eye-slash"> </i>
+          <!-- <i id="hide1" class="fa fa-eye"></i>
+          <i id="hide2" class="fa fa-eye-slash"> </i> -->
         </span>
       </div>
       <div class="input-box">
@@ -29,12 +29,12 @@
         <input
           type="password"
           placeholder="New Password"
-          id="myInput"
+          class="myInput"
           v-model="newPassword"
         />
         <span class="eye1" onclick="myfunction()">
-          <i id="hide1" class="fa fa-eye"></i>
-          <i id="hide2" class="fa fa-eye-slash"> </i>
+          <!-- <i id="hide1" class="fa fa-eye"></i>
+          <i id="hide2" class="fa fa-eye-slash"> </i> -->
         </span>
       </div>
       <div class="input-box">
@@ -43,14 +43,19 @@
           type="password"
           placeholder="Confirm Password"
           v-model="confirmPassword"
-          id="myInput"
+          class="myInput"
         />
         <span class="eye1" onclick="myfunction()">
-          <i id="hide1" class="fa fa-eye"></i>
-          <i id="hide2" class="fa fa-eye-slash"> </i>
+          <!-- <i id="hide1" class="fa fa-eye"></i>
+          <i id="hide2" class="fa fa-eye-slash"> </i> -->
         </span>
       </div>
-      <button type="button" class="login-btn">Change Password</button>
+      <div class="error">
+        <p class="error-line">{{ error }}</p>
+      </div>
+      <button @click="changePassword" type="button" class="login-btn">
+        Change Password
+      </button>
     </div>
   </div>
 </template>
@@ -62,13 +67,22 @@ export default {
   data() {
     return {
       viewer: this.$store.state.viewer,
-      email: "",
-      rollnumber: "",
+      id: "",
       currentPassword: "",
       newPassword: "",
       confirmPassword: "",
       error: null,
     };
+  },
+  watch: {
+    confirmPassword: function (val) {
+      console.log(this.newPassword, this.confirmPassword);
+      if (this.newPassword != val) {
+        this.error = "PASSWORD MISSMATCH";
+      } else {
+        this.error = null;
+      }
+    },
   },
   methods: {
     myfunction() {
@@ -85,53 +99,18 @@ export default {
         z.style.display = "block";
       }
     },
-    async register() {
+    async changePassword() {
       try {
-        await AuthenticationService.register({
-          rollnumber: this.rollnumber,
-          password: this.password,
+        await AuthenticationService.changePassword({
+          viewer: this.viewer,
+          id: this.id,
+          currentPassword: this.currentPassword,
+          newPassword: this.newPassword,
         });
+        console.log("success");
       } catch (error) {
-        // this.error = error.response.data.error;
-        alert(error.response.data.error);
-      }
-    },
-
-    async studentLogin() {
-      try {
-        const response = await AuthenticationService.studentLogin({
-          rollnumber: this.student.rollnumber,
-          password: this.student.password,
-        });
-        if (response.error) {
-          console.log("error");
-        }
-        this.$store.dispatch("setToken", response.data.token);
-        this.$store.dispatch("setUser", response.data.user);
-        this.$router.push({
-          name: "homeview",
-        });
-      } catch (error) {
-        // this.error = error.response.data.error;
-        alert(error.response.data.error);
-      }
-    },
-    async staffLogin() {
-      try {
-        console.log("Staff Login");
-        const response = await AuthenticationService.staffLogin({
-          mailId: this.staff.email,
-          password: this.staff.password,
-        });
-        console.log(response.data.token);
-        this.$store.dispatch("setToken", response.data.token);
-        this.$store.dispatch("setUser", response.data.user);
-        this.$router.push({
-          name: "homeview",
-        });
-      } catch (error) {
-        // this.error = error.response.data.error;
-        alert(error.response.data.error);
+        this.error = error.response.data.error;
+        // alert(error.respsonse.data.error);
       }
     },
   },

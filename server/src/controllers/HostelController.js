@@ -62,6 +62,12 @@ module.exports = {
     },
     async getMenu(req, res) {
         try {
+            const { day } = req.body;
+            const menu = await foodmenu.findAll({
+                where: {
+                    day,
+                },
+            });
             res.status(200).send({
                 status: "Success",
                 menu,

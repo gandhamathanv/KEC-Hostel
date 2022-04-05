@@ -11,6 +11,7 @@ module.exports = (app) => {
         app.post("/staffRegister", AuthenticationController.staffRegister),
         app.post("/studentLogin", AuthenticationController.studentLogin),
         app.post("/staffLogin", AuthenticationController.staffLogin),
+        app.post("/changePassword", AuthenticationController.changePassword),
         app.post("/getRooms", HostelController.getRooms); //get
     app.post("/getHostels", HostelController.getHostels); //get
     app.post("/getMenu", HostelController.getMenu); //get

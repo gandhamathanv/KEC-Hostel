@@ -119,4 +119,62 @@ module.exports = {
             });
         }
     },
+    async changePassword(req, res) {
+        try {
+            const { viewer, id, currentPassword, newPassword } = req.body;
+            if (viewer == "student") {
+                const user = await studentLogin.findOne({ where: { rollnumber: id } });
+                if (user) {
+                    const isPasswordValid = await user.comparePassword(currentPassword);
+                    if (!isPasswordValid) {
+                        res.status(403).send({
+                            error: "password Incorrect",
+                            isPasswordValid,
+                        });
+                    } else {
+                        await user.update({
+                            password: newPassword,
+                        });
+                        res.status(200).send({
+                            status: "success",
+                        });
+                    }
+                } else {
+                    res.status(403).send({
+                        status: "Failed",
+                        error: "user does not exist",
+                    });
+                }
+            }
+            if (viewer == "staff") {
+                const user = await staffLogin.findOne({ where: { mailID: id } });
+                if (user) {
+                    const isPasswordValid = await user.comparePassword(currentPassword);
+                    if (!isPasswordValid) {
+                        res.status(403).send({
+                            error: "password Incorrect",
+                            isPasswordValid,
+                        });
+                    } else {
+                        await user.update({
+                            password: newPassword,
+                        });
+                        res.status(200).send({
+                            status: "success",
+                        });
+                    }
+                } else {
+                    res.status(403).send({
+                        status: "Failed",
+                        error: "user does not exist",
+                    });
+                }
+            }
+        } catch (err) {
+            console.log(err);
+            res.status(500).send({
+                error: "Error in server",
+            });
+        }
+    },
 };

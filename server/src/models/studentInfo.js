@@ -1,6 +1,7 @@
 /* eslint-disable */
 module.exports = (sequelize, DataTypes) => {
     return sequelize.define("studentInfo", {
+        // photo: DataTypes.TEXT,
         name: DataTypes.STRING,
         rollnumber: {
             type: DataTypes.STRING,

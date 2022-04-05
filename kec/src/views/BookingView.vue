@@ -45,6 +45,7 @@
                 class="bed sold"
               ></div>
               <div
+                @click="bk"
                 v-for="bed in room.availability"
                 :key="bed"
                 class="bed"
@@ -53,7 +54,6 @@
           </fieldset>
         </div>
       </div>
-      <button @click="bk" type="button" class="book-button">Book</button>
     </div>
   </div>
 </template>
@@ -65,311 +65,10 @@ export default {
   name: "bookingView",
   data() {
     return {
-      rooms: [
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-        {
-          attachedBathroom: false,
-          availability: 3,
-          capacity: 5,
-          createdAt: null,
-          floor: 0,
-          hostelName: "KAMBAN",
-          roomNumber: "KBN001",
-          updatedAt: null,
-        },
-      ],
-      booked: [],
-      data: [],
-      hostelName: "KAMBAN",
+      rooms: null,
+      booked: null,
+      data: null,
+      hostelName: null,
     };
   },
 
@@ -409,11 +108,10 @@ export default {
       year: this.$store.state.user.year,
       gender: this.$store.state.user.gender,
     });
-    // console.log(hostels);
     if (hostels.data.status == "Closed") {
       console.log("booking closed");
     } else if (hostels.data.status == "Success") {
-      // console.log(hostels.data.data);
+      console.log(hostels.data.data);
       this.setHostel(hostels.data.data);
     }
   },
@@ -490,6 +188,11 @@ export default {
 }
 **/
 .bed:not(.sold):hover {
+  cursor: pointer;
+  background-color: green;
+  transform: scale(1.2);
+}
+.bed:not(.sold):active {
   cursor: pointer;
   background-color: green;
   transform: scale(1.2);

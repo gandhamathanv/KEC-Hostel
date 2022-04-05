@@ -1,88 +1,228 @@
 <template>
   <div>
-    <h2>Students Information</h2>
-    <section class="fullinfo-box">
-      <div class="div-box">
-        <div class="div-title">Name:</div>
-        <div>
-          <p class="div-content">{{ user.name }}</p>
-        </div>
-      </div>
-      <div class="div-box">
-        <div class="div-title">Roll Number:</div>
-        <div>
-          <p class="div-content">{{ user.rollnumber }}</p>
-        </div>
-      </div>
-      <div class="div-box">
-        <div class="div-title">Class:</div>
-        <div>
-          <p class="div-content">{{ user.department }}-{{ user.class }}</p>
-        </div>
-      </div>
-      <div class="div-box">
-        <div class="div-title">Year of Studying:</div>
-        <div>
-          <p class="div-content">{{ user.year }}</p>
-        </div>
-      </div>
-      <div class="div-box">
-        <div class="div-title">Department:</div>
-        <div>
-          <p class="div-content">{{ user.department }}</p>
-        </div>
-      </div>
-      <div class="div-box">
-        <div class="div-title">Date of Birth:</div>
-        <div>
-          <p class="div-content">{{ user.dob }}</p>
-        </div>
-      </div>
-      <div class="div-box">
-        <div class="div-title">Students Mobile Number:</div>
-        <div>
-          <p class="div-content">{{ user.studentPhoneno }}</p>
-        </div>
-      </div>
-      <div class="div-box">
-        <div class="div-title">Students Mail Id:</div>
-        <div>
-          <p class="div-content">{{ user.studentMailId }}</p>
-        </div>
-      </div>
-      <div class="div-box">
-        <div class="div-title">Hostel Name:</div>
-        <div>
-          <p class="div-content">{{ user.hostelName }}</p>
-        </div>
-      </div>
-      <div class="div-box">
-        <div class="div-title">Hostel Room Number:</div>
-        <div>
-          <p class="div-content">{{ user.hostelRoomNo }}</p>
-        </div>
-      </div>
-      <div class="div-box">
-        <div class="div-title">Parents Name:</div>
-        <div>
-          <p class="div-content">{{ user.parentsName }}</p>
-        </div>
-      </div>
-      <!-- <div class="div-box">
-        <div class="div-title">Parents Mobile Number:</div>
-        <div>
-          <p class="div-content">{{ parents }}</p>
-        </div>
-      </div> -->
-      <div class="div-box">
-        <div class="div-title">Address:</div>
-        <div>
-          <p class="div-content">
-            {{ user.address }}
-          </p>
+    <section>
+      <div class="rt-container">
+        <div class="col-rt-12">
+          <div class="Scriptcontent">
+            <!-- Student Profile -->
+            <div class="student-profile py-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div class="card shadow-sm">
+                      <div class="card-header">
+                        <img
+                          class="profile_img"
+                          src="https://source.unsplash.com/600x300/?student"
+                          alt="student dp"
+                        />
+                        <h3>Aanandhene</h3>
+                      </div>
+                      <hr />
+                      <div class="card-body">
+                        <p class="mb-0">
+                          <strong class="pr-1">RollNumber:</strong>20CSR051
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-8">
+                    <div class="card shadow-sm2">
+                      <div class="card-header border-0">
+                        <h3 class="mb-0">
+                          <i class="far fa-clone pr-1"></i>General Information
+                        </h3>
+                      </div>
+                      <div class="card-body pt-0">
+                        <table class="table table-bordered" border="0">
+                          <tr>
+                            <th width="20%">class</th>
+                            <td width="2%">:</td>
+                            <td>A</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">year</th>
+                            <td width="2%">:</td>
+                            <td>II</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">department</th>
+                            <td width="2%">:</td>
+                            <td>CSE</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">DOB</th>
+                            <td width="2%">:</td>
+                            <td>12.09.2001</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">bloodGroup</th>
+                            <td width="2%">:</td>
+                            <td>B+</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">roomNumber</th>
+                            <td width="2%">:</td>
+                            <td>205</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">hostelName</th>
+                            <td width="2%">:</td>
+                            <td>Amaravathi</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">gender</th>
+                            <td width="2%">:</td>
+                            <td>Female</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">phoneNumber</th>
+                            <td width="2%">:</td>
+                            <td>9876506543</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">whatsappNumber</th>
+                            <td width="2%">:</td>
+                            <td>9873256754</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">telegramNumber</th>
+                            <td width="2%">:</td>
+                            <td>9876506543</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">collegeMailID</th>
+                            <td width="2%">:</td>
+                            <td>bhuva.20cse@kongu.edu</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">personalMailID</th>
+                            <td width="2%">:</td>
+                            <td>bhuva13@gmail.com</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">aadharNumber</th>
+                            <td width="2%">:</td>
+                            <td>424618229565</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">fatherName</th>
+                            <td width="2%">:</td>
+                            <td>Raghu moorthy</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">fatherMobileNumber</th>
+                            <td width="2%">:</td>
+                            <td>8765432898</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">fatherOccupation</th>
+                            <td width="2%">:</td>
+                            <td>office staff</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">motherName</th>
+                            <td width="2%">:</td>
+                            <td>nagarathna</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">motherMobileNumber</th>
+                            <td width="2%">:</td>
+                            <td>7654387652</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">MotherOccupation</th>
+                            <td width="2%">:</td>
+                            <td>home maker</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">address</th>
+                            <td width="2%">:</td>
+                            <td>
+                              no-1/45,kalahasthipuram(vill),avalapalli(pst),hosur(tk).
+                            </td>
+                          </tr>
+                          <tr>
+                            <th width="20%">district</th>
+                            <td width="2%">:</td>
+                            <td>krishnagiri</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">state</th>
+                            <td width="2%">:</td>
+                            <td>tamilnadu</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">localGuardian</th>
+                            <td width="2%">:</td>
+                            <td>madhavan</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">localGuardianPhoneNumber</th>
+                            <td width="2%">:</td>
+                            <td>8765438765</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">accountNumber</th>
+                            <td width="2%">:</td>
+                            <td>7654321234567890</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">bankName</th>
+                            <td width="2%">:</td>
+                            <td>karur vysya bank</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">branch</th>
+                            <td width="2%">:</td>
+                            <td>hosur</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">IFSCcode</th>
+                            <td width="2%">:</td>
+                            <td>8765432189</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">dateOfEntry</th>
+                            <td width="2%">:</td>
+                            <td>01.09.2021</td>
+                          </tr>
+                          <tr>
+                            <th width="20%">dateOfVacation</th>
+                            <td width="2%">:</td>
+                            <td>-</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <!-- <div style="height: 26px"></div> -->
+                    <!-- <div class="card shadow-sm">
+                      <div class="card-header border-0">
+                        <h3 class="mb-0">
+                          <i class="far fa-clone pr-1"></i>Other Information
+                        </h3>
+                      </div>
+                      <div class="card-body pt-0">
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                          nostrud exercitation ullamco laboris nisi ut aliquip
+                          ex ea commodo consequat.
+                        </p>
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- partial -->
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- Analytics -->
   </div>
 </template>
 
@@ -99,178 +239,95 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-.header-fixed {
-  background-color: #292c2f;
-  box-shadow: 0 1px 1px #ccc;
-  padding: 20px 40px;
-  height: 80px;
-  color: #ffffff;
-  box-sizing: border-box;
-  top: -100px;
-  -webkit-transition: top 0.3s;
-  transition: top 0.3s;
-}
-
-.header-fixed .header-limiter {
-  max-width: 1200px;
+.rt-heading {
+  margin-top: 80px;
   text-align: center;
-  margin: 0 auto;
+  font-family: system-ui;
 }
 
-.header-fixed-placeholder {
-  height: 80px;
-  display: none;
-}
-/* Logo */
-
-.header-fixed .header-limiter h1 {
-  float: left;
-  font: normal 28px Cookie, Arial, Helvetica, sans-serif;
-  line-height: 40px;
-  margin: 0;
+.profile_img {
+  border-radius: 100%;
+  border: 15px solid rgb(197, 193, 193);
+  width: 200px;
+  height: 200px;
 }
 
-.header-fixed .header-limiter h1 span {
-  color: #f3390a;
-}
-/* The navigation links */
-
-.header-fixed .header-limiter a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.header-fixed .header-limiter nav {
-  font: 16px Arial, Helvetica, sans-serif;
-  line-height: 40px;
-  float: right;
-}
-
-.header-fixed .header-limiter nav a {
-  display: inline-block;
-  padding: 0 5px;
-  text-decoration: none;
-  color: #ffffff;
-  opacity: 0.9;
-}
-
-.header-fixed .header-limiter nav a:hover {
-  opacity: 1;
-}
-
-.header-fixed .header-limiter nav a.selected {
-  color: #608bd2;
-  pointer-events: none;
-  opacity: 1;
-}
-
-body.fixed .header-fixed {
-  padding: 10px 40px;
-  height: 50px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-body.fixed .header-fixed-placeholder {
-  display: block;
-}
-
-body.fixed .header-fixed .header-limiter h1 {
-  font-size: 24px;
-  line-height: 30px;
-}
-
-body.fixed .header-fixed .header-limiter nav {
-  line-height: 28px;
-  font-size: 13px;
-}
-
-@media all and (max-width: 600px) {
-  .header-fixed {
-    padding: 20px 0;
-    height: 75px;
-  }
-  .header-fixed .header-limiter h1 {
-    float: none;
-    margin: -8px 0 10px;
-    text-align: center;
-    font-size: 24px;
-    line-height: 1;
-  }
-  .header-fixed .header-limiter nav {
-    line-height: 1;
-    float: none;
-  }
-  .header-fixed .header-limiter nav a {
-    font-size: 13px;
-  }
-  body.fixed .header-fixed {
-    display: none;
-  }
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  height: 800px;
-}
-
-h1 {
+.card {
+  width: 400px;
+  height: auto;
+  position: relative;
+  border-radius: 20px;
+  background-color: aliceblue;
+  box-shadow: 2px 10px 10px gray;
   text-align: center;
-  color: white;
+  margin-left: 70px;
+  font-family: system-ui;
+  font-weight: bold;
+  padding: 15px;
 }
 
-h2 {
-  text-align: center;
-  text-transform: uppercase;
-  margin: 20px;
-  color: black;
+.table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  border: 2px solid rgb(194, 186, 186);
 }
 
-.fullinfo-box {
-  border: #608bd2 2px solid;
-  width: 90%;
-  padding: 20px;
-  margin: auto;
+.shadow-sm2 {
+  width: 80%;
+  align-items: center;
+  text-align: left;
 }
 
-.div-box {
-  width: 600px;
-  border-radius: 25px;
-  font-family: serif;
+table {
   border-collapse: collapse;
-  width: max-content;
-  margin-left: 2%;
 }
 
-.div-box:hover {
-  transform: scale(1.1);
-  text-shadow: #666 2px 2px 5px;
+td,
+th + th {
+  border-left: 1px solid rgb(107, 109, 106);
 }
 
-.div-title {
-  text-transform: lowercase;
-  color: orangered;
-  /* text-shadow: orangered 2px 5px 5px; */
-  opacity: 80%;
+tr + tr {
+  border-top: 1px solid rgb(126, 124, 128);
 }
 
-.div-content {
-  text-transform: capitalize;
-  width: max-content;
-  color: #292c2f;
-  font-size: larger;
-  color: #333;
-  padding-bottom: 2%;
-  margin: 12px 0px 30px 20px;
+td,
+th {
+  padding: 10px;
+}
+
+tr + tr > td,
+tr + tr > th {
+  border-top: 1px solid rgb(103, 102, 104);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: center;
+  padding: 10px;
+}
+
+@media (max-width: 790px) {
+  .row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .profile_img {
+    width: 100px;
+    height: 200px;
+  }
+  .card {
+    width: 350px;
+    height: auto;
+    position: relative;
+    margin-left: 20px;
+    font-family: system-ui;
+    font-weight: bold;
+    padding: 15px;
+  }
 }
 </style>

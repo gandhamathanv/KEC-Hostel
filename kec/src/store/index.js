@@ -6,7 +6,7 @@ export default createStore({
     state: {
         token: null,
         user: null,
-        viewer: null,
+        viewer: "student",
         isUserLoggedIn: false,
     },
     getters: {},

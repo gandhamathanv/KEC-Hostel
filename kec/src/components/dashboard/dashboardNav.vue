@@ -25,11 +25,13 @@
             {{ $store.state.user.name }}
             <span class="fa fa-ellipsis-v dots" aria-hidden="true"></span>
           </p>
-          <div v-if="pop" class="profile-div">
+          <div v-if="menuPop" class="profile-div">
             <p @click="navigateTo({ name: 'studentInfo' })">
               <i class="fa fa-user"></i> Profile
             </p>
-            <p><i class="fa fa-cogs"></i> Settings</p>
+            <p @click="navigateTo({ name: 'changePassword' })">
+              <i class="fa fa-cogs"></i> Settings
+            </p>
             <p @click="logout">
               <i class="fa fa-power-off"></i>
               Log Out
@@ -58,6 +60,7 @@ export default {
       this.$router.push(route);
     },
     togglePop() {
+      console.log("pop");
       this.menuPop = !this.menuPop;
     },
     toggleNoti() {

@@ -12,4 +12,7 @@ export default {
     staffLogin(Credentials) {
         return Api().post("staffLogin", Credentials);
     },
+    changePassword(Credentials) {
+        return Api().post("changePassword", Credentials);
+    },
 };
