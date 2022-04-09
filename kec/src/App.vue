@@ -1,17 +1,21 @@
 <template>
   <div>
-    <HeaderNav></HeaderNav>
+    <HeaderNav v-if="!this.$store.state.isUserLoggedIn"></HeaderNav>
+    <DashboardNav v-if="this.$store.state.isUserLoggedIn" />
 
     <router-view />
   </div>
 </template>
 <script>
 import HeaderNav from "@/components/HeaderNav.vue";
+import DashboardNav from "@/components/dashboard/dashboardNav.vue";
+
 export default {
   name: "app",
 
   components: {
     HeaderNav,
+    DashboardNav,
   },
 };
 </script>

@@ -5,10 +5,41 @@
         <p class="nav" @click="navigateTo({ name: 'homeview' })">Kec Hostel</p>
       </div>
 
-      <div class="col-div-6-icon">
+      <div v-if="this.$store.state.viewer == 'STUDENT'" class="col-div-6-icon">
         <button @click="navigateTo({ name: 'BookingView' })" class="book-now">
           book now
         </button>
+        <span @click="toggleNoti" class="fa fa-bell noti-icon"></span>
+        <div v-if="notiPop" class="notification-div">
+          <p class="noti-head">
+            Notification <span>{{ notification.length }}</span>
+          </p>
+          <p v-for="no in notification" :key="no.id">
+            {{ no.by }}
+            <span>{{ no.message }}</span>
+          </p>
+        </div>
+
+        <div class="profile" @click="togglePop">
+          <p>
+            {{ $store.state.user.name }}
+            <span class="fa fa-ellipsis-v dots" aria-hidden="true"></span>
+          </p>
+          <div v-if="menuPop" class="profile-div">
+            <p @click="navigateTo({ name: 'studentInfo' })">
+              <i class="fa fa-user"></i> Profile
+            </p>
+            <p @click="navigateTo({ name: 'changePassword' })">
+              <i class="fa fa-cogs"></i> Settings
+            </p>
+            <p @click="logout">
+              <i class="fa fa-power-off"></i>
+              Log Out
+            </p>
+          </div>
+        </div>
+      </div>
+      <div v-if="this.$store.state.viewer == 'STAFF'" class="col-div-6-icon">
         <span @click="toggleNoti" class="fa fa-bell noti-icon"></span>
         <div v-if="notiPop" class="notification-div">
           <p class="noti-head">

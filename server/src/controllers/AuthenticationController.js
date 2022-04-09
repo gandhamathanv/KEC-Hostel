@@ -103,7 +103,7 @@ module.exports = {
             } else {
                 const userInfo = await staffInfo.findOne({
                     where: {
-                        identityNumber: user.identityNumber,
+                        staffID: user.staffID,
                     },
                 });
                 const userJson = userInfo.toJSON();

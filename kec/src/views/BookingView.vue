@@ -45,7 +45,6 @@
                 class="bed sold"
               ></div>
               <div
-                @click="bk"
                 v-for="bed in room.availability"
                 :key="bed"
                 class="bed"
@@ -79,15 +78,12 @@ export default {
     },
     book(n) {
       this.booked = n.roomNumber;
+      alert(`you have booked ${this.booked} `);
     },
     flr(n) {
       this.rooms = this.data.filter((da) => {
         return da.floor == n;
       });
-      console.log(this.rooms);
-    },
-    bk() {
-      alert(`you have booked ${this.booked} `);
     },
     async getData(n) {
       try {

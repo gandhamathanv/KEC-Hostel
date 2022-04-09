@@ -102,6 +102,7 @@ export default {
         }
         this.$store.dispatch("setToken", response.data.token);
         this.$store.dispatch("setUser", response.data.user);
+        this.$store.dispatch("setViewer", "STUDENT");
         this.$router.push({
           name: "homeview",
         });
@@ -120,8 +121,9 @@ export default {
         console.log(response.data.token);
         this.$store.dispatch("setToken", response.data.token);
         this.$store.dispatch("setUser", response.data.user);
+        this.$store.dispatch("setViewer", "STAFF");
         this.$router.push({
-          name: "homeview",
+          name: "staffDashboard",
         });
       } catch (error) {
         // this.error = error.response.data.error;
@@ -136,8 +138,8 @@ export default {
 <style scoped>
 /* @import url("https://fonts.googleapis.com");
 @import url("https://fonts.gstatic.com"); */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap");
-@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"); */
+/* @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"); */
 .ln {
   width: 500px;
   background: rgba(0, 0, 0, 0.8);
