@@ -94,4 +94,11 @@ module.exports = {
             });
         }
     },
+    async getDash(req, res) {
+        const { responsibility } = req.body;
+
+        res.status(200).send({
+            status: "success",
+        });
+    },
 };
