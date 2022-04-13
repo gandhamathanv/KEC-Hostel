@@ -103,6 +103,7 @@
 </template>
 
 <script>
+import staffServices from "@/services/StaffServices";
 export default {
   name: "profilePage",
   data() {
@@ -111,7 +112,10 @@ export default {
       NumberOfQueries: 0,
     };
   },
-  created() {},
+  async created() {
+    const data = await staffServices.getDash();
+    console.log(data);
+  },
 };
 </script>
 <style scoped>

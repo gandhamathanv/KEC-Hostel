@@ -8,5 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         changePermissions: {
             type: DataTypes.BOOLEAN,
         },
+    }, {
+        timestamps: false,
     });
 };

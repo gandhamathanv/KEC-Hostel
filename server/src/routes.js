@@ -16,5 +16,6 @@ module.exports = (app) => {
     app.post("/getHostels", HostelController.getHostels); //get
     app.post("/getMenu", HostelController.getMenu); //get
     app.get("/getNotification", HostelController.getNoti); //get
-    app.get("/getdash", HostelController.getDash); //get
+
+    app.get("/getStaffDash", HostelController.getStaffDash); //get
 };

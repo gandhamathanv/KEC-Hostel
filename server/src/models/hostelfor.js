@@ -10,5 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         year: {
             type: DataTypes.INTEGER,
         },
+    }, {
+        timestamps: false,
     });
 };

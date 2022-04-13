@@ -17,5 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         dinner: {
             type: DataTypes.STRING,
         },
+    }, {
+        timestamps: false,
     });
 };

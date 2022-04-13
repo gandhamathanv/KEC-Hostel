@@ -8,5 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         booking: {
             type: DataTypes.BOOLEAN,
         },
+    }, {
+        timestamps: false,
     });
 };

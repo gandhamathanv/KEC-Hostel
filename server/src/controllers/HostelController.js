@@ -1,6 +1,7 @@
 /* eslint-disable */
 const {
     hostelinfo,
+    studentInfo,
     hostelrooms,
     hostelfor,
     foodmenu,
@@ -94,11 +95,12 @@ module.exports = {
             });
         }
     },
-    async getDash(req, res) {
-        const { responsibility } = req.body;
-
+    async getStaffDash(req, res) {
+        const studentCount = await studentInfo.count();
+        const roomCount = await hostelrooms.count();
         res.status(200).send({
             status: "success",
+            data: { studentCount, roomCount },
         });
     },
 };

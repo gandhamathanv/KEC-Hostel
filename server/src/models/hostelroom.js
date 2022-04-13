@@ -1,9 +1,6 @@
 /* eslint-disable */
 module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define("hostelrooms", {
-        hostelName: {
-            type: DataTypes.STRING,
-        },
         roomNumber: {
             type: DataTypes.STRING,
             primaryKey: true,
@@ -20,6 +17,8 @@ module.exports = (sequelize, DataTypes) => {
         attachedBathroom: {
             type: DataTypes.BOOLEAN,
         },
+    }, {
+        timestamps: false,
     });
 
     return User;
