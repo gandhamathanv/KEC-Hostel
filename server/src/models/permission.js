@@ -18,6 +18,10 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false,
             },
+            level: {
+                type: DataTypes.INTEGER,
+                defaultValue: 2,
+            },
         }, {
             timestamps: false,
         }

@@ -102,7 +102,7 @@ module.exports = {
             } else {
                 const userInfo = await staffInfo.findOne({
                     where: {
-                        staffID: user.staffID,
+                        collegeMailID: user.mailID,
                     },
                 });
                 const userJson = userInfo.toJSON();
