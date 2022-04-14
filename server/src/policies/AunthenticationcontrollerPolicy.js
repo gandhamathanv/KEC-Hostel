@@ -35,6 +35,7 @@ module.exports = {
         }
     },
     staffRegister(req, res, next) {
+        console.log("data lofddes");
         const schema = Joi.object({
             mailID: Joi.string().email({
                 minDomainSegments: 2,
@@ -73,6 +74,7 @@ module.exports = {
                     });
             }
         } else {
+            console.log("gadhaa");
             next();
         }
     },

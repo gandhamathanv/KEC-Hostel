@@ -14,18 +14,9 @@ app.use(cors());
 
 require("./routes")(app);
 sequelize
-    .sync({ force: true })
-    .then(() => {
-        const { models } = sequelize;
-        models.permission.bulkCreate([{
-                responsibility: "ASSISTANT WARDEN",
-            },
-            {
-                responsibility: "DEPUTY WARDEN",
-            },
-        ]);
-    })
-    .then(() => {
-        app.listen(config.PORT || 3000);
-        console.log(`server started on port ${config.PORT}`);
-    });
+    .sync({ alter: true })
+
+.then(() => {
+    app.listen(config.PORT || 3000);
+    console.log(`server started on port ${config.PORT}`);
+});

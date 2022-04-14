@@ -16,7 +16,6 @@ function jwtSignUser(user) {
 }
 module.exports = {
     async studentRegister(req, res) {
-        console.log(req.body);
         try {
             const user = await studentLogin.create(req.body);
             res.status(200).send(user.toJSON());
@@ -55,7 +54,7 @@ module.exports = {
                 });
             }
             const isPasswordValid = await user.comparePassword(password);
-
+            console.log(isPasswordValid);
             if (!isPasswordValid) {
                 res.status(403).send({
                     error: "password Incorrect",
