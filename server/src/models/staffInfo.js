@@ -15,7 +15,10 @@ module.exports = (sequelize, DataTypes) => {
 
             phoneNumber: DataTypes.BIGINT,
             whatsappNumber: DataTypes.BIGINT,
-            collegeMailID: DataTypes.STRING,
+            collegeMailID: {
+                type: DataTypes.STRING,
+                primaryKey: true,
+            },
             personalMailID: DataTypes.STRING,
             aadharNumber: DataTypes.BIGINT,
         }, {
