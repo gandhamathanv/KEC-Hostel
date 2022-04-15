@@ -4,45 +4,54 @@
       <section class="main">
         <div class="main-top">
           <h1>Staff dashboard</h1>
-          <i class="fas fa-user-cog"></i>
         </div>
         <div class="main-skills">
           <div class="card">
-            <i class="fas fa-laptop-code"></i>
+            <h1 class="card-title">student</h1>
+            <span class="card-button">view student</span>
+
             <h3>No of students</h3>
             <p>Present : {{ NumberOfStudents }}</p>
           </div>
           <div class="card">
-            <i class="fab fa-wordpress"></i>
+            <h1 class="card-title">staff</h1>
+            <span class="card-button">view staff</span>
+
+            <h3>No of staff</h3>
+            <p>Present : {{ NumberOfStudents }}</p>
+          </div>
+          <div class="card">
             <h3>No of Queries</h3>
             <p>Solved: {{ NumberOfQueries }}</p>
           </div>
           <div class="card">
-            <i class="fas fa-palette"></i>
-            <h3>Rooms</h3>
-            <p>Filled : 200</p>
-            <p>Unfilled : 30</p>
+            <h1 class="card-title">room</h1>
+            <span class="card-button">view room</span>
+
+            <h3>No of room</h3>
+
+            <p>rooms : {{ NumberOfRooms }}</p>
           </div>
-          <div class="card">
+          <!-- <div class="card">
             <i class="fab fa-app-store-ios"></i>
             <h3>IOS Dev</h3>
             <p>join over 1 million students .</p>
-          </div>
+          </div> -->
         </div>
       </section>
     </div>
     <!-- next rown -->
+
     <div class="col-div-4-1">
       <div class="box-1">
         <div class="content-box-1">
-          <p class="head-1">
-            <span>Querry</span>
-          </p>
-          <div class="buttons-query">
-            <button class="info1">Add Querry</button
-            ><button class="info1">View All</button>
+          <div class="card-line">
+            <h1 class="card-title">notifications</h1>
+            <div class="buttons-query">
+              <button class="card-button">add</button>
+              <button class="card-button">View</button>
+            </div>
           </div>
-          <br />
 
           <p class="m-box">
             <i class="fa fa-circle" style="color: green !important"></i> Lorem
@@ -58,35 +67,13 @@
     <div class="col-div-4-1">
       <div class="box-1">
         <div class="content-box-1">
-          <p class="head-1">
-            <span>Rules</span>
-          </p>
-          <div class="buttons-query">
-            <button class="info1">View All</button>
+          <div class="card-line">
+            <h1 class="card-title">querry</h1>
+            <div class="buttons-query">
+              <button class="card-button">add</button>
+              <button class="card-button">View</button>
+            </div>
           </div>
-          <br />
-
-          <p class="m-box">
-            <i class="fa fa-circle" style="color: green !important"></i> Lorem
-            Ipsum is simply dummy text of the printing and typesetting industry.
-          </p>
-          <p class="m-box">
-            <i class="fa fa-circle"></i> Lorem Ipsum is simply dummy text of the
-            printing and typesetting industry.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-div-4-1">
-      <div class="box-1">
-        <div class="content-box-1">
-          <p class="head-1">
-            <span>Rules</span>
-          </p>
-          <div class="buttons-query">
-            <button class="info1">View All</button>
-          </div>
-          <br />
 
           <p class="m-box">
             <i class="fa fa-circle" style="color: green !important"></i> Lorem
@@ -110,10 +97,13 @@ export default {
     return {
       NumberOfStudents: 4567,
       NumberOfQueries: 0,
+      NumberOfRooms: null,
     };
   },
   async created() {
-    const data = await staffServices.getDash();
+    const { data } = await staffServices.getDash();
+    this.NumberOfStudents = data.data.studentCount;
+    this.NumberOfRooms = data.data.roomCount;
     console.log(data);
   },
 };
@@ -145,22 +135,70 @@ body {
 .main-skills {
   display: flex;
   margin-top: 20px;
+  justify-content: space-evenly;
 }
 .main-skills .card {
   width: 25%;
+  height: auto;
   margin: 10px;
-  background: #fff;
+
   text-align: center;
   border-radius: 20px;
   padding: 10px;
-  box-shadow: 10px 12px 20px rgba(3, 91, 233, 0.555);
+
+  box-shadow: 2px 2px 10px black;
 }
 .main-skills .card h3 {
   margin: 10px;
+  margin-top: 15px;
   text-transform: capitalize;
 }
 .main-skills .card p {
   font-size: 15px;
+}
+.card-title {
+  font-size: 30px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  /* font-weight: bold; */
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  align-items: center;
+}
+.card-button {
+  text-shadow: 2px 2px 15px white;
+  padding: 2%;
+  color: white;
+  background-color: black;
+  border-radius: 4px;
+  font-family: "Times New Roman", Times, serif;
+}
+.card-button:hover {
+  text-shadow: 2px 2px 15px black;
+  padding: 2%;
+  color: black;
+  background-color: white;
+  border-radius: 4px;
+  border: 2px solid black;
+  cursor: pointer;
+}
+.card-line {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 40px 0px;
+}
+.card-line .card-title {
+  margin: 0;
+}
+.card-line .card-button {
+  padding: 5px;
+  gap: 3px;
+}
+.buttons-query {
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 .main-skills .card button {
   background: orangered;

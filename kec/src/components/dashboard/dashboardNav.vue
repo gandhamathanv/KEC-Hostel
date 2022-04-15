@@ -63,6 +63,12 @@
             <p @click="navigateTo({ name: 'changePassword' })">
               <i class="fa fa-cogs"></i> Settings
             </p>
+            <p
+              v-if="$store.state.level == 0"
+              @click="navigateTo({ name: 'changePermissions' })"
+            >
+              <i class="fa fa-cogs"></i> Permissions
+            </p>
             <p @click="logout">
               <i class="fa fa-power-off"></i>
               Log Out

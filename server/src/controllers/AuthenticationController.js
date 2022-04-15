@@ -4,6 +4,7 @@ const {
     staffLogin,
     studentInfo,
     studentLogin,
+    permission,
 } = require("../models");
 const jwt = require("jsonwebtoken");
 const config = require("../config/config");
@@ -87,7 +88,6 @@ module.exports = {
                     mailId: mailId,
                 },
             });
-            console.log("haii");
             if (!user) {
                 res.status(403).send({
                     error: "user mail ID is incorrect",
@@ -105,9 +105,16 @@ module.exports = {
                         collegeMailID: user.mailID,
                     },
                 });
+                const { level } = await permission.findOne({
+                    where: {
+                        responsibility: userInfo.hostelResponsibility,
+                    },
+                    attributes: ["level"],
+                });
                 const userJson = userInfo.toJSON();
                 res.status(200).send({
                     user: userJson,
+                    level: 0,
                     token: jwtSignUser(userJson),
                 });
             }

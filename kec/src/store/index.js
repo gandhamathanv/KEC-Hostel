@@ -7,7 +7,7 @@ export default createStore({
         token: null,
         user: null,
         viewer: null,
-        viewer: null,
+        level: null,
         isUserLoggedIn: false,
     },
     getters: {},
@@ -23,8 +23,10 @@ export default createStore({
         setUser(state, user) {
             state.user = user;
         },
-        setViewer(state, viewer) {
-            state.viewer = viewer;
+        setStaff(state, data) {
+            state.user = data.user;
+            state.level = data.level;
+            state.viewer = "STAFF";
         },
     },
     actions: {
@@ -34,8 +36,8 @@ export default createStore({
         setUser({ commit }, user) {
             commit("setUser", user);
         },
-        setViewer({ commit }, viewer) {
-            commit("setViewer", viewer);
+        setStaff({ commit }, data) {
+            commit("setStaff", data);
         },
     },
     modules: {},

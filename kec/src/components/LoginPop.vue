@@ -118,10 +118,9 @@ export default {
           mailId: this.staff.email,
           password: this.staff.password,
         });
-        console.log(response.data.token);
+        console.log(response.data);
         this.$store.dispatch("setToken", response.data.token);
-        this.$store.dispatch("setUser", response.data.user);
-        this.$store.dispatch("setViewer", "STAFF");
+        this.$store.dispatch("setStaff", response.data);
         this.$router.push({
           name: "staffDashboard",
         });

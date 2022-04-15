@@ -1,6 +1,7 @@
 /* eslint-disable */
 const AuthenticationController = require("./controllers/AuthenticationController");
 const AuthenticationControllerPolicy = require("./policies/AunthenticationcontrollerPolicy");
+const HostelControllerPolicy = require("./policies/HostelcontrollerPolicy");
 const HostelController = require("./controllers/HostelController");
 module.exports = (app) => {
     app.post(
@@ -17,5 +18,9 @@ module.exports = (app) => {
     app.post("/getMenu", HostelController.getMenu); //get
     app.get("/getNotification", HostelController.getNoti); //get
 
-    app.get("/getStaffDash", HostelController.getStaffDash); //get
+    app.get(
+        "/getStaffDash",
+        HostelController.getStaffDash,
+        HostelController.getStaffDash
+    ); //get
 };

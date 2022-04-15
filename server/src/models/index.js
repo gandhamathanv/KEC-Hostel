@@ -95,7 +95,6 @@ fs.readdirSync(__dirname)
 //     foreignKey: "roomNumber",
 //     targetKey: "roomNumber",
 // });
-
 // db.studentInfo.hasOne(db.studentLogin, {
 //     foreignKey: "rollnumber",
 //     sourceKey: "rollnumber",
