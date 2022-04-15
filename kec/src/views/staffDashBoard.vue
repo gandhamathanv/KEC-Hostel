@@ -32,11 +32,6 @@
 
             <p>rooms : {{ NumberOfRooms }}</p>
           </div>
-          <!-- <div class="card">
-            <i class="fab fa-app-store-ios"></i>
-            <h3>IOS Dev</h3>
-            <p>join over 1 million students .</p>
-          </div> -->
         </div>
       </section>
     </div>
@@ -101,7 +96,7 @@ export default {
     };
   },
   async created() {
-    const { data } = await staffServices.getDash();
+    const { data } = await staffServices.getDash(this.$store.state.token);
     this.NumberOfStudents = data.data.studentCount;
     this.NumberOfRooms = data.data.roomCount;
     console.log(data);

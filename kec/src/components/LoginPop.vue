@@ -103,6 +103,7 @@ export default {
         this.$store.dispatch("setToken", response.data.token);
         this.$store.dispatch("setUser", response.data.user);
         this.$store.dispatch("setViewer", "STUDENT");
+        localStorage.setItem("jwt", response.data.token);
         this.$router.push({
           name: "homeview",
         });

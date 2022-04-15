@@ -67,9 +67,11 @@ module.exports = {
                     },
                 });
                 const userJson = userInfo.toJSON();
+                const token = jwtSignUser(userJson);
+
                 res.status(200).send({
                     user: userJson,
-                    token: jwtSignUser(userJson),
+                    token,
                 });
             }
         } catch (err) {

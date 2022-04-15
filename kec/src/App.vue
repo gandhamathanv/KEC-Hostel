@@ -17,6 +17,9 @@ export default {
     HeaderNav,
     DashboardNav,
   },
+  created() {
+    this.$store.dispatch("setToken", localStorage.getItem("jwt"));
+  },
 };
 </script>
 <style lang="scss">

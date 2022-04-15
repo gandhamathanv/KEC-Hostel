@@ -96,6 +96,7 @@ module.exports = {
         }
     },
     async getStaffDash(req, res) {
+        console.log(req);
         const studentCount = await studentInfo.count();
         const roomCount = await hostelrooms.count();
         res.status(200).send({
