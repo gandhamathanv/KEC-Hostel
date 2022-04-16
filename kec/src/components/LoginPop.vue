@@ -1,21 +1,39 @@
 <template>
   <div>
-    <div class="container" id="container">
+    <div
+      class="container"
+      v-bind:class="{
+        'right-panel-active': isActive,
+      }"
+      id="container"
+    >
       <div class="form-container login-up-container">
         <form action="#">
           <h1 class="h1">Staff Login</h1>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button>Login</button>
+          <input type="email" placeholder="Email" v-model="staff.email" />
+          <input
+            type="password"
+            placeholder="Password"
+            v-model="staff.password"
+          />
+          <button @click="staffLogin">Login</button>
         </form>
       </div>
       <div class="form-container login-in-container">
         <form action="#">
           <h1 class="h1">Student Login</h1>
-          <input type="text" placeholder="Roll Number" />
-          <input type="password" placeholder="Password" />
+          <input
+            type="text"
+            placeholder="Roll Number"
+            v-model="student.rollnumber"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            v-model="student.password"
+          />
 
-          <button>Login</button>
+          <button @click="studentLogin">Login</button>
         </form>
       </div>
       <div class="overlay-container">
@@ -26,7 +44,9 @@
               Click student login button and go to the students login and enter
               your details.
             </p>
-            <button class="ghost" id="loginIn">Student Login</button>
+            <button @click="setActive(false)" class="ghost" id="loginIn">
+              Student Login
+            </button>
           </div>
           <div class="overlay-panel overlay-right">
             <h1 class="h1">For Staff's</h1>
@@ -34,7 +54,9 @@
               Click Staff button and go to the staff login and enter your
               details.
             </p>
-            <button class="ghost" id="loginUp">Staff Login</button>
+            <button @click="setActive(true)" class="ghost" id="loginUp">
+              Staff Login
+            </button>
           </div>
         </div>
       </div>
@@ -50,33 +72,12 @@ export default {
     return {
       staff: { email: "", password: "", error: null },
       student: { rollnumber: "", password: "", error: null },
+      isActive: false,
     };
   },
   methods: {
-    myfunction() {
-      var x = document.getElementsByClassName("myInput");
-      var y = document.getElementsByClassName("hide1");
-      var z = document.getElementById("hide2");
-      if (x.type === "password") {
-        x.type = "text";
-        y.style.display = "block";
-        z.style.display = "none";
-      } else {
-        x.type = "password";
-        y.style.display = "none";
-        z.style.display = "block";
-      }
-    },
-    async register() {
-      try {
-        await AuthenticationService.register({
-          rollnumber: this.rollnumber,
-          password: this.password,
-        });
-      } catch (error) {
-        // this.error = error.response.data.error;
-        alert(error.response.data.error);
-      }
+    setActive(bool) {
+      this.isActive = bool;
     },
 
     async studentLogin() {
@@ -89,8 +90,9 @@ export default {
           console.log("error");
         }
         this.$store.dispatch("setToken", response.data.token);
-        this.$store.dispatch("setStudent", response.data);
-        localStorage.setItem("jwt", response.data.token);
+        this.$store.dispatch("setUser", response.data.data.user);
+        this.$store.dispatch("setViewer", response.data.data.viewer);
+
         this.$router.push({
           name: "homeview",
         });
@@ -109,8 +111,9 @@ export default {
         });
         console.log(response.data);
         this.$store.dispatch("setToken", response.data.token);
-        this.$store.dispatch("setStaff", response.data);
-        localStorage.setItem("jwt", response.data.token);
+        this.$store.dispatch("setUser", response.data.data.user);
+        this.$store.dispatch("setViewer", response.data.data.viewer);
+
         this.$router.push({
           name: "staffDashboard",
         });
