@@ -20,23 +20,30 @@ export default {
   },
   async created() {
     const token = localStorage.getItem("jwt");
-    this.$store.dispatch("setToken", token);
+    if (token) {
+      this.$store.dispatch("setToken", token);
 
-    try {
-      const response = await AuthenticationService.getData(token);
-      if (response.error) {
-        console.log("error");
+      try {
+        const response = await AuthenticationService.getData(token);
+        if (response.error) {
+          console.log("error");
+        }
+        console.log(response.data.data.user);
+        const user = response.data.data.user;
+        const viewer = response.data.data.viewer;
+        this.$store.dispatch("setUser", user);
+        this.$store.dispatch("setViewer", viewer);
+        // this.$router.push({
+        // name: "homeview",
+        // });
+      } catch (error) {
+        // console.log(error);
+        // this.error = error.response.data.error;
+        alert(error);
       }
-      console.log(response.data.data.user);
-      this.$store.dispatch("setUser", response.data.data.user);
-      this.$store.dispatch("setViewer", response.data.data.viewer);
-      // this.$router.push({
-      // name: "homeview",
-      // });
-    } catch (error) {
-      // console.log(error);
-      // this.error = error.response.data.error;
-      alert(error);
+    } else {
+      this.$store.dispatch("setUser", null);
+      this.$store.dispatch("setViewer", null);
     }
   },
 };
