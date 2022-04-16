@@ -1,55 +1,43 @@
 <template>
-  <div class="container">
-    <div class="ln">
-      <h2 class="ln-here">Staff Login</h2>
+  <div>
+    <div class="container" id="container">
+      <div class="form-container login-up-container">
+        <form action="#">
+          <h1 class="h1">Staff Login</h1>
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <button>Login</button>
+        </form>
+      </div>
+      <div class="form-container login-in-container">
+        <form action="#">
+          <h1 class="h1">Student Login</h1>
+          <input type="text" placeholder="Roll Number" />
+          <input type="password" placeholder="Password" />
 
-      <div class="input-box">
-        <i class="fa fa-envelope-o"></i>
-        <input type="email" v-model="staff.email" placeholder="Email Id" />
+          <button>Login</button>
+        </form>
       </div>
-      <div class="input-box">
-        <i class="fa fa-key"></i>
-        <input
-          type="password"
-          v-model="staff.password"
-          placeholder="password"
-          class="myInput"
-        />
-        <span class="eye1" onclick="myfunction()">
-          <i class="hide1 fa fa-eye"></i>
-          <i id="hide2" class="fa fa-eye-slash"> </i>
-        </span>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1 class="h1">For Student's</h1>
+            <p class="loginp">
+              Click student login button and go to the students login and enter
+              your details.
+            </p>
+            <button class="ghost" id="loginIn">Student Login</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1 class="h1">For Staff's</h1>
+            <p class="loginp">
+              Click Staff button and go to the staff login and enter your
+              details.
+            </p>
+            <button class="ghost" id="loginUp">Staff Login</button>
+          </div>
+        </div>
       </div>
-      <button type="button" @click="staffLogin" class="login-btn">LOGIN</button>
-    </div>
-    <div class="ln">
-      <h2 class="ln-here">Student Login</h2>
-
-      <div class="input-box">
-        <i class="fa fa-envelope-o"></i>
-        <input
-          type="text"
-          v-model="student.rollnumber"
-          placeholder="Roll Number"
-        />
-      </div>
-      <div class="input-box">
-        <i class="fa fa-key"></i>
-        <input
-          type="password"
-          v-model="student.password"
-          placeholder="password"
-          class="myInput"
-        />
-        <span class="eye2" onclick="myfunction()">
-          <i class="hide1 fa fa-eye"></i>
-          <i id="hide2" class="fa fa-eye-slash"> </i>
-        </span>
-      </div>
-      <span v-if="this.student.error">{{ student.error }}</span>
-      <button type="button" @click="studentLogin" class="login-btn">
-        LOGIN
-      </button>
     </div>
   </div>
 </template>
@@ -133,73 +121,230 @@ export default {
     },
   },
 };
+// const loginUpButton = document.getElementById("loginUp");
+// const loginInButton = document.getElementById("loginIn");
+// const container = document.getElementById("container");
+
+// loginUpButton.addEventListener("click", () => {
+//   container.classList.add("right-panel-active");
+// });
+
+// loginInButton.addEventListener("click", () => {
+//   container.classList.remove("right-panel-active");
+// });
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/* @import url("https://fonts.googleapis.com");
-@import url("https://fonts.gstatic.com"); */
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"); */
-/* @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"); */
-.ln {
-  width: 500px;
-  background: rgba(0, 0, 0, 0.8);
-  margin: 12% auto;
-  padding: 50px 0;
-  color: #fff;
-  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
+* {
+  box-sizing: border-box;
 }
 
-.ln-here {
+body {
+  background: #f6f5f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  margin: -20px 0 50px;
+}
+
+.h1 {
+  font-weight: bold;
+  margin: 0;
+}
+
+h2 {
   text-align: center;
-  margin-bottom: 40px;
 }
-.input-box {
-  margin: 31px auto;
-  width: 80%;
-  border-bottom: 1px solid #fff;
-  padding-top: 10px;
-  padding-bottom: 5px;
+
+.loginp {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+
+span {
+  font-size: 12px;
+}
+
+a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid #ff4b2b;
+  background-color: #ff4b2b;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.ghost {
+  background-color: transparent;
+  border-color: #ffffff;
+}
+
+form {
+  background-color: #ffffff;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
 }
-.input-box input {
-  width: 96%;
+
+input {
+  background-color: #eee;
   border: none;
-  outline: none;
-  background: transparent;
-  color: #fff;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
 }
-::placeholder {
-  color: #ccc;
-}
-.fa {
-  margin-right: 10px;
-}
-.eye1,
-.eye2 {
-  position: absolute;
-  float: right;
-}
-.hide1 {
-  display: none;
-}
-.login-btn {
-  margin: 40px auto 20px;
-  width: 80%;
-  display: block;
-  outline: none;
-  padding: 10px 0;
-  border: 1px solid #fff;
-  cursor: pointer;
-  background: transparent;
-  color: #fff;
-  font-size: 16px;
-}
-.link {
-  text-align: right;
-  padding-right: 10%;
-}
+
 .container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+  margin: 0 auto;
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.login-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.container.right-panel-active .login-in-container {
+  transform: translateX(100%);
+}
+
+.login-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.right-panel-active .login-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+@keyframes show {
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.overlay {
+  background: #ff416c;
+  background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #ffffff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: absolute;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+  transform: translateX(20%);
 }
 </style>

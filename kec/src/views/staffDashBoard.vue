@@ -47,15 +47,22 @@
               <button class="card-button">View</button>
             </div>
           </div>
-
-          <p class="m-box">
-            <i class="fa fa-circle" style="color: green !important"></i> Lorem
-            Ipsum is simply dummy text of the printing and typesetting industry.
-          </p>
-          <p class="m-box">
-            <i class="fa fa-circle"></i> Lorem Ipsum is simply dummy text of the
-            printing and typesetting industry.
-          </p>
+          <section class="message-box">
+            <p class="name">Kannan</p>
+            <p class="date">24/04/2022</p>
+            <p class="message">
+              Tomorrow will be declared as holiday. You can leave the hostel by
+              tommorow evening.
+            </p>
+          </section>
+          <!-- <section>
+            <p class="name">Kannan</p>
+            <p class="date">24/04/2022</p>
+            <p class="message">
+              Tomorrow will be declared as holiday. You can leave the hostel by
+              tommorow evening.
+            </p>
+          </section> -->
         </div>
       </div>
     </div>
@@ -78,6 +85,14 @@
             <i class="fa fa-circle"></i> Lorem Ipsum is simply dummy text of the
             printing and typesetting industry.
           </p>
+          <!-- <p class="m-box">
+            <i class="fa fa-circle"></i> Lorem Ipsum is simply dummy text of the
+            printing and typesetting industry.
+          </p>
+          <p class="m-box">
+            <i class="fa fa-circle"></i> Lorem Ipsum is simply dummy text of the
+            printing and typesetting industry.
+          </p> -->
         </div>
       </div>
     </div>
@@ -310,6 +325,19 @@ body {
   color: white;
   padding: 3px 10px;
   font-size: 15px;
+}
+.name {
+  text-align: left;
+}
+.date {
+  /* text-align: right; */
+  /* text-align: top; */
+  position: relative;
+  left: 95px;
+  top: -23px;
+}
+.message {
+  text-align: center;
 }
 /* nextrow */
 </style>
