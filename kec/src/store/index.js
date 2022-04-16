@@ -20,9 +20,11 @@ export default createStore({
                 state.isUserLoggedIn = true;
             }
         },
-        setStudent(state, data) {
-            state.user = data.user;
-            state.viewer = "STUDENT";
+        setUser(state, data) {
+            state.user = data;
+        },
+        setViewer(state, data) {
+            state.viewer = data;
         },
         setStaff(state, data) {
             state.user = data.user;
@@ -34,8 +36,11 @@ export default createStore({
         setToken({ commit }, token) {
             commit("setToken", token);
         },
-        setStudent({ commit }, data) {
-            commit("setStudent", data);
+        setUser({ commit }, data) {
+            commit("setUser", data);
+        },
+        setViewer({ commit }, data) {
+            commit("setViewer", data);
         },
         setStaff({ commit }, data) {
             commit("setStaff", data);

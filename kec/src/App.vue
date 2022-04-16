@@ -27,8 +27,9 @@ export default {
       if (response.error) {
         console.log("error");
       }
-      console.log(response);
-      // this.$store.dispatch("setStudent", response.data);
+      console.log(response.data.data.user);
+      this.$store.dispatch("setUser", response.data.data.user);
+      this.$store.dispatch("setViewer", response.data.data.viewer);
       // this.$router.push({
       // name: "homeview",
       // });
