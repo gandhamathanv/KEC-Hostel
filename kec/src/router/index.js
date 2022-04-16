@@ -7,6 +7,7 @@ import BookingView from "../views/BookingView.vue";
 import Dashboard from "../views/dashBoard.vue";
 import staffDashboard from "../views/staffDashBoard.vue";
 import changePassword from "../components/resetPassword.vue";
+import permissions from "../components/permissions.vue";
 
 const routes = [{
         path: "/",
@@ -42,6 +43,11 @@ const routes = [{
         path: "/changePassword",
         name: "changePassword",
         component: changePassword,
+    },
+    {
+        path: "/permissions",
+        name: "permissionPage",
+        component: permissions,
     },
 ];
 
