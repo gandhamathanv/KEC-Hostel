@@ -106,6 +106,7 @@ export default {
     logout() {
       this.$store.dispatch("setToken", null);
       this.$store.dispatch("setUser", null);
+      localStorage.clear();
       this.$router.push({
         name: "home",
       });

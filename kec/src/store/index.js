@@ -14,14 +14,15 @@ export default createStore({
     mutations: {
         setToken(state, token) {
             state.token = token;
-            if (state.token) {
-                state.isUserLoggedIn = true;
-            } else {
+            if (!state.token) {
                 state.isUserLoggedIn = false;
+            } else {
+                state.isUserLoggedIn = true;
             }
         },
-        setUser(state, user) {
-            state.user = user;
+        setStudent(state, data) {
+            state.user = data.user;
+            state.viewer = "STUDENT";
         },
         setStaff(state, data) {
             state.user = data.user;
@@ -33,8 +34,8 @@ export default createStore({
         setToken({ commit }, token) {
             commit("setToken", token);
         },
-        setUser({ commit }, user) {
-            commit("setUser", user);
+        setStudent({ commit }, data) {
+            commit("setStudent", data);
         },
         setStaff({ commit }, data) {
             commit("setStaff", data);

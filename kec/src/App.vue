@@ -9,6 +9,7 @@
 <script>
 import HeaderNav from "@/components/HeaderNav.vue";
 import DashboardNav from "@/components/dashboard/dashboardNav.vue";
+import AuthenticationService from "@/services/AuthenticationServices";
 
 export default {
   name: "app",
@@ -17,8 +18,25 @@ export default {
     HeaderNav,
     DashboardNav,
   },
-  created() {
-    this.$store.dispatch("setToken", localStorage.getItem("jwt"));
+  async created() {
+    const token = localStorage.getItem("jwt");
+    this.$store.dispatch("setToken", token);
+
+    try {
+      const response = await AuthenticationService.getData(token);
+      if (response.error) {
+        console.log("error");
+      }
+      console.log(response);
+      // this.$store.dispatch("setStudent", response.data);
+      // this.$router.push({
+      // name: "homeview",
+      // });
+    } catch (error) {
+      // console.log(error);
+      // this.error = error.response.data.error;
+      alert(error);
+    }
   },
 };
 </script>

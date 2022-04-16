@@ -101,13 +101,13 @@ export default {
           console.log("error");
         }
         this.$store.dispatch("setToken", response.data.token);
-        this.$store.dispatch("setUser", response.data.user);
-        this.$store.dispatch("setViewer", "STUDENT");
+        this.$store.dispatch("setStudent", response.data);
         localStorage.setItem("jwt", response.data.token);
         this.$router.push({
           name: "homeview",
         });
       } catch (error) {
+        // console.log(error);
         // this.error = error.response.data.error;
         alert(error.response.data.error);
       }
@@ -122,6 +122,7 @@ export default {
         console.log(response.data);
         this.$store.dispatch("setToken", response.data.token);
         this.$store.dispatch("setStaff", response.data);
+        localStorage.setItem("jwt", response.data.token);
         this.$router.push({
           name: "staffDashboard",
         });

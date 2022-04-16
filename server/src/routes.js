@@ -1,10 +1,15 @@
 /* eslint-disable */
 const AuthenticationController = require("./controllers/AuthenticationController");
 const AuthenticationControllerPolicy = require("./policies/AunthenticationcontrollerPolicy");
-const HostelControllerPolicy = require("./policies/HostelcontrollerPolicy");
+const basicTokenPolicies = require("./policies/basicTokenPolicies");
 const HostelController = require("./controllers/HostelController");
 module.exports = (app) => {
-    app.post(
+    app.get(
+            "/getData",
+            basicTokenPolicies.getToken,
+            AuthenticationController.sentToken
+        ),
+        app.post(
             "/studentRegister",
             AuthenticationControllerPolicy.studentRegister,
             AuthenticationController.studentRegister
@@ -20,7 +25,7 @@ module.exports = (app) => {
 
     app.get(
         "/getStaffDash",
-        HostelController.getStaffDash,
+        basicTokenPolicies.getToken,
         HostelController.getStaffDash
     ); //get
 };

@@ -14,7 +14,7 @@ app.use(cors());
 
 require("./routes")(app);
 sequelize
-    .sync({ alter: true })
+    .sync()
     .then(() => {
         // console.log(sequelize);
         //     const { models } = sequelize;

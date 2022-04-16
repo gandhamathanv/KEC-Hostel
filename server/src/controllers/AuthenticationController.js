@@ -185,4 +185,17 @@ module.exports = {
             });
         }
     },
+    async sentToken(req, res) {
+        try {
+            const decode = jwt.verify(req.token, config.authentication.jwtSecret);
+
+            res.status(200).send({
+                data: decode,
+            });
+        } catch (err) {
+            res.send({
+                error: "cannot get data",
+            });
+        }
+    },
 };
