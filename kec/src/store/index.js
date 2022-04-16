@@ -14,6 +14,7 @@ export default createStore({
     mutations: {
         setToken(state, token) {
             state.token = token;
+            localStorage.setItem("jwt", token);
             if (!state.token) {
                 state.isUserLoggedIn = false;
             } else {
