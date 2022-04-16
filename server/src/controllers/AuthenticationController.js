@@ -61,17 +61,21 @@ module.exports = {
                     error: "password Incorrect",
                 });
             } else {
-                const userInfo = await studentInfo.findOne({
+                const user = await studentInfo.findOne({
                     where: {
                         rollnumber: rollnumber,
                     },
                 });
-                const userJson = userInfo.toJSON();
-                const token = jwtSignUser(userJson);
+                const userJson = user.toJSON();
+                const data = {
+                    user: userJson,
+                    viewer: "STUDENT",
+                };
 
                 res.status(200).send({
-                    user: userJson,
-                    token,
+                    status: "success",
+                    data,
+                    token: jwtSignUser(data),
                 });
             }
         } catch (err) {
@@ -114,10 +118,15 @@ module.exports = {
                     attributes: ["level"],
                 });
                 const userJson = userInfo.toJSON();
-                res.status(200).send({
+                const data = {
                     user: userJson,
-                    level: 0,
-                    token: jwtSignUser(userJson),
+                    level,
+                    viewer: "STAFF",
+                };
+                res.status(200).send({
+                    staus: "success",
+                    data,
+                    token: jwtSignUser(data),
                 });
             }
         } catch (err) {
