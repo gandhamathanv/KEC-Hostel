@@ -22,7 +22,7 @@
             placeholder="Password"
             v-model="staff.password"
           />
-          <button @click="staffLogin" class="button">Login</button>
+          <span @click="staffLogin" class="button">Login</span>
         </form>
       </div>
       <div class="form-container login-in-container">
@@ -41,7 +41,7 @@
             v-model="student.password"
           />
 
-          <button @click="studentLogin" class="button">Login</button>
+          <span @click="studentLogin" class="button">Login</span>
         </form>
       </div>
       <div class="overlay-container">
@@ -52,9 +52,9 @@
               Click student login button and go to the students login and enter
               your details.
             </p>
-            <button @click="setActive(false)" class="ghost" id="loginIn">
+            <span @click="setActive(false)" class="button ghost" id="loginIn">
               Student Login
-            </button>
+            </span>
           </div>
           <div class="overlay-panel overlay-right">
             <h1 class="h1">For Staff's</h1>
@@ -62,9 +62,9 @@
               Click Staff button and go to the staff login and enter your
               details.
             </p>
-            <button @click="setActive(true)" class="ghost" id="loginUp">
+            <span @click="setActive(true)" class="button ghost" id="loginUp">
               Staff Login
-            </button>
+            </span>
           </div>
         </div>
       </div>
@@ -201,6 +201,7 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
+  cursor: pointer;
 }
 
 .button:active {
