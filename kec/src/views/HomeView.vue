@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="body">
     <!-- start of tag -->
     <section class="header">
       <div class="text-box">
@@ -541,11 +541,11 @@
           </ul>
 
           <!--   for social links -->
-          <div class="social-media">
+          <!-- <div class="social-media">
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-google-plus-square"></i></a>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -573,6 +573,12 @@ export default {
 };
 </script>
 <style scoped>
+.body {
+  /* width: 100%;
+  margin: 0 auto; */
+  display: block;
+  margin: -8px;
+}
 .header {
   min-height: 100vh;
   width: 100%;
@@ -690,7 +696,7 @@ nav .fa {
 .row {
   margin-top: 5%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .about-col {
@@ -702,6 +708,7 @@ nav .fa {
   padding: 20px 12px;
   box-sizing: border-box;
   transition: 0.5s;
+  box-shadow: 2px 2px 10px black;
 }
 .about-col:hover {
   background: #a8e0f4;
@@ -761,7 +768,7 @@ nav .fa {
   padding-top: 20px;
 }
 .slideshow {
-  width: 40%;
+  width: 75%;
   height: 300px;
   position: relative;
   text-align: center;
@@ -866,11 +873,12 @@ nav .fa {
 }
 .button-container {
   padding: 20px;
+  cursor: pointer;
 }
 .folio-button {
   margin: 0 auto;
   padding: 5px 10px;
-  background-color: #91b0a5;
+  background-color: #f7faf9;
   border-radius: 4px;
   color: #333;
   text-decoration: none;
@@ -878,7 +886,7 @@ nav .fa {
   transition: all 0.3s ease;
 }
 .folio-button:hover {
-  background-color: #b0d6c9;
+  background-color: #fc2e05;
 }
 @media only screen and (max-width: 980px) {
   .slideshow {
@@ -1024,7 +1032,7 @@ figure.effect-facility:hover p {
   width: 12px;
 }
 .testimonial-col {
-  flex-basis: 44%;
+  flex-basis: 31%;
   border-radius: 10px;
   margin-bottom: 5%;
   text-align: left;
@@ -1032,6 +1040,7 @@ figure.effect-facility:hover p {
   padding: 25px;
   cursor: pointer;
   display: flex;
+  box-shadow: 2px 2px 10px black;
 }
 .testimonial-col img {
   height: 40px;
@@ -1163,30 +1172,6 @@ figure.effect-facility:hover p {
 
 li i {
   margin-right: 20px;
-}
-
-.social-media {
-  width: 100%;
-  color: #fff;
-  text-align: center;
-  font-size: 20px;
-}
-
-.social-media a {
-  text-decoration: none;
-}
-
-.social-media i {
-  height: 25px;
-  width: 25px;
-  margin: 20px 10px;
-  padding: 4px;
-  color: #fff;
-  transition: 0.5s;
-}
-
-.social-media i:hover {
-  transform: scale(1.5);
 }
 
 .footer-bottom {
