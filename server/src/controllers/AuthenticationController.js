@@ -89,7 +89,8 @@ module.exports = {
                 const token = jwtSignUser(data);
 
                 res.cookie("jwt", token, {
-                    httpOnly: true,
+                    expires: new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
+                    // httpOnly: true,
                 });
 
                 res.status(200).send({
@@ -145,6 +146,7 @@ module.exports = {
                 };
                 token = jwtSignUser(data);
                 res.cookie("jwt", token, {
+                    expires: new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
                     httpOnly: true,
                 });
                 res.status(200).send({
@@ -223,9 +225,12 @@ module.exports = {
             const decode = jwt.verify(req.token, config.authentication.jwtSecret);
 
             res.status(200).send({
+                status: "success",
                 data: decode,
+                token: req.token,
             });
         } catch (err) {
+            console.log(err);
             res.send({
                 error: "cannot get data",
             });
