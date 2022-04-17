@@ -1,12 +1,14 @@
 /* eslint-disable */
 const {
     hostelinfo,
+    hostelpermission,
     studentInfo,
     hostelrooms,
     hostelfor,
     foodmenu,
     notification,
 } = require("../models");
+const Promise = require("bluebird");
 const jwt = require("jsonwebtoken");
 const config = require("../config/config");
 
@@ -32,18 +34,26 @@ module.exports = {
         }
     },
     async getHostels(req, res) {
+        let hostelData;
         try {
             const { year, gender } = req.body;
             console.log(year, gender);
-            const user = await hostelfor.findAll({
+            const hostel = await hostelfor.findAll({
                 where: {
                     year,
                     gender,
                 },
+                include: [{
+                    model: hostelpermission,
+                    where: {
+                        booking: true,
+                    },
+                    attributes: [],
+                }, ],
                 attributes: ["hostelName"],
             });
-            const isbooking = true;
-            if (!isbooking) {
+            const data = hostel;
+            if (hostel.length == 0) {
                 console.log("booking");
                 res.status(200).send({
                     status: "Closed",
@@ -51,7 +61,7 @@ module.exports = {
             } else {
                 res.status(200).send({
                     status: "Success",
-                    data: user,
+                    data,
                 });
             }
         } catch (err) {

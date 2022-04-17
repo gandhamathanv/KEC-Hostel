@@ -103,6 +103,14 @@ fs.readdirSync(__dirname)
 //     foreignKey: "rollnumber",
 //     targetKey: "rollnumber",
 // });
+db.hostelfor.belongsTo(db.hostelpermission, {
+    foreignKey: "hostelName",
+    sourceKey: "hostelName",
+});
+db.hostelpermission.hasOne(db.hostelfor, {
+    foreignKey: "hostelName",
+    targetKey: "hostelName",
+});
 // db.staffInfo.hasMany(db.staffLogin);
 // console.log(db);
 db.sequelize = sequelize;
