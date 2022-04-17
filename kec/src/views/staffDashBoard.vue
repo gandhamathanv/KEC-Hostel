@@ -35,27 +35,23 @@
         </div>
       </section>
     </div>
-    <!-- next rown -->
 
-    <div class="col-div-4-1">
-      <div class="box-1">
-        <div class="content-box-1">
-          <div class="card-line">
-            <h1 class="card-title">notifications</h1>
-            <div class="buttons-query">
-              <button class="card-button">add</button>
-              <button class="card-button">View</button>
-            </div>
-          </div>
-          <section class="message-box">
-            <p class="name">Kannan</p>
-            <p class="date">24/04/2022</p>
-            <p class="message">
-              Tomorrow will be declared as holiday. You can leave the hostel by
-              tommorow evening.
-            </p>
-          </section>
-          <!-- <section>
+    <!-- next rown -->
+    <div class="container">
+      <div class="col-div-4-1">
+        <div class="box-1">
+          <div class="content-box-1">
+            <section class="message-box">
+              <div class="name-date">
+                <p class="name">Kannan</p>
+                <p class="date">24/04/2022</p>
+              </div>
+              <p class="message">
+                Tomorrow will be declared as holiday. You can leave the hostel
+                by tommorow evening.
+              </p>
+            </section>
+            <!-- <section>
             <p class="name">Kannan</p>
             <p class="date">24/04/2022</p>
             <p class="message">
@@ -63,36 +59,7 @@
               tommorow evening.
             </p>
           </section> -->
-        </div>
-      </div>
-    </div>
-    <div class="col-div-4-1">
-      <div class="box-1">
-        <div class="content-box-1">
-          <div class="card-line">
-            <h1 class="card-title">querry</h1>
-            <div class="buttons-query">
-              <button class="card-button">add</button>
-              <button class="card-button">View</button>
-            </div>
           </div>
-
-          <p class="m-box">
-            <i class="fa fa-circle" style="color: green !important"></i> Lorem
-            Ipsum is simply dummy text of the printing and typesetting industry.
-          </p>
-          <p class="m-box">
-            <i class="fa fa-circle"></i> Lorem Ipsum is simply dummy text of the
-            printing and typesetting industry.
-          </p>
-          <!-- <p class="m-box">
-            <i class="fa fa-circle"></i> Lorem Ipsum is simply dummy text of the
-            printing and typesetting industry.
-          </p>
-          <p class="m-box">
-            <i class="fa fa-circle"></i> Lorem Ipsum is simply dummy text of the
-            printing and typesetting industry.
-          </p> -->
         </div>
       </div>
     </div>
@@ -229,6 +196,7 @@ body {
 /*----------------*/
 .col-div-4-1 {
   width: 33.3%;
+  height: auto;
   float: left;
 }
 
@@ -238,7 +206,7 @@ body {
 
 .box-1 {
   width: 88%;
-  height: 282px;
+  height: fit-content;
   background-color: #ffffff;
   margin-left: 10px;
   padding: 10px;
@@ -326,18 +294,17 @@ body {
   padding: 3px 10px;
   font-size: 15px;
 }
-.name {
-  text-align: left;
+.message-box {
+  border-bottom: 2px solid burlywood;
+  padding: 10px 0px;
 }
-.date {
-  /* text-align: right; */
-  /* text-align: top; */
-  position: relative;
-  left: 95px;
-  top: -23px;
+.name-date {
+  display: flex;
+  justify-content: space-between;
 }
 .message {
   text-align: center;
 }
+
 /* nextrow */
 </style>
