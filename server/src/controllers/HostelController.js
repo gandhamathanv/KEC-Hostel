@@ -13,6 +13,12 @@ const jwt = require("jsonwebtoken");
 const config = require("../config/config");
 
 module.exports = {
+    async check(req, res) {
+        console.log(req.headers);
+        res.status(200).send({
+            status: "Success",
+        });
+    },
     async getRooms(req, res) {
         try {
             const { hostelName } = req.body;
@@ -113,6 +119,34 @@ module.exports = {
         res.status(200).send({
             status: "success",
             data: { studentCount, roomCount },
+        });
+    },
+    async getPermission(req, res) {
+        const { level, hostelName } = req.body;
+        let data;
+        switch (level) {
+            case 0:
+                data = await hostelpermission.findAll();
+                break;
+            case 1:
+                data = await hostelpermission.findOne({
+                    where: {
+                        hostelName,
+                    },
+                });
+                break;
+            case 2:
+                console.log(level);
+                break;
+
+            default:
+                console.log("level mismatch");
+                break;
+        }
+
+        res.status(200).send({
+            status: "success",
+            data,
         });
     },
 };

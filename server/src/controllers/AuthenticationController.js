@@ -71,11 +71,16 @@ module.exports = {
                     user: userJson,
                     viewer: "STUDENT",
                 };
+                const token = jwtSignUser(data);
+
+                res.cookie("jwt", token, {
+                    httpOnly: true,
+                });
 
                 res.status(200).send({
                     status: "success",
                     data,
-                    token: jwtSignUser(data),
+                    token,
                 });
             }
         } catch (err) {
@@ -123,10 +128,14 @@ module.exports = {
                     level,
                     viewer: "STAFF",
                 };
+                token = jwtSignUser(data);
+                res.cookie("jwt", token, {
+                    httpOnly: true,
+                });
                 res.status(200).send({
                     staus: "success",
                     data,
-                    token: jwtSignUser(data),
+                    token,
                 });
             }
         } catch (err) {

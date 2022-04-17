@@ -14,6 +14,7 @@ module.exports = (app) => {
             AuthenticationControllerPolicy.studentRegister,
             AuthenticationController.studentRegister
         ),
+        app.post("/getPermissions", HostelController.getPermission),
         app.post("/staffRegister", AuthenticationController.staffRegister),
         app.post("/studentLogin", AuthenticationController.studentLogin),
         app.post("/staffLogin", AuthenticationController.staffLogin),
@@ -27,5 +28,12 @@ module.exports = (app) => {
         "/getStaffDash",
         basicTokenPolicies.getToken,
         HostelController.getStaffDash
+    ); //get
+
+    //check
+    app.get(
+        "/check",
+
+        HostelController.check
     ); //get
 };
