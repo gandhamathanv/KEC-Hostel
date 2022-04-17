@@ -28,22 +28,14 @@ export default {
         if (response.error) {
           console.log("error");
         }
-        console.log(response.data.data.user);
-        const user = response.data.data.user;
-        const viewer = response.data.data.viewer;
-        this.$store.dispatch("setUser", user);
-        this.$store.dispatch("setViewer", viewer);
-        // this.$router.push({
-        // name: "homeview",
-        // });
+        console.log(response.data);
+        this.$store.dispatch("setUser", response.data.data.user);
+        this.$store.dispatch("setViewer", response.data.data.viewer);
       } catch (error) {
-        // console.log(error);
+        console.log(error);
         // this.error = error.response.data.error;
         alert(error);
       }
-    } else {
-      this.$store.dispatch("setUser", null);
-      this.$store.dispatch("setViewer", null);
     }
   },
 };

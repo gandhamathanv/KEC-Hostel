@@ -10,30 +10,38 @@
       <div class="form-container login-up-container">
         <form action="#">
           <h1 class="h1">Staff Login</h1>
-          <input type="email" placeholder="Email" v-model="staff.email" />
           <input
+            class="input"
+            type="email"
+            placeholder="Email"
+            v-model="staff.email"
+          />
+          <input
+            class="input"
             type="password"
             placeholder="Password"
             v-model="staff.password"
           />
-          <button @click="staffLogin">Login</button>
+          <span @click="staffLogin" class="button">Login</span>
         </form>
       </div>
       <div class="form-container login-in-container">
         <form action="#">
           <h1 class="h1">Student Login</h1>
           <input
+            class="input"
             type="text"
             placeholder="Roll Number"
             v-model="student.rollnumber"
           />
           <input
+            class="input"
             type="password"
             placeholder="Password"
             v-model="student.password"
           />
 
-          <button @click="studentLogin">Login</button>
+          <span @click="studentLogin" class="button">Login</span>
         </form>
       </div>
       <div class="overlay-container">
@@ -44,9 +52,9 @@
               Click student login button and go to the students login and enter
               your details.
             </p>
-            <button @click="setActive(false)" class="ghost" id="loginIn">
+            <span @click="setActive(false)" class="button ghost" id="loginIn">
               Student Login
-            </button>
+            </span>
           </div>
           <div class="overlay-panel overlay-right">
             <h1 class="h1">For Staff's</h1>
@@ -54,9 +62,9 @@
               Click Staff button and go to the staff login and enter your
               details.
             </p>
-            <button @click="setActive(true)" class="ghost" id="loginUp">
+            <span @click="setActive(true)" class="button ghost" id="loginUp">
               Staff Login
-            </button>
+            </span>
           </div>
         </div>
       </div>
@@ -159,9 +167,9 @@ body {
   margin: 0;
 }
 
-h2 {
+/* h2 {
   text-align: center;
-}
+} */
 
 .loginp {
   font-size: 14px;
@@ -171,18 +179,18 @@ h2 {
   margin: 20px 0 30px;
 }
 
-span {
+/* span {
   font-size: 12px;
-}
+} */
 
-a {
+/* a {
   color: #333;
   font-size: 14px;
   text-decoration: none;
   margin: 15px 0;
-}
+} */
 
-button {
+.button {
   border-radius: 20px;
   border: 1px solid #ff4b2b;
   background-color: #ff4b2b;
@@ -193,17 +201,18 @@ button {
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
+  cursor: pointer;
 }
 
-button:active {
+.button:active {
   transform: scale(0.95);
 }
 
-button:focus {
+.button:focus {
   outline: none;
 }
 
-button.ghost {
+.button.ghost {
   background-color: transparent;
   border-color: #ffffff;
 }
@@ -219,7 +228,7 @@ form {
   text-align: center;
 }
 
-input {
+.input {
   background-color: #eee;
   border: none;
   padding: 12px 15px;
