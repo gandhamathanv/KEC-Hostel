@@ -16,6 +16,21 @@ function jwtSignUser(user) {
     });
 }
 module.exports = {
+    async logout(req, res) {
+        try {
+            res.cookie("jwt", null, {
+                httpOnly: true,
+            });
+            res.send({
+                status: "success",
+            });
+        } catch (err) {
+            console.log(err);
+            res.send({
+                status: "error",
+            });
+        }
+    },
     async studentRegister(req, res) {
         try {
             const user = await studentLogin.create(req.body);

@@ -3,7 +3,9 @@ const config = require("../config/config");
 
 module.exports = {
     getToken(req, res, next) {
-        req.token = req.headers.authorization.split(" ")[1];
+        const token = req.cookies.jwt;
+        console.log(token);
+        req.token = token;
         next();
     },
 };

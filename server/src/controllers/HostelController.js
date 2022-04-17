@@ -14,10 +14,15 @@ const config = require("../config/config");
 
 module.exports = {
     async check(req, res) {
-        console.log(req.headers);
-        res.status(200).send({
-            status: "Success",
-        });
+        try {
+            res.status(200).send({
+                status: "Success",
+            });
+        } catch (err) {
+            res.status(200).send({
+                status: "failed",
+            });
+        }
     },
     async getRooms(req, res) {
         try {
@@ -40,7 +45,6 @@ module.exports = {
         }
     },
     async getHostels(req, res) {
-        let hostelData;
         try {
             const { year, gender } = req.body;
             console.log(year, gender);
@@ -112,14 +116,20 @@ module.exports = {
         }
     },
     async getStaffDash(req, res) {
-        const decode = jwt.verify(req.token, config.authentication.jwtSecret);
-        console.log(decode);
-        const studentCount = await studentInfo.count();
-        const roomCount = await hostelrooms.count();
-        res.status(200).send({
-            status: "success",
-            data: { studentCount, roomCount },
-        });
+        try {
+            const decode = jwt.verify(req.token, config.authentication.jwtSecret);
+            console.log(decode);
+            const studentCount = await studentInfo.count();
+            const roomCount = await hostelrooms.count();
+            res.status(200).send({
+                status: "success",
+                data: { studentCount, roomCount },
+            });
+        } catch (err) {
+            res.status(404).send({
+                status: "failed",
+            });
+        }
     },
     async getPermission(req, res) {
         const { level, hostelName } = req.body;

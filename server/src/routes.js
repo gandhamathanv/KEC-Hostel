@@ -31,9 +31,6 @@ module.exports = (app) => {
     ); //get
 
     //check
-    app.get(
-        "/check",
-
-        HostelController.check
-    ); //get
+    app.get("/check", basicTokenPolicies.getToken, HostelController.check); //get
+    app.get("/logout", AuthenticationController.logout); //get
 };
