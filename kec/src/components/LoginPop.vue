@@ -94,7 +94,7 @@ export default {
           rollnumber: this.student.rollnumber,
           password: this.student.password,
         });
-        console.log(response);
+        console.log(response.cookie);
         if (response.error) {
           console.log("error");
         }
@@ -102,9 +102,9 @@ export default {
         this.$store.dispatch("setUser", response.data.data.user);
         this.$store.dispatch("setViewer", response.data.data.viewer);
 
-        this.$router.push({
-          name: "homeview",
-        });
+        // this.$router.push({
+        //   name: "homeview",
+        // });
       } catch (error) {
         // console.log(error);
         // this.error = error.response.data.error;

@@ -87,10 +87,10 @@ module.exports = {
                     viewer: "STUDENT",
                 };
                 const token = jwtSignUser(data);
-
+                const tim = 3 * 24 * 60 * 60 * 1000;
                 res.cookie("jwt", token, {
-                    expires: new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
-                    // httpOnly: true,
+                    maxAge: tim,
+                    httpOnly: true,
                 });
 
                 res.status(200).send({

@@ -1,13 +1,18 @@
 <template>
-  <h1>kechostels</h1>
+  <div>
+    <h1>kechostels</h1>
+    <toggle-button me></toggle-button>
+  </div>
 </template>
 
 <script>
+import ToggleButton from "../components/components/ToggleButton.vue";
 export default {
   name: "permissionsPage",
   props: {
     msg: String,
   },
+  components: { ToggleButton },
 };
 </script>
 

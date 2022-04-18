@@ -15,7 +15,11 @@ export default {
     changePassword(Credentials) {
         return Api().post("changePassword", Credentials);
     },
-    getData() {
-        return Api().get("getData");
+    getData(token) {
+        return Api().get("getData", {
+            headers: {
+                Authorization: "Bearer " + token,
+            },
+        });
     },
 };
