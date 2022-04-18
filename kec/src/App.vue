@@ -42,7 +42,7 @@ export default {
       const token = localStorage.getItem("jwt");
       const res = await AuthenticationService.getData(token);
       console.log(res);
-      if (res.status == "success") {
+      if (res.data.status == "success") {
         this.$store.dispatch("setToken", res.data.token);
         this.$store.dispatch("setUser", res.data.data.user);
         this.$store.dispatch("setViewer", res.data.data.viewer);
