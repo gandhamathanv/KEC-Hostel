@@ -9,7 +9,7 @@
 <script>
 import HeaderNav from "@/components/HeaderNav.vue";
 import DashboardNav from "@/components/dashboard/dashboardNav.vue";
-import AuthenticationService from "@/services/AuthenticationServices";
+// import AuthenticationService from "@/services/AuthenticationServices";
 
 export default {
   name: "app",
@@ -18,25 +18,25 @@ export default {
     HeaderNav,
     DashboardNav,
   },
-  async created() {
-    try {
-      const res = await AuthenticationService.getData();
-      console.log(res);
-      if (res.status == "success") {
-        this.$store.dispatch("setToken", res.data.token);
-        this.$store.dispatch("setUser", res.data.data.user);
-        this.$store.dispatch("setViewer", res.data.data.viewer);
-      } else {
-        this.$store.dispatch("setToken", null);
-        this.$store.dispatch("setUser", null);
-        this.$store.dispatch("setViewer", null);
-      }
-    } catch (error) {
-      console.log(error);
-      // this.error = error.response.data.error;
-      alert(error);
-    }
-  },
+  // async created() {
+  //   try {
+  //     const res = await AuthenticationService.getData();
+  //     console.log(res);
+  //     if (res.status == "success") {
+  //       this.$store.dispatch("setToken", res.data.token);
+  //       this.$store.dispatch("setUser", res.data.data.user);
+  //       this.$store.dispatch("setViewer", res.data.data.viewer);
+  //     } else {
+  //       this.$store.dispatch("setToken", null);
+  //       this.$store.dispatch("setUser", null);
+  //       this.$store.dispatch("setViewer", null);
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //     // this.error = error.response.data.error;
+  //     alert(error);
+  //   }
+  // },
 };
 </script>
 <style lang="scss">
