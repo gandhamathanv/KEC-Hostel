@@ -8,6 +8,7 @@ import Dashboard from "../views/dashBoard.vue";
 import staffDashboard from "../views/staffDashBoard.vue";
 import changePassword from "../components/resetPassword.vue";
 import permissions from "../components/permissions.vue";
+import studentRegistration from "../views/studentRegistration";
 // import paymentPage from "../components/dashboard/paymentPage";
 
 const routes = [
@@ -50,6 +51,11 @@ const routes = [
     path: "/permissions",
     name: "permissionPage",
     component: permissions,
+  },
+  {
+    path: "/registration",
+    name: "studentRegisration",
+    component: studentRegistration,
   },
 ];
 
