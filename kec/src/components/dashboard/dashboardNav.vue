@@ -2,7 +2,20 @@
   <div v-if="$store.state.isUserLoggedIn">
     <div class="head">
       <div class="col-div-6-logo">
-        <p class="nav" @click="navigateTo({ name: 'homeview' })">Kec Hostel</p>
+        <p
+          class="nav"
+          v-if="$store.state.viewer == 'STUDENT'"
+          @click="navigateTo({ name: 'homeview' })"
+        >
+          Kec Hostel
+        </p>
+        <p
+          class="nav"
+          v-if="$store.state.viewer == 'STAFF'"
+          @click="navigateTo({ name: 'staffDashboard' })"
+        >
+          Kec Hostel
+        </p>
       </div>
 
       <div v-if="this.$store.state.viewer == 'STUDENT'" class="col-div-6-icon">
@@ -63,10 +76,7 @@
             <p @click="navigateTo({ name: 'changePassword' })">
               <i class="fa fa-cogs"></i> Settings
             </p>
-            <p
-              v-if="$store.state.level == 0"
-              @click="navigateTo({ name: 'changePermissions' })"
-            >
+            <p @click="navigateTo({ name: 'permissionsPage' })">
               <i class="fa fa-cogs"></i> Permissions
             </p>
             <p @click="logout">
@@ -96,6 +106,7 @@ export default {
     navigateTo(route) {
       this.$router.push(route);
     },
+
     togglePop() {
       console.log("pop");
       this.menuPop = !this.menuPop;

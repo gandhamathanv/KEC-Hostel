@@ -1,17 +1,30 @@
 <template>
   <div class="button-container">
-    <h1 class="button-label">{{ message }}</h1>
-    <label class="switch">
-      <input type="checkbox" />
-      <span class="slider round"></span>
-    </label>
+    <h1 class="button-title">Amaravathi</h1>
+    <div class="button-group">
+      <div class="button-div">
+        <h3 class="button-label">booking</h3>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="button-div">
+        <h3 class="button-label">registration</h3>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
   </div>
 </template>
-
 <script>
 export default {
   name: "ToggleButton",
-  props: ["message"],
+  props: {
+    msg: String,
+  },
 };
 </script>
 
@@ -82,13 +95,24 @@ input:checked + .slider:before {
 
 .button-container {
   display: flex;
-  width: fit-content;
+  width: 80%;
+  margin: 0 auto;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
 }
 
 .button-label {
   padding: 0;
   margin: 0;
+}
+.button-div {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 20px;
+}
+.button-group {
+  display: flex;
+  gap: 20px;
 }
 </style>

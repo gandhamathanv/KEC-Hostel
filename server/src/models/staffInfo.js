@@ -8,6 +8,9 @@ module.exports = (sequelize, DataTypes) => {
                 primaryKey: true,
             },
             designation: DataTypes.STRING,
+
+            hostelName: DataTypes.STRING,
+            roomNumber: DataTypes.STRING,
             hostelResponsibility: DataTypes.STRING,
             department: DataTypes.STRING,
             gender: DataTypes.STRING,

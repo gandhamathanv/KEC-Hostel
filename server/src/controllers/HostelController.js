@@ -115,18 +115,40 @@ module.exports = {
             });
         }
     },
+    async createNoti(req, res) {
+        try {
+            const { by, message } = req.body;
+            const data = await notification.create({
+                by,
+                message,
+                data: new Date(),
+            });
+
+            res.status(200).send({
+                status: "Success",
+                data,
+            });
+        } catch (err) {
+            console.log(err);
+            res.status(500).send({
+                error: "Error in server",
+            });
+        }
+    },
     async getStaffDash(req, res) {
         try {
             const decode = jwt.verify(req.token, config.authentication.jwtSecret);
             console.log(decode);
             const studentCount = await studentInfo.count();
             const roomCount = await hostelrooms.count();
+            const noti = await notification.findAll({});
             res.status(200).send({
                 status: "success",
-                data: { studentCount, roomCount },
+                data: { studentCount, roomCount, noti },
             });
         } catch (err) {
-            res.status(404).send({
+            console.log(err);
+            res.status(403).send({
                 status: "failed",
             });
         }
@@ -150,13 +172,76 @@ module.exports = {
                 break;
 
             default:
-                console.log("level mismatch");
+                res.status(403).send({
+                    status: "failed",
+                    message: "level miss match",
+                });
                 break;
         }
-
+        console.log(data);
         res.status(200).send({
             status: "success",
             data,
         });
+    },
+    async setPermission(req, res) {
+        // console.log(req);
+        try {
+            const { hostelName, change, value } = req.body;
+
+            console.log(hostelName, change, value);
+            if (change == "booking") {
+                const response = await hostelpermission.update({
+                    booking: value,
+                }, {
+                    where: {
+                        hostelName,
+                    },
+                });
+            } else if (change == "registration") {
+                const response = await hostelpermission.update({
+                    registration: value,
+                }, {
+                    where: {
+                        hostelName,
+                    },
+                });
+            }
+            res.status(200).send({
+                status: "success",
+            });
+        } catch (err) {
+            res.status(403).send({
+                status: "failed",
+            });
+        }
+    },
+    async closePermission(req, res) {
+        // console.log(req);
+        try {
+            const { change, value } = req.body;
+            await hostelpermission.findAll().then((data) => {
+                data.forEach((ele) => {
+                    if (change == "booking") {
+                        ele.update({
+                            booking: value,
+                        });
+                    } else if (change == "registration") {
+                        ele.update({
+                            registration: value,
+                        });
+                    }
+                });
+                res.status(200).send({
+                    status: "success",
+                });
+            });
+            // console.log(hostelName, change, value);
+        } catch (err) {
+            console.log(err);
+            res.status(403).send({
+                status: "failed",
+            });
+        }
     },
 };

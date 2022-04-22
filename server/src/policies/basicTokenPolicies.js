@@ -5,6 +5,7 @@ module.exports = {
     getToken(req, res, next) {
         try {
             const token = req.headers.authorization;
+            console.log(token);
             req.token = token.split(" ")[1];
             // const token = req.cookies.jwt;
             // req.token = token;

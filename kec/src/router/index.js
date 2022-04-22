@@ -46,7 +46,7 @@ const routes = [{
     },
     {
         path: "/permissions",
-        name: "permissionPage",
+        name: "permissionsPage",
         component: permissions,
     },
 ];

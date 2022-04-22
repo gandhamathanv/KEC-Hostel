@@ -118,14 +118,15 @@ export default {
           mailId: this.staff.email,
           password: this.staff.password,
         });
-        console.log(response.data);
+        console.log(response.data.data.level);
         this.$store.dispatch("setToken", response.data.token);
         this.$store.dispatch("setUser", response.data.data.user);
         this.$store.dispatch("setViewer", response.data.data.viewer);
+        this.$store.dispatch("setLevel", response.data.data.level);
 
-        this.$router.push({
-          name: "staffDashboard",
-        });
+        // this.$router.push({
+        //   name: "staffDashboard",
+        // });
       } catch (error) {
         // this.error = error.response.data.error;
         alert(error.response.data.error);

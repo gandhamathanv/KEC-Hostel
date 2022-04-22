@@ -37,6 +37,8 @@ export default {
   //     alert(error);
   //   }
   // },
+
+  // un comment
   async created() {
     try {
       const token = localStorage.getItem("jwt");
@@ -46,10 +48,12 @@ export default {
         this.$store.dispatch("setToken", res.data.token);
         this.$store.dispatch("setUser", res.data.data.user);
         this.$store.dispatch("setViewer", res.data.data.viewer);
+        this.$store.dispatch("setLevel", res.data.data.level);
       } else {
         this.$store.dispatch("setToken", null);
         this.$store.dispatch("setUser", null);
         this.$store.dispatch("setViewer", null);
+        this.$store.dispatch("setLevel", null);
       }
     } catch (error) {
       console.log(error);

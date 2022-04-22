@@ -7,7 +7,7 @@ module.exports = {
         password: process.env.DB_PASS || "",
         options: {
             dialect: process.env.DIALECT || "mysql", //type os the database
-            host: process.env.HOST || "localhost",
+            host: process.env.HOST || "",
         },
     },
     // db: {

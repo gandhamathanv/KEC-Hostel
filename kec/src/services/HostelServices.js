@@ -16,4 +16,13 @@ export default {
     getNoti() {
         return Api().get("getNotification");
     },
+    getPermissions(credentials) {
+        return Api().post("getPermissions", credentials);
+    },
+    setPermissions(credentials) {
+        return Api().patch("setPermissions", credentials);
+    },
+    closePermissions(credentials) {
+        return Api().patch("closePermissions", credentials);
+    },
 };

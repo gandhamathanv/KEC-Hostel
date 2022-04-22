@@ -41,24 +41,17 @@
       <div class="col-div-4-1">
         <div class="box-1">
           <div class="content-box-1">
-            <section class="message-box">
+            <section
+              v-for="noti in notification"
+              :key="noti"
+              class="message-box"
+            >
               <div class="name-date">
-                <p class="name">Kannan</p>
-                <p class="date">24/04/2022</p>
+                <p class="name">{{ noti.by }}</p>
+                <p class="date">{{ noti.date }}</p>
               </div>
-              <p class="message">
-                Tomorrow will be declared as holiday. You can leave the hostel
-                by tommorow evening.
-              </p>
+              <p class="message">{{ noti.message }}</p>
             </section>
-            <!-- <section>
-            <p class="name">Kannan</p>
-            <p class="date">24/04/2022</p>
-            <p class="message">
-              Tomorrow will be declared as holiday. You can leave the hostel by
-              tommorow evening.
-            </p>
-          </section> -->
           </div>
         </div>
       </div>
@@ -75,13 +68,15 @@ export default {
       NumberOfStudents: 4567,
       NumberOfQueries: 0,
       NumberOfRooms: null,
+      notification: null,
     };
   },
   async created() {
     const { data } = await staffServices.getDash(this.$store.state.token);
     this.NumberOfStudents = data.data.studentCount;
     this.NumberOfRooms = data.data.roomCount;
-    console.log(data);
+    this.notification = data.data.noti;
+    console.log(this.notification);
   },
 };
 </script>
