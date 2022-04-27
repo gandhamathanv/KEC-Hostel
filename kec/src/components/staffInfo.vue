@@ -16,13 +16,13 @@
                           src="https://source.unsplash.com/600x300/?student"
                           alt="student dp"
                         />
-                        <h3>{{ user.name }}</h3>
+                        <h3>Aanandhene</h3>
                       </div>
                       <hr />
                       <div class="card-body">
                         <p class="mb-0">
-                          <strong class="pr-1">RollNumber:</strong
-                          >{{ user.rollnumber }}
+                          <strong class="pr-1">Designation:</strong
+                          >{{ user.Designation }}
                         </p>
                       </div>
                     </div>
@@ -229,7 +229,7 @@
 
 <script>
 export default {
-  name: "StudentInfo",
+  name: "staffInfo",
   data() {
     return {
       user: this.$store.state.user,

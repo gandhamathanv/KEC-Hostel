@@ -2,33 +2,33 @@
   <div>
     <div class="container">
       <section class="main">
-        <div class="main-top">
+        <div class="header-title">
           <h1>Staff dashboard</h1>
         </div>
-        <div class="main-skills">
+        <div class="main-title">
           <div class="card">
             <h1 class="card-title">student</h1>
             <span class="card-button">view student</span>
 
-            <h3>No of students</h3>
+            <h3 class="h3">No of students</h3>
             <p>Present : {{ NumberOfStudents }}</p>
           </div>
           <div class="card">
             <h1 class="card-title">staff</h1>
             <span class="card-button">view staff</span>
 
-            <h3>No of staff</h3>
+            <h3 class="h3">No of staff</h3>
             <p>Present : {{ NumberOfStudents }}</p>
           </div>
           <div class="card">
-            <h3>No of Queries</h3>
+            <h3 class="h3">No of Queries</h3>
             <p>Solved: {{ NumberOfQueries }}</p>
           </div>
           <div class="card">
             <h1 class="card-title">room</h1>
             <span class="card-button">view room</span>
 
-            <h3>No of room</h3>
+            <h3 class="h3">No of room</h3>
 
             <p>rooms : {{ NumberOfRooms }}</p>
           </div>
@@ -38,14 +38,46 @@
 
     <!-- next rown -->
     <div class="container">
-      <div class="col-div-4-1">
-        <div class="box-1">
-          <div class="content-box-1">
-            <section
-              v-for="noti in notification"
-              :key="noti"
-              class="message-box"
-            >
+      <div class="container-box">
+        <div class="notification">
+          <div class="notification-box">
+            <section class="message-box">
+              <div class="name-date">
+                <p class="name">Kannan</p>
+                <p class="date">24/04/2022</p>
+              </div>
+              <p class="message">
+                Tomorrow will be declared as holiday. You can leave the hostel
+                by tommorow evening.
+              </p>
+            </section>
+            <section class="message-box">
+              <div class="name-date">
+                <p class="name">Kannan</p>
+                <p class="date">24/04/2022</p>
+              </div>
+              <p class="message">
+                Tomorrow will be declared as holiday. You can leave the hostel
+                by tommorow evening.
+              </p>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="container-box">
+        <div class="notification">
+          <div class="notification-box">
+            <section class="message-box">
+              <div class="name-date">
+                <p class="name">Kannan</p>
+                <p class="date">24/04/2022</p>
+              </div>
+              <p class="message">
+                Tomorrow will be declared as holiday. You can leave the hostel
+                by tommorow evening.
+              </p>
+            </section>
+            <section class="message-box">
               <div class="name-date">
                 <p class="name">{{ noti.by }}</p>
                 <p class="date">{{ noti.date }}</p>
@@ -81,7 +113,6 @@ export default {
 };
 </script>
 <style scoped>
-/* @import url("https://fonts.googleapis.com/css2?family=poppins:wght@400;500;600;700&display=swap"); */
 * {
   margin: 0;
   padding: 0;
@@ -104,12 +135,12 @@ body {
   width: 100%;
 }
 
-.main-skills {
+.main-title {
   display: flex;
   margin-top: 20px;
   justify-content: space-evenly;
 }
-.main-skills .card {
+.main-title .card {
   width: 25%;
   height: auto;
   margin: 10px;
@@ -120,16 +151,16 @@ body {
 
   box-shadow: 2px 2px 10px black;
 }
-.main-skills .card h3 {
+.main-title .card .h3 {
   margin: 10px;
   margin-top: 15px;
   text-transform: capitalize;
 }
-.main-skills .card p {
+.main-title .card {
   font-size: 15px;
 }
 .card-title {
-  font-size: 30px;
+  font-size: 25px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   /* font-weight: bold; */
@@ -154,52 +185,38 @@ body {
   border: 2px solid black;
   cursor: pointer;
 }
-.card-line {
-  display: inline-flex;
-  width: 100%;
-  justify-content: space-between;
-  padding: 40px 0px;
-}
-.card-line .card-title {
+
+.card-title {
   margin: 0;
 }
-.card-line .card-button {
+.card-button {
   padding: 5px;
   gap: 3px;
 }
-.buttons-query {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-}
-.main-skills .card button {
-  background: orangered;
+
+.main-title .card .button {
+  /* background: orangered; */
   color: rgb(250, 246, 246);
-  /* color: white; */
   padding: 7px 15px;
   border-radius: 25px;
   margin-top: 15px;
   cursor: pointer;
 }
-.main-skills .card button:hover {
+/* .main-title .card .button:hover {
   background: rgba(223, 70, 15, 0.856);
-}
-.main-skills .card i {
+} */
+.main-title .card i {
   font-size: 30px;
   padding: 10px;
 }
 /*----------------*/
-.col-div-4-1 {
+.container-box {
   width: 33.3%;
   height: auto;
   float: left;
 }
 
-.content-box-1 {
-  padding: 0px 10px;
-}
-
-.box-1 {
+.notification {
   width: 88%;
   height: fit-content;
   background-color: #ffffff;
@@ -207,15 +224,10 @@ body {
   padding: 10px;
   box-shadow: 2px 5px 10px #ddd;
   position: relative;
+  box-shadow: 2px 2px 10px black;
 }
 
-.head-1 {
-  font-size: 18px !important;
-  margin: 10px 0px;
-  color: #6c7293;
-}
-
-.head-1 span {
+.span {
   float: right;
   background-color: #5643ff;
   color: white;
@@ -223,66 +235,11 @@ body {
   font-size: 15px;
 }
 
-.m-box {
-  color: #6c7293;
-  position: relative;
-  padding: 0px 12px;
-}
-
-.m-box p {
-  display: inline-block;
-  margin: 10px 0px;
-}
-
-.active {
-  background-color: #5646ff;
-  color: white;
-  box-shadow: 4px 3px 7px 3px #3226ad54;
-}
-
-.active .no-1 {
-  color: #ddd !important;
-}
-
-.no-1 {
-  font-size: 12px;
-  color: #9398b1;
-}
-
-.act-p {
-  font-size: 13px;
-  color: #6c7293;
-}
-
-.act-p .fa {
-  color: orange !important;
-}
-
-.content-box-1 {
+.notification-box {
   padding: 0px 10px;
 }
 
-.box-8 {
-  width: 97.8%;
-  background-color: #fff;
-  height: 330px;
-}
-
-.box-8 {
-  margin-left: 10px;
-}
-
-.content-box {
-  padding: 20px;
-}
-
-.content-box p {
-  margin: 0px;
-  font-size: 20px;
-  color: #6c7293;
-}
-
-.content-box p span {
+.span {
   float: right;
   background-color: #5643ff;
   color: white;
@@ -300,6 +257,4 @@ body {
 .message {
   text-align: center;
 }
-
-/* nextrow */
 </style>

@@ -59,7 +59,7 @@
           <div class="overlay-panel overlay-right">
             <h1 class="h1">For Staff's</h1>
             <p class="loginp">
-              Click Staff button and go to the staff login and enter your
+              Click Staff login button and go to the staff login and enter your
               details.
             </p>
             <span @click="setActive(true)" class="button ghost" id="loginUp">
@@ -159,7 +159,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: "Montserrat", sans-serif;
+  font-family: sans-serif;
   height: 100vh;
   margin: -20px 0 50px;
 }
@@ -236,6 +236,7 @@ form {
   padding: 12px 15px;
   margin: 8px 0;
   width: 100%;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container {

@@ -40,5 +40,6 @@ module.exports = (sequelize, DataTypes) => {
         console.log(pass, this.password);
         return bcrypt.compareAsync(pass, this.password);
     };
+
     return User;
 };

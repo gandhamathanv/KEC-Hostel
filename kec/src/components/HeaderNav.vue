@@ -51,6 +51,22 @@ export default {
     };
   },
 };
+// $(document).ready(function () {
+//   var showHeaderAt = 150;
+
+//   var win = $(window),
+//     body = $("body");
+
+//   if (win.width() > 400) {
+//     win.on("scroll", function (e) {
+//       if (win.scrollTop() > showHeaderAt) {
+//         body.addClass("fixed");
+//       } else {
+//         body.removeClass("fixed");
+//       }
+//     });
+//   }
+// });
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -63,7 +79,7 @@ nav {
   align-items: center;
 }
 nav img {
-  width: 80px;
+  width: 75px;
 }
 .nav-links {
   flex: 1;

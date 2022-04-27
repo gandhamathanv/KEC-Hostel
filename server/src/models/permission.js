@@ -1,6 +1,6 @@
 /* eslint-disable */
 module.exports = (sequelize, DataTypes) => {
-    return sequelize.define(
+    const permission = sequelize.define(
         "permission", {
             responsibility: {
                 type: DataTypes.STRING,
@@ -26,4 +26,9 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: false,
         }
     );
+    permission.associate = function(models) {
+        console.log(models);
+        permission.hasOne(models.staffInfo);
+    };
+    return permission;
 };

@@ -29,7 +29,7 @@
           </p>
         </div>
         <div class="about-col">
-          <h3 class="abouth3">Alumini Guest House</h3>
+          <h3 class="abouth3">Boys Hostel</h3>
           <p class="aboutp">
             Dheeran Mens Hostel, Valluvar Mens Hostel, Ilango Mens Hostel,
             Bharathi Mens Hostel, Kamban Mens Hostel, Poonar Mens Hostel and
@@ -56,23 +56,7 @@
       <div class="hostel-row">
         <div class="bhostel-col">
           <img src="@/assets/img/homepage/dheeran.jpg" alt="dheeran hostel" />
-          <h3 class="hostelh3">Amaravathi Hostel</h3>
-          <p class="aboutp">
-            The students are provided with modern and updated facilities and
-            infrastructure by the college.
-          </p>
-        </div>
-        <div class="bhostel-col">
-          <img src="@/assets/img/homepage/dheeran.jpg" alt="dheeran hostel" />
-          <h3 class="hostelh3">Kaveri Hostel</h3>
-          <p class="aboutp">
-            The students are provided with modern and updated facilities and
-            infrastructure by the college.
-          </p>
-        </div>
-        <div class="bhostel-col">
-          <img src="@/assets/img/homepage/dheeran.jpg" alt="dheeran hostel" />
-          <h3 class="hostelh3">Bhavani Hostel</h3>
+          <h3 class="hostelh3">Deeran Hostel</h3>
           <p class="aboutp">
             The students are provided with modern and updated facilities and
             infrastructure by the college.
@@ -88,7 +72,7 @@
         </div>
         <div class="bhostel-col">
           <img src="@/assets/img/homepage/dheeran.jpg" alt="dheeran hostel" />
-          <h3 class="hostelh3">Valluvar Hostel</h3>
+          <h3 class="hostelh3">Deeran Hostel</h3>
           <p class="aboutp">
             The students are provided with modern and updated facilities and
             infrastructure by the college.
@@ -96,7 +80,7 @@
         </div>
         <div class="bhostel-col">
           <img src="@/assets/img/homepage/dheeran.jpg" alt="dheeran hostel" />
-          <h3 class="hostelh3">Bharathi Hostel</h3>
+          <h3 class="hostelh3">Deeran Hostel</h3>
           <p class="aboutp">
             The students are provided with modern and updated facilities and
             infrastructure by the college.
@@ -104,7 +88,7 @@
         </div>
         <div class="bhostel-col">
           <img src="@/assets/img/homepage/dheeran.jpg" alt="dheeran hostel" />
-          <h3 class="hostelh3">Ponnar Hostel</h3>
+          <h3 class="hostelh3">Deeran Hostel</h3>
           <p class="aboutp">
             The students are provided with modern and updated facilities and
             infrastructure by the college.
@@ -112,7 +96,7 @@
         </div>
         <div class="bhostel-col">
           <img src="@/assets/img/homepage/dheeran.jpg" alt="dheeran hostel" />
-          <h3 class="hostelh3">Sankar Hostel</h3>
+          <h3 class="hostelh3">Deeran Hostel</h3>
           <p class="aboutp">
             The students are provided with modern and updated facilities and
             infrastructure by the college.
@@ -120,7 +104,7 @@
         </div>
         <div class="bhostel-col">
           <img src="@/assets/img/homepage/dheeran.jpg" alt="dheeran hostel" />
-          <h3 class="hostelh3">Kamban Hostel</h3>
+          <h3 class="hostelh3">Deeran Hostel</h3>
           <p class="aboutp">
             The students are provided with modern and updated facilities and
             infrastructure by the college.
@@ -128,7 +112,7 @@
         </div>
         <div class="bhostel-col">
           <img src="@/assets/img/homepage/dheeran.jpg" alt="dheeran hostel" />
-          <h3 class="hostelh3">Elango Hostel</h3>
+          <h3 class="hostelh3">Deeran Hostel</h3>
           <p class="aboutp">
             The students are provided with modern and updated facilities and
             infrastructure by the college.
@@ -136,7 +120,7 @@
         </div>
         <div class="bhostel-col">
           <img src="@/assets/img/homepage/dheeran.jpg" alt="dheeran hostel" />
-          <h3 class="hostelh3">Guest Hostel</h3>
+          <h3 class="hostelh3">Deeran Hostel</h3>
           <p class="aboutp">
             The students are provided with modern and updated facilities and
             infrastructure by the college.
@@ -144,7 +128,23 @@
         </div>
         <div class="bhostel-col">
           <img src="@/assets/img/homepage/dheeran.jpg" alt="dheeran hostel" />
-          <h3 class="hostelh3">Staff Quarters</h3>
+          <h3 class="hostelh3">Deeran Hostel</h3>
+          <p class="aboutp">
+            The students are provided with modern and updated facilities and
+            infrastructure by the college.
+          </p>
+        </div>
+        <div class="bhostel-col">
+          <img src="@/assets/img/homepage/dheeran.jpg" alt="dheeran hostel" />
+          <h3 class="hostelh3">Deeran Hostel</h3>
+          <p class="aboutp">
+            The students are provided with modern and updated facilities and
+            infrastructure by the college.
+          </p>
+        </div>
+        <div class="bhostel-col">
+          <img src="@/assets/img/homepage/dheeran.jpg" alt="dheeran hostel" />
+          <h3 class="hostelh3">Deeran Hostel</h3>
           <p class="aboutp">
             The students are provided with modern and updated facilities and
             infrastructure by the college.

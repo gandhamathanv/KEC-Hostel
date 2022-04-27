@@ -19,7 +19,7 @@ function hashPassword(user, options) {
 module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define(
         "staffLogin", {
-            mailID: {
+            collegeMailID: {
                 type: DataTypes.STRING,
                 primaryKey: true,
             },

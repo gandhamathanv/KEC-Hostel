@@ -3,6 +3,7 @@
     <div v-if="hostelName != null">
       <label> Select a hostel</label>
       <button
+        class="button"
         v-for="name in hostelName"
         :key="name"
         @click="getData(name.hostelName)"
@@ -13,10 +14,10 @@
     <div v-if="data != null" class="floor">
       <label> Select a Floor:</label>
 
-      <button @click="flr(0)">Ground Floor</button>
-      <button @click="flr(1)">First Floor</button>
-      <button @click="flr(2)">Second Floor</button>
-      <button @click="flr(3)">Third Floor</button>
+      <button class="button" @click="flr(0)">Ground Floor</button>
+      <button class="button" @click="flr(1)">First Floor</button>
+      <button class="button" @click="flr(2)">Second Floor</button>
+      <button class="button" @click="flr(3)">Third Floor</button>
     </div>
     <div v-if="rooms != null">
       <ul class="showcase">
@@ -237,5 +238,23 @@ export default {
 }
 .washroom {
   color: red;
+}
+.button {
+  box-sizing: border-box;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  border-radius: 0.6em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.2em 2.8em;
+  background-color: black;
+  color: #fff;
+  border-radius: 0.6em;
+  box-shadow: 0 0 2px 2px rgb(211, 6, 6);
+}
+.button:hover {
+  box-shadow: 0 0 40px 40px rgb(44, 12, 223) inset;
 }
 </style>
