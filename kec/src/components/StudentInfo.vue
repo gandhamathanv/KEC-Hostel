@@ -16,12 +16,13 @@
                           src="https://source.unsplash.com/600x300/?student"
                           alt="student dp"
                         />
-                        <h3>Aanandhene</h3>
+                        <h3>{{ user.name }}</h3>
                       </div>
                       <hr />
                       <div class="card-body">
                         <p class="mb-0">
-                          <strong class="pr-1">RollNumber:</strong>20CSR051
+                          <strong class="pr-1">RollNumber:</strong
+                          >{{ user.rollnumber }}
                         </p>
                       </div>
                     </div>
@@ -35,162 +36,162 @@
                       </div>
                       <div class="card-body pt-0">
                         <table class="table table-bordered" border="0">
-                          <tr>
+                          <tr v-if="user.class">
                             <th width="20%">class</th>
                             <td width="2%">:</td>
-                            <td>A</td>
+                            <td>{{ user.class }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.year">
                             <th width="20%">year</th>
                             <td width="2%">:</td>
-                            <td>II</td>
+                            <td>{{ user.year }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.department">
                             <th width="20%">department</th>
                             <td width="2%">:</td>
-                            <td>CSE</td>
+                            <td>{{ user.department }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.DOB">
                             <th width="20%">DOB</th>
                             <td width="2%">:</td>
-                            <td>12.09.2001</td>
+                            <td>{{ user.DOB }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.bloodGroup">
                             <th width="20%">bloodGroup</th>
                             <td width="2%">:</td>
-                            <td>B+</td>
+                            <td>{{ user.bloodGroup }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.roomNumber">
                             <th width="20%">roomNumber</th>
                             <td width="2%">:</td>
-                            <td>205</td>
+                            <td>{{ user.roomNumber }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.hostelName">
                             <th width="20%">hostelName</th>
                             <td width="2%">:</td>
-                            <td>Amaravathi</td>
+                            <td>{{ user.hostelName }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.gender">
                             <th width="20%">gender</th>
                             <td width="2%">:</td>
-                            <td>Female</td>
+                            <td>{{ user.gender }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.phoneNumber">
                             <th width="20%">phoneNumber</th>
                             <td width="2%">:</td>
-                            <td>9876506543</td>
+                            <td>{{ user.phoneNumber }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.whatsappNumber">
                             <th width="20%">whatsappNumber</th>
                             <td width="2%">:</td>
-                            <td>9873256754</td>
+                            <td>{{ user.whatsappNumber }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.telegramNumber">
                             <th width="20%">telegramNumber</th>
                             <td width="2%">:</td>
-                            <td>9876506543</td>
+                            <td>{{ user.telegramNumber }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.collegeMailID">
                             <th width="20%">collegeMailID</th>
                             <td width="2%">:</td>
-                            <td>bhuva.20cse@kongu.edu</td>
+                            <td>{{ user.collegeMailID }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.personalMailID">
                             <th width="20%">personalMailID</th>
                             <td width="2%">:</td>
-                            <td>bhuva13@gmail.com</td>
+                            <td>{{ user.personalMailID }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.aadharNumber">
                             <th width="20%">aadharNumber</th>
                             <td width="2%">:</td>
-                            <td>424618229565</td>
+                            <td>{{ user.aadharNumber }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.fatherName">
                             <th width="20%">fatherName</th>
                             <td width="2%">:</td>
-                            <td>Raghu moorthy</td>
+                            <td>{{ user.fatherName }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.fatherMobileNumber">
                             <th width="20%">fatherMobileNumber</th>
                             <td width="2%">:</td>
-                            <td>8765432898</td>
+                            <td>{{ user.fatherMobileNumber }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.fatherOccupation">
                             <th width="20%">fatherOccupation</th>
                             <td width="2%">:</td>
-                            <td>office staff</td>
+                            <td>{{ user.fatherOccupation }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.motherName">
                             <th width="20%">motherName</th>
                             <td width="2%">:</td>
-                            <td>nagarathna</td>
+                            <td>{{ user.motherName }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.motherMobileNumber">
                             <th width="20%">motherMobileNumber</th>
                             <td width="2%">:</td>
-                            <td>7654387652</td>
+                            <td>{{ user.motherMobileNumber }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.MotherOccupation">
                             <th width="20%">MotherOccupation</th>
                             <td width="2%">:</td>
-                            <td>home maker</td>
+                            <td>{{ user.MotherOccupation }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.address">
                             <th width="20%">address</th>
                             <td width="2%">:</td>
                             <td>
-                              no-1/45,kalahasthipuram(vill),avalapalli(pst),hosur(tk).
+                              {{ user.address }}
                             </td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.district">
                             <th width="20%">district</th>
                             <td width="2%">:</td>
-                            <td>krishnagiri</td>
+                            <td>{{ user.district }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.state">
                             <th width="20%">state</th>
                             <td width="2%">:</td>
-                            <td>tamilnadu</td>
+                            <td>{{ user.state }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.localGuardian">
                             <th width="20%">localGuardian</th>
                             <td width="2%">:</td>
-                            <td>madhavan</td>
+                            <td>{{ user.localGuardian }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.localGuardianPhoneNumber">
                             <th width="20%">localGuardianPhoneNumber</th>
                             <td width="2%">:</td>
-                            <td>8765438765</td>
+                            <td>{{ user.localGuardianPhoneNumber }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.accountNumber">
                             <th width="20%">accountNumber</th>
                             <td width="2%">:</td>
-                            <td>7654321234567890</td>
+                            <td>{{ user.accountNumber }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.bankName">
                             <th width="20%">bankName</th>
                             <td width="2%">:</td>
-                            <td>karur vysya bank</td>
+                            <td>{{ user.bankName }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.branch">
                             <th width="20%">branch</th>
                             <td width="2%">:</td>
-                            <td>hosur</td>
+                            <td>{{ user.branch }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.IFSCcode">
                             <th width="20%">IFSCcode</th>
                             <td width="2%">:</td>
-                            <td>8765432189</td>
+                            <td>{{ user.IFSCcode }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.dateOfEntry">
                             <th width="20%">dateOfEntry</th>
                             <td width="2%">:</td>
-                            <td>01.09.2021</td>
+                            <td>{{ user.dateOfEntry }}</td>
                           </tr>
-                          <tr>
+                          <tr v-if="user.dateOfVacation">
                             <th width="20%">dateOfVacation</th>
                             <td width="2%">:</td>
-                            <td>-</td>
+                            <td>{{ user.dateOfVacation }}</td>
                           </tr>
                         </table>
                       </div>
