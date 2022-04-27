@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
     return sequelize.define(
         "booking", {
-            studentRollnumber: {
+            rollnumber: {
                 type: DataTypes.STRING,
                 primaryKey: true,
             },

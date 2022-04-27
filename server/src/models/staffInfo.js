@@ -1,11 +1,16 @@
 /* eslint-disable */
+
+function CreateLogin(user, options) {
+    console.log("createlogin");
+    console.log(user.dataValues.collegeMailID);
+}
 module.exports = (sequelize, DataTypes) => {
     return sequelize.define(
         "staffInfo", {
             name: DataTypes.STRING,
             staffID: {
                 type: DataTypes.STRING,
-                primaryKey: true,
+                unique: true,
             },
             designation: DataTypes.STRING,
             hostelResponsibility: DataTypes.STRING,
@@ -23,6 +28,9 @@ module.exports = (sequelize, DataTypes) => {
             aadharNumber: DataTypes.BIGINT,
         }, {
             timestamps: false,
+            hooks: {
+                beforeCreate: CreateLogin,
+            },
         }
     );
 };
