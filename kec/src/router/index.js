@@ -10,6 +10,7 @@ import changePassword from "../components/resetPassword.vue";
 import permissions from "../components/permissions.vue";
 import studentRegistration from "../views/studentRegistration.vue";
 import staffInfo from "../components/staffInfo.vue";
+import listView from "../views/dataList.vue";
 // import paymentPage from "../components/dashboard/paymentPage";
 
 const routes = [{
@@ -61,6 +62,11 @@ const routes = [{
         path: "/staffInfo",
         name: "staffInfo",
         component: staffInfo,
+    },
+    {
+        path: "/listView",
+        name: "listView",
+        component: listView,
     },
 ];
 
