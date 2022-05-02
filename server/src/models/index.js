@@ -74,7 +74,7 @@ db.booking.belongsTo(db.hostelinfo, {
 });
 // // roomNumber--->hostelinfo-hostelrooms
 
-db.hostelrooms.hasMany(db.booking, {
+db.hostelrooms.hasOne(db.booking, {
     foreignKey: "roomNumber",
     sourceKey: "roomNumber",
 });
