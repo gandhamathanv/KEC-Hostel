@@ -39,6 +39,6 @@ sequelize
     // .then(() => data())
 
 .then(() => {
-    // app.listen(config.PORT || 3000);
-    // console.log(`server started on port ${config.PORT}`);
+    app.listen(config.PORT || 3000);
+    console.log(`server started on port ${config.PORT}`);
 });
