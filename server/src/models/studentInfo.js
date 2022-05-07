@@ -14,7 +14,8 @@ module.exports = (sequelize, DataTypes) => {
             DOB: DataTypes.DATEONLY,
             bloodGroup: DataTypes.STRING,
 
-
+            hostelName: DataTypes.STRING,
+            roomNumber: DataTypes.STRING,
             gender: DataTypes.STRING,
             phoneNumber: DataTypes.BIGINT,
             whatsappNumber: DataTypes.BIGINT,

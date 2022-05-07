@@ -13,24 +13,38 @@ const sequelize = new Sequelize(
     config.db.options
 );
 
-// File = ["hostelinfo.js",];
-// File.forEach((file) => {
-//     const model = require(path.join(__dirname, file))(
-//         sequelize,
-//         Sequelize.DataTypes
-//     );
-//     db[model.name] = model;
-// });
-fs.readdirSync(__dirname)
-    .filter((file) => file !== "index.js")
-    .forEach((file) => {
-        console.log(path.join(__dirname, file));
-        const model = require(path.join(__dirname, file))(
-            sequelize,
-            Sequelize.DataTypes
-        );
-        db[model.name] = model;
-    });
+const file = [
+    "hostelinfo.js",
+    "hostelroom.js",
+    "hostelfor.js",
+    "hostelPermission.js",
+    "studentInfo.js",
+    "staffInfo.js",
+    "studentlogin.js",
+    "stafflogin.js",
+    "booking.js",
+    "foodmenu.js",
+    "notification.js",
+    "permission.js",
+];
+file.forEach((file) => {
+    const model = require(path.join(__dirname, file))(
+        sequelize,
+        Sequelize.DataTypes
+    );
+    db[model.name] = model;
+});
+console.log(db);
+// fs.readdirSync(__dirname)
+//     .filter((file) => file !== "index.js")
+//     .forEach((file) => {
+//         console.log(path.join(__dirname, file));
+//         const model = require(path.join(__dirname, file))(
+//             sequelize,
+//             Sequelize.DataTypes
+//         );
+//         db[model.name] = model;
+//     });
 
 // //foreign keys
 // // hostelName--->hostelinfo-hostelrooms
@@ -74,7 +88,7 @@ db.booking.belongsTo(db.hostelinfo, {
 });
 // // roomNumber--->hostelinfo-hostelrooms
 
-db.hostelrooms.hasMany(db.booking, {
+db.hostelrooms.hasOne(db.booking, {
     foreignKey: "roomNumber",
     sourceKey: "roomNumber",
 });
@@ -124,6 +138,14 @@ db.hostelinfo.hasOne(db.hostelfor, {
     sourceKey: "hostelName",
 });
 db.hostelfor.belongsTo(db.hostelinfo, {
+    foreignKey: "hostelName",
+    targetKey: "hostelName",
+});
+db.hostelinfo.hasOne(db.hostelpermission, {
+    foreignKey: "hostelName",
+    sourceKey: "hostelName",
+});
+db.hostelpermission.belongsTo(db.hostelinfo, {
     foreignKey: "hostelName",
     targetKey: "hostelName",
 });

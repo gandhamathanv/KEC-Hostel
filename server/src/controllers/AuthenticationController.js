@@ -16,6 +16,21 @@ function jwtSignUser(user) {
     });
 }
 module.exports = {
+    async logout(req, res) {
+        try {
+            res.cookie("jwt", null, {
+                httpOnly: true,
+            });
+            res.send({
+                status: "success",
+            });
+        } catch (err) {
+            console.log(err);
+            res.send({
+                status: "error",
+            });
+        }
+    },
     async studentRegister(req, res) {
         try {
             const user = await studentLogin.create(req.body);
@@ -71,11 +86,17 @@ module.exports = {
                     user: userJson,
                     viewer: "STUDENT",
                 };
+                const token = jwtSignUser(data);
+                const tim = 3 * 24 * 60 * 60 * 1000;
+                res.cookie("jwt", token, {
+                    maxAge: tim,
+                    httpOnly: true,
+                });
 
                 res.status(200).send({
                     status: "success",
                     data,
-                    token: jwtSignUser(data),
+                    token,
                 });
             }
         } catch (err) {
@@ -123,10 +144,15 @@ module.exports = {
                     level,
                     viewer: "STAFF",
                 };
+                token = jwtSignUser(data);
+                res.cookie("jwt", token, {
+                    expires: new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
+                    httpOnly: true,
+                });
                 res.status(200).send({
                     staus: "success",
                     data,
-                    token: jwtSignUser(data),
+                    token,
                 });
             }
         } catch (err) {
@@ -199,9 +225,12 @@ module.exports = {
             const decode = jwt.verify(req.token, config.authentication.jwtSecret);
 
             res.status(200).send({
+                status: "success",
                 data: decode,
+                token: req.token,
             });
         } catch (err) {
+            console.log(err);
             res.send({
                 error: "cannot get data",
             });

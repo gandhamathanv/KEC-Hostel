@@ -18,7 +18,7 @@ export default {
     getData(token) {
         return Api().get("getData", {
             headers: {
-                Authorization: "Bearer " + token, //the token is a variable which holds the token
+                Authorization: "Bearer " + token,
             },
         });
     },

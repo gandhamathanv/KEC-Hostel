@@ -18,24 +18,47 @@ export default {
     HeaderNav,
     DashboardNav,
   },
-  async created() {
-    const token = localStorage.getItem("jwt");
-    if (token) {
-      this.$store.dispatch("setToken", token);
+  // async created() {
+  //   try {
+  //     const res = await AuthenticationService.getData(this.$store.state.token);
+  //     console.log(res);
+  //     if (res.status == "success") {
+  //       this.$store.dispatch("setToken", res.data.token);
+  //       this.$store.dispatch("setUser", res.data.data.user);
+  //       this.$store.dispatch("setViewer", res.data.data.viewer);
+  //     } else {
+  //       this.$store.dispatch("setToken", null);
+  //       this.$store.dispatch("setUser", null);
+  //       this.$store.dispatch("setViewer", null);
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //     // this.error = error.response.data.error;
+  //     alert(error);
+  //   }
+  // },
 
-      try {
-        const response = await AuthenticationService.getData(token);
-        if (response.error) {
-          console.log("error");
-        }
-        console.log(response.data);
-        this.$store.dispatch("setUser", response.data.data.user);
-        this.$store.dispatch("setViewer", response.data.data.viewer);
-      } catch (error) {
-        console.log(error);
-        // this.error = error.response.data.error;
-        alert(error);
+  // un comment
+  async created() {
+    try {
+      const token = localStorage.getItem("jwt");
+      const res = await AuthenticationService.getData(token);
+      console.log(res);
+      if (res.data.status == "success") {
+        this.$store.dispatch("setToken", res.data.token);
+        this.$store.dispatch("setUser", res.data.data.user);
+        this.$store.dispatch("setViewer", res.data.data.viewer);
+        this.$store.dispatch("setLevel", res.data.data.level);
+      } else {
+        this.$store.dispatch("setToken", null);
+        this.$store.dispatch("setUser", null);
+        this.$store.dispatch("setViewer", null);
+        this.$store.dispatch("setLevel", null);
       }
+    } catch (error) {
+      console.log(error);
+      // this.error = error.response.data.error;
+      alert(error);
     }
   },
 };

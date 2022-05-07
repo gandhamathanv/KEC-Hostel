@@ -13,6 +13,9 @@ module.exports = (sequelize, DataTypes) => {
                 unique: true,
             },
             designation: DataTypes.STRING,
+
+            hostelName: DataTypes.STRING,
+            roomNumber: DataTypes.STRING,
             hostelResponsibility: DataTypes.STRING,
             department: DataTypes.STRING,
             gender: DataTypes.STRING,

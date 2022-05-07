@@ -100,19 +100,22 @@ export default {
     },
   },
 
-  async created() {
+  async mounted() {
+    console.log(this.$store.state.user.year);
     const hostels = await HostelService.getHostels({
       year: this.$store.state.user.year,
       gender: this.$store.state.user.gender,
     });
     if (hostels.data.status == "Closed") {
-      console.log("booking closed");
+      alert("booking closed");
+      this.$router.push({
+        name: "homeview",
+      });
     } else if (hostels.data.status == "Success") {
       console.log(hostels.data.data);
       this.setHostel(hostels.data.data);
     }
   },
-  async mounted() {},
 };
 </script>
 <style scoped>

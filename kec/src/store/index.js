@@ -27,10 +27,8 @@ export default createStore({
         setViewer(state, data) {
             state.viewer = data;
         },
-        setStaff(state, data) {
-            state.user = data.user;
-            state.level = data.level;
-            state.viewer = "STAFF";
+        setLevel(state, data) {
+            state.level = data;
         },
     },
     actions: {
@@ -43,8 +41,8 @@ export default createStore({
         setViewer({ commit }, data) {
             commit("setViewer", data);
         },
-        setStaff({ commit }, data) {
-            commit("setStaff", data);
+        setLevel({ commit }, data) {
+            commit("setLevel", data);
         },
     },
     modules: {},
