@@ -1,361 +1,369 @@
 <template>
   <div class="body">
     <div class="container">
-      <header class="header">Registration Form</header>
-      <form class="form" action="#">
-        <div v-if="level == 1" class="form-first">
-          <div v-if="level == 1" class="details-personal">
-            <span class="title">Students Details</span>
+      <div class="registration-container">
+        <header class="header">Registration Form</header>
+        <form class="form" action="#">
+          <div v-if="level == 1" class="form-first">
+            <div v-if="level == 1" class="details-personal">
+              <span class="title">Students Details</span>
 
-            <div class="fields">
-              <div class="input-field">
-                <label class="label">Full Name</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your name"
-                  required
-                />
-              </div>
+              <div class="fields">
+                <div class="input-field">
+                  <label class="label">Full Name</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
 
-              <div class="input-field">
-                <label class="label">Roll Number</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Roll Number"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">Date of Birth</label>
-                <input
-                  class="input"
-                  type="date"
-                  placeholder="Enter your Date of Birth"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">Department</label>
-                <!-- <input
+                <div class="input-field">
+                  <label class="label">Roll Number</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Roll Number"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">Date of Birth</label>
+                  <input
+                    class="input"
+                    type="date"
+                    placeholder="Enter your Date of Birth"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">Department</label>
+                  <!-- <input
                     class="input"
                     type="text"
                     placeholder="Enter your Department"
                     required
                   /> -->
-                <select class="input">
-                  <option value="Department" disabled selected hidden>
-                    Select your Department
-                  </option>
-                  <option value="cse">CSE</option>
-                  <option value="ece">ECE</option>
-                  <option value="Civil">Civil</option>
-                  <option value="Mech">Mech</option>
-                  <option value="eee">EEE</option>
-                  <option value="eie">EIE</option>
-                  <option value="ft">Food Tech</option>
-                  <option value="chemical">Chemical</option>
-                </select>
-              </div>
-              <div class="input-field">
-                <label class="label">Year of Studying</label>
-                <select class="input">
-                  <option value="studying" disabled selected hidden>
-                    Select your Year of Study
-                  </option>
-                  <option value="first">1</option>
-                  <option value="second">2</option>
-                  <option value="third">3</option>
-                  <option value="fourth">4</option>
-                </select>
-              </div>
-              <div class="input-field">
-                <label class="label">Class</label>
-                <select class="input">
-                  <option value="studying" disabled selected hidden>
-                    Select your class
-                  </option>
-                  <option value="first">A</option>
-                  <option value="second">B</option>
-                  <option value="third">C</option>
-                  <option value="fourth">D</option>
-                </select>
-              </div>
+                  <select class="input">
+                    <option value="Department" disabled selected hidden>
+                      Select your Department
+                    </option>
+                    <option value="cse">CSE</option>
+                    <option value="ece">ECE</option>
+                    <option value="Civil">Civil</option>
+                    <option value="Mech">Mech</option>
+                    <option value="eee">EEE</option>
+                    <option value="eie">EIE</option>
+                    <option value="ft">Food Tech</option>
+                    <option value="chemical">Chemical</option>
+                  </select>
+                </div>
+                <div class="input-field">
+                  <label class="label">Year of Studying</label>
+                  <select class="input">
+                    <option value="studying" disabled selected hidden>
+                      Select your Year of Study
+                    </option>
+                    <option value="first">1</option>
+                    <option value="second">2</option>
+                    <option value="third">3</option>
+                    <option value="fourth">4</option>
+                  </select>
+                </div>
+                <div class="input-field">
+                  <label class="label">Class</label>
+                  <select class="input">
+                    <option value="studying" disabled selected hidden>
+                      Select your class
+                    </option>
+                    <option value="first">A</option>
+                    <option value="second">B</option>
+                    <option value="third">C</option>
+                    <option value="fourth">D</option>
+                  </select>
+                </div>
 
-              <div class="input-field">
-                <label class="label">Gender</label>
-                <select class="input">
-                  <option value="gender" disabled selected hidden>
-                    Select your Gender
-                  </option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="others">Others</option>
-                </select>
+                <div class="input-field">
+                  <label class="label">Gender</label>
+                  <select class="input">
+                    <option value="gender" disabled selected hidden>
+                      Select your Gender
+                    </option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="others">Others</option>
+                  </select>
+                </div>
+                <div class="input-field">
+                  <label class="label">Blood Group</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Blood Group"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">Phone Number</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Phone Number"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">Whatsapp Number</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Whatsapp Number"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">Telegram Number</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Telegram Number"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">Personal Mail ID</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Mail ID"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">College Mail ID</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Kongu Mail ID"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">Aadhar Number </label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Aadhar Number"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">Aadhar Number </label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Aadhar Number"
+                    required
+                  />
+                </div>
+                <button class="nextBtn">
+                  <span class="btn-text">Next </span>
+                  <i class="uil uil-navigator"></i>
+                </button>
               </div>
-              <div class="input-field">
-                <label class="label">Blood Group</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Blood Group"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">Phone Number</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Phone Number"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">Whatsapp Number</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Whatsapp Number"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">Telegram Number</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Telegram Number"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">Personal Mail ID</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Mail ID"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">College Mail ID</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Kongu Mail ID"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">Aadhar Number </label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Aadhar Number"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">Aadhar Number </label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Aadhar Number"
-                  required
-                />
-              </div>
-              <button class="nextBtn">
-                <span class="btn-text">Next </span>
-                <i class="uil uil-navigator"></i>
-              </button>
             </div>
           </div>
-        </div>
-        <div v-else-if="level == 2" class="form-second">
-          <div class="details-address">
-            <span class="title">Family Details</span>
+          <div v-else-if="level == 2" class="form-second">
+            <div class="details-address">
+              <span class="title">Family Details</span>
 
-            <div class="fields">
-              <div class="input-field">
-                <label class="label">Father Name</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Father Name"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">Father Mobile Number</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Father Mobile Number"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">Father Occupation</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Father's Occupation"
-                  required
-                />
-              </div>
+              <div class="fields">
+                <div class="input-field">
+                  <label class="label">Father Name</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Father Name"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">Father Mobile Number</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Father Mobile Number"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">Father Occupation</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Father's Occupation"
+                    required
+                  />
+                </div>
 
-              <div class="input-field">
-                <label class="label">Mother Name</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Mother's Occupation"
-                  required
-                />
+                <div class="input-field">
+                  <label class="label">Mother Name</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Mother's Occupation"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">Mother Mobile Number</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Mother Mobile Number"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">Mother Occupation</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Mother's Occupation"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">Address</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Full Address"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">District</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your District"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">State</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your State"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">Pincode </label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Pincode"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">Local Guardian Name</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter Local Guardian Name"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">Local Guardian Phone Number</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter Local Guardian Phone Number "
+                    required
+                  />
+                </div>
               </div>
-              <div class="input-field">
-                <label class="label">Mother Mobile Number</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Mother Mobile Number"
-                  required
-                />
+              <div class="buttons">
+                <div class="backBtn">
+                  <span class="btn-text">Back </span>
+                  <i class="uil uil-navigator"></i>
+                </div>
+                <button class="submit">
+                  <span class="submit">Next </span>
+                  <i class="uil uil-navigator"></i>
+                </button>
               </div>
-              <div class="input-field">
-                <label class="label">Mother Occupation</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Mother's Occupation"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">Address</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Full Address"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">District</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your District"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">State</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your State"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">Pincode </label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Pincode"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">Local Guardian Name</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter Local Guardian Name"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">Local Guardian Phone Number</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter Local Guardian Phone Number "
-                  required
-                />
-              </div>
-            </div>
-            <div class="buttons">
-              <div class="backBtn">
-                <span class="btn-text">Back </span>
-                <i class="uil uil-navigator"></i>
-              </div>
-              <button class="submit">
-                <span class="submit">Next </span>
-                <i class="uil uil-navigator"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div v-else class="form-second">
-          <div class="details-address">
-            <span class="title">Bank Details</span>
-
-            <div class="fields">
-              <div class="input-field">
-                <label class="label">Account Number</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter your Account Number"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">IFSC Code</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter IFSC Code"
-                  required
-                />
-              </div>
-
-              <div class="input-field">
-                <label class="label">Bank Name</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter the Bank Name"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label class="label">Branch Name</label>
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Enter the Branch Name"
-                  required
-                />
-              </div>
-            </div>
-            <div class="buttons">
-              <div class="backBtn">
-                <span class="btn-text">Back </span>
-                <i class="uil uil-navigator"></i>
-              </div>
-              <button class="submit">
-                <span class="submit">Submit </span>
-                <i class="uil uil-navigator"></i>
-              </button>
             </div>
           </div>
+          <div v-else class="form-second">
+            <div class="details-address">
+              <span class="title">Bank Details</span>
+
+              <div class="fields">
+                <div class="input-field">
+                  <label class="label">Account Number</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter your Account Number"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">IFSC Code</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter IFSC Code"
+                    required
+                  />
+                </div>
+
+                <div class="input-field">
+                  <label class="label">Bank Name</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter the Bank Name"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label class="label">Branch Name</label>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter the Branch Name"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="backBtn">
+                  <span class="btn-text">Back </span>
+                  <i class="uil uil-navigator"></i>
+                </div>
+                <button class="submit">
+                  <span class="submit">Submit </span>
+                  <i class="uil uil-navigator"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="authentication-cointainer">
+        <header class="header">Aunthecation form</header>
+        <div class="registration-form">
+          <!-- //code here -->
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </template>
