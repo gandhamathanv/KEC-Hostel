@@ -1,7 +1,7 @@
 <template>
   <div class="body">
     <div class="container">
-      <div class="registration-container">
+      <div v-show="false" class="registration-container">
         <header class="header">Registration Form</header>
         <form class="form" action="#">
           <div v-if="level == 1" class="form-first">
