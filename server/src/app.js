@@ -14,29 +14,7 @@ app.use(cors());
 
 require("./routes")(app);
 
-sequelize
-    .sync({ alter: true })
-    // .sync()
-    // .then(() => {
-    //     const { models } = sequelize;
-    //     models.staffInfo.create({
-    //         name: "Jeevitha",
-    //         staffID: "34567",
-    //         designation: "staff",
-    //         hostelResponsibility: "DEPUTY WARDEN",
-    //         department: "cse",
-    //         gender: "Female",
-    //         bloodGroup: "O+ve",
-    //         phoneNumber: 6369678903,
-    //         whatsappNumber: 9790234234,
-    //         collegeMailID: "jeevitacse@kongu.edu",
-    //         personalMailID: "jeevita@gmail.com",
-    //         aadharNumber: 123456785674,
-    //     });
-    // })
-    // .then(() => data())
-
-.then(() => {
+sequelize.sync().then(() => {
     app.listen(config.PORT || 3000);
     console.log(`server started on port ${config.PORT}`);
 });

@@ -3,8 +3,8 @@
     <div class="container">
       <header class="header">Registration Form</header>
       <form class="form" action="#">
-        <div class="form-first">
-          <div class="details-personal">
+        <div v-if="level == 1" class="form-first">
+          <div v-if="level == 1" class="details-personal">
             <span class="title">Students Details</span>
 
             <div class="fields">
@@ -103,21 +103,6 @@
                   required
                 />
               </div>
-              <!-- <div class="input-field">
-                  <label class="label">Blood Group</label>
-                  <select class="input">
-                    <option value="zero" disabled selected hidden>
-                      Select your Blood Group
-                    </option>
-  
-                    <option value="first">A+ve</option>
-                    <option value="second">B+ve</option>
-                    <option value="third">A-ve</option>
-                    <option value="fourth">B-ve</option>
-                    <option value="fifth">O+ve</option>
-                    <option value="sixth">O-ve</option>
-                  </select>
-                </div> -->
               <div class="input-field">
                 <label class="label">Phone Number</label>
                 <input
@@ -188,7 +173,7 @@
             </div>
           </div>
         </div>
-        <div class="form-second">
+        <div v-else-if="level == 2" class="form-second">
           <div class="details-address">
             <span class="title">Family Details</span>
 
@@ -302,14 +287,20 @@
                   required
                 />
               </div>
-              <button class="nextBtn">
-                <span class="btn-text">Next </span>
+            </div>
+            <div class="buttons">
+              <div class="backBtn">
+                <span class="btn-text">Back </span>
+                <i class="uil uil-navigator"></i>
+              </div>
+              <button class="submit">
+                <span class="submit">Next </span>
                 <i class="uil uil-navigator"></i>
               </button>
             </div>
           </div>
         </div>
-        <div class="form-second">
+        <div v-else class="form-second">
           <div class="details-address">
             <span class="title">Bank Details</span>
 
@@ -369,7 +360,26 @@
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: "MainPage",
+  data() {
+    return {
+      data: {
+        level1: {},
+        level2: {},
+        level3: {},
+      },
+      level: 2,
+    };
+  },
+  methods: {
+    toggleFacility() {
+      this.toggleFacilityButton = !this.toggleFacilityButton;
+    },
+  },
+};
+</script>
 <style scoped>
 * {
   margin: 0;
