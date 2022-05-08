@@ -1,7 +1,7 @@
 <template>
   <div class="body">
     <div class="container">
-      <div v-show="false" class="registration-container">
+      <div class="registration-container">
         <header class="header">Registration Form</header>
         <form class="form" action="#">
           <div v-if="level == 1" class="form-first">
@@ -167,7 +167,7 @@
                     required
                   />
                 </div>
-                <button class="nextBtn">
+                <button @click="setLevel(2)" class="nextBtn">
                   <span class="btn-text">Next </span>
                   <i class="uil uil-navigator"></i>
                 </button>
@@ -290,18 +290,18 @@
                 </div>
               </div>
               <div class="buttons">
-                <div class="backBtn">
-                  <span class="btn-text">Back </span>
+                <button @click="setLevel(1)" class="submit">
+                  <span class="submit">back </span>
                   <i class="uil uil-navigator"></i>
-                </div>
-                <button class="submit">
+                </button>
+                <button @click="setLevel(3)" class="submit">
                   <span class="submit">Next </span>
                   <i class="uil uil-navigator"></i>
                 </button>
               </div>
             </div>
           </div>
-          <div v-else class="form-second">
+          <div v-else-if="level == 3" class="form-second">
             <div class="details-address">
               <span class="title">Bank Details</span>
 
@@ -345,64 +345,64 @@
                 </div>
               </div>
               <div class="buttons">
-                <div class="backBtn">
-                  <span class="btn-text">Back </span>
+                <button @click="setLevel(3)" class="submit">
+                  <span class="submit">back </span>
                   <i class="uil uil-navigator"></i>
-                </div>
-                <button class="submit">
+                </button>
+                <button @click="setLevel(0)" class="submit">
                   <span class="submit">Submit </span>
                   <i class="uil uil-navigator"></i>
                 </button>
               </div>
             </div>
           </div>
-        </form>
-      </div>
-      <div class="authentication-cointainer">
-        <header class="header">Aunthecation form</header>
-        <div class="registration-form">
-          <!-- //code here -->
-          <h1 class="otph1">ENTER OTP</h1>
-          <div class="userInput">
-            <input
-              class="otpinput"
-              type="text"
-              id="ist"
-              maxlength="1"
-              onkeyup="clickEvent(this,'sec')"
-            />
-            <input
-              class="otpinput"
-              type="text"
-              id="sec"
-              maxlength="1"
-              onkeyup="clickEvent(this,'third')"
-            />
-            <input
-              class="otpinput"
-              type="text"
-              id="third"
-              maxlength="1"
-              onkeyup="clickEvent(this,'fourth')"
-            />
-            <input
-              class="otpinput"
-              type="text"
-              id="fourth"
-              maxlength="1"
-              onkeyup="clickEvent(this,'fifth')"
-            />
-            <input
-              class="otpinput"
-              type="text"
-              id="fifth"
-              maxlength="1"
-              onkeyup="clickEvent(this,'sixth')"
-            />
-            <input class="otpinput" type="text" id="fifth" maxlength="1" />
+          <div v-else class="authentication-cointainer">
+            <header class="header">Aunthecation form</header>
+            <div class="registration-form">
+              <!-- //code here -->
+              <h1 class="otph1">ENTER OTP</h1>
+              <div class="userInput">
+                <input
+                  class="otpinput"
+                  type="text"
+                  id="ist"
+                  maxlength="1"
+                  onkeyup="clickEvent(this,'sec')"
+                />
+                <input
+                  class="otpinput"
+                  type="text"
+                  id="sec"
+                  maxlength="1"
+                  onkeyup="clickEvent(this,'third')"
+                />
+                <input
+                  class="otpinput"
+                  type="text"
+                  id="third"
+                  maxlength="1"
+                  onkeyup="clickEvent(this,'fourth')"
+                />
+                <input
+                  class="otpinput"
+                  type="text"
+                  id="fourth"
+                  maxlength="1"
+                  onkeyup="clickEvent(this,'fifth')"
+                />
+                <input
+                  class="otpinput"
+                  type="text"
+                  id="fifth"
+                  maxlength="1"
+                  onkeyup="clickEvent(this,'sixth')"
+                />
+                <input class="otpinput" type="text" id="fifth" maxlength="1" />
+              </div>
+              <button class="otpbtn">CONFIRM</button>
+            </div>
           </div>
-          <button class="otpbtn">CONFIRM</button>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -418,10 +418,13 @@ export default {
         level2: {},
         level3: {},
       },
-      level: 2,
+      level: 1,
     };
   },
   methods: {
+    setLevel(level) {
+      this.level = level;
+    },
     toggleFacility() {
       this.toggleFacilityButton = !this.toggleFacilityButton;
     },
