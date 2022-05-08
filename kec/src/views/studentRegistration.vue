@@ -362,6 +362,46 @@
         <header class="header">Aunthecation form</header>
         <div class="registration-form">
           <!-- //code here -->
+          <h1 class="otph1">ENTER OTP</h1>
+          <div class="userInput">
+            <input
+              class="otpinput"
+              type="text"
+              id="ist"
+              maxlength="1"
+              onkeyup="clickEvent(this,'sec')"
+            />
+            <input
+              class="otpinput"
+              type="text"
+              id="sec"
+              maxlength="1"
+              onkeyup="clickEvent(this,'third')"
+            />
+            <input
+              class="otpinput"
+              type="text"
+              id="third"
+              maxlength="1"
+              onkeyup="clickEvent(this,'fourth')"
+            />
+            <input
+              class="otpinput"
+              type="text"
+              id="fourth"
+              maxlength="1"
+              onkeyup="clickEvent(this,'fifth')"
+            />
+            <input
+              class="otpinput"
+              type="text"
+              id="fifth"
+              maxlength="1"
+              onkeyup="clickEvent(this,'sixth')"
+            />
+            <input class="otpinput" type="text" id="fifth" maxlength="1" />
+          </div>
+          <button class="otpbtn">CONFIRM</button>
         </div>
       </div>
     </div>
@@ -433,7 +473,7 @@ export default {
   position: relative;
   margin-top: 16px;
   min-height: 490px;
-  /* background-color: #f2f2f2; */
+
   overflow: hidden;
 }
 .container .form .form-first {
@@ -561,5 +601,53 @@ export default {
   .form .fields .input-field {
     width: 100%;
   }
+}
+/* authentication form */
+.container {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  align-items: space-around;
+  justify-content: center;
+}
+
+.userInput {
+  display: flex;
+  justify-content: center;
+}
+
+.otpinput {
+  margin: 10px;
+  height: 35px;
+  width: 65px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-family: arimo;
+  font-size: 1.2rem;
+  background: #cdd0d1;
+}
+
+.otph1 {
+  text-align: center;
+  font-family: arimo;
+  color: rgb(3, 48, 3);
+}
+
+.otpbtn {
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  max-width: 200px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 5px;
+  margin: 25px 0;
+  cursor: pointer;
+
+  background-color: #e36f11;
+  transition: all 0.3s linear;
 }
 </style>
