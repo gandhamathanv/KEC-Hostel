@@ -5,13 +5,14 @@
         <header class="header">Registration Form</header>
         <form class="form" action="#">
           <div v-if="level == 1" class="form-first">
-            <div v-if="level == 1" class="details-personal">
+            <div class="details-personal">
               <span class="title">Students Details</span>
 
               <div class="fields">
                 <div class="input-field">
                   <label class="label">Full Name</label>
                   <input
+                    v-model="data.level1.name"
                     class="input"
                     type="text"
                     placeholder="Enter your name"
@@ -22,6 +23,7 @@
                 <div class="input-field">
                   <label class="label">Roll Number</label>
                   <input
+                    v-model="data.level1.rollnumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Roll Number"
@@ -31,6 +33,7 @@
                 <div class="input-field">
                   <label class="label">Date of Birth</label>
                   <input
+                    v-model="data.level1.DOB"
                     class="input"
                     type="date"
                     placeholder="Enter your Date of Birth"
@@ -45,35 +48,39 @@
                     placeholder="Enter your Department"
                     required
                   /> -->
-                  <select class="input">
+                  <select class="input" v-model="data.level1.department">
+                    >
                     <option value="Department" disabled selected hidden>
                       Select your Department
                     </option>
                     <option value="cse">CSE</option>
                     <option value="ece">ECE</option>
-                    <option value="Civil">Civil</option>
-                    <option value="Mech">Mech</option>
+                    <option value="Civil">CIVIL</option>
+                    <option value="Mech">MECH</option>
                     <option value="eee">EEE</option>
                     <option value="eie">EIE</option>
-                    <option value="ft">Food Tech</option>
-                    <option value="chemical">Chemical</option>
+                    <option value="ft">FT</option>
+                    <option value="chemical">CHE</option>
+                    <option value="auto">AUTO</option>
                   </select>
                 </div>
                 <div class="input-field">
                   <label class="label">Year of Studying</label>
-                  <select class="input">
+                  <select class="input" v-model="data.level1.year">
+                    >
                     <option value="studying" disabled selected hidden>
                       Select your Year of Study
                     </option>
-                    <option value="first">1</option>
-                    <option value="second">2</option>
-                    <option value="third">3</option>
-                    <option value="fourth">4</option>
+                    <option value="first">I</option>
+                    <option value="second">II</option>
+                    <option value="third">III</option>
+                    <option value="fourth">IV</option>
                   </select>
                 </div>
                 <div class="input-field">
                   <label class="label">Class</label>
-                  <select class="input">
+                  <select class="input" v-model="data.level1.class">
+                    >
                     <option value="studying" disabled selected hidden>
                       Select your class
                     </option>
@@ -86,7 +93,7 @@
 
                 <div class="input-field">
                   <label class="label">Gender</label>
-                  <select class="input">
+                  <select class="input" v-model="data.level1.gender">
                     <option value="gender" disabled selected hidden>
                       Select your Gender
                     </option>
@@ -98,6 +105,7 @@
                 <div class="input-field">
                   <label class="label">Blood Group</label>
                   <input
+                    v-model="data.level1.bloodGroup"
                     class="input"
                     type="text"
                     placeholder="Enter your Blood Group"
@@ -107,6 +115,7 @@
                 <div class="input-field">
                   <label class="label">Phone Number</label>
                   <input
+                    v-model="data.level1.phoneNumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Phone Number"
@@ -116,6 +125,7 @@
                 <div class="input-field">
                   <label class="label">Whatsapp Number</label>
                   <input
+                    v-model="data.level1.whatsappNumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Whatsapp Number"
@@ -125,6 +135,7 @@
                 <div class="input-field">
                   <label class="label">Telegram Number</label>
                   <input
+                    v-model="data.level1.telegramNumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Telegram Number"
@@ -134,6 +145,7 @@
                 <div class="input-field">
                   <label class="label">Personal Mail ID</label>
                   <input
+                    v-model="data.level1.personalMailID"
                     class="input"
                     type="text"
                     placeholder="Enter your Mail ID"
@@ -143,6 +155,7 @@
                 <div class="input-field">
                   <label class="label">College Mail ID</label>
                   <input
+                    v-model="data.level1.collegeMailID"
                     class="input"
                     type="text"
                     placeholder="Enter your Kongu Mail ID"
@@ -152,6 +165,7 @@
                 <div class="input-field">
                   <label class="label">Aadhar Number </label>
                   <input
+                    v-model="data.level1.aadharNumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Aadhar Number"
@@ -161,6 +175,7 @@
                 <div class="input-field">
                   <label class="label">Aadhar Number </label>
                   <input
+                    v-model="data.level1.aadharNumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Aadhar Number"
@@ -182,6 +197,7 @@
                 <div class="input-field">
                   <label class="label">Father Name</label>
                   <input
+                    v-model="data.level2.fatherName"
                     class="input"
                     type="text"
                     placeholder="Enter your Father Name"
@@ -191,6 +207,7 @@
                 <div class="input-field">
                   <label class="label">Father Mobile Number</label>
                   <input
+                    v-model="data.level2.fatherMobileNumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Father Mobile Number"
@@ -200,6 +217,7 @@
                 <div class="input-field">
                   <label class="label">Father Occupation</label>
                   <input
+                    v-model="data.level2.fatherOccupation"
                     class="input"
                     type="text"
                     placeholder="Enter your Father's Occupation"
@@ -210,6 +228,7 @@
                 <div class="input-field">
                   <label class="label">Mother Name</label>
                   <input
+                    v-model="data.level2.motherName"
                     class="input"
                     type="text"
                     placeholder="Enter your Mother's Occupation"
@@ -219,6 +238,7 @@
                 <div class="input-field">
                   <label class="label">Mother Mobile Number</label>
                   <input
+                    v-model="data.level2.motherMobileNumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Mother Mobile Number"
@@ -228,6 +248,7 @@
                 <div class="input-field">
                   <label class="label">Mother Occupation</label>
                   <input
+                    v-model="data.level2.MotherOccupation"
                     class="input"
                     type="text"
                     placeholder="Enter your Mother's Occupation"
@@ -237,6 +258,7 @@
                 <div class="input-field">
                   <label class="label">Address</label>
                   <input
+                    v-model="data.level2.address"
                     class="input"
                     type="text"
                     placeholder="Enter your Full Address"
@@ -246,6 +268,7 @@
                 <div class="input-field">
                   <label class="label">District</label>
                   <input
+                    v-model="data.level2.district"
                     class="input"
                     type="text"
                     placeholder="Enter your District"
@@ -255,6 +278,7 @@
                 <div class="input-field">
                   <label class="label">State</label>
                   <input
+                    v-model="data.level2.state"
                     class="input"
                     type="text"
                     placeholder="Enter your State"
@@ -264,6 +288,7 @@
                 <div class="input-field">
                   <label class="label">Pincode </label>
                   <input
+                    v-model="data.level2.Pincode"
                     class="input"
                     type="text"
                     placeholder="Enter your Pincode"
@@ -273,6 +298,7 @@
                 <div class="input-field">
                   <label class="label">Local Guardian Name</label>
                   <input
+                    v-model="data.level2.localGuardian"
                     class="input"
                     type="text"
                     placeholder="Enter Local Guardian Name"
@@ -282,6 +308,7 @@
                 <div class="input-field">
                   <label class="label">Local Guardian Phone Number</label>
                   <input
+                    v-model="data.level2.localGuardianPhoneNumber"
                     class="input"
                     type="text"
                     placeholder="Enter Local Guardian Phone Number "
@@ -309,6 +336,7 @@
                 <div class="input-field">
                   <label class="label">Account Number</label>
                   <input
+                    v-model="data.level3.accountNumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Account Number"
@@ -318,6 +346,7 @@
                 <div class="input-field">
                   <label class="label">IFSC Code</label>
                   <input
+                    v-model="data.level3.IFSCcode"
                     class="input"
                     type="text"
                     placeholder="Enter IFSC Code"
@@ -328,6 +357,7 @@
                 <div class="input-field">
                   <label class="label">Bank Name</label>
                   <input
+                    v-model="data.level3.bankName"
                     class="input"
                     type="text"
                     placeholder="Enter the Bank Name"
@@ -337,6 +367,7 @@
                 <div class="input-field">
                   <label class="label">Branch Name</label>
                   <input
+                    v-model="data.level3.branch"
                     class="input"
                     type="text"
                     placeholder="Enter the Branch Name"
@@ -413,49 +444,14 @@ export default {
   name: "MainPage",
   data() {
     return {
-      temp: {
-        //     name:"",
-        //     rollnumber:"",
-        // class:2,
-        // year:2,
-        // department:"",
-        // DOB:16/06/2003,
-        // bloodGroup:"",
-        hostelName: "",
-        roomNumber: "",
-        // gender:"",
-        // phoneNumber:9878323973,
-        // whatsappNumber:9789323973,
-        // telegramNumber:9876543210,
-        // collegeMailID:"",
-        // personalMailID:"",
-        // aadharNumber:424618765987,
-        // fatherName:"",
-        // fatherMobileNumber:8979897654,
-        // fatherOccupation:"",
-        // motherName:"",
-        // motherMobileNumber:8769876787,
-        // MotherOccupation:"",
-        // address:"",
-        //  district:"",
-        //  state:"",
-        //  localGuardian:"",
-        //   localGuardianPhoneNumber:9878978978,
-        //  accountNumber:9876543213456,
-        //   bankName:"",
-        //    branch:"",
-        //    IFSCcode:"",
-        dateOfEntry: 01 / 09 / 2020,
-        dateOfVacation: 01 / 05 / 2024,
-      },
       data: {
         level1: {
-          name: "",
+          name: "g",
           rollnumber: "",
           class: 2,
           year: 2,
           department: "",
-          DOB: 16 / 06 / 2003,
+          DOB: null,
           bloodGroup: "",
           gender: "",
           phoneNumber: 9878323973,
