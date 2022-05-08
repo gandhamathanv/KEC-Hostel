@@ -17,8 +17,8 @@ app.use(cookieParser());
 require("./routes")(app);
 
 sequelize
-    .sync({ alter: true })
-    // .sync()
+// .sync({ alter: true })
+    .sync()
     // .then(() => {
     //     const { models } = sequelize;
     //     models.staffInfo.create({

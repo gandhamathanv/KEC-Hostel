@@ -33,7 +33,8 @@ module.exports = {
     },
     async studentRegister(req, res) {
         try {
-            const user = await studentLogin.create(req.body);
+            const user = await studentInfo.create(req.body);
+
             res.status(200).send(user.toJSON());
         } catch (err) {
             console.log(err);

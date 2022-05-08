@@ -1,4 +1,5 @@
 /* eslint-disable */
+
 module.exports = (sequelize, DataTypes) => {
     return sequelize.define(
         "studentInfo", {

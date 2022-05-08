@@ -11,7 +11,7 @@ module.exports = (app) => {
         ),
         app.post(
             "/studentRegister",
-            AuthenticationControllerPolicy.studentRegister,
+            // AuthenticationControllerPolicy.studentRegister,
             AuthenticationController.studentRegister
         ),
         app.post("/getPermissions", HostelController.getPermission),

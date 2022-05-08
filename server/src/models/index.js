@@ -1,11 +1,11 @@
 /* eslint-disable */
 const fs = require("fs");
+const { options } = require("joi");
 const path = require("path");
 const Sequelize = require("sequelize");
 const config = require("../config/config");
-
+const mailer = require("../mailer.js");
 const db = {};
-
 const sequelize = new Sequelize(
     config.db.database,
     config.db.user,
@@ -158,6 +158,18 @@ db.booking.belongsTo(db.studentInfo, {
     targetKey: "rollnumber",
 });
 
+//hooks
+
+db.studentInfo.addHook("beforeCreate", (user, options) => {
+    const { rollnumber, collegeMailID } = user.dataValues;
+    db.studentLogin.create({ rollnumber, password: "Kongu2022", collegeMailID });
+});
+db.studentLogin.addHook("beforeCreate", async(user, options) => {
+    const { collegeMailID } = user.dataValues;
+    console.log("aunthecations");
+    // const result = await mailer(collegeMailID);
+    // console.log(result);
+});
 // console.log(db);
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
