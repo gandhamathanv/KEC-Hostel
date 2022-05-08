@@ -5800,7 +5800,7 @@ const staffInfoData = [{
         staffID: 113456,
         designation: "Associate Professor",
         hostelName: null,
-        roomNumber: "AMR310",
+        roomNumber: null,
         hostelResponsibility: "Deputy Warden",
         department: "IT",
         gender: "FEMALE",
@@ -5816,7 +5816,7 @@ const staffInfoData = [{
         staffID: 223456,
         designation: null,
         hostelName: "AMARAVATHI",
-        roomNumber: "AMR005",
+        roomNumber: null,
         hostelResponsibility: "STAFF",
         department: null,
         gender: "FEMALE",
@@ -5833,13 +5833,12 @@ sequelize
     .then(() => {
         const { models } = sequelize;
         console.log(models);
+        // models.hostelinfo.bulkCreate(hostelInfoData);
         // models.hostelpermission.bulkCreate(hostelPermissionData);
+        // models.permission.bulkCreate(permissionData);
+
         // models.hostelrooms.bulkCreate(hostelRoomsData);
-        // models.hostelinfo.bulkCreate(hostelInfoData);
-        // models.hostelfor.bulkCreate(hostelForData);
-        // models.permission.bulkCreate(hostelForData);
-        // models.hostelrooms.bulkCreate(hostelRoomsData);
-        // models.hostelinfo.bulkCreate(hostelInfoData);
+
         // models.staffInfo.bulkCreate(staffInfoData);
     })
     .then(() => {
