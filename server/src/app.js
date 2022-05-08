@@ -5800,7 +5800,7 @@ const staffInfoData = [{
         staffID: 113456,
         designation: "Associate Professor",
         hostelName: null,
-        roomNumber: null,
+        roomNumber: "AMR310",
         hostelResponsibility: "Deputy Warden",
         department: "IT",
         gender: "FEMALE",
@@ -5816,7 +5816,7 @@ const staffInfoData = [{
         staffID: 223456,
         designation: null,
         hostelName: "AMARAVATHI",
-        roomNumber: null,
+        roomNumber: "AMR005",
         hostelResponsibility: "STAFF",
         department: null,
         gender: "FEMALE",
@@ -5828,18 +5828,70 @@ const staffInfoData = [{
         aadharNumber: 12345678674,
     },
 ];
+const foodmenuData = [{
+        day: "MONDAY",
+        breakfast: "Idly,Sambar,Chuttney",
+        lunch: "Rice,Sambar,Rasam,Curd,Potato Fry",
+        eveningSnacks: "Sundal",
+        dinner: "Dosai,Chutney,Sambar,Curd Rice",
+    },
+    {
+        day: "TUESDAY",
+        breakfast: "Idly,Sambar,Chuttney",
+        lunch: "Rice,Sambar,Rasam,Curd,Potato Fry",
+        eveningSnacks: "Sundal",
+        dinner: "Dosai,Chutney,Sambar,Curd Rice",
+    },
+    {
+        day: "WEDNESDAY",
+        breakfast: "Idly,Sambar,Chuttney",
+        lunch: "Rice,Sambar,Rasam,Curd,Potato Fry",
+        eveningSnacks: "Sundal",
+        dinner: "Dosai,Chutney,Sambar,Curd Rice",
+    },
+    {
+        day: "THURSDAY",
+        breakfast: "Idly,Sambar,Chuttney",
+        lunch: "Rice,Sambar,Rasam,Curd,Potato Fry",
+        eveningSnacks: "Sundal",
+        dinner: "Dosai,Chutney,Sambar,Curd Rice",
+    },
+    {
+        day: "FRIDAY",
+        breakfast: "Idly,Sambar,Chuttney",
+        lunch: "Rice,Sambar,Rasam,Curd,Potato Fry",
+        eveningSnacks: "Sundal",
+        dinner: "Dosai,Chutney,Sambar,Curd Rice",
+    },
+    {
+        day: "SATURDAY",
+        breakfast: "Idly,Sambar,Chuttney",
+        lunch: "Rice,Sambar,Rasam,Curd,Potato Fry",
+        eveningSnacks: "Sundal",
+        dinner: "Dosai,Chutney,Sambar,Curd Rice",
+    },
+    {
+        day: "SUNDAY",
+        breakfast: "Idly,Sambar,Chuttney",
+        lunch: "Rice,Sambar,Rasam,Curd,Potato Fry",
+        eveningSnacks: "Sundal",
+        dinner: "Dosai,Chutney,Sambar,Curd Rice",
+    },
+];
 sequelize
     .sync()
     .then(() => {
         const { models } = sequelize;
         console.log(models);
-        // models.hostelinfo.bulkCreate(hostelInfoData);
         // models.hostelpermission.bulkCreate(hostelPermissionData);
-        // models.permission.bulkCreate(permissionData);
-
         // models.hostelrooms.bulkCreate(hostelRoomsData);
-
+        // models.hostelinfo.bulkCreate(hostelInfoData);
+        // models.hostelfor.bulkCreate(hostelForData);
+        // models.permission.bulkCreate(hostelForData);
+        // models.hostelrooms.bulkCreate(hostelRoomsData);
+        // models.hostelinfo.bulkCreate(hostelInfoData);
         // models.staffInfo.bulkCreate(staffInfoData);
+        // models.foodmenu.bulkCreate(foodmenuData);
     })
     .then(() => {
         app.listen(config.PORT || 3000);
