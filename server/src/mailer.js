@@ -37,10 +37,10 @@ module.exports = async function sentMail(data) {
         };
         const result = await transport.sendMail(mailOptions);
         result.authCode = AuthCode;
+        result.status = "success";
 
         return result;
     } catch (error) {
-        console.log("error", error);
         return error;
     }
 };

@@ -46,11 +46,14 @@ module.exports = {
     async studentDataRegister(req, res) {
         try {
             console.log(req.body);
-            // const user = await studentLogin.create(req.body);
-            res.status(200).send(user.toJSON());
+            const user = await studentInfo.create(req.body);
+            res.status(200).send({
+                status: "success",
+            });
         } catch (err) {
             console.log(err);
             res.status(400).send({
+                status: "failed",
                 error: "Error in Authenticationcroller.js",
             });
         }

@@ -13,7 +13,6 @@ app.use(morgan("combined"));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(cookieParser());
-
 require("./routes")(app);
 const hostelRoomsData = [{
         roomNumber: "AMR001",

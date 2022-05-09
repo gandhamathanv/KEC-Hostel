@@ -484,7 +484,12 @@ export default {
     async submit() {
       console.log(this.data);
       const res = await AuthenticationService.StudentRegister(this.data);
-      console.log(res);
+      if (res.data.status == "success") {
+        console.log("success");
+      }
+      if (res.data.status == "failed") {
+        console.log("failed");
+      }
     },
     setLevel(level) {
       this.level = level;

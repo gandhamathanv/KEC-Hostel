@@ -1,4 +1,5 @@
 /* eslint-disable */
+const { error } = require("console");
 const fs = require("fs");
 const { options } = require("joi");
 const path = require("path");
@@ -167,8 +168,12 @@ db.studentInfo.addHook("beforeCreate", (user, options) => {
 db.studentLogin.addHook("beforeCreate", async(user, options) => {
     const { collegeMailID } = user.dataValues;
     console.log("aunthecations");
-    // const result = await mailer(collegeMailID);
-    // console.log(result);
+    const result = await mailer(collegeMailID);
+    console.log("result ", result);
+    if (result.status != "success") {
+        console.log("error in mail");
+        return new Error("error");
+    }
 });
 // console.log(db);
 db.sequelize = sequelize;
