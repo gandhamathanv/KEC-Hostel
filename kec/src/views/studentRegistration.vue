@@ -12,6 +12,7 @@
                 <div class="input-field">
                   <label class="label">Full Name</label>
                   <input
+                    v-model="data.name"
                     class="input"
                     type="text"
                     placeholder="Enter your name"
@@ -22,6 +23,7 @@
                 <div class="input-field">
                   <label class="label">Roll Number</label>
                   <input
+                    v-model="data.rollnumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Roll Number"
@@ -31,6 +33,7 @@
                 <div class="input-field">
                   <label class="label">Date of Birth</label>
                   <input
+                    v-model="data.DOB"
                     class="input"
                     type="date"
                     placeholder="Enter your Date of Birth"
@@ -45,7 +48,8 @@
                     placeholder="Enter your Department"
                     required
                   /> -->
-                  <select class="input">
+                  <select class="input" v-model="data.department">
+                    >
                     <option value="Department" disabled selected hidden>
                       Select your Department
                     </option>
@@ -61,7 +65,8 @@
                 </div>
                 <div class="input-field">
                   <label class="label">Year of Studying</label>
-                  <select class="input">
+                  <select class="input" v-model="data.year">
+                    >
                     <option value="studying" disabled selected hidden>
                       Select your Year of Study
                     </option>
@@ -73,7 +78,8 @@
                 </div>
                 <div class="input-field">
                   <label class="label">Class</label>
-                  <select class="input">
+                  <select class="input" v-model="data.class">
+                    >
                     <option value="studying" disabled selected hidden>
                       Select your class
                     </option>
@@ -86,7 +92,7 @@
 
                 <div class="input-field">
                   <label class="label">Gender</label>
-                  <select class="input">
+                  <select class="input" v-model="data.gender">
                     <option value="gender" disabled selected hidden>
                       Select your Gender
                     </option>
@@ -98,6 +104,7 @@
                 <div class="input-field">
                   <label class="label">Blood Group</label>
                   <input
+                    v-model="data.bloodGroup"
                     class="input"
                     type="text"
                     placeholder="Enter your Blood Group"
@@ -107,6 +114,7 @@
                 <div class="input-field">
                   <label class="label">Phone Number</label>
                   <input
+                    v-model="data.phoneNumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Phone Number"
@@ -116,6 +124,7 @@
                 <div class="input-field">
                   <label class="label">Whatsapp Number</label>
                   <input
+                    v-model="data.whatsappNumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Whatsapp Number"
@@ -125,6 +134,7 @@
                 <div class="input-field">
                   <label class="label">Telegram Number</label>
                   <input
+                    v-model="data.telegramNumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Telegram Number"
@@ -134,6 +144,7 @@
                 <div class="input-field">
                   <label class="label">Personal Mail ID</label>
                   <input
+                    v-model="data.personalMailID"
                     class="input"
                     type="text"
                     placeholder="Enter your Mail ID"
@@ -143,6 +154,7 @@
                 <div class="input-field">
                   <label class="label">College Mail ID</label>
                   <input
+                    v-model="data.collegeMailID"
                     class="input"
                     type="text"
                     placeholder="Enter your Kongu Mail ID"
@@ -152,6 +164,7 @@
                 <div class="input-field">
                   <label class="label">Aadhar Number </label>
                   <input
+                    v-model="data.aadharNumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Aadhar Number"
@@ -161,6 +174,7 @@
                 <div class="input-field">
                   <label class="label">Aadhar Number </label>
                   <input
+                    v-model="data.aadharNumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Aadhar Number"
@@ -182,6 +196,7 @@
                 <div class="input-field">
                   <label class="label">Father Name</label>
                   <input
+                    v-model="data.fatherName"
                     class="input"
                     type="text"
                     placeholder="Enter your Father Name"
@@ -191,6 +206,7 @@
                 <div class="input-field">
                   <label class="label">Father Mobile Number</label>
                   <input
+                    v-model="data.fatherMobileNumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Father Mobile Number"
@@ -200,6 +216,7 @@
                 <div class="input-field">
                   <label class="label">Father Occupation</label>
                   <input
+                    v-model="data.fatherOccupation"
                     class="input"
                     type="text"
                     placeholder="Enter your Father's Occupation"
@@ -210,6 +227,7 @@
                 <div class="input-field">
                   <label class="label">Mother Name</label>
                   <input
+                    v-model="data.motherName"
                     class="input"
                     type="text"
                     placeholder="Enter your Mother's Occupation"
@@ -219,6 +237,7 @@
                 <div class="input-field">
                   <label class="label">Mother Mobile Number</label>
                   <input
+                    v-model="data.motherMobileNumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Mother Mobile Number"
@@ -228,6 +247,7 @@
                 <div class="input-field">
                   <label class="label">Mother Occupation</label>
                   <input
+                    v-model="data.MotherOccupation"
                     class="input"
                     type="text"
                     placeholder="Enter your Mother's Occupation"
@@ -237,6 +257,7 @@
                 <div class="input-field">
                   <label class="label">Address</label>
                   <input
+                    v-model="data.address"
                     class="input"
                     type="text"
                     placeholder="Enter your Full Address"
@@ -246,6 +267,7 @@
                 <div class="input-field">
                   <label class="label">District</label>
                   <input
+                    v-model="data.district"
                     class="input"
                     type="text"
                     placeholder="Enter your District"
@@ -255,6 +277,7 @@
                 <div class="input-field">
                   <label class="label">State</label>
                   <input
+                    v-model="data.state"
                     class="input"
                     type="text"
                     placeholder="Enter your State"
@@ -264,6 +287,7 @@
                 <div class="input-field">
                   <label class="label">Pincode </label>
                   <input
+                    v-model="data.Pincode"
                     class="input"
                     type="text"
                     placeholder="Enter your Pincode"
@@ -273,6 +297,7 @@
                 <div class="input-field">
                   <label class="label">Local Guardian Name</label>
                   <input
+                    v-model="data.localGuardian"
                     class="input"
                     type="text"
                     placeholder="Enter Local Guardian Name"
@@ -282,6 +307,7 @@
                 <div class="input-field">
                   <label class="label">Local Guardian Phone Number</label>
                   <input
+                    v-model="data.localGuardianPhoneNumber"
                     class="input"
                     type="text"
                     placeholder="Enter Local Guardian Phone Number "
@@ -309,6 +335,7 @@
                 <div class="input-field">
                   <label class="label">Account Number</label>
                   <input
+                    v-model="data.accountNumber"
                     class="input"
                     type="text"
                     placeholder="Enter your Account Number"
@@ -318,6 +345,7 @@
                 <div class="input-field">
                   <label class="label">IFSC Code</label>
                   <input
+                    v-model="data.IFSCcode"
                     class="input"
                     type="text"
                     placeholder="Enter IFSC Code"
@@ -328,6 +356,7 @@
                 <div class="input-field">
                   <label class="label">Bank Name</label>
                   <input
+                    v-model="data.bankName"
                     class="input"
                     type="text"
                     placeholder="Enter the Bank Name"
@@ -337,6 +366,7 @@
                 <div class="input-field">
                   <label class="label">Branch Name</label>
                   <input
+                    v-model="data.branch"
                     class="input"
                     type="text"
                     placeholder="Enter the Branch Name"
@@ -349,17 +379,17 @@
                   <span class="submit">back </span>
                   <i class="uil uil-navigator"></i>
                 </button>
-                <button @click="setLevel(0)" class="submit">
+                <button @click.prevent="submit()" class="submit">
                   <span class="submit">Submit </span>
                   <i class="uil uil-navigator"></i>
                 </button>
               </div>
             </div>
           </div>
-          <div v-else class="authentication-cointainer">
+          <!-- <div v-else class="authentication-cointainer">
             <header class="header">Aunthecation form</header>
             <div class="registration-form">
-              <!-- //code here -->
+              
               <h1 class="otph1">ENTER OTP</h1>
               <div class="userInput">
                 <input
@@ -401,7 +431,7 @@
               </div>
               <button class="otpbtn">CONFIRM</button>
             </div>
-          </div>
+          </div> -->
         </form>
       </div>
     </div>
@@ -409,19 +439,53 @@
 </template>
 
 <script>
+import AuthenticationService from "@/services/AuthenticationServices";
+
 export default {
   name: "MainPage",
   data() {
     return {
       data: {
-        level1: {},
-        level2: {},
-        level3: {},
+        name: "g",
+        rollnumber: "",
+        class: 2,
+        year: 2,
+        department: "",
+        DOB: null,
+        bloodGroup: "",
+        gender: "",
+        phoneNumber: 9878323973,
+        whatsappNumber: 9789323973,
+        telegramNumber: 9876543210,
+        collegeMailID: "",
+        personalMailID: "",
+        aadharNumber: 424618765987,
+        fatherName: "",
+        fatherMobileNumber: 8979897654,
+        fatherOccupation: "",
+        motherName: "",
+        motherMobileNumber: 8769876787,
+        MotherOccupation: "",
+        address: "",
+        district: "",
+        state: "",
+        localGuardian: "",
+        localGuardianPhoneNumber: 9878978978,
+        accountNumber: 9876543213456,
+        bankName: "",
+        branch: "",
+        IFSCcode: "",
       },
+
       level: 1,
     };
   },
   methods: {
+    async submit() {
+      console.log(this.data);
+      const res = await AuthenticationService.StudentRegister(this.data);
+      console.log(res);
+    },
     setLevel(level) {
       this.level = level;
     },
