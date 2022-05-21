@@ -1,7 +1,6 @@
 /* eslint-disable */
 const {
     hostelinfo,
-    hostelpermission,
     studentInfo,
     hostelrooms,
     hostelfor,
@@ -52,14 +51,9 @@ module.exports = {
                 where: {
                     year,
                     gender,
+                    booking: true,
                 },
-                include: [{
-                    model: hostelpermission,
-                    where: {
-                        booking: true,
-                    },
-                    attributes: [],
-                }, ],
+
                 attributes: ["hostelName"],
             });
             const data = hostel;
@@ -158,13 +152,14 @@ module.exports = {
         let data;
         switch (level) {
             case 0:
-                data = await hostelpermission.findAll();
+                data = await hostelfor.findAll();
                 break;
             case 1:
-                data = await hostelpermission.findOne({
+                data = await hostelfor.findOne({
                     where: {
                         hostelName,
                     },
+                    attributes: ["hostelName", "booking"],
                 });
                 break;
             case 2:
@@ -191,16 +186,8 @@ module.exports = {
 
             console.log(hostelName, change, value);
             if (change == "booking") {
-                const response = await hostelpermission.update({
+                const response = await hostelfor.update({
                     booking: value,
-                }, {
-                    where: {
-                        hostelName,
-                    },
-                });
-            } else if (change == "registration") {
-                const response = await hostelpermission.update({
-                    registration: value,
                 }, {
                     where: {
                         hostelName,
@@ -220,7 +207,7 @@ module.exports = {
         // console.log(req);
         try {
             const { change, value } = req.body;
-            await hostelpermission.findAll().then((data) => {
+            await hostelfor.findAll().then((data) => {
                 data.forEach((ele) => {
                     if (change == "booking") {
                         ele.update({

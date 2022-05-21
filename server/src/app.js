@@ -16,11 +16,10 @@ app.use(cors());
 app.use(cookieParser());
 require("./routes")(app);
 sequelize
-    .sync()
+    .sync({ alter: true })
     .then(() => {
         const { models } = sequelize;
         // models.hostelrooms.bulkCreate(hostelRoomsData);
-        // models.hostelpermission.bulkCreate(hostelPermissionData);
         // models.hostelinfo.bulkCreate(hostelInfoData);
         // models.hostelfor.bulkCreate(hostelForData);
         // models.permission.bulkCreate(hostelForData);
