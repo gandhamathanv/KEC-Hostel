@@ -53,15 +53,15 @@
                     <option value="Department" disabled selected hidden>
                       Select your Department
                     </option>
-                    <option value="cse">CSE</option>
-                    <option value="ece">ECE</option>
-                    <option value="Civil">CIVIL</option>
-                    <option value="Mech">MECH</option>
-                    <option value="eee">EEE</option>
-                    <option value="eie">EIE</option>
-                    <option value="ft">FT</option>
-                    <option value="chemical">CHE</option>
-                    <option value="auto">AUTO</option>
+                    <option value="CSE">CSE</option>
+                    <option value="ECE">ECE</option>
+                    <option value="CIVIL">CIVIL</option>
+                    <option value="MECH">MECH</option>
+                    <option value="EEE">EEE</option>
+                    <option value="EIE">EIE</option>
+                    <option value="FT">FT</option>
+                    <option value="CHEMICAL">CHE</option>
+                    <option value="AUTO">AUTO</option>
                   </select>
                 </div>
                 <div class="input-field">
@@ -71,10 +71,10 @@
                     <option value="studying" disabled selected hidden>
                       Select your Year of Study
                     </option>
-                    <option value="first">I</option>
-                    <option value="second">II</option>
-                    <option value="third">III</option>
-                    <option value="fourth">IV</option>
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
                   </select>
                 </div>
                 <div class="input-field">
@@ -84,10 +84,10 @@
                     <option value="studying" disabled selected hidden>
                       Select your class
                     </option>
-                    <option value="first">A</option>
-                    <option value="second">B</option>
-                    <option value="third">C</option>
-                    <option value="fourth">D</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
                   </select>
                 </div>
 
@@ -97,9 +97,9 @@
                     <option value="gender" disabled selected hidden>
                       Select your Gender
                     </option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="others">Others</option>
+                    <option value="MALE">Male</option>
+                    <option value="FEMALE">Female</option>
+                    <option value="OTHERS">Others</option>
                   </select>
                 </div>
                 <div class="input-field">
