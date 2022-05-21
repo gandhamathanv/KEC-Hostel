@@ -9,30 +9,81 @@ const cookieParser = require("cookie-parser");
 // const sequel = require('./models');
 const config = require("./config/config");
 const app = express();
-const { hostelRoomsData } = require("./data");
+const {
+  hostelRoomsData,
+  hostelPermissionData,
+  hostelInfoData,
+  hostelForData,
+  permissionData,
+  staffInfoData,
+  foodmenuData,
+} = require("./data");
 app.use(morgan("combined"));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(cookieParser());
 require("./routes")(app);
 sequelize
-    .sync()
-    .then(() => {
-        const { models } = sequelize;
-        // models.hostelrooms.bulkCreate(hostelRoomsData);
-        // models.hostelpermission.bulkCreate(hostelPermissionData);
-        // models.hostelinfo.bulkCreate(hostelInfoData);
-        // models.hostelfor.bulkCreate(hostelForData);
-        // models.permission.bulkCreate(hostelForData);
-        // models.hostelrooms.bulkCreate(hostelRoomsData);
-        // models.hostelinfo.bulkCreate(hostelInfoData);
-        // models.staffInfo.bulkCreate(staffInfoData);
-        // models.foodmenu.bulkCreate(foodmenuData);
-    })
-    .then(() => {
-        app.listen(config.PORT || 3000);
-        console.log(`server started on port ${config.PORT}`);
-    })
-    .catch((err) => {
-        console.log(err);
-    });
+  .sync()
+  .then(() => {
+    const { models } = sequelize;
+    // models.hostelinfo
+    //   .bulkCreate(hostelInfoData)
+    //   .then(() => {
+    //     console.log("hostelinfo daata inserted");
+    //   })
+    //   .catch((err) => {
+    //     console.log("error in hostelinfo");
+    //   });
+    // models.hostelpermission
+    //   .bulkCreate(hostelPermissionData)
+    //   .then(() => {
+    //     console.log("permission daata inserted");
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     console.log("error in hostelpermission");
+    //   });
+    // models.hostelfor
+    //   .bulkCreate(hostelForData)
+    //   .then(() => {
+    //     console.log("hostelfordata daata inserted");
+    //   })
+    //   .catch((err) => {
+    //     console.log("error in hostelfordata");
+    //   });
+    // models.permission
+    //   .bulkCreate(permissionData)
+    //   .then(() => {
+    //     console.log("permission daata inserted");
+    //   })
+    //   .catch((err) => {
+    //     console.log("error in permission");
+    //   });
+
+    // models.hostelrooms.bulkCreate(hostelRoomsData);
+    // models.staffInfo
+    //   .bulkCreate(staffInfoData)
+    //   .then(() => {
+    //     console.log("staffinfo daata inserted");
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     console.log("error in staffinfo");
+    //   });
+    // models.foodmenu
+    //   .bulkCreate(foodmenuData)
+    //   .then(() => {
+    //     console.log("foodmenu daata inserted");
+    //   })
+    //   .catch((err) => {
+    //     console.log("error in foodmenu");
+    //   });
+  })
+  .then(() => {
+    app.listen(config.PORT || 3000);
+    console.log(`server started on port ${config.PORT}`);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
