@@ -18,7 +18,6 @@ const file = [
     "hostelinfo.js",
     "hostelroom.js",
     "hostelfor.js",
-    "hostelPermission.js",
     "studentInfo.js",
     "staffInfo.js",
     "studentlogin.js",
@@ -133,22 +132,6 @@ db.staffInfo.hasOne(db.staffLogin, {
 db.staffLogin.belongsTo(db.staffInfo, {
     foreignKey: "collegeMailID",
     targetKey: "collegeMailID",
-});
-db.hostelpermission.hasOne(db.hostelfor, {
-    foreignKey: "hostelName",
-    sourceKey: "hostelName",
-});
-db.hostelfor.belongsTo(db.hostelpermission, {
-    foreignKey: "hostelName",
-    targetKey: "hostelName",
-});
-db.hostelinfo.hasOne(db.hostelpermission, {
-    foreignKey: "hostelName",
-    sourceKey: "hostelName",
-});
-db.hostelpermission.belongsTo(db.hostelinfo, {
-    foreignKey: "hostelName",
-    targetKey: "hostelName",
 });
 db.studentInfo.hasOne(db.booking, {
     foreignKey: "rollnumber",
