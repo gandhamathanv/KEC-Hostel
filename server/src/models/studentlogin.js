@@ -26,6 +26,9 @@ module.exports = (sequelize, DataTypes) => {
             password: {
                 type: DataTypes.STRING,
             },
+            collegeMailID: {
+                type: DataTypes.STRING,
+            },
         }, {
             timestamps: false,
 

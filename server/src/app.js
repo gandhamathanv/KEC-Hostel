@@ -9,36 +9,30 @@ const cookieParser = require("cookie-parser");
 // const sequel = require('./models');
 const config = require("./config/config");
 const app = express();
+const { hostelRoomsData } = require("./data");
 app.use(morgan("combined"));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(cookieParser());
-
 require("./routes")(app);
-
 sequelize
     .sync()
-    // .sync()
-    // .then(() => {
-    //     const { models } = sequelize;
-    //     models.staffInfo.create({
-    //         name: "Jeevitha",
-    //         staffID: "34567",
-    //         designation: "staff",
-    //         hostelResponsibility: "DEPUTY WARDEN",
-    //         department: "cse",
-    //         gender: "Female",
-    //         bloodGroup: "O+ve",
-    //         phoneNumber: 6369678903,
-    //         whatsappNumber: 9790234234,
-    //         collegeMailID: "jeevitacse@kongu.edu",
-    //         personalMailID: "jeevita@gmail.com",
-    //         aadharNumber: 123456785674,
-    //     });
-    // })
-    // .then(() => data())
-
-.then(() => {
-    app.listen(config.PORT || 3000);
-    console.log(`server started on port ${config.PORT}`);
-});
+    .then(() => {
+        const { models } = sequelize;
+        // models.hostelrooms.bulkCreate(hostelRoomsData);
+        // models.hostelpermission.bulkCreate(hostelPermissionData);
+        // models.hostelinfo.bulkCreate(hostelInfoData);
+        // models.hostelfor.bulkCreate(hostelForData);
+        // models.permission.bulkCreate(hostelForData);
+        // models.hostelrooms.bulkCreate(hostelRoomsData);
+        // models.hostelinfo.bulkCreate(hostelInfoData);
+        // models.staffInfo.bulkCreate(staffInfoData);
+        // models.foodmenu.bulkCreate(foodmenuData);
+    })
+    .then(() => {
+        app.listen(config.PORT || 3000);
+        console.log(`server started on port ${config.PORT}`);
+    })
+    .catch((err) => {
+        console.log(err);
+    });

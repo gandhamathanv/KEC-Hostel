@@ -4,6 +4,10 @@ const Joi = require("joi");
 module.exports = {
     studentRegister(req, res, next) {
         const schema = Joi.object({
+            collegeMailID: Joi.string().email({
+                minDomainSegments: 2,
+                // tlds: { allow: ["kongu.edu"] },
+            }),
             rollnumber: Joi.string().regex(new RegExp("^[a-zA-Z0-9]{8}$")),
             password: Joi.string().regex(new RegExp("^[a-zA-Z0-9]{8,32}$")),
         });

@@ -128,7 +128,7 @@ export default {
     },
   },
   async created() {
-    if (this.$store.state.level && this.$store.state.user.hostelName) {
+    if (this.$store.state.level != null) {
       const res = await hostelServices.getPermissions({
         level: this.$store.state.level,
         hostelName: this.$store.state.user.hostelName,

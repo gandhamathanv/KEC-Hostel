@@ -2,8 +2,8 @@
 import Api from "@/services/api";
 
 export default {
-    register(Credentials) {
-        return Api().post("register", Credentials);
+    StudentRegister(Credentials) {
+        return Api().post("StudentDataRegister", Credentials);
     },
 
     studentLogin(Credentials) {

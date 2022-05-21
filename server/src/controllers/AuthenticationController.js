@@ -33,11 +33,27 @@ module.exports = {
     },
     async studentRegister(req, res) {
         try {
-            const user = await studentLogin.create(req.body);
+            const user = await studentInfo.create(req.body);
+
             res.status(200).send(user.toJSON());
         } catch (err) {
             console.log(err);
             res.status(400).send({
+                error: "Error in Authenticationcroller.js",
+            });
+        }
+    },
+    async studentDataRegister(req, res) {
+        try {
+            console.log(req.body);
+            const user = await studentInfo.create(req.body);
+            res.status(200).send({
+                status: "success",
+            });
+        } catch (err) {
+            console.log(err);
+            res.status(400).send({
+                status: "failed",
                 error: "Error in Authenticationcroller.js",
             });
         }
@@ -108,11 +124,11 @@ module.exports = {
     },
     async staffLogin(req, res) {
         try {
-            console.log(req);
+            console.log(req.body);
             const { mailId, password } = req.body;
             const user = await staffLogin.findOne({
                 where: {
-                    mailId: mailId,
+                    collegeMailID: mailId,
                 },
             });
             if (!user) {
@@ -129,7 +145,7 @@ module.exports = {
             } else {
                 const userInfo = await staffInfo.findOne({
                     where: {
-                        collegeMailID: user.mailID,
+                        collegeMailID: user.collegeMailID,
                     },
                 });
                 const { level } = await permission.findOne({

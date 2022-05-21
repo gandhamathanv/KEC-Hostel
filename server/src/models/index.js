@@ -1,11 +1,12 @@
 /* eslint-disable */
+const { error } = require("console");
 const fs = require("fs");
+const { options } = require("joi");
 const path = require("path");
 const Sequelize = require("sequelize");
 const config = require("../config/config");
-
+const mailer = require("../mailer.js");
 const db = {};
-
 const sequelize = new Sequelize(
     config.db.database,
     config.db.user,
@@ -13,24 +14,38 @@ const sequelize = new Sequelize(
     config.db.options
 );
 
-// File = ["hostelinfo.js",];
-// File.forEach((file) => {
-//     const model = require(path.join(__dirname, file))(
-//         sequelize,
-//         Sequelize.DataTypes
-//     );
-//     db[model.name] = model;
-// });
-fs.readdirSync(__dirname)
-    .filter((file) => file !== "index.js")
-    .forEach((file) => {
-        console.log(path.join(__dirname, file));
-        const model = require(path.join(__dirname, file))(
-            sequelize,
-            Sequelize.DataTypes
-        );
-        db[model.name] = model;
-    });
+const file = [
+    "hostelinfo.js",
+    "hostelroom.js",
+    "hostelfor.js",
+    "hostelPermission.js",
+    "studentInfo.js",
+    "staffInfo.js",
+    "studentlogin.js",
+    "stafflogin.js",
+    "booking.js",
+    "foodmenu.js",
+    "notification.js",
+    "permission.js",
+];
+file.forEach((file) => {
+    const model = require(path.join(__dirname, file))(
+        sequelize,
+        Sequelize.DataTypes
+    );
+    db[model.name] = model;
+});
+console.log(db);
+// fs.readdirSync(__dirname)
+//     .filter((file) => file !== "index.js")
+//     .forEach((file) => {
+//         console.log(path.join(__dirname, file));
+//         const model = require(path.join(__dirname, file))(
+//             sequelize,
+//             Sequelize.DataTypes
+//         );
+//         db[model.name] = model;
+//     });
 
 // //foreign keys
 // // hostelName--->hostelinfo-hostelrooms
@@ -74,7 +89,7 @@ db.booking.belongsTo(db.hostelinfo, {
 });
 // // roomNumber--->hostelinfo-hostelrooms
 
-db.hostelrooms.hasMany(db.booking, {
+db.hostelrooms.hasOne(db.booking, {
     foreignKey: "roomNumber",
     sourceKey: "roomNumber",
 });
@@ -119,11 +134,19 @@ db.staffLogin.belongsTo(db.staffInfo, {
     foreignKey: "collegeMailID",
     targetKey: "collegeMailID",
 });
-db.hostelinfo.hasOne(db.hostelfor, {
+db.hostelpermission.hasOne(db.hostelfor, {
     foreignKey: "hostelName",
     sourceKey: "hostelName",
 });
-db.hostelfor.belongsTo(db.hostelinfo, {
+db.hostelfor.belongsTo(db.hostelpermission, {
+    foreignKey: "hostelName",
+    targetKey: "hostelName",
+});
+db.hostelinfo.hasOne(db.hostelpermission, {
+    foreignKey: "hostelName",
+    sourceKey: "hostelName",
+});
+db.hostelpermission.belongsTo(db.hostelinfo, {
     foreignKey: "hostelName",
     targetKey: "hostelName",
 });
@@ -136,6 +159,22 @@ db.booking.belongsTo(db.studentInfo, {
     targetKey: "rollnumber",
 });
 
+//hooks
+
+db.studentInfo.addHook("beforeCreate", (user, options) => {
+    const { rollnumber, collegeMailID } = user.dataValues;
+    db.studentLogin.create({ rollnumber, password: "Kongu2022", collegeMailID });
+});
+db.studentLogin.addHook("beforeCreate", async(user, options) => {
+    const { collegeMailID } = user.dataValues;
+    console.log("aunthecations");
+    const result = await mailer(collegeMailID);
+    console.log("result ", result);
+    if (result.status != "success") {
+        console.log("error in mail");
+        return new Error("error");
+    }
+});
 // console.log(db);
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

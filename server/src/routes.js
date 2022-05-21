@@ -11,8 +11,12 @@ module.exports = (app) => {
         ),
         app.post(
             "/studentRegister",
-            AuthenticationControllerPolicy.studentRegister,
+            // AuthenticationControllerPolicy.studentRegister,
             AuthenticationController.studentRegister
+        ),
+        app.post(
+            "/studentDataRegister",
+            AuthenticationController.studentDataRegister
         ),
         app.post("/getPermissions", HostelController.getPermission),
         app.patch("/setPermissions", HostelController.setPermission),

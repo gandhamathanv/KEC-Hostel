@@ -4,7 +4,7 @@ function CreateLogin(user, options) {
     console.log("createlogin");
     console.log(user.dataValues.collegeMailID);
 }
-module.exports = (sequelize, DataTypes) => {
+const user = (sequelize, DataTypes) => {
     return sequelize.define(
         "staffInfo", {
             name: DataTypes.STRING,
@@ -32,8 +32,10 @@ module.exports = (sequelize, DataTypes) => {
         }, {
             timestamps: false,
             hooks: {
+                beforeSave: CreateLogin,
                 beforeCreate: CreateLogin,
             },
         }
     );
 };
+module.exports = user;
