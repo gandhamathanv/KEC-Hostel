@@ -134,11 +134,11 @@ db.staffLogin.belongsTo(db.staffInfo, {
     foreignKey: "collegeMailID",
     targetKey: "collegeMailID",
 });
-db.hostelinfo.hasOne(db.hostelfor, {
+db.hostelpermission.hasOne(db.hostelfor, {
     foreignKey: "hostelName",
     sourceKey: "hostelName",
 });
-db.hostelfor.belongsTo(db.hostelinfo, {
+db.hostelfor.belongsTo(db.hostelpermission, {
     foreignKey: "hostelName",
     targetKey: "hostelName",
 });
