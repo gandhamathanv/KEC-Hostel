@@ -5,7 +5,7 @@
         <header class="header">Registration Form</header>
         <form class="form" action="#">
           <div v-if="level == 1" class="form-first">
-            <div v-if="level == 1" class="details-personal">
+            <div class="details-personal">
               <span class="title">Students Details</span>
 
               <div class="fields">
@@ -55,12 +55,13 @@
                     </option>
                     <option value="cse">CSE</option>
                     <option value="ece">ECE</option>
-                    <option value="Civil">Civil</option>
-                    <option value="Mech">Mech</option>
+                    <option value="Civil">CIVIL</option>
+                    <option value="Mech">MECH</option>
                     <option value="eee">EEE</option>
                     <option value="eie">EIE</option>
-                    <option value="ft">Food Tech</option>
-                    <option value="chemical">Chemical</option>
+                    <option value="ft">FT</option>
+                    <option value="chemical">CHE</option>
+                    <option value="auto">AUTO</option>
                   </select>
                 </div>
                 <div class="input-field">
@@ -70,10 +71,10 @@
                     <option value="studying" disabled selected hidden>
                       Select your Year of Study
                     </option>
-                    <option value="first">1</option>
-                    <option value="second">2</option>
-                    <option value="third">3</option>
-                    <option value="fourth">4</option>
+                    <option value="first">I</option>
+                    <option value="second">II</option>
+                    <option value="third">III</option>
+                    <option value="fourth">IV</option>
                   </select>
                 </div>
                 <div class="input-field">
