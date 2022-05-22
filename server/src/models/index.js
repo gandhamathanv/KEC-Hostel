@@ -148,6 +148,10 @@ db.studentInfo.addHook("beforeCreate", (user, options) => {
     const { rollnumber, collegeMailID } = user.dataValues;
     db.studentLogin.create({ rollnumber, password: "Kongu2022", collegeMailID });
 });
+db.staffInfo.addHook("beforeCreate", (user, options) => {
+    const { collegeMailID } = user.dataValues;
+    db.staffLogin.create({ password: "Kongu2022", collegeMailID });
+});
 db.studentLogin.addHook("beforeCreate", async(user, options) => {
     const { collegeMailID } = user.dataValues;
     console.log("aunthecations");
