@@ -1,13 +1,13 @@
 <template>
   <div>
-    viewList
+    InfoDetails
     <!-- Analytics -->
   </div>
 </template>
 
 <script>
 export default {
-  name: "viewLIst",
+  name: "InfoDetails",
   data() {
     return {};
   },

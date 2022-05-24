@@ -104,13 +104,18 @@
                 </div>
                 <div class="input-field">
                   <label class="label">Blood Group</label>
-                  <input
-                    v-model="data.bloodGroup"
-                    class="input"
-                    type="text"
-                    placeholder="Enter your Blood Group"
-                    required
-                  />
+                  <select class="input">
+                    <option value="gender" disabled selected hidden>
+                      Select your Blood Group
+                    </option>
+                    <option value="A Positive">A Positive</option>
+                    <option value="A Negative">A Negative</option>
+                    <option value="AB Negative">AB Negative</option>
+                    <option value="AB Positive">AB Positive</option>
+                    <option value="B Negative">B Negative</option>
+                    <option value="B Positive">B Positive</option>
+                    <option value="O Positive">O Positive</option>
+                  </select>
                 </div>
                 <div class="input-field">
                   <label class="label">Phone Number</label>

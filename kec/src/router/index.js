@@ -11,7 +11,8 @@ import permissions from "../components/permissions.vue";
 import studentRegistration from "../views/studentRegistration.vue";
 import staffRegistration from "../views/staffRegistration.vue";
 import staffInfo from "../components/staffInfo.vue";
-import listView from "../components/viewList.vue";
+import infoDetails from "../components/infoDetails.vue";
+import listView from "../views/dataList.vue";
 import updateInfo from "../components/updateInfo.vue";
 
 const routes = [
@@ -79,6 +80,11 @@ const routes = [
     path: "/updateInfo",
     name: "updateInfo",
     component: updateInfo,
+  },
+  {
+    path: "/infoDetails",
+    name: "infoDetails",
+    component: infoDetails,
   },
 ];
 
