@@ -2,14 +2,23 @@
 module.exports = {
     PORT: 8881,
     db: {
-        database: process.env.DB_NAME || "kecho",
-        user: process.env.DB_USER || "root",
-        password: process.env.DB_PASS || "",
+        database: process.env.DB_NAME || "sql6494136",
+        user: process.env.DB_USER || "sql6494136",
+        password: process.env.DB_PASS || "AMthJlLDmk",
         options: {
             dialect: process.env.DIALECT || "mysql", //type os the database
-            host: process.env.HOST || "",
+            host: process.env.HOST || "sql6.freesqldatabase.com",
         },
     },
+    // db: {
+    //     database: process.env.DB_NAME || "kecho",
+    //     user: process.env.DB_USER || "root",
+    //     password: process.env.DB_PASS || "",
+    //     options: {
+    //         dialect: process.env.DIALECT || "mysql", //type os the database
+    //         host: process.env.HOST || "",
+    //     },
+    // },
     mailer: {
         CLIENT_ID: process.env.CLIENT_ID ||
             "846597000677-v7nc2bp2kbr79lud67fhj3r7nm9llclp.apps.googleusercontent.com",

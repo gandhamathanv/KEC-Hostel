@@ -180,6 +180,7 @@ module.exports = {
     },
     async changePassword(req, res) {
         try {
+            //TODO change password bug
             const { viewer, id, currentPassword, newPassword } = req.body;
             if (viewer == "student") {
                 const user = await studentLogin.findOne({ where: { rollnumber: id } });
