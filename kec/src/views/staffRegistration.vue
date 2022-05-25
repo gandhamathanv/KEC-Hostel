@@ -6,7 +6,7 @@
         <form class="form" action="#">
           <div v-if="level == 1" class="form-first">
             <div class="details-personal">
-              <span class="title">Students Details</span>
+              <span class="title">Staff Details</span>
 
               <div class="fields">
                 <div class="input-field">
@@ -16,17 +16,6 @@
                     class="input"
                     type="text"
                     placeholder="Enter your name"
-                    required
-                  />
-                </div>
-
-                <div class="input-field">
-                  <label class="label">Roll Number</label>
-                  <input
-                    v-model="data.rollnumber"
-                    class="input"
-                    type="text"
-                    placeholder="Enter your Roll Number"
                     required
                   />
                 </div>
@@ -41,15 +30,32 @@
                   />
                 </div>
                 <div class="input-field">
-                  <label class="label">Department</label>
-                  <!-- <input
+                  <label class="label">Gender</label>
+                  <select class="input">
+                    <option value="gender" disabled selected hidden>
+                      Select your Gender
+                    </option>
+                    <option value="MALE">Male</option>
+                    <option value="FEMALE">Female</option>
+                    <option value="OTHERS">Others</option>
+                  </select>
+                </div>
+
+                <div class="input-field">
+                  <label class="label">Designation</label>
+                  <input
+                    v-model="data.rollnumber"
                     class="input"
                     type="text"
-                    placeholder="Enter your Department"
+                    placeholder="Enter your Designation"
                     required
-                  /> -->
-                  <select class="input" v-model="data.department">
-                    >
+                  />
+                </div>
+
+                <div class="input-field">
+                  <label class="label">Department</label>
+
+                  <select class="input">
                     <option value="Department" disabled selected hidden>
                       Select your Department
                     </option>
@@ -62,46 +68,28 @@
                     <option value="FT">FT</option>
                     <option value="CHEMICAL">CHE</option>
                     <option value="AUTO">AUTO</option>
+                    <option value="NIL">NIL</option>
                   </select>
                 </div>
                 <div class="input-field">
-                  <label class="label">Year of Studying</label>
-                  <select class="input" v-model="data.year">
+                  <label class="label">Hostel Responsibility</label>
+                  <select class="input">
                     >
-                    <option value="studying" disabled selected hidden>
-                      Select your Year of Study
-                    </option>
-                    <option value="I">I</option>
-                    <option value="II">II</option>
-                    <option value="III">III</option>
-                    <option value="IV">IV</option>
-                  </select>
-                </div>
-                <div class="input-field">
-                  <label class="label">Class</label>
-                  <select class="input" v-model="data.class">
+                    <option
+                      value="Hostel Responsibility"
+                      disabled
+                      selected
+                      hidden
                     >
-                    <option value="studying" disabled selected hidden>
-                      Select your class
+                      Select your Responsibility
                     </option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
+                    <option value="CSE">Associate Warden</option>
+                    <option value="ECE">Deputy Warden</option>
+                    <option value="CIVIL">Warden</option>
+                    <option value="MECH">Staff</option>
                   </select>
                 </div>
 
-                <div class="input-field">
-                  <label class="label">Gender</label>
-                  <select class="input" v-model="data.gender">
-                    <option value="gender" disabled selected hidden>
-                      Select your Gender
-                    </option>
-                    <option value="MALE">Male</option>
-                    <option value="FEMALE">Female</option>
-                    <option value="OTHERS">Others</option>
-                  </select>
-                </div>
                 <div class="input-field">
                   <label class="label">Blood Group</label>
                   <select class="input">
@@ -137,16 +125,7 @@
                     required
                   />
                 </div>
-                <div class="input-field">
-                  <label class="label">Telegram Number</label>
-                  <input
-                    v-model="data.telegramNumber"
-                    class="input"
-                    type="text"
-                    placeholder="Enter your Telegram Number"
-                    required
-                  />
-                </div>
+
                 <div class="input-field">
                   <label class="label">Personal Mail ID</label>
                   <input
@@ -174,89 +153,6 @@
                     class="input"
                     type="text"
                     placeholder="Enter your Aadhar Number"
-                    required
-                  />
-                </div>
-                <div class="input-field">
-                  <label class="label">Aadhar Number </label>
-                  <input
-                    v-model="data.aadharNumber"
-                    class="input"
-                    type="text"
-                    placeholder="Enter your Aadhar Number"
-                    required
-                  />
-                </div>
-                <button @click="setLevel(2)" class="nextBtn">
-                  <span class="btn-text">Next </span>
-                  <i class="uil uil-navigator"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div v-else-if="level == 2" class="form-second">
-            <div class="details-address">
-              <span class="title">Family Details</span>
-
-              <div class="fields">
-                <div class="input-field">
-                  <label class="label">Father Name</label>
-                  <input
-                    v-model="data.fatherName"
-                    class="input"
-                    type="text"
-                    placeholder="Enter your Father Name"
-                    required
-                  />
-                </div>
-                <div class="input-field">
-                  <label class="label">Father Mobile Number</label>
-                  <input
-                    v-model="data.fatherMobileNumber"
-                    class="input"
-                    type="text"
-                    placeholder="Enter your Father Mobile Number"
-                    required
-                  />
-                </div>
-                <div class="input-field">
-                  <label class="label">Father Occupation</label>
-                  <input
-                    v-model="data.fatherOccupation"
-                    class="input"
-                    type="text"
-                    placeholder="Enter your Father's Occupation"
-                    required
-                  />
-                </div>
-
-                <div class="input-field">
-                  <label class="label">Mother Name</label>
-                  <input
-                    v-model="data.motherName"
-                    class="input"
-                    type="text"
-                    placeholder="Enter your Mother's Occupation"
-                    required
-                  />
-                </div>
-                <div class="input-field">
-                  <label class="label">Mother Mobile Number</label>
-                  <input
-                    v-model="data.motherMobileNumber"
-                    class="input"
-                    type="text"
-                    placeholder="Enter your Mother Mobile Number"
-                    required
-                  />
-                </div>
-                <div class="input-field">
-                  <label class="label">Mother Occupation</label>
-                  <input
-                    v-model="data.MotherOccupation"
-                    class="input"
-                    type="text"
-                    placeholder="Enter your Mother's Occupation"
                     required
                   />
                 </div>
@@ -290,101 +186,8 @@
                     required
                   />
                 </div>
-                <div class="input-field">
-                  <label class="label">Pincode </label>
-                  <input
-                    v-model="data.Pincode"
-                    class="input"
-                    type="text"
-                    placeholder="Enter your Pincode"
-                    required
-                  />
-                </div>
-                <div class="input-field">
-                  <label class="label">Local Guardian Name</label>
-                  <input
-                    v-model="data.localGuardian"
-                    class="input"
-                    type="text"
-                    placeholder="Enter Local Guardian Name"
-                    required
-                  />
-                </div>
-                <div class="input-field">
-                  <label class="label">Local Guardian Phone Number</label>
-                  <input
-                    v-model="data.localGuardianPhoneNumber"
-                    class="input"
-                    type="text"
-                    placeholder="Enter Local Guardian Phone Number "
-                    required
-                  />
-                </div>
               </div>
               <div class="buttons">
-                <button @click="setLevel(1)" class="submit">
-                  <span class="submit">back </span>
-                  <i class="uil uil-navigator"></i>
-                </button>
-                <button @click="setLevel(3)" class="submit">
-                  <span class="submit">Next </span>
-                  <i class="uil uil-navigator"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div v-else-if="level == 3" class="form-second">
-            <div class="details-address">
-              <span class="title">Bank Details</span>
-
-              <div class="fields">
-                <div class="input-field">
-                  <label class="label">Account Number</label>
-                  <input
-                    v-model="data.accountNumber"
-                    class="input"
-                    type="text"
-                    placeholder="Enter your Account Number"
-                    required
-                  />
-                </div>
-                <div class="input-field">
-                  <label class="label">IFSC Code</label>
-                  <input
-                    v-model="data.IFSCcode"
-                    class="input"
-                    type="text"
-                    placeholder="Enter IFSC Code"
-                    required
-                  />
-                </div>
-
-                <div class="input-field">
-                  <label class="label">Bank Name</label>
-                  <input
-                    v-model="data.bankName"
-                    class="input"
-                    type="text"
-                    placeholder="Enter the Bank Name"
-                    required
-                  />
-                </div>
-                <div class="input-field">
-                  <label class="label">Branch Name</label>
-                  <input
-                    v-model="data.branch"
-                    class="input"
-                    type="text"
-                    placeholder="Enter the Branch Name"
-                    required
-                  />
-                </div>
-              </div>
-              <div class="buttons">
-                <button @click="setLevel(3)" class="submit">
-                  <span class="submit">back </span>
-                  <i class="uil uil-navigator"></i>
-                </button>
                 <button @click.prevent="submit()" class="submit">
                   <span class="submit">Submit </span>
                   <i class="uil uil-navigator"></i>
@@ -448,7 +251,7 @@
 import AuthenticationService from "@/services/AuthenticationServices";
 
 export default {
-  name: "MainPage",
+  name: "staffRegistration",
   data() {
     return {
       data: {
