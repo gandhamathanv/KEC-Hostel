@@ -31,7 +31,7 @@
                 </div>
                 <div class="input-field">
                   <label class="label">Gender</label>
-                  <select class="input">
+                  <select class="input" v-model="data.gender">
                     <option value="gender" disabled selected hidden>
                       Select your Gender
                     </option>
@@ -55,7 +55,7 @@
                 <div class="input-field">
                   <label class="label">Department</label>
 
-                  <select class="input">
+                  <select class="input" v-model="data.department">
                     <option value="Department" disabled selected hidden>
                       Select your Department
                     </option>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="input-field">
                   <label class="label">Hostel Responsibility</label>
-                  <select class="input">
+                  <select class="input" v-model="data.hostelResponsibility">
                     >
                     <option
                       value="Hostel Responsibility"
@@ -92,7 +92,7 @@
 
                 <div class="input-field">
                   <label class="label">Blood Group</label>
-                  <select class="input">
+                  <select class="input" v-model="data.bloodGroup">
                     <option value="gender" disabled selected hidden>
                       Select your Blood Group
                     </option>
@@ -265,6 +265,7 @@ export default {
         designation: "",
         collegeMailID: "",
         personalMailID: "",
+        hostelResponsibility: "",
         aadharNumber: 424618765987,
         address: "",
         district: "",
