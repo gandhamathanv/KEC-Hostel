@@ -92,7 +92,7 @@
 
                 <div class="input-field">
                   <label class="label">Blood Group</label>
-                  <select class="input">
+                  <select class="input" v-model="data.bloodGroup">
                     <option value="gender" disabled selected hidden>
                       Select your Blood Group
                     </option>
