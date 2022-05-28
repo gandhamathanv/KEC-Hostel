@@ -5,6 +5,9 @@ export default {
     StudentRegister(Credentials) {
         return Api().post("StudentDataRegister", Credentials);
     },
+    StaffRegister(Credentials) {
+        return Api().post("StaffDataRegister", Credentials);
+    },
 
     studentLogin(Credentials) {
         return Api().post("studentLogin", Credentials);

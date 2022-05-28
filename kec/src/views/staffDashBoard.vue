@@ -79,10 +79,10 @@
             </section>
             <section class="message-box">
               <div class="name-date">
-                <p class="name">{{ noti.by }}</p>
-                <p class="date">{{ noti.date }}</p>
+                <p class="name">{{ "kannan" }}</p>
+                <p class="date">{{ "todeaaty" }}</p>
               </div>
-              <p class="message">{{ noti.message }}</p>
+              <p class="message">{{ "cone" }}</p>
             </section>
           </div>
         </div>

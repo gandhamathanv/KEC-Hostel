@@ -31,18 +31,7 @@ module.exports = {
             });
         }
     },
-    async studentRegister(req, res) {
-        try {
-            const user = await studentInfo.create(req.body);
 
-            res.status(200).send(user.toJSON());
-        } catch (err) {
-            console.log(err);
-            res.status(400).send({
-                error: "Error in Authenticationcroller.js",
-            });
-        }
-    },
     async studentDataRegister(req, res) {
         try {
             console.log(req.body);
@@ -58,10 +47,10 @@ module.exports = {
             });
         }
     },
-    async staffRegister(req, res) {
+    async staffDataRegister(req, res) {
         console.log(req.body);
         try {
-            const user = await staffLogin.create(req.body);
+            const user = await staffInfo.create(req.body);
             res.status(200).send(user.toJSON());
         } catch (err) {
             console.log(err);

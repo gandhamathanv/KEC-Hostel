@@ -10,18 +10,13 @@ module.exports = (app) => {
             AuthenticationController.sentToken
         ),
         app.post(
-            "/studentRegister",
-            // AuthenticationControllerPolicy.studentRegister,
-            AuthenticationController.studentRegister
-        ),
-        app.post(
             "/studentDataRegister",
             AuthenticationController.studentDataRegister
         ),
+        app.post("/staffDataRegister", AuthenticationController.staffDataRegister),
         app.post("/getPermissions", HostelController.getPermission),
         app.patch("/setPermissions", HostelController.setPermission),
         app.patch("/closePermissions", HostelController.closePermission),
-        app.post("/staffRegister", AuthenticationController.staffRegister),
         app.post("/studentLogin", AuthenticationController.studentLogin),
         app.post("/staffLogin", AuthenticationController.staffLogin),
         app.post("/changePassword", AuthenticationController.changePassword),

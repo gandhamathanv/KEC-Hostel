@@ -278,7 +278,7 @@ export default {
   methods: {
     async submit() {
       console.log(this.data);
-      const res = await AuthenticationService.StudentRegister(this.data);
+      const res = await AuthenticationService.StaffRegister(this.data);
       if (res.data.status == "success") {
         console.log("success");
       }
