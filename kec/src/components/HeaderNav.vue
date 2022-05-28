@@ -2,10 +2,10 @@
   <div>
     <header>
       <a href="#000" class="logo">KONGU HOSTEL</a>
-      <div class="toggle" onclick="togglemenu();"></div>
+      <div class="toggle" @click="togglemenu"></div>
       <ul class="menu">
-        <li><a href="#000" onclick="togglemenu();">Home</a></li>
-        <li><a href="#001" onclick="togglemenu();">Login</a></li>
+        <li><a href="#000" @click="togglemenu">Home</a></li>
+        <li><a href="#001" @click="togglemenu">Login</a></li>
       </ul>
     </header>
     <!-- <nav class="nav">
@@ -23,18 +23,27 @@
   </div>
 </template>
 
-<script type="text/javascript">
-window.addEventListener("scroll", function () {
-  var header = document.querySelector("header");
-  header.classList.toggle("sticky", window.scrollY > 0);
-});
-
-function togglemenu() {
-  var menutoggle = document.querySelector(".toggle");
-  var menu = document.querySelector(".menu");
-  menutoggle.classList.toggle("active");
-  menu.classList.toggle("active");
-}
+<script>
+export default {
+  name: "HeaderNav",
+  data() {
+    return {};
+  },
+  methods: {
+    togglemenu() {
+      var menutoggle = document.querySelector(".toggle");
+      var menu = document.querySelector(".menu");
+      menutoggle.classList.toggle("active");
+      menu.classList.toggle("active");
+    },
+  },
+  created: function () {
+    window.addEventListener("scroll", function () {
+      var header = document.querySelector("header");
+      header.classList.toggle("sticky", window.scrollY > 0);
+    });
+  },
+};
 </script>
 
 <style scoped>
@@ -194,14 +203,15 @@ header.sticky ul li a:hover {
   .toggle {
     width: 40px;
     height: 40px;
-    background: url(menu.jpg);
+    /* TODO  */
+    /* background: url(menu.jpg); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: 30px;
     cursor: pointer;
   }
   .toggle.active {
-    background: url(close.png);
+    /* background: url(close.png); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: 25px;
