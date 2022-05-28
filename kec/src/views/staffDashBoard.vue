@@ -23,13 +23,11 @@
             <h3 class="h3">No of staff</h3>
             <p>Present : {{ NumberOfStudents }}</p>
           </div>
-          <!-- <div class="card">
-            <h3 class="h3">No of Queries</h3>
-            <p>Solved: {{ NumberOfQueries }}</p>
-          </div> -->
           <div class="card">
             <h1 class="card-title">Booking</h1>
-            <span class="card-button">view booking</span>
+            <span @click="navigateTo({ name: 'listView' })" class="card-button"
+              >view booking</span
+            >
 
             <h3 class="h3">No of Booking</h3>
 
