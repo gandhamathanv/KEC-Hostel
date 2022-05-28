@@ -4,40 +4,6 @@
       <div class="clearfix"></div>
       <br />
 
-      <div class="col-div-4-1">
-        <div class="box">
-          <p class="head-1">todays attendance</p>
-          <p class="number">Present</p>
-          <p class="percent">
-            99%
-            <span>for sem III</span>
-          </p>
-          <i class="fa fa-line-chart box-icon"></i>
-        </div>
-      </div>
-      <div class="col-div-4-1">
-        <div class="box">
-          <!-- <p class="head-1">purchases</p>
-                <p class="number">2343</p>
-                <p class="percent" style="color: red !important">
-                    <i class="fa fa-long-arrow-down" aria-hidden="true"></i> 5.64%
-                    <span>Since Last Months</span>
-                </p>
-                <i class="fa fa-circle-o-notch box-icon"></i> -->
-        </div>
-      </div>
-      <div class="col-div-4-1">
-        <div class="box">
-          <!-- <p class="head-1">orders</p>
-                <p class="number">35343</p>
-                <p class="percent">
-                    <i class="fa fa-long-arrow-up" aria-hidden="true"></i> 5.674%
-                    <span>Since Last Months</span>
-                </p>
-                <i class="fa fa-shopping-bag box-icon"></i> -->
-        </div>
-      </div>
-
       <div class="clearfix"></div>
       <br />
 
@@ -80,90 +46,27 @@
       </div>
       <div class="col-div-4-1">
         <div class="box-1">
-          <div class="content-box-1">
-            <p class="head-1">
-              querry <span>add querry</span><span>View All</span>
-            </p>
-            <br />
-
-            <p class="act-p">
-              <i class="fa fa-circle" style="color: green !important"></i> Lorem
-              Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </p>
-            <p class="act-p">
-              <i class="fa fa-circle"></i> Lorem Ipsum is simply dummy text of
-              the printing and typesetting industry.
-            </p>
+          <div class="profile-box">
+            <h3 class="student-name">Students Details</h3>
+            <!-- <p class="dept">CSE</p> -->
+            <p class="hostel">No of Students:</p>
+            <button type="button">View Students</button>
           </div>
         </div>
       </div>
       <div class="col-div-4-1">
         <div class="box-1">
-          <div class="content-box-1">
-            <p class="head-1">Rules <span>View All</span></p>
-            <br />
-
-            <p class="act-p">
-              <i class="fa fa-circle" style="color: green !important"></i> Lorem
-              Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </p>
-            <p class="act-p">
-              <i class="fa fa-circle"></i> Lorem Ipsum is simply dummy text of
-              the printing and typesetting industry.
-            </p>
+          <div class="profile-box">
+            <h3 class="student-name">Staff Details</h3>
+            <!-- <p class="dept">CSE</p> -->
+            <p class="hostel">No of Staffs:</p>
+            <button type="button">View Staffs</button>
           </div>
         </div>
       </div>
 
       <div class="clearfix"></div>
       <br />
-      <div class="col-div-12" style="display: none">
-        <div class="box-8">
-          <div class="content-box">
-            <p>Top Selling Projects <span>Sell All</span></p>
-            <br />
-            <table>
-              <tr>
-                <th>Company</th>
-                <th>Contact</th>
-                <th>Country</th>
-              </tr>
-              <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-              </tr>
-              <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td>Mexico</td>
-              </tr>
-              <tr>
-                <td>Ernst Handel</td>
-                <td>Roland Mendel</td>
-                <td>Austria</td>
-              </tr>
-              <tr>
-                <td>Island Trading</td>
-                <td>Helen Bennett</td>
-                <td>UK</td>
-              </tr>
-              <tr>
-                <td>Ernst Handel</td>
-                <td>Roland Mendel</td>
-                <td>Austria</td>
-              </tr>
-              <tr>
-                <td>Island Trading</td>
-                <td>Helen Bennett</td>
-                <td>UK</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
 
       <div class="clearfix"></div>
     </div>
@@ -643,5 +546,43 @@ tr:nth-child(even) {
   font-weight: 700;
   font-size: 2em;
   color: #6c7293;
+}
+.profile-box {
+  background: #ff574a;
+  width: 100%;
+  text-align: center;
+  padding: 68px 0px;
+  color: #fff;
+  position: relative;
+  border-radius: 20px;
+}
+
+.profile-box button {
+  background: #fff;
+  color: #f1480b;
+  border: none;
+  outline: none;
+  box-shadow: 0 5px 10px rgba(8, 19, 237, 0.5);
+  padding: 14px 30px;
+  border-radius: 30px;
+  margin-bottom: -50px;
+  font-weight: 200;
+  font-size: 13px;
+  cursor: pointer;
+}
+.profile-box button:hover {
+  background-color: rgb(67, 65, 69);
+}
+.student-name {
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: black;
+}
+/* .dept {
+  margin-bottom: 5px;
+} */
+.hostel {
+  font-size: 18px;
+  margin-bottom: 15px;
 }
 </style>

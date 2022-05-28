@@ -392,52 +392,6 @@
               </div>
             </div>
           </div>
-          <!-- <div v-else class="authentication-cointainer">
-            <header class="header">Aunthecation form</header>
-            <div class="registration-form">
-              
-              <h1 class="otph1">ENTER OTP</h1>
-              <div class="userInput">
-                <input
-                  class="otpinput"
-                  type="text"
-                  id="ist"
-                  maxlength="1"
-                  onkeyup="clickEvent(this,'sec')"
-                />
-                <input
-                  class="otpinput"
-                  type="text"
-                  id="sec"
-                  maxlength="1"
-                  onkeyup="clickEvent(this,'third')"
-                />
-                <input
-                  class="otpinput"
-                  type="text"
-                  id="third"
-                  maxlength="1"
-                  onkeyup="clickEvent(this,'fourth')"
-                />
-                <input
-                  class="otpinput"
-                  type="text"
-                  id="fourth"
-                  maxlength="1"
-                  onkeyup="clickEvent(this,'fifth')"
-                />
-                <input
-                  class="otpinput"
-                  type="text"
-                  id="fifth"
-                  maxlength="1"
-                  onkeyup="clickEvent(this,'sixth')"
-                />
-                <input class="otpinput" type="text" id="fifth" maxlength="1" />
-              </div>
-              <button class="otpbtn">CONFIRM</button>
-            </div>
-          </div> -->
         </form>
       </div>
     </div>

@@ -1,6 +1,14 @@
 <template>
   <div>
-    <nav class="nav">
+    <header>
+      <a href="#000" class="logo">KONGU HOSTEL</a>
+      <div class="toggle" onclick="togglemenu();"></div>
+      <ul class="menu">
+        <li><a href="#000" onclick="togglemenu();">Home</a></li>
+        <li><a href="#001" onclick="togglemenu();">Login</a></li>
+      </ul>
+    </header>
+    <!-- <nav class="nav">
       <div class="logo">KONGU HOSTEL</div>
       <input type="checkbox" id="click" />
       <label for="click" class="menu-btn">
@@ -11,115 +19,203 @@
 
         <li class="li"><a class="active" href="#">Login</a></li>
       </ul>
-    </nav>
+    </nav> -->
   </div>
 </template>
 
-<script type="text/javascript"></script>
+<script type="text/javascript">
+window.addEventListener("scroll", function () {
+  var header = document.querySelector("header");
+  header.classList.toggle("sticky", window.scrollY > 0);
+});
+
+function togglemenu() {
+  var menutoggle = document.querySelector(".toggle");
+  var menu = document.querySelector(".menu");
+  menutoggle.classList.toggle("active");
+  menu.classList.toggle("active");
+}
+</script>
 
 <style scoped>
 * {
-  margin: 0px;
-
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
-.nav {
-  display: flex;
-  height: 80px;
+section {
+  padding: 100px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  background: #1b1b1b;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 50px 0 100px;
-  flex-wrap: wrap;
-}
-.nav .logo {
-  color: #fff;
-  font-size: 36px;
-  font-family: serif;
-
-  color: rgb(229, 94, 63);
-
-  font-weight: 600;
-}
-.nav .ul {
+  padding: 40px 100px;
+  z-index: 1000;
   display: flex;
-  flex-wrap: wrap;
-  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
 }
-.nav .ul .li {
-  margin: 0 5px;
+header.sticky {
+  /* background: #fff; */
+  background: rgb(199, 31, 31);
+  padding: 20px 100px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
-.nav .ul .li a {
-  color: #f2f2f2;
+header .logo {
+  /* color: #fff; */
+  color: rgb(25, 9, 244);
+  font-size: 24px;
   text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 8px 15px;
-  border-radius: 5px;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
+  font-weight: 700;
+  letter-spacing: 3px;
+  position: relative;
 }
-.nav .ul .li a.active,
-.nav .ul .li a:hover {
+header .logo:hover {
+  color: burlywood;
+}
+
+header.sticky .logo {
   color: #111;
-  background: #fff;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 5px;
 }
-.nav .menu-btn i {
-  color: #fff;
-  font-size: 22px;
-  cursor: pointer;
-  display: none;
+header.sticky .logo:before {
+  content: "KONGU HOSTEL";
+  position: absolute;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  width: 100%;
+  height: 100%;
+  color: goldenrod;
+  overflow: hidden;
+  animation: animate 4s infinite;
 }
-input[type="checkbox"] {
-  display: none;
-}
-@media (max-width: 1000px) {
-  .nav {
-    padding: 0 40px 0 50px;
+
+@keyframes animate {
+  0% {
+    width: 0%;
   }
-}
-@media (max-width: 920px) {
-  .nav .menu-btn i {
-    display: block;
-  }
-  #click:checked ~ .menu-btn i:before {
-    content: "\f00d";
-  }
-  .nav .ul {
-    position: fixed;
-    top: 80px;
-    left: -100%;
-    background: #111;
-    height: 100vh;
+  50% {
     width: 100%;
-    text-align: center;
-    display: block;
-    transition: all 0.3s ease;
   }
-  #click:checked ~ .ul {
+  100% {
+    width: 0%;
+  }
+}
+
+header.sticky .logo:hover {
+  opacity: 0.6;
+}
+header ul {
+  position: relative;
+  display: flex;
+}
+header ul li {
+  position: relative;
+  list-style: none;
+  font-weight: 500;
+}
+header ul li a:hover {
+  color: burlywood;
+}
+header ul li a {
+  position: relative;
+  display: inline-block;
+  margin: 0 15px;
+  color: #fff;
+  text-decoration: none;
+}
+header.sticky ul li a {
+  color: #111;
+}
+header.sticky ul li a:hover {
+  color: burlywood;
+}
+
+/* The Close Button */
+.close {
+  color: #888;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(126, 2, 2);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* responsive */
+@media (max-width: 991px) {
+  header,
+  header.sticky {
+    padding: 20px 50px;
+    z-index: 1000;
+  }
+  header.sticky ul li a {
+    color: #fff;
+  }
+
+  .menu {
+    position: fixed;
+    top: 75px;
+    left: -100%;
+    display: block;
+    padding: 100px 50px;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    background: #111;
+    transition: 0.5s;
+    z-index: 999;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .menu.active {
     left: 0;
   }
-  .nav .ul .li {
-    width: 100%;
-    margin: 40px 0;
+  header ul li a {
+    font-size: 24px;
+    margin: 10px;
   }
-  .nav .ul .li a {
-    width: 100%;
-    margin-left: -100%;
-    display: block;
-    font-size: 20px;
-    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  header ul li a:hover {
+    color: burlywood;
   }
-  #click:checked ~ .ul .li a {
-    margin-left: 0px;
+  .toggle {
+    width: 40px;
+    height: 40px;
+    background: url(menu.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    cursor: pointer;
   }
-  .nav .ul .li a.active,
-  .nav .ul .li a:hover {
-    background: none;
-    color: cyan;
+  .toggle.active {
+    background: url(close.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25px;
+    cursor: pointer;
+  }
+  header.sticky .toggle {
+    filter: invert(1);
+  }
+
+  @media (max-width: 600px) {
+    header,
+    header.sticky {
+      padding: 20px 20px;
+    }
   }
 }
 </style>
