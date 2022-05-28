@@ -71,14 +71,14 @@ header {
   transition: 0.5s;
 }
 header.sticky {
-  /* background: #fff; */
-  background: rgb(199, 31, 31);
+  background: #fff;
+
   padding: 20px 100px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 header .logo {
-  /* color: #fff; */
-  color: rgb(25, 9, 244);
+  color: #fff;
+
   font-size: 24px;
   text-decoration: none;
   font-weight: 700;
