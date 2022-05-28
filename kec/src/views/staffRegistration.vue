@@ -44,7 +44,7 @@
                 <div class="input-field">
                   <label class="label">Designation</label>
                   <input
-                    v-model="data.rollnumber"
+                    v-model="data.designation"
                     class="input"
                     type="text"
                     placeholder="Enter your Designation"
@@ -256,34 +256,19 @@ export default {
     return {
       data: {
         name: "g",
-        rollnumber: "",
-        class: 2,
-        year: 2,
         department: "",
         DOB: null,
         bloodGroup: "",
         gender: "",
         phoneNumber: 9878323973,
         whatsappNumber: 9789323973,
-        telegramNumber: 9876543210,
+        designation: "",
         collegeMailID: "",
         personalMailID: "",
         aadharNumber: 424618765987,
-        fatherName: "",
-        fatherMobileNumber: 8979897654,
-        fatherOccupation: "",
-        motherName: "",
-        motherMobileNumber: 8769876787,
-        MotherOccupation: "",
         address: "",
         district: "",
         state: "",
-        localGuardian: "",
-        localGuardianPhoneNumber: 9878978978,
-        accountNumber: 9876543213456,
-        bankName: "",
-        branch: "",
-        IFSCcode: "",
       },
 
       level: 1,
