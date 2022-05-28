@@ -8,14 +8,17 @@
         <div class="main-title">
           <div class="card">
             <h1 class="card-title">student</h1>
-            <span class="card-button">view student</span>
-
+            <span @click="navigateTo({ name: 'listView' })" class="card-button"
+              >view students</span
+            >
             <h3 class="h3">No of students</h3>
             <p>Present : {{ NumberOfStudents }}</p>
           </div>
           <div class="card">
             <h1 class="card-title">staff</h1>
-            <span class="card-button">view staff</span>
+            <span @click="navigateTo({ name: 'listView' })" class="card-button"
+              >view staff</span
+            >
 
             <h3 class="h3">No of staff</h3>
             <p>Present : {{ NumberOfStudents }}</p>
@@ -33,8 +36,10 @@
             <p>Booking : {{ NumberOfBooking }}</p>
           </div>
           <div class="card">
-            <h1 class="card-title">Room</h1>
-            <span class="card-button">view room</span>
+            <h1 class="card-title">room</h1>
+            <span @click="navigateTo({ name: 'listView' })" class="card-button"
+              >view room</span
+            >
 
             <h3 class="h3">No of room</h3>
 
@@ -117,6 +122,11 @@ export default {
     this.NumberOfRooms = data.data.roomCount;
     this.notification = data.data.noti;
     console.log(this.notification);
+  },
+  methods: {
+    navigateTo(route) {
+      this.$router.push(route);
+    },
   },
 };
 </script>
