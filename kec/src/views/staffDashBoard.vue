@@ -20,12 +20,20 @@
             <h3 class="h3">No of staff</h3>
             <p>Present : {{ NumberOfStudents }}</p>
           </div>
-          <div class="card">
+          <!-- <div class="card">
             <h3 class="h3">No of Queries</h3>
             <p>Solved: {{ NumberOfQueries }}</p>
+          </div> -->
+          <div class="card">
+            <h1 class="card-title">Booking</h1>
+            <span class="card-button">view booking</span>
+
+            <h3 class="h3">No of Booking</h3>
+
+            <p>Booking : {{ NumberOfBooking }}</p>
           </div>
           <div class="card">
-            <h1 class="card-title">room</h1>
+            <h1 class="card-title">Room</h1>
             <span class="card-button">view room</span>
 
             <h3 class="h3">No of room</h3>
@@ -37,7 +45,7 @@
     </div>
 
     <!-- next rown -->
-    <div class="container">
+    <div class="container1">
       <div class="container-box">
         <div class="notification">
           <div class="notification-box">
@@ -115,7 +123,7 @@ export default {
 <style scoped>
 * {
   margin: 0;
-  padding: 0;
+  padding: 10px 10px;
   outline: none;
   border: none;
   text-decoration: none;
@@ -127,6 +135,10 @@ body {
 }
 .container {
   display: flex;
+}
+.container1 {
+  display: flex;
+  align-items: center;
 }
 
 .main {
@@ -165,12 +177,12 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   /* font-weight: bold; */
   text-transform: uppercase;
-  margin-bottom: 30px;
+  margin-bottom: 90px;
   align-items: center;
 }
 .card-button {
   text-shadow: 2px 2px 15px white;
-  padding: 2%;
+  padding: 4%;
   color: white;
   background-color: black;
   border-radius: 4px;
@@ -178,7 +190,7 @@ body {
 }
 .card-button:hover {
   text-shadow: 2px 2px 15px black;
-  padding: 2%;
+  padding: 4%;
   color: black;
   background-color: white;
   border-radius: 4px;
@@ -188,10 +200,6 @@ body {
 
 .card-title {
   margin: 0;
-}
-.card-button {
-  padding: 5px;
-  gap: 3px;
 }
 
 .main-title .card .button {
