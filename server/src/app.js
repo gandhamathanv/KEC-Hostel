@@ -11,7 +11,6 @@ const config = require("./config/config");
 const app = express();
 const {
     hostelRoomsData,
-
     hostelInfoData,
     hostelForData,
     permissionData,

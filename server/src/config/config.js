@@ -2,12 +2,12 @@
 module.exports = {
     PORT: 8881,
     db: {
-        database: process.env.DB_NAME || "sql6494136",
-        user: process.env.DB_USER || "sql6494136",
-        password: process.env.DB_PASS || "AMthJlLDmk",
+        database: process.env.DB_NAME || "890TdXAB8U",
+        user: process.env.DB_USER || "890TdXAB8U",
+        password: process.env.DB_PASS || "hzTmxSXEac",
         options: {
             dialect: process.env.DIALECT || "mysql", //type os the database
-            host: process.env.HOST || "sql6.freesqldatabase.com",
+            host: process.env.HOST || "remotemysql.com",
         },
     },
     // db: {

@@ -1,5 +1,6 @@
 /* eslint-disable */
 const Promise = require("bluebird");
+const { boolean } = require("joi");
 const bcrypt = Promise.promisifyAll(require("bcrypt-nodejs"));
 
 function hashPassword(user, options) {
@@ -28,6 +29,10 @@ module.exports = (sequelize, DataTypes) => {
             },
             collegeMailID: {
                 type: DataTypes.STRING,
+            },
+            status: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false,
             },
         }, {
             timestamps: false,

@@ -15,82 +15,81 @@ import infoDetails from "../components/infoDetails.vue";
 import listView from "../views/dataList.vue";
 import updateInfo from "../components/updateInfo.vue";
 
-const routes = [
-  {
-    path: "/",
-    name: "home",
-    component: HomeView,
-  },
-  {
-    path: "/login",
-    name: "login",
-    component: LoginPop,
-  },
-  {
-    path: "/Student",
-    name: "studentInfo",
-    component: StudentInfo,
-  },
-  {
-    path: "/booking",
-    name: "BookingView",
-    component: BookingView,
-  },
-  {
-    path: "/dash",
-    name: "homeview",
-    component: Dashboard,
-  },
-  {
-    path: "/staffDashboard",
-    name: "staffDashboard",
-    component: staffDashboard,
-  },
-  {
-    path: "/changePassword",
-    name: "changePassword",
-    component: changePassword,
-  },
-  {
-    path: "/permissions",
-    name: "permissionsPage",
-    component: permissions,
-  },
-  {
-    path: "/registration",
-    name: "studentRegisration",
-    component: studentRegistration,
-  },
-  {
-    path: "/staffRegistration",
-    name: "studentRegisration",
-    component: staffRegistration,
-  },
-  {
-    path: "/staffInfo",
-    name: "staffInfo",
-    component: staffInfo,
-  },
-  {
-    path: "/listView",
-    name: "listView",
-    component: listView,
-  },
-  {
-    path: "/updateInfo",
-    name: "updateInfo",
-    component: updateInfo,
-  },
-  {
-    path: "/infoDetails",
-    name: "infoDetails",
-    component: infoDetails,
-  },
+const routes = [{
+        path: "/",
+        name: "home",
+        component: HomeView,
+    },
+    {
+        path: "/login",
+        name: "login",
+        component: LoginPop,
+    },
+    {
+        path: "/Student",
+        name: "studentInfo",
+        component: StudentInfo,
+    },
+    {
+        path: "/booking",
+        name: "BookingView",
+        component: BookingView,
+    },
+    {
+        path: "/dash",
+        name: "homeview",
+        component: Dashboard,
+    },
+    {
+        path: "/staffDashboard",
+        name: "staffDashboard",
+        component: staffDashboard,
+    },
+    {
+        path: "/changePassword",
+        name: "changePassword",
+        component: changePassword,
+    },
+    {
+        path: "/permissions",
+        name: "permissionsPage",
+        component: permissions,
+    },
+    {
+        path: "/studentRegistration",
+        name: "studentRegisration",
+        component: studentRegistration,
+    },
+    {
+        path: "/staffRegistration",
+        name: "staffRegisration",
+        component: staffRegistration,
+    },
+    {
+        path: "/staffInfo",
+        name: "staffInfo",
+        component: staffInfo,
+    },
+    {
+        path: "/listView",
+        name: "listView",
+        component: listView,
+    },
+    {
+        path: "/updateInfo",
+        name: "updateInfo",
+        component: updateInfo,
+    },
+    {
+        path: "/infoDetails",
+        name: "infoDetails",
+        component: infoDetails,
+    },
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
+    history: createWebHistory(process.env.BASE_URL),
+    routes,
 });
 
 export default router;
