@@ -1,58 +1,38 @@
 <template>
-  <div class="container">
-    <div class="dash">
-      <figure class="box">
-        <div class="box-title">
-          <h2 class="box-rollno">20CSR003</h2>
+  <div class="dash">
+    <figure class="box">
+      <div class="box-title">
+        <h2 class="box-rollno">20CSR003</h2>
+      </div>
+      <div class="box-title">
+        <h6 class="box-name">AANANDHENE</h6>
+      </div>
+      <div class="box-dept">
+        <div class="box-deptname">
+          <h6 class="box-name">CSE</h6>
         </div>
-        <div class="box-title">
-          <h6 class="box-name">AANANDHENE</h6>
+        <div class="box-deptname">
+          <h6 class="box-name">AMARAVATHI</h6>
         </div>
-        <div class="box-dept">
-          <div class="box-deptname">
-            <h6 class="box-name">CSE</h6>
-          </div>
-          <div class="box-deptname">
-            <h6 class="box-name">AMARAVATHI</h6>
-          </div>
-          <div class="box-deptname">
-            <h6 class="box-name">II</h6>
-          </div>
+        <div class="box-deptname">
+          <h6 class="box-name">II</h6>
         </div>
+      </div>
 
-        <a class="box-details" href="#">
-          <span>Detail -></span>
-        </a>
-      </figure>
-    </div>
-    <div class="dash">
-      <figure class="box">
-        <div class="box-title">
-          <h2 class="box-rollno">20CSR003</h2>
-        </div>
-        <div class="box-title">
-          <h6 class="box-name">AANANDHENE</h6>
-        </div>
-        <div class="box-dept">
-          <div class="box-deptname">
-            <h6 class="box-name">CSE</h6>
-          </div>
-          <div class="box-deptname">
-            <h6 class="box-name">AMARAVATHI</h6>
-          </div>
-          <div class="box-deptname">
-            <h6 class="box-name">II</h6>
-          </div>
-        </div>
-
-        <a class="box-details" href="/product?id={%ID%}">
-          <span>Detail -></span>
-        </a>
-      </figure>
-    </div>
+      <a class="box-details" href="#">
+        <span>Detail -></span>
+      </a>
+    </figure>
   </div>
 </template>
-
+<script>
+export default {
+  data() {
+    return {};
+  },
+  props: { data: Object },
+};
+</script>
 <style scoped>
 *,
 *::before,

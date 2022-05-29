@@ -124,28 +124,10 @@ export default {
   },
   methods: {
     navigateTo(route) {
-      console.log(route);
-      const data = {
-        filter: {
-          hostelName: null,
-          gender: null,
-          year: null,
-        },
-        options: {
-          hostelName: [null, "AMARAVATHI", "PONNAR", "SANKAR", "VALLUVAR"],
-          gender: [null, "MALE", "FEMALE"],
-          year: [null, 1, 2, 3, 4],
-        },
-        data: {
-          name: "",
-          rollnumber: "",
-          dept: "",
-        },
-      };
       this.$router.push({
         name: "listView",
         params: {
-          data,
+          route,
         },
       });
     },
