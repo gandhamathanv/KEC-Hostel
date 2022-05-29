@@ -1,8 +1,66 @@
 <template>
   <div>
-    <div class="loading">
-      <span>Loading</span>
-    </div>
+    <h2>Students Information</h2>
+    <section class="fullinfo-box">
+      <fieldset class="fieldset-box">
+        <td class="label">Name:</td>
+        <td><input class="para-tag" type="text" id="fname" name="fname" /></td>
+      </fieldset>
+      <fieldset class="fieldset-box">
+        <td class="label">Roll Number:</td>
+        <td><input class="para-tag" type="text" id="fname" name="fname" /></td>
+      </fieldset>
+      <fieldset class="fieldset-box">
+        <td class="label">Class:</td>
+        <td>
+          <input class="para-tag" type="text" id="fname" name="fname" />
+        </td>
+      </fieldset>
+
+      <fieldset class="fieldset-box">
+        <td class="label">Year of Studying:</td>
+        <td>
+          <input class="para-tag" type="text" id="fname" name="fname" />
+        </td>
+      </fieldset>
+
+      <fieldset class="fieldset-box">
+        <td class="label">Department:</td>
+        <td><input class="para-tag" type="text" id="fname" name="fname" /></td>
+      </fieldset>
+      <fieldset class="fieldset-box">
+        <td class="label">Date of Birth:</td>
+        <td><input class="para-tag" type="text" id="fname" name="fname" /></td>
+      </fieldset>
+      <fieldset class="fieldset-box">
+        <td class="label">Students Phone Number:</td>
+        <td><input class="para-tag" type="text" id="fname" name="fname" /></td>
+      </fieldset>
+      <fieldset class="fieldset-box">
+        <td class="label">Students Mail Id:</td>
+        <td><input class="para-tag" type="text" id="fname" name="fname" /></td>
+      </fieldset>
+      <fieldset class="fieldset-box">
+        <td class="label">Hostel Name:</td>
+        <td><input class="para-tag" type="text" id="fname" name="fname" /></td>
+      </fieldset>
+      <fieldset class="fieldset-box">
+        <td class="label">Hostel Room Number:</td>
+        <td><input class="para-tag" type="text" id="fname" name="fname" /></td>
+      </fieldset>
+      <fieldset class="fieldset-box">
+        <td class="label">Parents Name:</td>
+        <td><input class="para-tag" type="text" id="fname" name="fname" /></td>
+      </fieldset>
+      <fieldset class="fieldset-box">
+        <td class="label">Parents Mobile Number:</td>
+        <td><input class="para-tag" type="text" id="fname" name="fname" /></td>
+      </fieldset>
+      <fieldset class="fieldset-box">
+        <td class="label">Address:</td>
+        <td><input class="para-tag" type="text" id="fname" name="fname" /></td>
+      </fieldset>
+    </section>
   </div>
 </template>
 
@@ -16,68 +74,46 @@ export default {
 </script>
 
 <style scoped>
-* {
+body {
   margin: 0;
   padding: 0;
-  font-family: "montserrat", sans-serif;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
+  height: 800px;
 }
 
-.loading {
-  margin: auto;
-  width: 200px;
-  height: 200px;
-  box-sizing: border-box;
-  border-radius: 50%;
-  border-top: 10px solid #706fd3;
-  position: relative;
-  top: 50px;
-  animation: a1 2s linear infinite;
-}
-
-.loading::before,
-.loading::after {
-  content: "";
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  left: 0;
-  top: -10px;
-  box-sizing: border-box;
-  border-radius: 50%;
-}
-
-.loading::before {
-  border-top: 10px solid #40407a;
-  transform: rotate(120deg);
-}
-.loading::after {
-  border-top: 10px solid #474787;
-  transform: rotate(240deg);
-}
-
-.loading span {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  color: rgb(23, 21, 21);
+h1 {
   text-align: center;
-  line-height: 200px;
-  animation: a2 2s linear infinite;
-  z-index: 4;
+
+  color: white;
+}
+h2 {
+  text-align: center;
+  text-decoration: underline;
+  color: black;
 }
 
-@keyframes a1 {
-  to {
-    transform: rotate(360deg);
-  }
+.fieldset-box {
+  width: 400px;
+  border: 5px solid white;
+  text-align: center;
+
+  background-color: rgb(204, 218, 248);
+  color: rgb(10, 26, 59);
+
+  border-radius: 25px;
+  font-family: serif;
+
+  margin-left: auto;
+  display: inline-block;
+  margin-right: auto;
 }
 
-@keyframes a2 {
-  to {
-    transform: rotate(-360deg);
-  }
+.para-tag {
+  background-color: white;
+  padding: 15px;
+  float: right;
+  left: 20px;
+
+  border: none;
+  color: #292c2f;
 }
 </style>
