@@ -18,12 +18,12 @@
             <th col-index="1">
               hostelName
               <select
-                v-model="filter.hostelName"
+                v-model="data.filter.hostelName"
                 class="table-filter"
                 @change="filter_rows()"
               >
                 <option
-                  v-for="name in options.hostelName"
+                  v-for="name in data.options.hostelName"
                   :key="name"
                   :value="name"
                 >
@@ -34,12 +34,12 @@
             <th col-index="2">
               gender
               <select
-                v-model="filter.gender"
+                v-model="data.filter.gender"
                 class="table-filter"
                 @change="filter_rows()"
               >
                 <option
-                  v-for="name in options.gender"
+                  v-for="name in data.options.gender"
                   :key="name"
                   :value="name"
                 >
@@ -52,10 +52,14 @@
               year
               <select
                 class="table-filter"
-                v-model="filter.year"
+                v-model="data.filter.year"
                 @change="filter_rows()"
               >
-                <option v-for="name in options.year" :key="name" :value="name">
+                <option
+                  v-for="name in data.options.year"
+                  :key="name"
+                  :value="name"
+                >
                   {{ name }}
                 </option>
               </select>
@@ -63,12 +67,12 @@
             <th col-index="4">
               department
               <select
-                v-model="filter.department"
+                v-model="data.filter.department"
                 class="table-filter"
                 @change="filter_rows()"
               >
                 <option
-                  v-for="name in options.department"
+                  v-for="name in data.options.department"
                   :key="name"
                   :value="name"
                 >
@@ -81,46 +85,35 @@
       </div>
     </div>
     <div class="container1">
-      <ListCards :v-bind="filter"></ListCards>
+      <ListCards v-bind:data="listData"></ListCards>
     </div>
   </div>
 </template>
 
 <script>
 import ListCards from "@/components/listCards.vue";
+import getDetails from "@/services/getDetails";
 export default {
   name: "MainPage",
   data() {
     return {
       listName: this.$route.params.route,
       search: "",
-      filter: {
-        hostelName: null,
-        gender: null,
-        year: null,
-        department: null,
-      },
-      options: {
-        hostelName: [null, "AMARAVATHI", "PONNAR", "SANKAR", "VALLUVAR"],
-        gender: [null, "MALE", "FEMALE"],
-        year: [null, 1, 2, 3, 4],
-        department: [
-          null,
-          "CSE",
-          "ECE",
-          "EEE",
-          "EIE",
-          "MECH",
-          "FT",
-          "CIVIL",
-          "AUTO",
-        ],
-      },
       data: {
-        name: "",
-        rollnumber: "",
-        dept: "",
+        filter: {
+          hostelName: null,
+          gender: null,
+          year: null,
+          department: null,
+        },
+        options: {
+          hostelName: null,
+          gender: null,
+          year: null,
+          department: null,
+        },
       },
+      listData: null,
     };
   },
 
@@ -131,6 +124,164 @@ export default {
     filter_rows() {
       console.log(this.hostelName);
     },
+  },
+  async created() {
+    if (this.$route.params.route == "studentList") {
+      const { data } = await getDetails.getStudent();
+      this.data.options.hostelName = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.hostelName;
+          })
+        ),
+      ];
+      this.data.options.gender = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.gender;
+          })
+        ),
+      ];
+      this.data.options.year = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.year;
+          })
+        ),
+      ];
+      this.data.options.department = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.department;
+          })
+        ),
+      ];
+    }
+    if (this.$route.params.route == "studentList") {
+      const { data } = await getDetails.getStudent();
+      this.data.options.hostelName = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.hostelName;
+          })
+        ),
+      ];
+      this.data.options.gender = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.gender;
+          })
+        ),
+      ];
+      this.data.options.year = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.year;
+          })
+        ),
+      ];
+      this.data.options.department = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.department;
+          })
+        ),
+      ];
+      this.listData = data.data;
+    } else if (this.$route.params.route == "staffList") {
+      const { data } = await getDetails.getStaff();
+      this.data.options.hostelName = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.hostelName;
+          })
+        ),
+      ];
+      this.data.options.gender = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.gender;
+          })
+        ),
+      ];
+      this.data.options.year = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.year;
+          })
+        ),
+      ];
+      this.data.options.department = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.department;
+          })
+        ),
+      ];
+      this.listData = data.data;
+    } else if (this.$route.params.route == "bookingList") {
+      const { data } = await getDetails.getBooking();
+      this.data.options.hostelName = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.hostelName;
+          })
+        ),
+      ];
+      this.data.options.gender = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.gender;
+          })
+        ),
+      ];
+      this.data.options.year = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.year;
+          })
+        ),
+      ];
+      this.data.options.department = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.department;
+          })
+        ),
+      ];
+      this.listData = data.data;
+    } else if (this.$route.params.route == "roomsList") {
+      const { data } = await getDetails.getRooms();
+      this.data.options.hostelName = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.hostelName;
+          })
+        ),
+      ];
+      this.data.options.gender = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.gender;
+          })
+        ),
+      ];
+      this.data.options.year = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.year;
+          })
+        ),
+      ];
+      this.data.options.department = [
+        ...new Set(
+          data.data.map((el) => {
+            return el.department;
+          })
+        ),
+      ];
+      this.listData = data.data;
+    }
   },
 
   components: { ListCards },
