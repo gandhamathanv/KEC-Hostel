@@ -87,8 +87,8 @@ h1 {
 }
 
 .box-title {
-  background: linear-gradient(to bottom, #9be15d, #00e3ae);
-  margin-right: auto;
+  background: linear-gradient(to bottom, #ea8d0c, #f04d41);
+  /* margin-right: auto; */
   display: flex;
   align-items: center;
   padding: 0 3rem;
@@ -96,7 +96,7 @@ h1 {
 
 .box-rollno {
   color: white;
-  font-size: 2.25rem;
+  font-size: 1.2rem;
   transform: skewX(20deg);
 }
 
@@ -117,7 +117,7 @@ h1 {
 
 .box-name {
   font-weight: 400;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   transform: skewX(20deg);
   padding: 1.75rem;
 }
@@ -125,9 +125,9 @@ h1 {
 .box-details:link,
 .box-details:visited {
   flex: 0 0 auto;
-  background-color: #79e17b;
+  background-color: #f16d39;
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 900;
   text-transform: uppercase;
   text-decoration: none;
