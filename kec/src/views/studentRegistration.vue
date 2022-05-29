@@ -68,13 +68,19 @@
                   <label class="label">Year of Studying</label>
                   <select class="input" v-model="data.year">
                     >
-                    <option value="studying" disabled selected hidden>
+                    <option
+                      type="number"
+                      value="studying"
+                      disabled
+                      selected
+                      hidden
+                    >
                       Select your Year of Study
                     </option>
-                    <option value="I">I</option>
-                    <option value="II">II</option>
-                    <option value="III">III</option>
-                    <option value="IV">IV</option>
+                    <option :value="parseInt(1)">I</option>
+                    <option :value="parseInt(2)">II</option>
+                    <option :value="parseInt(3)">III</option>
+                    <option :value="parseInt(4)">IV</option>
                   </select>
                 </div>
                 <div class="input-field">
@@ -408,7 +414,7 @@ export default {
       data: {
         name: "g",
         rollnumber: "",
-        class: 2,
+        class: "B",
         year: 2,
         department: "",
         DOB: null,

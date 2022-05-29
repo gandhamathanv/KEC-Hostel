@@ -14,6 +14,7 @@ import staffInfo from "../components/staffInfo.vue";
 import infoDetails from "../components/infoDetails.vue";
 import listView from "../views/dataList.vue";
 import updateInfo from "../components/updateInfo.vue";
+import checking from "../components/dashboard/newPage.vue";
 
 const routes = [{
         path: "/",
@@ -84,6 +85,11 @@ const routes = [{
         path: "/infoDetails",
         name: "infoDetails",
         component: infoDetails,
+    },
+    {
+        path: "/checking",
+        name: "checking",
+        component: checking,
     },
 ];
 

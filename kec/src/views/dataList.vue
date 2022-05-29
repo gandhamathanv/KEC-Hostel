@@ -2,7 +2,12 @@
   <div>
     <div class="container">
       <div class="search-box">
-        <input type="text" class="search-input" placeholder="Search.." />
+        <input
+          type="text"
+          v-model="search"
+          class="search-input"
+          placeholder="Search.."
+        />
         <button class="search-button"></button>
       </div>
     </div>
@@ -12,55 +17,42 @@
           <thead>
             <th col-index="1">
               hostelName
-              <select class="table-filter" onchange="filter_rows()">
-                <option value="all">Amaravathi</option>
-                <option value="all">Kaveri</option>
-                <option value="all">Bhavani</option>
-                <option value="all">Dheeran</option>
-                <option value="all">Bharathi</option>
+              <select
+                v-model="filter.hostelName"
+                class="table-filter"
+                @change="filter_rows()"
+              >
+                <option
+                  v-for="name in options.hostelName"
+                  :key="name"
+                  :value="name"
+                >
+                  {{ name }}
+                </option>
               </select>
             </th>
             <th col-index="2">
               gender
-              <select class="table-filter" onchange="filter_rows()">
-                <option value="all">Female</option>
-                <option value="all">Male</option>
+              <select class="table-filter" @change="filter_rows()">
+                <option
+                  v-for="name in options.gender"
+                  :key="name"
+                  :value="name"
+                >
+                  {{ name }}
+                </option>
               </select>
             </th>
 
             <th col-index="3">
               year
-              <select class="table-filter" onchange="filter_rows()">
-                <option value="all">1</option>
-                <option value="all">2</option>
-                <option value="all">3</option>
-                <option value="all">4</option>
+              <select class="table-filter" @change="filter_rows()">
+                <option v-for="name in options.year" :key="name" :value="name">
+                  {{ name }}
+                </option>
               </select>
             </th>
           </thead>
-          <!-- <tbody>
-            <tr>
-              <td>Dheeran</td>
-              <td>Male</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>Amaravathi</td>
-              <td>Female</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>Bhavani</td>
-              <td>Female</td>
-              <td>2</td>
-            </tr>
-
-            <tr>
-              <td>Ponnar</td>
-              <td>Female</td>
-              <td>1</td>
-            </tr>
-          </tbody> -->
         </table>
       </div>
     </div>
@@ -147,12 +139,27 @@ export default {
   name: "MainPage",
   data() {
     return {
-      toggleFacilityButton: false,
+      search: "",
+      filter: {
+        hostelName: null,
+        gender: null,
+        year: null,
+      },
+      options: {
+        hostelName: [null, "AMARAVATHI", "PONNAR", "SANKAR", "VALLUVAR"],
+        gender: [null, "MALE", "FEMALE"],
+        year: [null, 1, 2, 3, 4],
+      },
+      data: {
+        name: "",
+        rollnumber: "",
+        dept: "",
+      },
     };
   },
   methods: {
-    toggleFacility() {
-      this.toggleFacilityButton = !this.toggleFacilityButton;
+    filter_rows() {
+      console.log(this.hostelName);
     },
   },
 };

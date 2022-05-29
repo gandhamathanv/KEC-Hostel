@@ -6,7 +6,6 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const { sequelize } = require("./models");
 const cookieParser = require("cookie-parser");
-// const sequel = require('./models');
 const config = require("./config/config");
 const app = express();
 const {
