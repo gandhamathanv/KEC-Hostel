@@ -39,9 +39,13 @@ export default {
   },
   methods: {
     navigateTo(route) {
-      this.dashBoard.showList = true;
-      this.dashBoard.showDash = false;
       console.log(route);
+      this.$router.push({
+        name: "listView",
+        params: {
+          data: "string",
+        },
+      });
     },
   },
 };
