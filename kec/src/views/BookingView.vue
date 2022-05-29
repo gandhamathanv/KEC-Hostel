@@ -240,21 +240,22 @@ export default {
   color: red;
 }
 .button {
-  box-sizing: border-box;
-  background-color: transparent;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  max-width: 100px;
+  /* width: 100%; */
+  border: none;
+  outline: none;
+  /* color: #fff; */
+  border-radius: 5px;
+  margin: 25px 0;
+  gap: 10px;
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  border-radius: 0.6em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.2em 2.8em;
-  background-color: black;
-  color: #fff;
-  border-radius: 0.6em;
   box-shadow: 0 0 2px 2px rgb(211, 6, 6);
 }
 .button:hover {
-  box-shadow: 0 0 40px 40px rgb(44, 12, 223) inset;
+  box-shadow: 0 0 40px 40px rgb(223, 40, 12) inset;
 }
 </style>
