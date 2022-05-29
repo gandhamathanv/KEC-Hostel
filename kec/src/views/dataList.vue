@@ -182,7 +182,7 @@ export default {
     };
   },
   mounted() {
-    console.log(this.$router.params);
+    console.log(typeof this.$route.params.data);
   },
   methods: {
     filter_rows() {

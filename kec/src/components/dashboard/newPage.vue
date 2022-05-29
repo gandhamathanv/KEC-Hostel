@@ -84,6 +84,7 @@ h1 {
   transform: skewX(-20deg);
   display: flex;
   transition: all 0.5s;
+  justify-content: space-between;
 }
 
 .box-title {
