@@ -52,6 +52,18 @@
                 </option>
               </select>
             </th>
+            <th col-index="4">
+              department
+              <select class="table-filter" @change="filter_rows()">
+                <option
+                  v-for="name in options.department"
+                  :key="name"
+                  :value="name"
+                >
+                  {{ name }}
+                </option>
+              </select>
+            </th>
           </thead>
         </table>
       </div>
@@ -144,11 +156,23 @@ export default {
         hostelName: null,
         gender: null,
         year: null,
+        department: null,
       },
       options: {
         hostelName: [null, "AMARAVATHI", "PONNAR", "SANKAR", "VALLUVAR"],
         gender: [null, "MALE", "FEMALE"],
         year: [null, 1, 2, 3, 4],
+        department: [
+          null,
+          "CSE",
+          "ECE",
+          "EEE",
+          "EIE",
+          "MECH",
+          "FT",
+          "CIVIL",
+          "AUTO",
+        ],
       },
       data: {
         name: "",
