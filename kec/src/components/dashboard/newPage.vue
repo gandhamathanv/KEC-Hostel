@@ -1,35 +1,56 @@
 <template>
-  <body>
-    <div class="container">
-      <h1>🌽 Node Farm 🥦</h1>
-
-      <div class="cards-container">
-        <figure class="card">
-          <div class="card__title-box">
-            <h2 class="card__title">20CSR003</h2>
+  <div class="container">
+    <div class="cards-container">
+      <figure class="card">
+        <div class="card__title-box">
+          <h2 class="card__title">20CSR003</h2>
+        </div>
+        <div class="card__title-box">
+          <h6 class="card__detail">AANANDHENE</h6>
+        </div>
+        <div class="card__details">
+          <div class="card__detail-box">
+            <h6 class="card__detail">CSE</h6>
           </div>
           <div class="card__detail-box">
-            <h6 class="card__detail">AANANDHENE</h6>
+            <h6 class="card__detail">AMARAVATHI</h6>
           </div>
-          <div class="card__details">
-            <div class="card__detail-box {%NOT_ORGANIC%}">
-              <h6 class="card__detail">CSE</h6>
-            </div>
-            <div class="card__detail-box">
-              <h6 class="card__detail">AMARAVATHI</h6>
-            </div>
-            <div class="card__detail-box">
-              <h6 class="card__detail card__detail--price">II</h6>
-            </div>
+          <div class="card__detail-box">
+            <h6 class="card__detail">II</h6>
           </div>
+        </div>
 
-          <a class="card__link" href="/product?id={%ID%}">
-            <span>Detail <i class="emoji-right">👉</i></span>
-          </a>
-        </figure>
-      </div>
+        <a class="card__link" href="/product?id={%ID%}">
+          <span>Detail -></span>
+        </a>
+      </figure>
     </div>
-  </body>
+    <div class="cards-container">
+      <figure class="card">
+        <div class="card__title-box">
+          <h2 class="card__title">20CSR003</h2>
+        </div>
+        <div class="card__title-box">
+          <h6 class="card__detail">AANANDHENE</h6>
+        </div>
+        <div class="card__details">
+          <div class="card__detail-box">
+            <h6 class="card__detail">CSE</h6>
+          </div>
+          <div class="card__detail-box">
+            <h6 class="card__detail">AMARAVATHI</h6>
+          </div>
+          <div class="card__detail-box">
+            <h6 class="card__detail">II</h6>
+          </div>
+        </div>
+
+        <a class="card__link" href="/product?id={%ID%}">
+          <span>Detail -></span>
+        </a>
+      </figure>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -39,20 +60,6 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-}
-
-html {
-  font-size: 62.5%;
-  box-sizing: border-box;
-}
-
-body {
-  padding: 5rem 5rem 10rem;
-  line-height: 1.7;
-  font-family: "Nunito Sans", sans-serif;
-  color: #555;
-  min-height: 100vh;
-  background: linear-gradient(to bottom right, #ffd700, #00e3ae);
 }
 
 h1 {
@@ -65,27 +72,9 @@ h1 {
   word-spacing: 3px;
 }
 
-h1::before {
-  content: "";
-  display: block;
-  height: 65%;
-  width: 49%;
-  position: absolute;
-  top: 105%;
-  left: 50%;
-  background: linear-gradient(to bottom, #9be15d, #00e3ae);
-  opacity: 0.8;
-  z-index: -1;
-  transform: skewY(370deg) translate(-50%, -50%);
-}
-
 .container {
   width: 95rem;
   margin: 0 auto;
-}
-
-.cards-container {
-  margin-top: 8rem;
 }
 
 .card {
@@ -114,7 +103,6 @@ h1::before {
 }
 
 .card__title {
-  font-family: "Megrim", sans-serif;
   color: white;
   font-size: 2.25rem;
   transform: skewX(20deg);
@@ -181,11 +169,6 @@ h1::before {
 
 .card__link span {
   transform: skewX(20deg);
-}
-
-.card:hover {
-  transform: skewX(-20deg) scale(1.08);
-  box-shadow: 0 3rem 8rem 2rem rgba(0, 0, 0, 0.15);
 }
 
 .emoji-left {

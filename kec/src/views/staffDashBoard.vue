@@ -1,7 +1,10 @@
 <template>
   <div>
-    <DashBoard v-on:list="navigateTo($event)"></DashBoard>
-    <DataList data="data"></DataList>
+    <DashBoard
+      v-if="dashBoard.showDash"
+      v-on:list="navigateTo($event)"
+    ></DashBoard>
+    <DataList v-if="dashBoard.showList" data="data"></DataList>
   </div>
 </template>
 
@@ -15,11 +18,16 @@ export default {
 
   data() {
     return {
+      dashBoard: {
+        showDash: true,
+        showList: false,
+      },
       NumberOfStudents: 4567,
       NumberOfQueries: 0,
       NumberOfRooms: null,
       notification: null,
       state: null,
+      listData: null,
     };
   },
   async created() {
@@ -31,6 +39,8 @@ export default {
   },
   methods: {
     navigateTo(route) {
+      this.dashBoard.showList = true;
+      this.dashBoard.showDash = false;
       console.log(route);
     },
   },
