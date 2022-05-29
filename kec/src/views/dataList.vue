@@ -33,7 +33,11 @@
             </th>
             <th col-index="2">
               gender
-              <select class="table-filter" @change="filter_rows()">
+              <select
+                v-model="filter.gender"
+                class="table-filter"
+                @change="filter_rows()"
+              >
                 <option
                   v-for="name in options.gender"
                   :key="name"
@@ -46,7 +50,11 @@
 
             <th col-index="3">
               year
-              <select class="table-filter" @change="filter_rows()">
+              <select
+                class="table-filter"
+                v-model="filter.year"
+                @change="filter_rows()"
+              >
                 <option v-for="name in options.year" :key="name" :value="name">
                   {{ name }}
                 </option>
@@ -54,7 +62,11 @@
             </th>
             <th col-index="4">
               department
-              <select class="table-filter" @change="filter_rows()">
+              <select
+                v-model="filter.department"
+                class="table-filter"
+                @change="filter_rows()"
+              >
                 <option
                   v-for="name in options.department"
                   :key="name"
@@ -69,88 +81,18 @@
       </div>
     </div>
     <div class="container1">
-      <div class="profile-box">
-        <h3 class="student-name">Aanandhene M</h3>
-        <p class="dept">CSE</p>
-        <p class="hostel">Amaravathi</p>
-        <button type="button">View Details</button>
-      </div>
-      <div class="profile-box">
-        <h3 class="student-name">Aanandhene M</h3>
-        <p class="dept">CSE</p>
-        <p class="hostel">Amaravathi</p>
-        <button type="button">View Details</button>
-      </div>
-      <div class="profile-box">
-        <h3 class="student-name">Aanandhene M</h3>
-        <p class="dept">CSE</p>
-        <p class="hostel">Amaravathi</p>
-        <button type="button">View Details</button>
-      </div>
-      <div class="profile-box">
-        <h3 class="student-name">Aanandhene M</h3>
-        <p class="dept">CSE</p>
-        <p class="hostel">Amaravathi</p>
-        <button type="button">View Details</button>
-      </div>
-      <div class="profile-box">
-        <h3 class="student-name">Aanandhene M</h3>
-        <p class="dept">CSE</p>
-        <p class="hostel">Amaravathi</p>
-        <button type="button">View Details</button>
-      </div>
-      <div class="profile-box">
-        <h3 class="student-name">Aanandhene M</h3>
-        <p class="dept">CSE</p>
-        <p class="hostel">Amaravathi</p>
-        <button type="button">View Details</button>
-      </div>
-
-      <div class="profile-box">
-        <h3 class="student-name">Aanandhene M</h3>
-        <p class="dept">CSE</p>
-        <p class="hostel">Amaravathi</p>
-        <button type="button">View Details</button>
-      </div>
-      <div class="profile-box">
-        <h3 class="student-name">Aanandhene M</h3>
-        <p class="dept">CSE</p>
-        <p class="hostel">Amaravathi</p>
-        <button type="button">View Details</button>
-      </div>
-      <div class="profile-box">
-        <h3 class="student-name">Aanandhene M</h3>
-        <p class="dept">CSE</p>
-        <p class="hostel">Amaravathi</p>
-        <button type="button">View Details</button>
-      </div>
-      <div class="profile-box">
-        <h3 class="student-name">Aanandhene M</h3>
-        <p class="dept">CSE</p>
-        <p class="hostel">Amaravathi</p>
-        <button type="button">View Details</button>
-      </div>
-      <div class="profile-box">
-        <h3 class="student-name">Aanandhene M</h3>
-        <p class="dept">CSE</p>
-        <p class="hostel">Amaravathi</p>
-        <button type="button">View Details</button>
-      </div>
-      <div class="profile-box">
-        <h3 class="student-name">Aanandhene M</h3>
-        <p class="dept">CSE</p>
-        <p class="hostel">Amaravathi</p>
-        <button type="button">View Details</button>
-      </div>
+      <ListCards :v-bind="filter"></ListCards>
     </div>
   </div>
 </template>
 
 <script>
+import ListCards from "@/components/listCards.vue";
 export default {
   name: "MainPage",
   data() {
     return {
+      listName: this.$route.params.route,
       search: "",
       filter: {
         hostelName: null,
@@ -181,14 +123,17 @@ export default {
       },
     };
   },
-  mounted() {
-    console.log(typeof this.$route.params.data);
-  },
+
   methods: {
+    setList(listName) {
+      this.listName = listName;
+    },
     filter_rows() {
       console.log(this.hostelName);
     },
   },
+
+  components: { ListCards },
 };
 </script>
 <style scoped>
@@ -315,12 +260,8 @@ table td {
   font-family: "poppins", sans-serif;
 }
 .container1 {
-  width: 100%;
+  width: 80%;
   height: auto;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px;
 
   align-items: center;
   justify-content: center;
