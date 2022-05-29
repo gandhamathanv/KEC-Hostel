@@ -1,51 +1,51 @@
 <template>
   <div class="container">
-    <div class="cards-container">
-      <figure class="card">
-        <div class="card__title-box">
-          <h2 class="card__title">20CSR003</h2>
+    <div class="dash">
+      <figure class="box">
+        <div class="box-title">
+          <h2 class="box-rollno">20CSR003</h2>
         </div>
-        <div class="card__title-box">
-          <h6 class="card__detail">AANANDHENE</h6>
+        <div class="box-title">
+          <h6 class="box-name">AANANDHENE</h6>
         </div>
-        <div class="card__details">
-          <div class="card__detail-box">
-            <h6 class="card__detail">CSE</h6>
+        <div class="box-dept">
+          <div class="box-deptname">
+            <h6 class="box-name">CSE</h6>
           </div>
-          <div class="card__detail-box">
-            <h6 class="card__detail">AMARAVATHI</h6>
+          <div class="box-deptname">
+            <h6 class="box-name">AMARAVATHI</h6>
           </div>
-          <div class="card__detail-box">
-            <h6 class="card__detail">II</h6>
+          <div class="box-deptname">
+            <h6 class="box-name">II</h6>
           </div>
         </div>
 
-        <a class="card__link" href="/product?id={%ID%}">
+        <a class="box-details" href="#">
           <span>Detail -></span>
         </a>
       </figure>
     </div>
-    <div class="cards-container">
-      <figure class="card">
-        <div class="card__title-box">
-          <h2 class="card__title">20CSR003</h2>
+    <div class="dash">
+      <figure class="box">
+        <div class="box-title">
+          <h2 class="box-rollno">20CSR003</h2>
         </div>
-        <div class="card__title-box">
-          <h6 class="card__detail">AANANDHENE</h6>
+        <div class="box-title">
+          <h6 class="box-name">AANANDHENE</h6>
         </div>
-        <div class="card__details">
-          <div class="card__detail-box">
-            <h6 class="card__detail">CSE</h6>
+        <div class="box-dept">
+          <div class="box-deptname">
+            <h6 class="box-name">CSE</h6>
           </div>
-          <div class="card__detail-box">
-            <h6 class="card__detail">AMARAVATHI</h6>
+          <div class="box-deptname">
+            <h6 class="box-name">AMARAVATHI</h6>
           </div>
-          <div class="card__detail-box">
-            <h6 class="card__detail">II</h6>
+          <div class="box-deptname">
+            <h6 class="box-name">II</h6>
           </div>
         </div>
 
-        <a class="card__link" href="/product?id={%ID%}">
+        <a class="box-details" href="/product?id={%ID%}">
           <span>Detail -></span>
         </a>
       </figure>
@@ -77,7 +77,7 @@ h1 {
   margin: 0 auto;
 }
 
-.card {
+.box {
   background: white;
   box-shadow: 0 2rem 6rem 1rem rgba(0, 0, 0, 0.15);
   margin-bottom: 5rem;
@@ -86,15 +86,7 @@ h1 {
   transition: all 0.5s;
 }
 
-.card__emoji {
-  font-size: 5.5rem;
-  line-height: 1.2;
-  padding: 1.5rem 6rem 0.5rem 1.5rem;
-  letter-spacing: -4rem;
-  transform: skewX(20deg);
-}
-
-.card__title-box {
+.box-title {
   background: linear-gradient(to bottom, #9be15d, #00e3ae);
   margin-right: auto;
   display: flex;
@@ -102,51 +94,36 @@ h1 {
   padding: 0 3rem;
 }
 
-.card__title {
+.box-rollno {
   color: white;
   font-size: 2.25rem;
   transform: skewX(20deg);
 }
 
-.card__details {
+.box-dept {
   display: flex;
 }
 
-.card__detail-box {
+.box-deptname {
   align-self: stretch;
   border-right: 1px solid #ddd;
   display: flex;
   align-items: center;
 }
 
-.card__detail-box:last-child {
+.box-deptname:last-child {
   border: none;
 }
 
-.card__detail {
+.box-name {
   font-weight: 400;
   font-size: 1.8rem;
   transform: skewX(20deg);
   padding: 1.75rem;
 }
 
-.card__detail--organic {
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 1.9rem;
-  background-image: linear-gradient(to right, #9be15d, #00e3ae);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.card__detail--price {
-  font-weight: 900;
-  font-size: 1.9rem;
-}
-
-.card__link:link,
-.card__link:visited {
+.box-details:link,
+.box-details:visited {
   flex: 0 0 auto;
   background-color: #79e17b;
   color: white;
@@ -162,26 +139,12 @@ h1 {
   transition: all 0.3s;
 }
 
-.card__link:hover,
-.card__link:active {
+.box-details:hover,
+.box-details:active {
   background-color: #9be15d;
 }
 
-.card__link span {
+.box-details span {
   transform: skewX(20deg);
-}
-
-.emoji-left {
-  font-size: 2rem;
-  margin-right: 1rem;
-}
-
-.emoji-right {
-  font-size: 2rem;
-  margin-left: 1rem;
-}
-
-.not-organic {
-  display: none;
 }
 </style>

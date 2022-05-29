@@ -1,7 +1,7 @@
 <template>
   <div class="body">
     <div v-if="hostelName != null">
-      <label> Select a hostel</label>
+      <label> Select a hostel:</label><br />
       <button
         class="button"
         v-for="name in hostelName"
@@ -12,7 +12,7 @@
       </button>
     </div>
     <div v-if="data != null" class="floor">
-      <label> Select a Floor:</label>
+      <label> Select a Floor:</label> <br />
 
       <button class="button" @click="flr(0)">Ground Floor</button>
       <button class="button" @click="flr(1)">First Floor</button>
@@ -240,18 +240,18 @@ export default {
   color: red;
 }
 .button {
-  /* display: flex; */
   align-items: center;
   justify-content: center;
   height: 42px;
   max-width: 100px;
-  /* width: 100%; */
+  /* display: flex; */
+
   border: none;
   outline: none;
-  /* color: #fff; */
+
   border-radius: 5px;
   margin: 25px 0;
-  gap: 10px;
+
   cursor: pointer;
   box-shadow: 0 0 2px 2px rgb(211, 6, 6);
 }
