@@ -3,6 +3,7 @@ const AuthenticationController = require("./controllers/AuthenticationController
 const AuthenticationControllerPolicy = require("./policies/AunthenticationcontrollerPolicy");
 const basicTokenPolicies = require("./policies/basicTokenPolicies");
 const HostelController = require("./controllers/HostelController");
+const DetailsController = require("./controllers/DetailsController");
 module.exports = (app) => {
     app.get(
             "/getData",
@@ -37,4 +38,10 @@ module.exports = (app) => {
     //check
     app.get("/check", basicTokenPolicies.getToken, HostelController.check); //get
     app.get("/logout", AuthenticationController.logout); //get
+
+    //
+    app.get("/getStudentsList", DetailsController.getStudentList);
+    app.get("/getStaffList", DetailsController.getStaffList);
+    app.get("/getBookingList", DetailsController.getBookingList);
+    app.get("/getRoomsList", DetailsController.getRoomsList);
 };

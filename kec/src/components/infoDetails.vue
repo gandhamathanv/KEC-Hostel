@@ -8,25 +8,6 @@
             <div class="student-profile py-4">
               <div class="container">
                 <div class="row">
-                  <!-- <div class="col-lg-4">
-                    <div class="card shadow-sm">
-                      <div class="card-header">
-                        <img
-                          class="profile_img"
-                          src="https://source.unsplash.com/600x300/?student"
-                          alt="student dp"
-                        />
-                        <h3>{{ user.name }}</h3>
-                      </div>
-                      <hr />
-                      <div class="card-body">
-                        <p class="mb-0">
-                          <strong class="pr-1">RollNumber:</strong
-                          >{{ user.rollnumber }}
-                        </p>
-                      </div>
-                    </div>
-                  </div> -->
                   <div class="col-lg-8">
                     <div class="card shadow-sm2">
                       <div class="card-header border-0">
@@ -231,41 +212,7 @@ export default {
   name: "StudentInfo",
   data() {
     return {
-      user: {
-        name: "gandhamathan",
-        rollnumber: "20CSR051",
-        class: 0,
-        year: 0,
-        department: "CSE",
-        DOB: "2022-05-24",
-        bloodGroup: "B+ve",
-        hostelName: null,
-        roomNumber: null,
-        gender: "MALE",
-        phoneNumber: 9878323973,
-        whatsappNumber: 9789323973,
-        telegramNumber: 9876543210,
-        collegeMailID: "gandhamathanv.20cse@kongu.edu",
-        personalMailID: "gandhasaroja@gmail.com",
-        aadharNumber: 424618765987,
-        fatherName: "",
-        fatherMobileNumber: 8979897654,
-        fatherOccupation: "",
-        motherName: "",
-        motherMobileNumber: 8769876787,
-        MotherOccupation: "",
-        address: "",
-        district: "",
-        state: "",
-        localGuardian: "",
-        localGuardianPhoneNumber: 9878978978,
-        accountNumber: 9876543213456,
-        bankName: "234",
-        branch: "234",
-        IFSCcode: "234",
-        dateOfEntry: null,
-        dateOfVacation: null,
-      },
+      user: null,
     };
   },
 };

@@ -1,27 +1,27 @@
 <template>
   <div class="dash">
-    <figure class="box">
+    <figure v-for="el in data" :key="el" class="box">
       <div class="box-title">
-        <h2 class="box-rollno">20CSR003</h2>
+        <h2 class="box-rollno">{{ el.rollnumber }}</h2>
       </div>
       <div class="box-title">
-        <h6 class="box-name">AANANDHENE</h6>
+        <h6 class="box-name">{{ el.name }}</h6>
       </div>
       <div class="box-dept">
         <div class="box-deptname">
-          <h6 class="box-name">CSE</h6>
+          <h6 class="box-name">{{ el.department }}</h6>
         </div>
         <div class="box-deptname">
-          <h6 class="box-name">AMARAVATHI</h6>
+          <h6 class="box-name">{{ el.hostelName }}</h6>
         </div>
         <div class="box-deptname">
-          <h6 class="box-name">II</h6>
+          <h6 class="box-name">{{ el.year }}</h6>
         </div>
-      </div>
 
-      <a class="box-details" href="#">
-        <span>Detail -></span>
-      </a>
+        <a @click="showDetails(el.rollnumber)" class="box-details" href="#">
+          <span>Detail -></span>
+        </a>
+      </div>
     </figure>
   </div>
 </template>
@@ -31,6 +31,16 @@ export default {
     return {};
   },
   props: { data: Object },
+  methods: {
+    showDetails(rollnumber) {
+      this.$router.push({
+        name: "infoDetails",
+        params: {
+          rollnumber,
+        },
+      });
+    },
+  },
 };
 </script>
 <style scoped>

@@ -8,7 +8,7 @@
         <div class="main-title">
           <div class="card">
             <h1 class="card-title">student</h1>
-            <span @click="navigateTo('stuentList')" class="card-button"
+            <span @click="navigateTo('studentList')" class="card-button"
               >view students</span
             >
             <h3 class="h3">No of students</h3>
@@ -16,7 +16,7 @@
           </div>
           <div class="card">
             <h1 class="card-title">staff</h1>
-            <span @click="navigateTo('stuentList')" class="card-button"
+            <span @click="navigateTo('staffList')" class="card-button"
               >view staff</span
             >
 
@@ -25,7 +25,7 @@
           </div>
           <div class="card">
             <h1 class="card-title">Booking</h1>
-            <span @click="navigateTo('stuentList')" class="card-button"
+            <span @click="navigateTo('booking')" class="card-button"
               >view booking</span
             >
 
@@ -35,7 +35,7 @@
           </div>
           <div class="card">
             <h1 class="card-title">room</h1>
-            <span @click="navigateTo('stuentList')" class="card-button"
+            <span @click="navigateTo('roomsList')" class="card-button"
               >view room</span
             >
 
