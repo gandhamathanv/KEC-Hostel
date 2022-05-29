@@ -80,7 +80,7 @@ h1 {
 .box {
   background: white;
   box-shadow: 0 2rem 6rem 1rem rgba(0, 0, 0, 0.15);
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   transform: skewX(-20deg);
   display: flex;
   transition: all 0.5s;

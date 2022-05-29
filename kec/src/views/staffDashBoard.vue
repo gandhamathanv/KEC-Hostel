@@ -1,33 +1,118 @@
 <template>
   <div>
-    <DashBoard
-      v-if="dashBoard.showDash"
-      v-on:list="navigateTo($event)"
-    ></DashBoard>
-    <DataList v-if="dashBoard.showList" data="data"></DataList>
+    <div class="container">
+      <section class="main">
+        <div class="header-title">
+          <h1>Staff dashboard</h1>
+        </div>
+        <div class="main-title">
+          <div class="card">
+            <h1 class="card-title">student</h1>
+            <span @click="navigateTo('stuentList')" class="card-button"
+              >view students</span
+            >
+            <h3 class="h3">No of students</h3>
+            <p>Present : {{ NumberOfStudents }}</p>
+          </div>
+          <div class="card">
+            <h1 class="card-title">staff</h1>
+            <span @click="navigateTo('stuentList')" class="card-button"
+              >view staff</span
+            >
+
+            <h3 class="h3">No of staff</h3>
+            <p>Present : {{ NumberOfStudents }}</p>
+          </div>
+          <div class="card">
+            <h1 class="card-title">Booking</h1>
+            <span @click="navigateTo('stuentList')" class="card-button"
+              >view booking</span
+            >
+
+            <h3 class="h3">No of Booking</h3>
+
+            <p>Booking : {{ NumberOfBooking }}</p>
+          </div>
+          <div class="card">
+            <h1 class="card-title">room</h1>
+            <span @click="navigateTo('stuentList')" class="card-button"
+              >view room</span
+            >
+
+            <h3 class="h3">No of room</h3>
+
+            <p>rooms : {{ NumberOfRooms }}</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- next rown -->
+    <div class="container1">
+      <div class="container-box">
+        <div class="notification">
+          <div class="notification-box">
+            <section class="message-box">
+              <div class="name-date">
+                <p class="name">Kannan</p>
+                <p class="date">24/04/2022</p>
+              </div>
+              <p class="message">
+                Tomorrow will be declared as holiday. You can leave the hostel
+                by tommorow evening.
+              </p>
+            </section>
+            <section class="message-box">
+              <div class="name-date">
+                <p class="name">Kannan</p>
+                <p class="date">24/04/2022</p>
+              </div>
+              <p class="message">
+                Tomorrow will be declared as holiday. You can leave the hostel
+                by tommorow evening.
+              </p>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="container-box">
+        <div class="notification">
+          <div class="notification-box">
+            <section class="message-box">
+              <div class="name-date">
+                <p class="name">Kannan</p>
+                <p class="date">24/04/2022</p>
+              </div>
+              <p class="message">
+                Tomorrow will be declared as holiday. You can leave the hostel
+                by tommorow evening.
+              </p>
+            </section>
+            <section class="message-box">
+              <div class="name-date">
+                <p class="name">{{ "kannan" }}</p>
+                <p class="date">{{ "todeaaty" }}</p>
+              </div>
+              <p class="message">{{ "cone" }}</p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import staffServices from "@/services/StaffServices";
-import DashBoard from "../components/dashboard/DashBoard.vue";
-import DataList from "./dataList.vue";
 export default {
-  name: "profilePage",
-  components: { DashBoard, DataList },
+  name: "DashBoard",
 
   data() {
     return {
-      dashBoard: {
-        showDash: true,
-        showList: false,
-      },
       NumberOfStudents: 4567,
       NumberOfQueries: 0,
       NumberOfRooms: null,
       notification: null,
-      state: null,
-      listData: null,
     };
   },
   async created() {
@@ -40,10 +125,27 @@ export default {
   methods: {
     navigateTo(route) {
       console.log(route);
+      const data = {
+        filter: {
+          hostelName: null,
+          gender: null,
+          year: null,
+        },
+        options: {
+          hostelName: [null, "AMARAVATHI", "PONNAR", "SANKAR", "VALLUVAR"],
+          gender: [null, "MALE", "FEMALE"],
+          year: [null, 1, 2, 3, 4],
+        },
+        data: {
+          name: "",
+          rollnumber: "",
+          dept: "",
+        },
+      };
       this.$router.push({
         name: "listView",
         params: {
-          data: "string",
+          data,
         },
       });
     },
