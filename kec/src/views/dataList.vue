@@ -157,6 +157,9 @@ export default {
       },
     };
   },
+  mounted() {
+    console.log(this.$router.params);
+  },
   methods: {
     filter_rows() {
       console.log(this.hostelName);
