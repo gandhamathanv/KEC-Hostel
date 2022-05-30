@@ -55,16 +55,22 @@
         </div>
       </div>
     </div>
+    <div>
+      <booking-popup v-if="pop"></booking-popup>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HostelService from "@/services/HostelServices";
+import bookingPopup from "./bookingPopup.vue";
 export default {
+  components: { bookingPopup },
   name: "bookingView",
   data() {
     return {
+      pop: false,
       rooms: null,
       booked: null,
       data: null,

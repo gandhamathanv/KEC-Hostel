@@ -1,39 +1,38 @@
 <template>
   <div>
-    <div class="container">
-      <div class="container-pop">
-        <div class="close">+</div>
-        <div class="container-full">
-          <h2 class="heading">Room Details</h2>
-          <h3 class="heading-details">
-            <span class="heading-title">Name:</span>Amaravathi
-          </h3>
+    <div class="container-pop">
+      <div class="close">+</div>
+      <div class="container-full">
+        <h2 class="heading">Room Details</h2>
+        <h3 class="heading-details">
+          <span class="heading-title">Name:</span>Amaravathi
+        </h3>
 
-          <h3 class="heading-details">
-            <span class="heading-title">Room Number:</span>AMR230
-          </h3>
-          <h3 class="heading-details">
-            <span class="heading-title">Floor:</span>Second Floor
-          </h3>
+        <h3 class="heading-details">
+          <span class="heading-title">Room Number:</span>AMR230
+        </h3>
+        <h3 class="heading-details">
+          <span class="heading-title">Floor:</span>Second Floor
+        </h3>
 
-          <h3 class="heading-details">
-            <span class="heading-title">Capacity:</span>3
-          </h3>
-          <h3 class="heading-details">
-            <span class="heading-title">Availability:</span>2
-          </h3>
-          <h3 class="heading-details">
-            <span class="heading-title">Attached Bathroom:</span>Yes
-          </h3>
+        <h3 class="heading-details">
+          <span class="heading-title">Capacity:</span>3
+        </h3>
+        <h3 class="heading-details">
+          <span class="heading-title">Availability:</span>2
+        </h3>
+        <h3 class="heading-details">
+          <span class="heading-title">Attached Bathroom:</span>Yes
+        </h3>
 
-          <a class="button">Book Now</a>
-        </div>
+        <a class="button">Book Now</a>
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
+  name: "bookingPopUp",
   data() {
     return {};
   },
@@ -41,14 +40,6 @@ export default {
 };
 </script>
 <style scoped>
-.container {
-  background-color: #fafafa;
-  margin: 210px;
-  box-shadow: #fff;
-  position: relative;
-  outline-style: outset;
-  border-radius: 20px;
-}
 .container-pop {
   border-radius: 20px;
   background-color: rgba(194, 190, 190, 0.825);

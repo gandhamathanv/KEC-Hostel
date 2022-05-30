@@ -1,0 +1,22 @@
+TODO: staff login return message
+TODO: list view data retrevia
+TODO: reset password
+FIXME: validator
+FIXME: show password
+
+
+TODO: filter
+TODO: delete data
+FIXME: staff list
+FIXME: booking list
+FIXME: hostel name list
+FIXME: update data
+TODO: pagenation
+TODO: aurth by using link
+
+
+TODO: notification
+TODO: menu
+TODO: export excel
+
+TODO: booking page button

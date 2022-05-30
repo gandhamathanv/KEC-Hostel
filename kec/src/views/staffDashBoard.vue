@@ -51,51 +51,17 @@
     <div class="container1">
       <div class="container-box">
         <div class="notification">
-          <div class="notification-box">
-            <section class="message-box">
-              <div class="name-date">
-                <p class="name">Kannan</p>
-                <p class="date">24/04/2022</p>
-              </div>
-              <p class="message">
-                Tomorrow will be declared as holiday. You can leave the hostel
-                by tommorow evening.
-              </p>
-            </section>
-            <section class="message-box">
-              <div class="name-date">
-                <p class="name">Kannan</p>
-                <p class="date">24/04/2022</p>
-              </div>
-              <p class="message">
-                Tomorrow will be declared as holiday. You can leave the hostel
-                by tommorow evening.
-              </p>
-            </section>
-          </div>
+          <div class="notification-box">//notification #bhuvaneshwariBOO</div>
         </div>
       </div>
       <div class="container-box">
         <div class="notification">
-          <div class="notification-box">
-            <section class="message-box">
-              <div class="name-date">
-                <p class="name">Kannan</p>
-                <p class="date">24/04/2022</p>
-              </div>
-              <p class="message">
-                Tomorrow will be declared as holiday. You can leave the hostel
-                by tommorow evening.
-              </p>
-            </section>
-            <section class="message-box">
-              <div class="name-date">
-                <p class="name">{{ "kannan" }}</p>
-                <p class="date">{{ "todeaaty" }}</p>
-              </div>
-              <p class="message">{{ "cone" }}</p>
-            </section>
-          </div>
+          <div class="notification-box">//todays menu</div>
+        </div>
+      </div>
+      <div class="container-box">
+        <div class="notification">
+          <div class="notification-box">//export data</div>
         </div>
       </div>
     </div>
