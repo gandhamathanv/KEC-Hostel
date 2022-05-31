@@ -171,7 +171,7 @@ module.exports = {
         try {
             //TODO change password bug
             const { viewer, id, currentPassword, newPassword } = req.body;
-            if (viewer == "student") {
+            if (viewer == "STUDENT") {
                 const user = await studentLogin.findOne({ where: { rollnumber: id } });
                 if (user) {
                     const isPasswordValid = await user.comparePassword(currentPassword);
@@ -195,8 +195,8 @@ module.exports = {
                     });
                 }
             }
-            if (viewer == "staff") {
-                const user = await staffLogin.findOne({ where: { mailID: id } });
+            if (viewer == "STAFF") {
+                const user = await staffLogin.findOne({ where: { collegeMailID: id } });
                 if (user) {
                     const isPasswordValid = await user.comparePassword(currentPassword);
                     if (!isPasswordValid) {
