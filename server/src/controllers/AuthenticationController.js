@@ -6,6 +6,8 @@ const {
     studentLogin,
     permission,
 } = require("../models");
+const { sequelize } = require("../models");
+let transactionT = [];
 const jwt = require("jsonwebtoken");
 const config = require("../config/config");
 
@@ -33,23 +35,28 @@ module.exports = {
     },
 
     async studentDataRegister(req, res) {
+        const t = await sequelize.transaction();
         try {
-            const t = await sequelize.transaction();
             const user = await studentInfo.create(req.body, { transaction: t });
 
-            await db.studentLogin.create({
+            await studentLogin.create({
                 rollnumber: req.body.rollnumber,
                 password: "Kongu2022",
                 collegeMailID: req.body.collegeMailID,
             });
-
-            const result = await mailer(collegeMailID);
+            console.log("here");
+            const result = await mailer.sentMail({
+                mailId: req.body.collegeMailID,
+                jwt: "string",
+            });
             console.log("result ", result);
             if (result.status != "success") {
                 console.log("error in mail");
                 new Error("error");
             }
             console.log({ id: req.body.collegeMailID, trans: t });
+            transactionT.push({ id: req.body.collegeMailID, trans: t });
+            console.log(transactionT.length);
         } catch (err) {
             console.log(err);
             await t.rollback();
@@ -66,10 +73,10 @@ module.exports = {
             const t = await sequelize.transaction();
             const user = await staffInfo.create(req.body, { transaction: t });
 
-            await db.staffLogin.create({
+            await staffLogin.create({
                 collegeMailID: req.body.collegeMailID,
                 password: "Kongu2022",
-            });
+            }, { transaction: t });
 
             const result = await mailer(collegeMailID);
             console.log("result ", result);
@@ -78,7 +85,7 @@ module.exports = {
                 new Error("error");
             }
             console.log({ id: req.body.collegeMailID, trans: t });
-            res.status(200).send(user.toJSON());
+            res.status(200).send("success");
         } catch (err) {
             console.log(err);
             await t.rollback();

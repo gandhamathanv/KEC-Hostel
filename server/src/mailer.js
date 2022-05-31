@@ -10,36 +10,46 @@ const oAuth2client = new google.auth.OAuth2(
 );
 oAuth2client.setCredentials({ refresh_token: config.mailer.REFRESH_TOKEN });
 
-module.exports = async function sentMail(data) {
-    const { mailId, jwt } = data;
-    try {
-        const accessToken = await oAuth2client.getAccessToken();
-        const transport = nodemailer.createTransport({
-            service: "gmail",
-            auth: {
-                type: "OAuth2",
-                user: "kechostel@gmail.com",
-                clientId: config.mailer.CLIENT_ID,
-                clientSecret: config.mailer.CLIENT_SECRET,
-                refreshToken: config.mailer.REFRESH_TOKEN,
-                accessToken: accessToken,
-            },
-            connectionTimeout: 5 * 60 * 1000,
-        });
-        const mailOptions = {
-            from: "KEC HOSTEL <kechostel@gmail.com>",
-            to: `${mailId}`,
-            subject: "Authentication mail",
-            text: "your file is aunthecated",
-            html: `<p>your login is Authentication code is <h1> click here to authorize-> <a href="${jwt}">Confirm Login</a> </h1></p>`,
-        };
-        const result = await transport.sendMail(mailOptions);
-        result.authCode = AuthCode;
-        result.status = "success";
-        console.log("success");
+module.exports = {
+    async sentMail(data) {
+        const { mailId, jwt } = data;
+        try {
+            console.log("entered mailer");
+            const accessToken = await oAuth2client.getAccessToken();
+            console.log("access token");
 
-        return result;
-    } catch (error) {
-        return error;
-    }
+            const transport = nodemailer.createTransport({
+                service: "gmail",
+                auth: {
+                    type: "OAuth2",
+                    user: "kechostel@gmail.com",
+                    clientId: config.mailer.CLIENT_ID,
+                    clientSecret: config.mailer.CLIENT_SECRET,
+                    refreshToken: config.mailer.REFRESH_TOKEN,
+                    accessToken: accessToken,
+                },
+                connectionTimeout: 5 * 60 * 1000,
+            });
+            console.log("token set");
+
+            const mailOptions = {
+                from: "KEC HOSTEL <kechostel@gmail.com>",
+                to: `${mailId}`,
+                subject: "Authentication mail",
+                text: "your file is aunthecated",
+                html: `<p>your login is Authentication code is <h1> click here to authorize-> <a href="${jwt}">Confirm Login</a> </h1></p>`,
+            };
+            console.log("access");
+            const result = await transport.sendMail(mailOptions);
+            console.log("mail snet");
+
+            result.status = "success";
+            console.log("success");
+
+            return result;
+        } catch (error) {
+            console.log(error);
+            return error;
+        }
+    },
 };
