@@ -3,6 +3,7 @@ TODO: list view data retrevia
 TODO: reset password
 FIXME: validator
 FIXME: show password
+FIXME: jwt token refactor
 
 
 TODO: filter
@@ -20,3 +21,5 @@ TODO: menu
 TODO: export excel
 
 TODO: booking page button
+
+TODO: staff count

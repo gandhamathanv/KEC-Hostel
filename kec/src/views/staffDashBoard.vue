@@ -25,7 +25,7 @@
           </div>
           <div class="card">
             <h1 class="card-title">Booking</h1>
-            <span @click="navigateTo('booking')" class="card-button"
+            <span @click="navigateTo('bookingList')" class="card-button"
               >view booking</span
             >
 
@@ -35,7 +35,7 @@
           </div>
           <div class="card">
             <h1 class="card-title">room</h1>
-            <span @click="navigateTo('roomsList')" class="card-button"
+            <span @click="navigateTo('hostelList')" class="card-button"
               >view room</span
             >
 
@@ -90,12 +90,23 @@ export default {
   },
   methods: {
     navigateTo(route) {
-      this.$router.push({
-        name: "listView",
-        params: {
-          route,
-        },
-      });
+      if (route === "studentList") {
+        this.$router.push({
+          name: "studentDataList",
+        });
+      } else if (route === "staffList") {
+        this.$router.push({
+          name: "staffDataList",
+        });
+      } else if (route == "bookingList") {
+        this.$router.push({
+          name: "bookingDataList",
+        });
+      } else if (route == "hostelList") {
+        this.$router.push({
+          name: "hostelDataList",
+        });
+      }
     },
   },
 };

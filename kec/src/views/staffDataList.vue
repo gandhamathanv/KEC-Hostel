@@ -126,162 +126,36 @@ export default {
     },
   },
   async created() {
-    if (this.$route.params.route == "studentList") {
-      const { data } = await getDetails.getStudent();
-      this.data.options.hostelName = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.hostelName;
-          })
-        ),
-      ];
-      this.data.options.gender = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.gender;
-          })
-        ),
-      ];
-      this.data.options.year = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.year;
-          })
-        ),
-      ];
-      this.data.options.department = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.department;
-          })
-        ),
-      ];
-    }
-    if (this.$route.params.route == "studentList") {
-      const { data } = await getDetails.getStudent();
-      this.data.options.hostelName = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.hostelName;
-          })
-        ),
-      ];
-      this.data.options.gender = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.gender;
-          })
-        ),
-      ];
-      this.data.options.year = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.year;
-          })
-        ),
-      ];
-      this.data.options.department = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.department;
-          })
-        ),
-      ];
-      this.listData = data.data;
-    } else if (this.$route.params.route == "staffList") {
-      const { data } = await getDetails.getStaff();
-      this.data.options.hostelName = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.hostelName;
-          })
-        ),
-      ];
-      this.data.options.gender = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.gender;
-          })
-        ),
-      ];
-      this.data.options.year = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.year;
-          })
-        ),
-      ];
-      this.data.options.department = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.department;
-          })
-        ),
-      ];
-      this.listData = data.data;
-    } else if (this.$route.params.route == "bookingList") {
-      const { data } = await getDetails.getBooking();
-      this.data.options.hostelName = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.hostelName;
-          })
-        ),
-      ];
-      this.data.options.gender = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.gender;
-          })
-        ),
-      ];
-      this.data.options.year = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.year;
-          })
-        ),
-      ];
-      this.data.options.department = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.department;
-          })
-        ),
-      ];
-      this.listData = data.data;
-    } else if (this.$route.params.route == "roomsList") {
-      const { data } = await getDetails.getRooms();
-      this.data.options.hostelName = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.hostelName;
-          })
-        ),
-      ];
-      this.data.options.gender = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.gender;
-          })
-        ),
-      ];
-      this.data.options.year = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.year;
-          })
-        ),
-      ];
-      this.data.options.department = [
-        ...new Set(
-          data.data.map((el) => {
-            return el.department;
-          })
-        ),
-      ];
-      this.listData = data.data;
-    }
+    const { data } = await getDetails.getStaff();
+    this.data.options.hostelName = [
+      ...new Set(
+        data.data.map((el) => {
+          return el.hostelName;
+        })
+      ),
+    ];
+    this.data.options.gender = [
+      ...new Set(
+        data.data.map((el) => {
+          return el.gender;
+        })
+      ),
+    ];
+    this.data.options.year = [
+      ...new Set(
+        data.data.map((el) => {
+          return el.year;
+        })
+      ),
+    ];
+    this.data.options.department = [
+      ...new Set(
+        data.data.map((el) => {
+          return el.department;
+        })
+      ),
+    ];
+    this.listData = data.data;
   },
 
   components: { ListCards },
