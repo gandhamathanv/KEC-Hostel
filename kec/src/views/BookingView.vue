@@ -141,7 +141,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* height: 100vh; */
+
   font-family: "Lato", sans-serif;
   margin: 0;
 }
@@ -188,11 +188,7 @@ export default {
 .bed:nth-of-type(5) {
   margin-right: 18px;
 }
-/*
-.bed:nth-last-of-type(3) {
-  margin-left: 18px;
-}
-**/
+
 .bed:not(.sold):hover {
   cursor: pointer;
   background-color: green;
@@ -247,19 +243,15 @@ export default {
 }
 .button {
   align-items: center;
-  justify-content: center;
-  height: 42px;
+  height: 40px;
   max-width: 100px;
-  /* display: flex; */
-
   border: none;
+  margin: 16px;
+  justify-content: space-around;
   outline: none;
-
-  border-radius: 5px;
-  margin: 25px 0;
-
+  border-radius: 6px;
+  background: green;
   cursor: pointer;
-  box-shadow: 0 0 2px 2px rgb(211, 6, 6);
 }
 .button:hover {
   box-shadow: 0 0 40px 40px rgb(223, 40, 12) inset;

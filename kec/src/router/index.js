@@ -16,6 +16,10 @@ import listView from "../views/dataList.vue";
 import updateInfo from "../components/updateInfo.vue";
 import checking from "../components/listCards.vue";
 import Popup from "../views/bookingPopup.vue";
+import studentDataList from "../views/studentDataList.vue";
+import staffDataList from "../views/staffDataList.vue";
+import bookingDataList from "../views/bookingDataList.vue";
+import hostelDataList from "../views/hostelDataList.vue";
 
 const routes = [
   {
@@ -97,6 +101,26 @@ const routes = [
     path: "/popup",
     name: "popup",
     component: Popup,
+  },
+  {
+    path: "/studentDataList",
+    name: "studentDataList",
+    component: studentDataList,
+  },
+  {
+    path: "/staffDataList",
+    name: "staffDataList",
+    component: staffDataList,
+  },
+  {
+    path: "/bookingDataList",
+    name: "bookingDataList",
+    component: bookingDataList,
+  },
+  {
+    path: "/hostelDataList",
+    name: "hostelDataList",
+    component: hostelDataList,
   },
 ];
 
