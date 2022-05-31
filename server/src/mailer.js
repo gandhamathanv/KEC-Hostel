@@ -2,7 +2,7 @@
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 const config = require("./config/config");
-getCode = () => Math.floor(100000 + Math.random() * 900000);
+
 const oAuth2client = new google.auth.OAuth2(
     config.mailer.CLIENT_ID,
     config.mailer.CLIENT_SECRET,
@@ -11,11 +11,9 @@ const oAuth2client = new google.auth.OAuth2(
 oAuth2client.setCredentials({ refresh_token: config.mailer.REFRESH_TOKEN });
 
 module.exports = async function sentMail(data) {
-    const mailId = data;
-    console.log(mailId);
+    const { mailId, jwt } = data;
     try {
         const accessToken = await oAuth2client.getAccessToken();
-        const AuthCode = getCode();
         const transport = nodemailer.createTransport({
             service: "gmail",
             auth: {
@@ -33,11 +31,12 @@ module.exports = async function sentMail(data) {
             to: `${mailId}`,
             subject: "Authentication mail",
             text: "your file is aunthecated",
-            html: `<p>your login is Authentication code is <h1> ${AuthCode} </h1></p>`,
+            html: `<p>your login is Authentication code is <h1> click here to authorize-> <a href="${jwt}">Confirm Login</a> </h1></p>`,
         };
         const result = await transport.sendMail(mailOptions);
         result.authCode = AuthCode;
         result.status = "success";
+        console.log("success");
 
         return result;
     } catch (error) {
