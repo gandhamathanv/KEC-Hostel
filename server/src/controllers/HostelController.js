@@ -1,12 +1,13 @@
 /* eslint-disable */
 const {
     hostelinfo,
-
+    staffInfo,
     studentInfo,
     hostelrooms,
     hostelfor,
     foodmenu,
     notification,
+    booking,
 } = require("../models");
 const Promise = require("bluebird");
 const jwt = require("jsonwebtoken");
@@ -133,13 +134,14 @@ module.exports = {
     async getStaffDash(req, res) {
         try {
             const decode = jwt.verify(req.token, config.authentication.jwtSecret);
-            console.log(decode);
             const studentCount = await studentInfo.count();
-            const roomCount = await hostelrooms.count();
+            const staffCount = await staffInfo.count();
+            const hostelCount = await hostelinfo.count();
+            const bookingCount = await booking.count();
             const noti = await notification.findAll({});
             res.status(200).send({
                 status: "success",
-                data: { studentCount, roomCount, noti },
+                data: { studentCount, staffCount, bookingCount, hostelCount, noti },
             });
         } catch (err) {
             console.log(err);
