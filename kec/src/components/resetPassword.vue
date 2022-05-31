@@ -3,13 +3,23 @@
     <div class="ln">
       <h2 class="ln-here">Reset Password</h2>
 
-      <div v-if="viewer == 'staff'" class="input-box">
+      <div v-if="viewer == 'STAFF'" class="input-box">
         <i class="fa fa-envelope-o"></i>
-        <input type="email" placeholder="Email Id" v-model="id" />
+        <input
+          type="email"
+          placeholder="Email Id"
+          :readonly="true"
+          :value="id"
+        />
       </div>
-      <div v-if="viewer == 'student'" class="input-box">
+      <div v-if="viewer == 'STUDENT'" class="input-box">
         <i class="fa fa-envelope-o"></i>
-        <input type="text" placeholder="Rollnumber" v-model="id" />
+        <input
+          type="text"
+          placeholder="Rollnumber"
+          :readonly="true"
+          :value="id"
+        />
       </div>
       <div class="input-box">
         <i class="fa fa-key"></i>
@@ -53,7 +63,7 @@
       <div class="error">
         <p class="error-line">{{ error }}</p>
       </div>
-      <button @click="changePassword" type="button" class="login-btn">
+      <button @click="changePassword()" type="button" class="login-btn">
         Change Password
       </button>
     </div>
@@ -66,7 +76,7 @@ export default {
   name: "changePassword",
   data() {
     return {
-      viewer: this.$store.state.viewer,
+      viewer: null,
       id: "",
       currentPassword: "",
       newPassword: "",
@@ -101,6 +111,7 @@ export default {
     },
     async changePassword() {
       try {
+        console.log("change password");
         await AuthenticationService.changePassword({
           viewer: this.viewer,
           id: this.id,
@@ -113,6 +124,15 @@ export default {
         // alert(error.respsonse.data.error);
       }
     },
+  },
+  created() {
+    this.viewer = this.$store.state.viewer;
+    if (this.viewer === "STAFF") {
+      this.id = this.$store.state.user.collegeMailID;
+    } else if (this.viewer === "STUDENT") {
+      this.id = this.$store.state.user.rollnumber;
+    }
+    console.log(this.viewer);
   },
 };
 </script>

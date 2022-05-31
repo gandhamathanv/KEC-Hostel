@@ -250,8 +250,8 @@ export default {
         ),
       ];
       this.listData = data.data;
-    } else if (this.$route.params.route == "roomsList") {
-      const { data } = await getDetails.getRooms();
+    } else if (this.$route.params.route == "hostelList") {
+      const { data } = await getDetails.getHostels();
       this.data.options.hostelName = [
         ...new Set(
           data.data.map((el) => {

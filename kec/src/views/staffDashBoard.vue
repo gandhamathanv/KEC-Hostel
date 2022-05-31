@@ -12,7 +12,7 @@
               >view students</span
             >
             <h3 class="h3">No of students</h3>
-            <p>Present : {{ NumberOfStudents }}</p>
+            <p>{{ NumberOfStudents }}</p>
           </div>
           <div class="card">
             <h1 class="card-title">staff</h1>
@@ -21,7 +21,7 @@
             >
 
             <h3 class="h3">No of staff</h3>
-            <p>Present : {{ NumberOfStudents }}</p>
+            <p>{{ NumberOfStudents }}</p>
           </div>
           <div class="card">
             <h1 class="card-title">Booking</h1>
@@ -31,17 +31,17 @@
 
             <h3 class="h3">No of Booking</h3>
 
-            <p>Booking : {{ NumberOfBooking }}</p>
+            <p>{{ NumberOfBooking }}</p>
           </div>
           <div class="card">
-            <h1 class="card-title">room</h1>
+            <h1 class="card-title">Hostels</h1>
             <span @click="navigateTo('hostelList')" class="card-button"
-              >view room</span
+              >View Hostels</span
             >
 
-            <h3 class="h3">No of room</h3>
+            <h3 class="h3">No of Hostels</h3>
 
-            <p>rooms : {{ NumberOfRooms }}</p>
+            <p>{{ NumberOfRooms }}</p>
           </div>
         </div>
       </section>
