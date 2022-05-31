@@ -34,13 +34,26 @@ module.exports = {
 
     async studentDataRegister(req, res) {
         try {
-            console.log(req.body);
-            const user = await studentInfo.create(req.body);
-            res.status(200).send({
-                status: "success",
+            const t = await sequelize.transaction();
+            const user = await studentInfo.create(req.body, { transaction: t });
+
+            await db.studentLogin.create({
+                rollnumber: req.body.rollnumber,
+                password: "Kongu2022",
+                collegeMailID: req.body.collegeMailID,
             });
+
+            const result = await mailer(collegeMailID);
+            console.log("result ", result);
+            if (result.status != "success") {
+                console.log("error in mail");
+                new Error("error");
+            }
+            console.log({ id: req.body.collegeMailID, trans: t });
         } catch (err) {
             console.log(err);
+            await t.rollback();
+
             res.status(400).send({
                 status: "failed",
                 error: "Error in Authenticationcroller.js",
@@ -50,10 +63,25 @@ module.exports = {
     async staffDataRegister(req, res) {
         console.log(req.body);
         try {
-            const user = await staffInfo.create(req.body);
+            const t = await sequelize.transaction();
+            const user = await staffInfo.create(req.body, { transaction: t });
+
+            await db.staffLogin.create({
+                collegeMailID: req.body.collegeMailID,
+                password: "Kongu2022",
+            });
+
+            const result = await mailer(collegeMailID);
+            console.log("result ", result);
+            if (result.status != "success") {
+                console.log("error in mail");
+                new Error("error");
+            }
+            console.log({ id: req.body.collegeMailID, trans: t });
             res.status(200).send(user.toJSON());
         } catch (err) {
             console.log(err);
+            await t.rollback();
             res.status(400).send({
                 error: "Error in Authenticationcroller.js",
             });
@@ -91,7 +119,7 @@ module.exports = {
                     user: userJson,
                     viewer: "STUDENT",
                 };
-                const token = jwtSignUser(data);
+                const token = jwtSignUser({ rollnumber });
                 const tim = 3 * 24 * 60 * 60 * 1000;
                 res.cookie("jwt", token, {
                     maxAge: tim,
@@ -143,13 +171,14 @@ module.exports = {
                     },
                     attributes: ["level"],
                 });
+                token = jwtSignUser({ mailId });
                 const userJson = userInfo.toJSON();
                 const data = {
                     user: userJson,
                     level,
                     viewer: "STAFF",
+                    token,
                 };
-                token = jwtSignUser(data);
                 res.cookie("jwt", token, {
                     expires: new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
                     httpOnly: true,
@@ -228,11 +257,41 @@ module.exports = {
     },
     async sentToken(req, res) {
         try {
+            let data;
             const decode = jwt.verify(req.token, config.authentication.jwtSecret);
+            if (decode.rollnumber) {
+                const user = await studentInfo.findOne({
+                    where: {
+                        rollnumber: decode.rollnumber,
+                    },
+                });
+                const userJson = user.toJSON();
+                data = {
+                    user: userJson,
+                    viewer: "STUDENT",
+                };
+            }
+            if (decode.mailId) {
+                const userInfo = await staffInfo.findOne({
+                    collegeMailID: decode.mailId,
+                });
 
+                const { level } = await permission.findOne({
+                    where: {
+                        responsibility: userInfo.hostelResponsibility,
+                    },
+                    attributes: ["level"],
+                });
+                const userJson = userInfo.toJSON();
+                data = {
+                    user: userJson,
+                    level,
+                    viewer: "STAFF",
+                };
+            }
             res.status(200).send({
                 status: "success",
-                data: decode,
+                data,
                 token: req.token,
             });
         } catch (err) {

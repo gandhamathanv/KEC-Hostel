@@ -143,25 +143,6 @@ db.booking.belongsTo(db.studentInfo, {
 });
 
 //hooks
-
-db.studentInfo.addHook("beforeCreate", (user, options) => {
-    const { rollnumber, collegeMailID } = user.dataValues;
-    db.studentLogin.create({ rollnumber, password: "Kongu2022", collegeMailID });
-});
-db.staffInfo.addHook("beforeCreate", (user, options) => {
-    const { collegeMailID } = user.dataValues;
-    db.staffLogin.create({ password: "Kongu2022", collegeMailID });
-});
-// db.studentLogin.addHook("beforeCreate", async(user, options) => {
-//     const { collegeMailID } = user.dataValues;
-//     console.log("aunthecations");
-//     const result = await mailer(collegeMailID);
-//     console.log("result ", result);
-//     if (result.status != "success") {
-//         console.log("error in mail");
-//         return new Error("error");
-//     }
-// });
 // console.log(db);
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
