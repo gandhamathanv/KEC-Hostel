@@ -273,7 +273,9 @@ module.exports = {
             }
             if (decode.mailId) {
                 const userInfo = await staffInfo.findOne({
-                    collegeMailID: decode.mailId,
+                    where: {
+                        collegeMailID: decode.mailId,
+                    },
                 });
 
                 const { level } = await permission.findOne({
