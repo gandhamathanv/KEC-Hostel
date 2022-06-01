@@ -205,46 +205,18 @@
   </div>
 </template>
 <script>
+import getDetails from "@/services/getDetails";
 export default {
-  name: "studentDetails",
   data() {
     return {
-      user: {
-        name: "ggasd",
-        rollnumber: "20CSR051",
-        class: "B",
-        year: 2,
-        department: "MECH",
-        DOB: "2022-05-05",
-        bloodGroup: "",
-        hostelName: null,
-        roomNumber: null,
-        gender: "MALE",
-        phoneNumber: 9878323973,
-        whatsappNumber: 9789323973,
-        telegramNumber: 9876543210,
-        collegeMailID: "gandhamathanv.20cse@kongu.edu",
-        personalMailID: "gandhamathanv.20cse@kongu.edu",
-        aadharNumber: 424618765987,
-        fatherName: "",
-        fatherMobileNumber: 8979897654,
-        fatherOccupation: "",
-        motherName: "",
-        motherMobileNumber: 8769876787,
-        MotherOccupation: "",
-        address: "",
-        district: "",
-        state: "",
-        localGuardian: "",
-        localGuardianPhoneNumber: 9878978978,
-        accountNumber: 9876543213456,
-        bankName: "",
-        branch: "sadasd",
-        IFSCcode: "as",
-        dateOfEntry: null,
-        dateOfVacation: null,
-      },
+      user: null,
     };
+  },
+  async created() {
+    const { data } = await getDetails.getStudent({
+      rollnumber: this.$route.params.rollnumber,
+    });
+    this.user = data;
   },
 };
 </script>
