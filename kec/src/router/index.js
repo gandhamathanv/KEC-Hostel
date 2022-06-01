@@ -122,6 +122,11 @@ const routes = [
     name: "hostelDataList",
     component: hostelDataList,
   },
+  // {
+  //   path: "/newInfoDetails",
+  //   name: "newInfoDetails",
+  //   component: newInfoDetails,
+  // },
 ];
 
 const router = createRouter({

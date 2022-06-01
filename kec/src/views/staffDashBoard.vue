@@ -51,14 +51,121 @@
     <div class="container1">
       <div class="container-box">
         <div class="notification">
-          <div class="notification-box">//notification #bhuvaneshwariBOO</div>
+          <div class="notification-box">
+            <div class="menu">
+              <table>
+                <tr>
+                  <td>
+                    <ul>
+                      <li class="menu1">
+                        <a href="#link1">MONDAY</a>
+                      </li>
+                      <li class="menu1">
+                        <a href="#link2">TUESDAY</a>
+                      </li>
+                      <li class="menu1">
+                        <a href="#link3">WEDNESDAY</a>
+                      </li>
+                      <li class="menu1">
+                        <a href="#link4">THURSDAY</a>
+                      </li>
+                      <li class="menu1">
+                        <a href="#link5">FRIDAY</a>
+                      </li>
+                      <li class="menu1">
+                        <a href="#link6">SATURDAY</a>
+                      </li>
+                      <li class="menu1">
+                        <a href="#link7">SUNDAY</a>
+                      </li>
+                    </ul>
+                  </td>
+                  <td class="items">
+                    <div id="link1">
+                      <h3 CLASS="break">breakfast</h3>
+                      <h4>DOSA,CHUTNEY,CHAPATHI</h4>
+                      <h3 CLASS="lunch">lunch</h3>
+                      <h4>RICE,SAMBER,CHAPATHI</h4>
+                      <h3 CLASS="dinner">dinner</h3>
+                      <h4>IDLI,CHUTNEY,CURD RICE</h4>
+                    </div>
+
+                    <div id="link2">
+                      <h3 CLASS="break">breakfast</h3>
+                      <h4>RICE,SAMBER,CHAPATHI</h4>
+                      <h3 CLASS="lunch">lunch</h3>
+                      <h4>DOSA,CHUTNEY,CHAPATHI</h4>
+                      <h3 CLASS="dinner">dinner</h3>
+                      <h4>IDLI,CHUTNEY,CURD RICE</h4>
+                    </div>
+                    <div id="link3">
+                      <h3 CLASS="break">breakfast</h3>
+                      <h4>DOSA,CHUTNEY,CHAPATHI</h4>
+                      <h3 CLASS="lunch">lunch</h3>
+                      <h4>IDLI,CHUTNEY,CURD RICE</h4>
+                      <h3 CLASS="dinner">dinner</h3>
+                      <h4>RICE,SAMBER,CHAPATHI</h4>
+                    </div>
+                    <div id="link4">
+                      <h3 CLASS="break">breakfast</h3>
+                      <h4>DOSA,CHUTNEY,CHAPATHI</h4>
+                      <h3 CLASS="lunch">breakfast</h3>
+                      <h4>RICE,SAMBER,CHAPATHI</h4>
+                      <h3 CLASS="dinner">breakfast</h3>
+                      <h4>IDLI,CHUTNEY,CURD RICE</h4>
+                    </div>
+                    <div id="link5">
+                      <h3 CLASS="break">breakfast</h3>
+                      <h4>DOSA,CHUTNEY,CHAPATHI</h4>
+                      <h3 CLASS="lunch">breakfast</h3>
+                      <h4>RICE,SAMBER,CHAPATHI</h4>
+                      <h3 CLASS="dinner">breakfast</h3>
+                      <h4>IDLI,CHUTNEY,CURD RICE</h4>
+                    </div>
+                    <div id="link6">
+                      <h3 CLASS="break">breakfast</h3>
+                      <h4>DOSA,CHUTNEY,CHAPATHI</h4>
+                      <h3 CLASS="lunch">breakfast</h3>
+                      <h4>RICE,SAMBER,CHAPATHI</h4>
+                      <h3 CLASS="dinner">breakfast</h3>
+                      <h4>IDLI,CHUTNEY,CURD RICE</h4>
+                    </div>
+                    <div id="link7">
+                      <h3 CLASS="break">breakfast</h3>
+                      <h4>DOSA,CHUTNEY,CHAPATHI</h4>
+                      <h3 CLASS="lunch">breakfast</h3>
+                      <h4>RICE,SAMBER,CHAPATHI</h4>
+                      <h3 CLASS="dinner">breakfast</h3>
+                      <h4>IDLI,CHUTNEY,CURD RICE</h4>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
+
       <div class="container-box">
         <div class="notification">
-          <div class="notification-box">//todays menu</div>
+          <div class="notification-box">
+            <div class="left">
+              <div>
+                <a class="btn" href="contact.html"> </a>
+              </div>
+              <div class="noof">
+                <div class="number1">
+                  Number of Notifications:
+                  <div class="buttons-query">
+                    <button class="info2">5</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
       <div class="container-box">
         <div class="notification">
           <div class="notification-box">//export data</div>
@@ -216,7 +323,7 @@ body {
 }
 
 .notification {
-  width: 88%;
+  width: 150%;
   height: fit-content;
   background-color: #ffffff;
   margin-left: 10px;
@@ -255,5 +362,107 @@ body {
 }
 .message {
   text-align: center;
+} /************************menu items */
+.menu1 {
+  background-color: #dfc0ba;
+  width: 140px;
+  padding: 10px;
+  text-align: center;
+  margin: 10px;
+  border-radius: 20px;
+  text-decoration: none;
+  list-style-type: none;
+}
+.menu1:hover {
+  box-shadow: 2px 5px 5px rgb(158, 158, 238);
+  background-color: rgb(158, 211, 211);
+}
+
+.menu div {
+  display: none;
+}
+
+.menu div:target {
+  display: block;
+}
+.items {
+  background-color: #9fcef5;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+}
+.break {
+  background-color: #ffffff;
+  width: 140px;
+  box-shadow: 2px 5px 5px #3c4043;
+  margin: 10px;
+  border-radius: 5px;
+  height: 45px;
+}
+.lunch {
+  background-color: #ffffff;
+  width: 140px;
+  box-shadow: 2px 5px 5px #3c4043;
+  margin: 10px;
+  border-radius: 5px;
+  height: 45px;
+}
+.dinner {
+  background-color: #ffffff;
+  width: 140px;
+  box-shadow: 2px 5px 5px #3c4043;
+  margin: 10px;
+  border-radius: 5px;
+  height: 45px;
+}
+/* notification */
+.btn {
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  background-color: white;
+  color: #3c4043;
+  display: inline-flex;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    0 1px 3px 1px rgba(60, 64, 67, 0.149);
+  transition: 0.5s;
+}
+
+.btn::before {
+  background-image: url(https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 32px;
+  content: "";
+  min-width: 56px;
+
+  display: block;
+}
+.number1 {
+  font-family: system-ui;
+  color: grey;
+  width: 180px;
+  position: relative;
+  bottom: 20px;
+  margin: 20px;
+  font-size: 15px;
+}
+.left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  left: 100px;
+}
+.info2 {
+  background-color: #c0d9ec;
+  box-shadow: 2px 5px 10px #ddd;
+  border-radius: 20px;
+  border: none;
+  width: 120px;
+  height: 40px;
+  position: relative;
+  right: 150px;
+  bottom: 20px;
 }
 </style>
