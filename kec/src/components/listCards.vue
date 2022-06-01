@@ -34,7 +34,7 @@ export default {
   methods: {
     showDetails(rollnumber) {
       this.$router.push({
-        name: "infoDetails",
+        name: "studentdetail",
         params: {
           rollnumber,
         },

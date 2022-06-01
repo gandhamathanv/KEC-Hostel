@@ -20,6 +20,7 @@ import studentDataList from "../views/studentDataList.vue";
 import staffDataList from "../views/staffDataList.vue";
 import bookingDataList from "../views/bookingDataList.vue";
 import hostelDataList from "../views/hostelDataList.vue";
+import studentDetail from "../components/studentDetail.vue";
 
 const routes = [
   {
@@ -77,11 +78,7 @@ const routes = [
     name: "staffInfo",
     component: staffInfo,
   },
-  {
-    path: "/listView",
-    name: "listView",
-    component: listView,
-  },
+
   {
     path: "/updateInfo",
     name: "updateInfo",
@@ -108,9 +105,20 @@ const routes = [
     component: studentDataList,
   },
   {
+    path: "/studentDataList/:rollnumber",
+    name: "studentdetail",
+    component: studentDetail,
+  },
+
+  {
     path: "/staffDataList",
     name: "staffDataList",
     component: staffDataList,
+  },
+  {
+    path: "/staffDataList/:name",
+    name: "staffDetail",
+    component: staffDetail,
   },
   {
     path: "/bookingDataList",
@@ -122,11 +130,6 @@ const routes = [
     name: "hostelDataList",
     component: hostelDataList,
   },
-  // {
-  //   path: "/newInfoDetails",
-  //   name: "newInfoDetails",
-  //   component: newInfoDetails,
-  // },
 ];
 
 const router = createRouter({

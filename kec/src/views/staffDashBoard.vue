@@ -21,7 +21,7 @@
             >
 
             <h3 class="h3">No of staff</h3>
-            <p>{{ NumberOfStudents }}</p>
+            <p>{{ NumberOfStaffs }}</p>
           </div>
           <div class="card">
             <h1 class="card-title">Booking</h1>
@@ -31,7 +31,7 @@
 
             <h3 class="h3">No of Booking</h3>
 
-            <p>{{ NumberOfBooking }}</p>
+            <p>{{ NumberOfBookings }}</p>
           </div>
           <div class="card">
             <h1 class="card-title">Hostels</h1>
@@ -41,7 +41,7 @@
 
             <h3 class="h3">No of Hostels</h3>
 
-            <p>{{ NumberOfRooms }}</p>
+            <p>{{ NumberOfHostels }}</p>
           </div>
         </div>
       </section>
@@ -182,16 +182,19 @@ export default {
 
   data() {
     return {
-      NumberOfStudents: 4567,
-      NumberOfQueries: 0,
-      NumberOfRooms: null,
+      NumberOfStudents: null,
+      NumberOfStaffs: null,
+      NumberOfBookings: null,
+      NumberOfHostels: null,
       notification: null,
     };
   },
   async created() {
     const { data } = await staffServices.getDash(this.$store.state.token);
     this.NumberOfStudents = data.data.studentCount;
-    this.NumberOfRooms = data.data.roomCount;
+    this.NumberOfStaffs = data.data.staffCount;
+    this.NumberOfHostels = data.data.hostelCount;
+    this.NumberOfBookings = data.data.bookingCount;
     this.notification = data.data.noti;
     console.log(this.notification);
   },

@@ -41,23 +41,25 @@ export default {
   // un comment
   async created() {
     try {
+      console.log(localStorage.getItem("jwt"));
       const token = localStorage.getItem("jwt");
-      const res = await AuthenticationService.getData(token);
-      console.log(res);
-      if (res.data.status == "success") {
-        this.$store.dispatch("setToken", res.data.token);
-        this.$store.dispatch("setUser", res.data.data.user);
-        this.$store.dispatch("setViewer", res.data.data.viewer);
-        this.$store.dispatch("setLevel", res.data.data.level);
-      } else {
-        this.$store.dispatch("setToken", null);
-        this.$store.dispatch("setUser", null);
-        this.$store.dispatch("setViewer", null);
-        this.$store.dispatch("setLevel", null);
+      if (token) {
+        const res = await AuthenticationService.getData(token);
+        console.log(res);
+        if (res.data.status == "success") {
+          this.$store.dispatch("setToken", res.data.token);
+          this.$store.dispatch("setUser", res.data.data.user);
+          this.$store.dispatch("setViewer", res.data.data.viewer);
+          this.$store.dispatch("setLevel", res.data.data.level);
+        } else {
+          this.$store.dispatch("setToken", null);
+          this.$store.dispatch("setUser", null);
+          this.$store.dispatch("setViewer", null);
+          this.$store.dispatch("setLevel", null);
+          localStorage.removeItem("jwt");
+        }
       }
     } catch (error) {
-      console.log(error);
-      // this.error = error.response.data.error;
       alert(error);
     }
   },

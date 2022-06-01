@@ -7,8 +7,6 @@ module.exports = {
             const token = req.headers.authorization;
             console.log(token);
             req.token = token.split(" ")[1];
-            // const token = req.cookies.jwt;
-            // req.token = token;
         } catch (err) {
             res.status(400)({
                 status: "failed",
