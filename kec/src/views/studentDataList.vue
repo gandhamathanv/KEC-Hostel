@@ -91,7 +91,7 @@
 </template>
 
 <script>
-import StudentCards from "@/components/StudentCards.vue";
+import StudentCards from "@/components/studentCards.vue";
 import getDetails from "@/services/getDetails";
 export default {
   name: "studentDataList",
