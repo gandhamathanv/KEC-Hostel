@@ -11,7 +11,6 @@ import permissions from "../components/permissions.vue";
 import studentRegistration from "../views/studentRegistration.vue";
 import staffRegistration from "../views/staffRegistration.vue";
 import staffInfo from "../components/staffInfo.vue";
-
 import updateInfo from "../components/updateInfo.vue";
 import Popup from "../views/bookingPopup.vue";
 import studentDataList from "../views/studentDataList.vue";

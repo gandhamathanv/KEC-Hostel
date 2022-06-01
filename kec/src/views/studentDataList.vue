@@ -101,10 +101,10 @@ export default {
       search: "",
       data: {
         filter: {
-          hostelName: null,
-          gender: null,
-          year: null,
-          department: null,
+          hostelName: undefined,
+          gender: undefined,
+          year: undefined,
+          department: undefined,
         },
         options: {
           hostelName: null,
@@ -114,6 +114,7 @@ export default {
         },
       },
       listData: null,
+      realData: null,
     };
   },
 
@@ -122,7 +123,18 @@ export default {
       this.listName = listName;
     },
     filter_rows() {
-      console.log(this.hostelName);
+      const option = this.data.options;
+      this.listData = this.realData.filter((el) =>
+        option.gender ? el.gender === option.gender : true
+      );
+      // .filter((el) =>
+      //   option.hostelName ? el.hostelName === option.hostelName : true
+      // );
+      // .filter((el) => (option.year ? el.year === option.year : true))
+      // .filter((el) =>
+      //   option.department ? el.department === option.department : true
+      // );
+      console.log(this.listData);
     },
   },
   async created() {
@@ -156,6 +168,7 @@ export default {
       ),
     ];
     this.listData = data.data;
+    this.realData = data.data;
   },
 
   components: { StudentCards },
