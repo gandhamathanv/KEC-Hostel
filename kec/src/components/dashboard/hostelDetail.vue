@@ -210,11 +210,9 @@ export default {
     return {
       user: {
         hostelName: "Amaravathi",
-        floor: 4,
-        rooms: 150,
-        capacity: 450,
-        availability: 450,
-        facility: "Gym,TV Room,Computer Lab",
+        gender: "Female",
+        year: 2,
+        department: "CSE",
       },
     };
   },

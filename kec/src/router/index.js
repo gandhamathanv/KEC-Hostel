@@ -21,7 +21,7 @@ import bookingDataList from "../views/bookingDataList.vue";
 import hostelDataList from "../views/hostelDataList.vue";
 import studentDetail from "../components/studentDetail.vue";
 import staffDetail from "../components/staffDetail.vue";
-// import hostelDetail from "../components/hostelDetail.vue";
+import hostelDetail from "../components/dashboard/hostelDetail.vue";
 
 const routes = [
   {
@@ -127,11 +127,11 @@ const routes = [
     name: "hostelDataList",
     component: hostelDataList,
   },
-  // {
-  //   path: "/hostelDataList/:hostelName",
-  //   name: "hostelDetail",
-  //   component: hostelDetail,
-  // },
+  {
+    path: "/hostelDataList/:hostelName",
+    name: "hostelDetail",
+    component: hostelDetail,
+  },
 ];
 
 const router = createRouter({
