@@ -11,7 +11,7 @@
                   <div class="col-lg-8">
                     <div class="card shadow-sm2">
                       <div class="card-header border-0">
-                        <h3 class="mb-0">STUDENTS INFORMATION</h3>
+                        <h3 class="mb-0">HOSTEL INFORMATION</h3>
                       </div>
                       <div class="buttons">
                         <button class="submit">
