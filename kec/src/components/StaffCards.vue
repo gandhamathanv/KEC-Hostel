@@ -2,20 +2,18 @@
   <div class="dash">
     <figure v-for="el in data" :key="el" class="box">
       <div class="box-title">
-        <h2 class="box-rollno">{{ el.rollnumber }}</h2>
+        <h2 class="box-rollno">{{ el.name }}</h2>
       </div>
       <div class="box-title">
-        <h6 class="box-name">{{ el.name }}</h6>
+        <h6 class="box-name">{{ el.hostelName }}</h6>
       </div>
       <div class="box-dept">
         <div class="box-deptname">
           <h6 class="box-name">{{ el.department }}</h6>
         </div>
+
         <div class="box-deptname">
-          <h6 class="box-name">{{ el.hostelName }}</h6>
-        </div>
-        <div class="box-deptname">
-          <h6 class="box-name">{{ el.year }}</h6>
+          <h6 class="box-name">{{ el.gender }}</h6>
         </div>
 
         <a @click="showDetails(el.rollnumber)" class="box-details" href="#">
