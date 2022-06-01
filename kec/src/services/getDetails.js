@@ -19,6 +19,6 @@ export default {
     },
     getStudent(credentials) {
         console.log(credentials);
-        return Api().get("getStudentInfo", credentials);
+        return Api().get("getStudentInfo/" + credentials.rollnumber);
     },
 };

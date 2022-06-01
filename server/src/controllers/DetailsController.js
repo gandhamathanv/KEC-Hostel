@@ -36,13 +36,13 @@ module.exports = {
     },
     async getStudentInfo(req, res) {
         try {
-            console.log(req.body);
-            const rollnumber = req.body.rollnumber;
-            const data = await studentInfo.findAll({
+            const rollnumber = req.params.rollnumber;
+            const data = await studentInfo.findOne({
                 where: {
                     rollnumber,
                 },
             });
+            console.log("data sent");
             res.status(200).send({
                 status: "success",
                 data: data,
