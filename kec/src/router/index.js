@@ -12,7 +12,6 @@ import studentRegistration from "../views/studentRegistration.vue";
 import staffRegistration from "../views/staffRegistration.vue";
 import staffInfo from "../components/staffInfo.vue";
 import infoDetails from "../components/infoDetails.vue";
-import listView from "../views/dataList.vue";
 import updateInfo from "../components/updateInfo.vue";
 import checking from "../components/listCards.vue";
 import Popup from "../views/bookingPopup.vue";
