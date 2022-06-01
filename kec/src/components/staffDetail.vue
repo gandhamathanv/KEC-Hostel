@@ -205,6 +205,7 @@
   </div>
 </template>
 <script>
+import getDetails from "@/services/getDetails";
 export default {
   data() {
     return {
@@ -227,6 +228,12 @@ export default {
         aadharNumber: 23456789067,
       },
     };
+  },
+  async created() {
+    const { data } = await getDetails.getStaff({
+      staffID: this.$route.params.staffID,
+    });
+    this.user = data.data;
   },
 };
 </script>

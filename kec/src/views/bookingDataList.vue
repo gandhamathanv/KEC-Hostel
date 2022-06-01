@@ -85,13 +85,13 @@
       </div>
     </div>
     <div class="container1">
-      <ListCards v-bind:data="listData"></ListCards>
+      <BookingCards v-bind:data="listData"></BookingCards>
     </div>
   </div>
 </template>
 
 <script>
-import ListCards from "@/components/listCards.vue";
+import BookingCards from "@/components/BookingCards.vue";
 import getDetails from "@/services/getDetails";
 export default {
   name: "bookingDataList",
@@ -158,7 +158,7 @@ export default {
     this.listData = data.data;
   },
 
-  components: { ListCards },
+  components: { BookingCards },
 };
 </script>
 <style scoped>
