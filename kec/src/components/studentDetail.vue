@@ -2,5 +2,18 @@
   <div>{{ this.$route.params.rollnumber }}</div>
 </template>
 <script>
-export default {};
+import getDetails from "@/services/getDetails";
+export default {
+  data() {
+    return {
+      data: null,
+    };
+  },
+  async created() {
+    const { data } = await getDetails.getStudent({
+      rollnumber: this.$route.params.rollnumber,
+    });
+    this.data = data;
+  },
+};
 </script>

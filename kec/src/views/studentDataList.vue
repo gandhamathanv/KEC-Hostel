@@ -126,7 +126,7 @@ export default {
     },
   },
   async created() {
-    const { data } = await getDetails.getStudent();
+    const { data } = await getDetails.getStudentList();
     this.data.options.hostelName = [
       ...new Set(
         data.data.map((el) => {
