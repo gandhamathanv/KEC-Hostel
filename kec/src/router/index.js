@@ -20,6 +20,7 @@ import staffDataList from "../views/staffDataList.vue";
 import bookingDataList from "../views/bookingDataList.vue";
 import hostelDataList from "../views/hostelDataList.vue";
 import studentDetail from "../components/studentDetail.vue";
+import staffDetail from "../components/staffDetail.vue";
 
 const routes = [
   {

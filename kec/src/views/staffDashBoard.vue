@@ -147,7 +147,7 @@
       </div>
 
       <div class="container-box">
-        <div class="notification">
+        <div class="notification1">
           <div class="notification-box">
             <div class="left">
               <div>
@@ -166,11 +166,11 @@
         </div>
       </div>
 
-      <div class="container-box">
+      <!-- <div class="container-box">
         <div class="notification">
           <div class="notification-box">//export data</div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -304,16 +304,13 @@ body {
 }
 
 .main-title .card .button {
-  /* background: orangered; */
   color: rgb(250, 246, 246);
   padding: 7px 15px;
   border-radius: 25px;
   margin-top: 15px;
   cursor: pointer;
 }
-/* .main-title .card .button:hover {
-  background: rgba(223, 70, 15, 0.856);
-} */
+
 .main-title .card i {
   font-size: 30px;
   padding: 10px;
@@ -330,6 +327,16 @@ body {
   height: fit-content;
   background-color: #ffffff;
   margin-left: 10px;
+  padding: 10px;
+  box-shadow: 2px 5px 10px #ddd;
+  position: relative;
+  box-shadow: 2px 2px 10px black;
+}
+.notification1 {
+  width: 100%;
+  height: fit-content;
+  background-color: #ffffff;
+  margin-left: 250px;
   padding: 10px;
   box-shadow: 2px 5px 10px #ddd;
   position: relative;
@@ -468,4 +475,76 @@ body {
   right: 150px;
   bottom: 20px;
 }
+.col-div-4-1 {
+  display: flex;
+  flex-direction: column;
+  /* overflow-x: hidden; */
+  content: " ";
+  position: relative;
+  align-items: center;
+}
+.box-1 {
+  width: 480px;
+  height: auto;
+  background-color: #ffffff;
+  margin: 10px;
+  position: relative;
+  box-shadow: 2px 5px 10px #ddd;
+  border-radius: 20px;
+}
+.content-box-1 {
+  position: relative;
+  align-items: center;
+}
+.head-1 {
+  font-size: 1px;
+}
+.head-1 {
+  font-family: system-ui;
+  font-weight: bold;
+  /* padding-top: 10px; */
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  /* background-color: #dff0fc;
+  border-radius: 10px;
+  height:40px;
+   */
+}
+.left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  left: 100px;
+}
+.number1 {
+  font-family: system-ui;
+  color: grey;
+  width: 180px;
+  position: relative;
+  bottom: 20px;
+  margin: 20px;
+  font-size: 15px;
+}
+.info2 {
+  background-color: #c0d9ec;
+  box-shadow: 2px 5px 10px #ddd;
+  border-radius: 20px;
+  border: none;
+  width: 120px;
+  height: 40px;
+  position: relative;
+  right: 150px;
+  bottom: 20px;
+}
+.buttons-query {
+  border: none;
+  width: 60px;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+
+  padding: 2px 28px;
+  cursor: pointer;
+  width: 400px;
+}
+/***************.notification */
 </style>
