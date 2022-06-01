@@ -21,6 +21,7 @@ import hostelDataList from "../views/hostelDataList.vue";
 import studentDetail from "../components/studentDetail.vue";
 import staffDetail from "../components/staffDetail.vue";
 import hostelDetail from "../components/dashboard/hostelDetail.vue";
+import bookingDetail from "../components/dashboard/bookingDetail.vue";
 
 const routes = [{
         path: "/",
@@ -129,6 +130,11 @@ const routes = [{
         path: "/hostelDataList/:hostelName",
         name: "hostelDetail",
         component: hostelDetail,
+    },
+    {
+        path: "/bookingDataList/:hostelName",
+        name: "bookingDetail",
+        component: bookingDetail,
     },
 ];
 

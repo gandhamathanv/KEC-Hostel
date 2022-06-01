@@ -213,6 +213,7 @@ export default {
         name: "Jeevitha",
         staffID: "12345",
         designation: "Assistant Professor",
+        year: 2,
 
         hostelName: "Amaravathi",
         roomNumber: "AMR067",
