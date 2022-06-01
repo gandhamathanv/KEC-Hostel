@@ -216,7 +216,7 @@ export default {
     const { data } = await getDetails.getStudent({
       rollnumber: this.$route.params.rollnumber,
     });
-    this.user = data;
+    this.user = data.data;
   },
 };
 </script>
