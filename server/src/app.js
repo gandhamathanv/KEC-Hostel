@@ -2,9 +2,9 @@
 console.log("haii");
 const express = require("express");
 const cors = require("cors");
+const { sequelize } = require("./models");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
-const { sequelize } = require("./models");
 const cookieParser = require("cookie-parser");
 const config = require("./config/config");
 const app = express();
@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(cookieParser());
 require("./routes")(app);
-let completed = {};
+
 sequelize
     .sync()
     .then(() => {

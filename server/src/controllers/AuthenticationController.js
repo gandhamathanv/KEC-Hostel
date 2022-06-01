@@ -10,6 +10,7 @@ const { sequelize } = require("../models");
 let transactionT = [];
 const jwt = require("jsonwebtoken");
 const config = require("../config/config");
+const mailer = require("../mailer");
 
 function jwtSignUser(user) {
     const ONE_WEEK = 60 * 60 * 24 * 7;
@@ -18,6 +19,12 @@ function jwtSignUser(user) {
     });
 }
 module.exports = {
+    async confirmation(req, res) {
+        req.params.jwt;
+        const t = transactionT.find((el) => el.id === "gandhasaroja@gmail.com");
+        await t.trans.commit();
+        res.status(200).send("success");
+    },
     async logout(req, res) {
         try {
             res.cookie("jwt", null, {
@@ -43,12 +50,9 @@ module.exports = {
                 rollnumber: req.body.rollnumber,
                 password: "Kongu2022",
                 collegeMailID: req.body.collegeMailID,
-            });
-            console.log("here");
-            const result = await mailer.sentMail({
-                mailId: req.body.collegeMailID,
-                jwt: "string",
-            });
+            }, { transaction: t });
+
+            const result = await mailer.sentMail(req.body.collegeMailID, "string");
             console.log("result ", result);
             if (result.status != "success") {
                 console.log("error in mail");
@@ -77,8 +81,8 @@ module.exports = {
                 collegeMailID: req.body.collegeMailID,
                 password: "Kongu2022",
             }, { transaction: t });
-
-            const result = await mailer(collegeMailID);
+            console.log("sent mail");
+            const result = await mailer.sentMail(collegeMailID, "strings");
             console.log("result ", result);
             if (result.status != "success") {
                 console.log("error in mail");

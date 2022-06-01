@@ -11,8 +11,7 @@ const oAuth2client = new google.auth.OAuth2(
 oAuth2client.setCredentials({ refresh_token: config.mailer.REFRESH_TOKEN });
 
 module.exports = {
-    async sentMail(data) {
-        const { mailId, jwt } = data;
+    async sentMail(mailId, jwt) {
         try {
             console.log("entered mailer");
             const accessToken = await oAuth2client.getAccessToken();
