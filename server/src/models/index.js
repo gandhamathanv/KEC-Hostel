@@ -5,7 +5,6 @@ const { options } = require("joi");
 const path = require("path");
 const Sequelize = require("sequelize");
 const config = require("../config/config");
-const mailer = require("../mailer.js");
 const db = {};
 const sequelize = new Sequelize(
     config.db.database,
