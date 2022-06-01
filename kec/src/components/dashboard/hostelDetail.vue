@@ -11,7 +11,7 @@
                   <div class="col-lg-8">
                     <div class="card shadow-sm2">
                       <div class="card-header border-0">
-                        <h3 class="mb-0">STAFF INFORMATION</h3>
+                        <h3 class="mb-0">STUDENTS INFORMATION</h3>
                       </div>
                       <div class="buttons">
                         <button class="submit">
@@ -209,22 +209,12 @@ export default {
   data() {
     return {
       user: {
-        name: "Jeevitha",
-        staffID: "12345",
-        designation: "Assistant Professor",
-
         hostelName: "Amaravathi",
-        roomNumber: "AMR067",
-        hostelResponsibility: "Deputy Warden",
-        department: "CSE",
-        gender: "female",
-        bloodGroup: "O+ve",
-
-        phoneNumber: 1234567890,
-        whatsappNumber: 23456789056,
-        collegeMailID: "jeevithacse@kongu.edu",
-        personalMailID: "jeevitha@gmail.com",
-        aadharNumber: 23456789067,
+        floor: 4,
+        rooms: 150,
+        capacity: 450,
+        availability: 450,
+        facility: "Gym,TV Room,Computer Lab",
       },
     };
   },
