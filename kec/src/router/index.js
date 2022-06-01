@@ -86,11 +86,6 @@ const routes = [{
     },
 
     {
-        path: "/checking",
-        name: "checking",
-        component: checking,
-    },
-    {
         path: "/popup",
         name: "popup",
         component: Popup,
