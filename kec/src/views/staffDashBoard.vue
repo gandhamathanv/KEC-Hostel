@@ -145,21 +145,29 @@
           </div>
         </div>
       </div>
+      <div class="sideBar">
+        <div class="container-box">
+          <div class="notification1">
+            <div class="notification-box">
+              <div class="card">
+                <h1 class="card-title">Notification</h1>
+                <span class="card-button">view notification</span>
 
-      <div class="container-box">
-        <div class="notification1">
-          <div class="notification-box">
-            <div class="left">
-              <div>
-                <a class="btn" href="contact.html"> </a>
+                <h3 class="h3">No of Notification</h3>
+                <p>{{ NoOfNotification }}</p>
               </div>
-              <div class="noof">
-                <div class="number1">
-                  Number of Notifications:
-                  <div class="buttons-query">
-                    <button class="info2">5</button>
-                  </div>
-                </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-box">
+          <div class="notification1">
+            <div class="notification-box">
+              <div class="card">
+                <h1 class="card-title">Export</h1>
+                <span class="card-button">view export</span>
+
+                <!-- <h3 class="h3">No of staff</h3> -->
+                <!-- <p>{{ NumberOfStaffs }}</p> -->
               </div>
             </div>
           </div>
@@ -230,6 +238,9 @@ export default {
   text-decoration: none;
   box-sizing: border-box;
   font-family: "poppins", sans-serif;
+}
+.sideBar {
+  display: block;
 }
 body {
   background-color: #dfe9f5;
@@ -330,6 +341,7 @@ body {
   padding: 10px;
   box-shadow: 2px 5px 10px #ddd;
   position: relative;
+
   box-shadow: 2px 2px 10px black;
 }
 .notification1 {
@@ -340,6 +352,7 @@ body {
   padding: 10px;
   box-shadow: 2px 5px 10px #ddd;
   position: relative;
+  border-radius: 25px;
   box-shadow: 2px 2px 10px black;
 }
 
@@ -427,124 +440,4 @@ body {
   height: 45px;
 }
 /* notification */
-.btn {
-  height: 56px;
-  width: 56px;
-  border-radius: 50%;
-  background-color: white;
-  color: #3c4043;
-  display: inline-flex;
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
-    0 1px 3px 1px rgba(60, 64, 67, 0.149);
-  transition: 0.5s;
-}
-
-.btn::before {
-  background-image: url(https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 32px;
-  content: "";
-  min-width: 56px;
-
-  display: block;
-}
-.number1 {
-  font-family: system-ui;
-  color: grey;
-  width: 180px;
-  position: relative;
-  bottom: 20px;
-  margin: 20px;
-  font-size: 15px;
-}
-.left {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  position: relative;
-  left: 100px;
-}
-.info2 {
-  background-color: #c0d9ec;
-  box-shadow: 2px 5px 10px #ddd;
-  border-radius: 20px;
-  border: none;
-  width: 120px;
-  height: 40px;
-  position: relative;
-  right: 150px;
-  bottom: 20px;
-}
-.col-div-4-1 {
-  display: flex;
-  flex-direction: column;
-  /* overflow-x: hidden; */
-  content: " ";
-  position: relative;
-  align-items: center;
-}
-.box-1 {
-  width: 480px;
-  height: auto;
-  background-color: #ffffff;
-  margin: 10px;
-  position: relative;
-  box-shadow: 2px 5px 10px #ddd;
-  border-radius: 20px;
-}
-.content-box-1 {
-  position: relative;
-  align-items: center;
-}
-.head-1 {
-  font-size: 1px;
-}
-.head-1 {
-  font-family: system-ui;
-  font-weight: bold;
-  /* padding-top: 10px; */
-  color: rgb(0, 0, 0);
-  font-size: 20px;
-  /* background-color: #dff0fc;
-  border-radius: 10px;
-  height:40px;
-   */
-}
-.left {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  position: relative;
-  left: 100px;
-}
-.number1 {
-  font-family: system-ui;
-  color: grey;
-  width: 180px;
-  position: relative;
-  bottom: 20px;
-  margin: 20px;
-  font-size: 15px;
-}
-.info2 {
-  background-color: #c0d9ec;
-  box-shadow: 2px 5px 10px #ddd;
-  border-radius: 20px;
-  border: none;
-  width: 120px;
-  height: 40px;
-  position: relative;
-  right: 150px;
-  bottom: 20px;
-}
-.buttons-query {
-  border: none;
-  width: 60px;
-  /* display: grid;
-  grid-template-columns: 1fr 1fr; */
-
-  padding: 2px 28px;
-  cursor: pointer;
-  width: 400px;
-}
-/***************.notification */
 </style>
