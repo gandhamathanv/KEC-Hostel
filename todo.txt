@@ -1,6 +1,5 @@
 TODO: staff login return message
 TODO: list view data retrevia
-TODO: reset password
 FIXME: validator
 FIXME: show password
 FIXME: jwt token refactor
@@ -28,5 +27,5 @@ TODO: staff count
 
 
 TODAY
-TODO: get data by get params
-FIXME: auth mailer not sent
+FIXME: auth mailer change to link
+FIXME: filter
