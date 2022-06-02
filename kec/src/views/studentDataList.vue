@@ -85,7 +85,7 @@
       </div>
     </div>
     <div class="dash">
-      <figure v-for="el in data" :key="el" class="box">
+      <figure v-for="el in listData" :key="el" class="box">
         <div class="box-title">
           <h2 class="box-rollno">{{ el.name }}</h2>
         </div>
@@ -116,7 +116,6 @@
 </template>
 
 <script>
-import StudentCards from "@/components/studentCards.vue";
 import getDetails from "@/services/getDetails";
 export default {
   name: "studentDataList",
@@ -144,9 +143,6 @@ export default {
   },
 
   methods: {
-    setList(listName) {
-      this.listName = listName;
-    },
     filter_rows() {
       const option = this.data.options;
       this.listData = this.realData.filter((el) =>
@@ -204,8 +200,6 @@ export default {
     this.listData = data.data;
     this.realData = data.data;
   },
-
-  components: { StudentCards },
 };
 </script>
 <style scoped>
