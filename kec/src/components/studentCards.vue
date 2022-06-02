@@ -33,15 +33,11 @@ export default {
   data() {
     return {};
   },
-  props: { data: Object },
+  props: ["data"],
   methods: {
     showDetails(rollnumber) {
-      this.$router.push({
-        name: "studentdetail",
-        params: {
-          rollnumber,
-        },
-      });
+      console.log(rollnumber);
+      this.$emit("rollnumber", rollnumber);
     },
   },
 };
