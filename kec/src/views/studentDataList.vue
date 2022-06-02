@@ -85,7 +85,10 @@
       </div>
     </div>
     <div class="container1">
-      <StudentCards v-bind:data="listData"></StudentCards>
+      <StudentCards
+        v-bind:data="listData"
+        @change:rollnumber="showDetails"
+      ></StudentCards>
     </div>
   </div>
 </template>
@@ -135,6 +138,15 @@ export default {
       //   option.department ? el.department === option.department : true
       // );
       console.log(this.listData);
+    },
+    showDetails(rollnumber) {
+      console.log(rollnumber);
+      // this.$router.push({
+      //   name: "studentdetail",
+      //   params: {
+      //     rollnumber,
+      //   },
+      // });
     },
   },
   async created() {
