@@ -111,7 +111,6 @@
 </template>
 
 <script>
-import StaffCards from "@/components/StaffCards.vue";
 import getDetails from "@/services/getDetails";
 export default {
   name: "staffDataList",
@@ -185,8 +184,6 @@ export default {
     ];
     this.listData = data.data;
   },
-
-  components: { StaffCards },
 };
 </script>
 <style scoped>

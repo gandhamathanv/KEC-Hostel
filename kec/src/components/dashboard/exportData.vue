@@ -26,8 +26,6 @@
 </template>
 
 <script>
-import { saveExcel } from "@progress/kendo-vue-excel-export";
-
 export default {
   name: "exportData",
   data() {
@@ -42,14 +40,14 @@ export default {
   },
   methods: {
     exportExcel() {
-      saveExcel({
-        data: this.items,
-        fileName: "myFile",
-        columns: [
-          { field: "ProductID" },
-          { field: "ProductName", title: "Product Name" },
-        ],
-      });
+      // saveExcel({
+      //   data: this.items,
+      //   fileName: "myFile",
+      //   columns: [
+      //     { field: "ProductID" },
+      //     { field: "ProductName", title: "Product Name" },
+      //   ],
+      // });
     },
   },
 };
