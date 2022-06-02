@@ -25,15 +25,47 @@ export default {
   data() {
     return {
       json_fields: {
-        "Complete name": "name",
-        City: "city",
-        Telephone: "phone.mobile",
-        "Telephone 2": {
-          field: "phone.landline",
-          callback: (value) => {
-            return `Landline Phone - ${value}`;
-          },
-        },
+        "Name": name,
+        "Roll Number":rollnumber,
+        "Class": class,
+        "Year": year,
+        "Department":department,
+        "DOB": DOB,
+        "Blood Group": bloodGroup,
+        "hostel Name": hostelName,
+        "Room Number": roomNumber,
+        "Gender": gender,
+        "Phone Number": phoneNumber,
+        "Whatsapp Number":whatsappNumber ,
+        "Telegram Number": telegramNumber,
+        "College Mail ID": collegeMailID,
+        "Personal Mail ID": personalMailID,
+        "Aadhar Number":aadharNumber ,
+        "Father Name":fatherName ,
+        "Father Mobile Number":fatherMobileNumber ,
+        "Father Occupation":fatherOccupation ,
+        "Mother Name":motherName,
+        "Mother Mobile Number":motherMobileNumber,
+        "Mother Occupation":MotherOccupation ,
+        "Address":address ,
+        "District":district ,
+         "State":state,
+        "Local Guardian":localGuardian ,
+        "Local Guardian Phone Number":localGuardianPhoneNumber,
+        "Account Number":bankName ,
+        "Bank Name":accountNumber ,
+        "Branch": branch,
+          "IFSC Code": IFSCcode,
+            "Date Of Entry": dateOfEntry,
+            "Date Of Vacation": dateOfVacation,
+
+        // Telephone: "phone.mobile",
+        // "Telephone 2": {
+        //   field: "phone.landline",
+        //   callback: (value) => {
+        //     return `Landline Phone - ${value}`;
+        //   },
+        // },
       },
       json_meta: [
         [
