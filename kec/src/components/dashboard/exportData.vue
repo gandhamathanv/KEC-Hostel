@@ -59,9 +59,42 @@ export default {
         "Date Of Entry": "dateOfEntry",
         "Date Of Vacation": "dateOfVacation",
       },
-      json_staff_field: {},
-      json_booking_field: {},
-      json_rooms_field: {},
+      json_staff_field: {
+        Name: "name",
+        "Staff ID": "staffID",
+        Designation: "designation",
+
+        "Hostel Name": "hostelName",
+        "Room Number": "roomNumber",
+        "Hostel Responsibility": "hostelResponsibility",
+        Department: "department",
+        Gender: "gender",
+        "Blood Group": "bloodGroup",
+
+        "Phone Number": "phoneNumber",
+        "Whatsapp Number": "whatsappNumber",
+        "College Mail ID": "collegeMailID",
+        "Personal Mail ID": "personalMailID",
+        "Aadhar Number": "aadharNumber",
+      },
+      json_booking_field: {
+        "Roll Number": "rollnumber",
+        "Student Name": "studentName",
+
+        Department: "department",
+        Year: "year",
+        "Amount paid": "amountpaid",
+        "Booked Date": "bookedDate",
+      },
+      json_rooms_field: {
+        "Room Number": "roomNumber",
+
+        Capacity: "capacity",
+        Availability: "availability",
+        Floor: "floor",
+        "Attached Bathroom": "attachedBathroom",
+        "Hostel Name": "hostelName",
+      },
       json_meta: [
         [
           {
