@@ -1,0 +1,111 @@
+/* eslint-disable */
+const {
+  staffInfo,
+  staffLogin,
+  studentInfo,
+  studentLogin,
+  permission,
+  booking,
+  hostelinfo,
+  hostelRooms,
+} = require("../models");
+module.exports = {
+  async StudentData(req, res) {
+    try {
+      const data = await studentInfo.findAll({});
+      res.status(200).send({
+        status: "success",
+        data: data,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(404).send({
+        status: "failure",
+        error: "cannot get data",
+      });
+    }
+  },
+  async getStudentInfo(req, res) {
+    try {
+      const rollnumber = req.params.rollnumber;
+      const data = await studentInfo.findOne({
+        where: {
+          rollnumber,
+        },
+      });
+      console.log("data sent");
+      res.status(200).send({
+        status: "success",
+        data: data,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(404).send({
+        status: "failure",
+        error: "cannot get data",
+      });
+    }
+  },
+  async getStaffList(req, res) {
+    try {
+      const data = await staffInfo.findAll({
+        attributes: ["staffID", "name", "department", "hostelName", "gender"],
+      });
+      res.status(200).send({
+        status: "success",
+        data: data,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(404).send({
+        status: "failure",
+        error: "cannot get data",
+      });
+    }
+  },
+  async getBookingList(req, res) {
+    try {
+      const data = await booking.findAll();
+      res.status(200).send({
+        status: "success",
+        data: data,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(404).send({
+        status: "failure",
+        error: "cannot get data",
+      });
+    }
+  },
+  async getRoomsList(req, res) {
+    try {
+      const data = await hostelRooms.findAll();
+      res.status(200).send({
+        status: "success",
+        data: data,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(404).send({
+        status: "failure",
+        error: "cannot get data",
+      });
+    }
+  },
+  async getHostelList(req, res) {
+    try {
+      const data = await hostelinfo.findAll();
+      res.status(200).send({
+        status: "success",
+        data: data,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(404).send({
+        status: "failure",
+        error: "cannot get data",
+      });
+    }
+  },
+};

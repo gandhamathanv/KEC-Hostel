@@ -2,12 +2,14 @@
   <div class="container">
     <div>
       <div class="buttons">
+        <!-- :data="json_data" -->
         <export-excel
           class="submit"
-          :data="json_data"
+          :fetch="StudentGetData"
           :fields="json_fields"
           worksheet="My Worksheet"
           name="filename.xls"
+          @click="getData"
         >
           Download Excel (you can customize this with html code!)
         </export-excel>
@@ -17,6 +19,7 @@
 </template>
 
 <script>
+import exportDetails from "@/services/exportDetails";
 export default {
   name: "exportData",
   data() {
@@ -32,28 +35,6 @@ export default {
           },
         },
       },
-      json_data: [
-        {
-          name: "Tony Peña",
-          city: "New York",
-          country: "United States",
-          birthdate: "1978-03-15",
-          phone: {
-            mobile: "1-541-754-3010",
-            landline: "(541) 754-3010",
-          },
-        },
-        {
-          name: "Thessaloniki",
-          city: "Athens",
-          country: "Greece",
-          birthdate: "1987-11-23",
-          phone: {
-            mobile: "+1 855 275 5071",
-            landline: "(2741) 2621-244",
-          },
-        },
-      ],
       json_meta: [
         [
           {
@@ -64,7 +45,12 @@ export default {
       ],
     };
   },
-  methods: {},
+  methods: {
+    async StudentGetData() {
+      const { data } = await exportDetails.StudentData();
+      return data.data;
+    },
+  },
 };
 </script>
 
