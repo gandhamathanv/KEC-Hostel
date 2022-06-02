@@ -58,7 +58,7 @@ module.exports = {
     async getStaffList(req, res) {
         try {
             const data = await staffInfo.findAll({
-                attributes: ["name", "department", "hostelName", "gender"],
+                attributes: ["staffID","name", "department", "hostelName", "gender"],
             });
             res.status(200).send({
                 status: "success",

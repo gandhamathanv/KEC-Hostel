@@ -16,7 +16,7 @@
           <h6 class="box-name">{{ el.gender }}</h6>
         </div>
 
-        <a @click="showDetails(el.rollnumber)" class="box-details" href="#">
+        <a @click="showDetails(el.staffID)" class="box-details" href="#">
           <span>Detail -></span>
         </a>
       </div>
@@ -28,17 +28,7 @@ export default {
   data() {
     return {};
   },
-  props: { data: Object },
-  methods: {
-    showDetails(rollnumber) {
-      this.$router.push({
-        name: "studentdetail",
-        params: {
-          rollnumber,
-        },
-      });
-    },
-  },
+  props: { data: Object, showDetails: Function },
 };
 </script>
 <style scoped>

@@ -85,10 +85,7 @@
       </div>
     </div>
     <div class="container1">
-      <StudentCards
-        v-bind:data="listData"
-        @change:rollnumber="showDetails"
-      ></StudentCards>
+      <StudentCards :data="listData" :showDetails="showDetails"></StudentCards>
     </div>
   </div>
 </template>
@@ -141,12 +138,12 @@ export default {
     },
     showDetails(rollnumber) {
       console.log(rollnumber);
-      // this.$router.push({
-      //   name: "studentdetail",
-      //   params: {
-      //     rollnumber,
-      //   },
-      // });
+      this.$router.push({
+        name: "studentdetail",
+        params: {
+          rollnumber,
+        },
+      });
     },
   },
   async created() {

@@ -30,15 +30,13 @@
 </template>
 <script>
 export default {
+  name: "studentCards",
   data() {
     return {};
   },
-  props: ["data"],
-  methods: {
-    showDetails(rollnumber) {
-      console.log(rollnumber);
-      this.$emit("rollnumber", rollnumber);
-    },
+  props: {
+    data: Object,
+    showDetails: Function,
   },
 };
 </script>

@@ -85,7 +85,10 @@
       </div>
     </div>
     <div class="container1">
-      <StaffCards v-bind:data="listData"></StaffCards>
+      <StaffCards
+        v-bind:data="listData"
+        :showDetails="showDetails"
+      ></StaffCards>
     </div>
   </div>
 </template>
@@ -124,6 +127,14 @@ export default {
     filter_rows() {
       console.log(this.hostelName);
     },
+    showDetails(staffID) {
+      this.$router.push({
+        name: "staffdetail",
+        params: {
+          staffID,
+        },
+      });
+    },
   },
   async created() {
     const { data } = await getDetails.getStaff();
@@ -141,7 +152,7 @@ export default {
         })
       ),
     ];
-    this.data.options.year = [
+    this.data.options.responsiblity = [
       ...new Set(
         data.data.map((el) => {
           return el.year;
