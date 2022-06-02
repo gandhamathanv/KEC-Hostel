@@ -250,7 +250,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
-  border: 2px solid rgb(194, 186, 186);
+  // border: 2px solid rgb(194, 186, 186);
 }
 
 .shadow-sm2 {
