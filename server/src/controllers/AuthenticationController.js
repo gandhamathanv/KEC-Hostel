@@ -20,10 +20,17 @@ function jwtSignUser(user) {
 }
 module.exports = {
     async confirmation(req, res) {
-        req.params.jwt;
-        const t = transactionT.find((el) => el.id === "gandhasaroja@gmail.com");
-        await t.trans.commit();
-        res.status(200).send("success");
+        try {
+            console.log(req.params.jwt);
+            decode = jwt.decode(req.params.jwt, config.authentication.jwtSecret);
+            console.log(decode);
+            const t = transactionT.find((el) => el.id === decode.mailId);
+            await t.trans.commit();
+            res.status(200).send("success");
+        } catch (err) {
+            console.log(err);
+            res.status(403).send("failed");
+        }
     },
     async logout(req, res) {
         try {
@@ -51,14 +58,14 @@ module.exports = {
                 password: "Kongu2022",
                 collegeMailID: req.body.collegeMailID,
             }, { transaction: t });
+            const jwt = jwtSignUser({ mailId: req.body.collegeMailID });
 
-            const result = await mailer.sentMail(req.body.collegeMailID, "string");
+            const result = await mailer.sentMail(req.body.collegeMailID, jwt);
             console.log("result ", result);
             if (result.status != "success") {
                 console.log("error in mail");
                 new Error("error");
             }
-            console.log({ id: req.body.collegeMailID, trans: t });
             transactionT.push({ id: req.body.collegeMailID, trans: t });
             console.log(transactionT.length);
         } catch (err) {
