@@ -208,13 +208,13 @@ body {
   background-color: #232f3e;
   box-shadow: 0px 1px 2px #232f3e;
 }
-h1 {
+/* h1 {
   color: coral;
   font-weight: bold;
 
   background: transparent;
   padding: 7px;
-}
+} */
 
 .outer-wrapper {
   margin-top: 40px;

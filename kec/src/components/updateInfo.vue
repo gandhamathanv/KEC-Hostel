@@ -80,7 +80,7 @@ body {
   height: 800px;
 }
 
-h1 {
+/* h1 {
   text-align: center;
 
   color: white;
@@ -89,7 +89,7 @@ h2 {
   text-align: center;
   text-decoration: underline;
   color: black;
-}
+} */
 
 .fieldset-box {
   width: 400px;
