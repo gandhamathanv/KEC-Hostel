@@ -116,7 +116,6 @@
 </template>
 
 <script>
-import StudentCards from "@/components/studentCards.vue";
 import getDetails from "@/services/getDetails";
 export default {
   name: "studentDataList",
@@ -204,8 +203,6 @@ export default {
     this.listData = data.data;
     this.realData = data.data;
   },
-
-  components: { StudentCards },
 };
 </script>
 <style scoped>
