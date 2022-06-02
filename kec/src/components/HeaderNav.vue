@@ -4,8 +4,10 @@
       <a href="#000" class="logo">KONGU HOSTEL</a>
       <div class="toggle" @click="togglemenu"></div>
       <ul class="menu">
-        <li><a href="#000" @click="togglemenu">Home</a></li>
-        <li><a href="#001" @click="togglemenu">Login</a></li>
+        <li>
+          <span @click="navigateTo({ name: 'login' })">Home</span>
+        </li>
+        <li><span @click="navigateTo({ name: 'login' })">Login</span></li>
       </ul>
     </header>
     <!-- <nav class="nav">
@@ -31,10 +33,13 @@ export default {
   },
   methods: {
     togglemenu() {
-      var menutoggle = document.querySelector(".toggle");
-      var menu = document.querySelector(".menu");
-      menutoggle.classList.toggle("active");
-      menu.classList.toggle("active");
+      // var menutoggle = document.querySelector(".toggle");
+      // var menu = document.querySelector(".menu");
+      // menutoggle.classList.toggle("active");
+      // menu.classList.toggle("active");
+    },
+    navigateTo(route) {
+      this.$router.push(route);
     },
   },
   created: function () {
@@ -133,20 +138,20 @@ header ul li {
   list-style: none;
   font-weight: 500;
 }
-header ul li a:hover {
+header ul li span:hover {
   color: burlywood;
 }
-header ul li a {
+header ul li span {
   position: relative;
   display: inline-block;
   margin: 0 15px;
   color: #fff;
   text-decoration: none;
 }
-header.sticky ul li a {
+header.sticky ul li span {
   color: #111;
 }
-header.sticky ul li a:hover {
+header.sticky ul li span:hover {
   color: burlywood;
 }
 
