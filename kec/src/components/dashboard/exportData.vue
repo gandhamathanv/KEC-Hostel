@@ -2,30 +2,25 @@
   <div class="container">
     <div>
       <div class="buttons">
-        <button class="submit">
-          <span class="submit">Student Data </span>
+        <button class="submit" @click="exportExcel('student')">
+          Student Export Excel
         </button>
       </div>
       <div class="buttons">
-        <button class="submit">
-          <span class="submit">staff Data </span>
+        <button class="submit" @click="exportExcel('staff')">
+          Staff Export Excel
         </button>
       </div>
       <div class="buttons">
-        <button class="submit">
-          <span class="submit">booking Data </span>
+        <button class="submit" @click="exportExcel('booking')">
+          Booking Export Excel
         </button>
       </div>
       <div class="buttons">
-        <button class="submit">
-          <span class="submit">hostel Data </span>
+        <button class="submit" @click="exportExcel('rooms')">
+          Rooms Export Excel
         </button>
       </div>
-    </div>
-    <div>
-      <button :theme-color="'primary'" @click="exportExcel">
-        Export Excel
-      </button>
     </div>
   </div>
 </template>
