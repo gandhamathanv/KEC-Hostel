@@ -1,33 +1,61 @@
 <template>
-  <div>
-    <div class="buttons">
-      <button class="submit">
-        <span class="submit">Submit </span>
-      </button>
+  <div class="container">
+    <div>
+      <div class="buttons">
+        <button class="submit">
+          <span class="submit">Student Data </span>
+        </button>
+      </div>
+      <div class="buttons">
+        <button class="submit">
+          <span class="submit">staff Data </span>
+        </button>
+      </div>
+      <div class="buttons">
+        <button class="submit">
+          <span class="submit">booking Data </span>
+        </button>
+      </div>
+      <div class="buttons">
+        <button class="submit">
+          <span class="submit">hostel Data </span>
+        </button>
+      </div>
     </div>
-    <div class="buttons">
-      <button class="submit">
-        <span class="submit">Submit </span>
-      </button>
-    </div>
-    <div class="buttons">
-      <button class="submit">
-        <span class="submit">Submit </span>
-      </button>
-    </div>
-    <div class="buttons">
-      <button class="submit">
-        <span class="submit">Submit </span>
+    <div>
+      <button :theme-color="'primary'" @click="exportExcel">
+        Export Excel
       </button>
     </div>
   </div>
 </template>
 
 <script>
+import { saveExcel } from "@progress/kendo-vue-excel-export";
+
 export default {
   name: "exportData",
   data() {
-    return {};
+    return {
+      items: [],
+      columns: [
+        { field: "ProductID" },
+        { field: "ProductName", title: "Product Name" },
+        { field: "UnitPrice", title: "Unit Price" },
+      ],
+    };
+  },
+  methods: {
+    exportExcel() {
+      saveExcel({
+        data: this.items,
+        fileName: "myFile",
+        columns: [
+          { field: "ProductID" },
+          { field: "ProductName", title: "Product Name" },
+        ],
+      });
+    },
   },
 };
 </script>
