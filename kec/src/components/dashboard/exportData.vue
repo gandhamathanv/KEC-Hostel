@@ -8,7 +8,7 @@
           :fetch="StudentGetData"
           :fields="json_student_fields"
           worksheet="My Worksheet"
-          name="filename.xls"
+          name="studentData.xls"
           @click="getData"
         >
           Download Excel (you can customize this with html code!)
@@ -18,7 +18,7 @@
           :fetch="StaffGetData"
           :fields="json_staff_fields"
           worksheet="My Worksheet"
-          name="filename.xls"
+          name="staffData.xls"
           @click="getData"
         >
           Download Excel (you can customize this with html code!)
@@ -28,7 +28,7 @@
           :fetch="BookingGetData"
           :fields="json_booking_fields"
           worksheet="My Worksheet"
-          name="filename.xls"
+          name="bookingData.xls"
           @click="getData"
         >
           Download Excel (you can customize this with html code!)
@@ -38,7 +38,7 @@
           :fetch="RoomsGetData"
           :fields="json_rooms_field"
           worksheet="My Worksheet"
-          name="filename.xls"
+          name="roomsData.xls"
           @click="getData"
         >
           Download Excel (you can customize this with html code!)
