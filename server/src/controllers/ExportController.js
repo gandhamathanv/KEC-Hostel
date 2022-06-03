@@ -7,7 +7,7 @@ const {
   permission,
   booking,
   hostelinfo,
-  hostelRooms,
+  hostelrooms,
 } = require("../models");
 module.exports = {
   async StudentData(req, res) {
@@ -25,15 +25,9 @@ module.exports = {
       });
     }
   },
-  async getStudentInfo(req, res) {
+  async StaffData(req, res) {
     try {
-      const rollnumber = req.params.rollnumber;
-      const data = await studentInfo.findOne({
-        where: {
-          rollnumber,
-        },
-      });
-      console.log("data sent");
+      const data = await staffInfo.findAll({});
       res.status(200).send({
         status: "success",
         data: data,
@@ -46,11 +40,9 @@ module.exports = {
       });
     }
   },
-  async getStaffList(req, res) {
+  async BookingData(req, res) {
     try {
-      const data = await staffInfo.findAll({
-        attributes: ["staffID", "name", "department", "hostelName", "gender"],
-      });
+      const data = await booking.findAll({});
       res.status(200).send({
         status: "success",
         data: data,
@@ -63,39 +55,9 @@ module.exports = {
       });
     }
   },
-  async getBookingList(req, res) {
+  async RoomsData(req, res) {
     try {
-      const data = await booking.findAll();
-      res.status(200).send({
-        status: "success",
-        data: data,
-      });
-    } catch (err) {
-      console.log(err);
-      res.status(404).send({
-        status: "failure",
-        error: "cannot get data",
-      });
-    }
-  },
-  async getRoomsList(req, res) {
-    try {
-      const data = await hostelRooms.findAll();
-      res.status(200).send({
-        status: "success",
-        data: data,
-      });
-    } catch (err) {
-      console.log(err);
-      res.status(404).send({
-        status: "failure",
-        error: "cannot get data",
-      });
-    }
-  },
-  async getHostelList(req, res) {
-    try {
-      const data = await hostelinfo.findAll();
+      const data = await hostelrooms.findAll({});
       res.status(200).send({
         status: "success",
         data: data,

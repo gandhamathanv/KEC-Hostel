@@ -53,4 +53,7 @@ module.exports = (app) => {
 
   //export data
   app.get("/export/StudentData", ExportController.StudentData);
+  app.get("/export/StaffData", ExportController.StaffData);
+  app.get("/export/BookingData", ExportController.BookingData);
+  app.get("/export/RoomsData", ExportController.RoomsData);
 };

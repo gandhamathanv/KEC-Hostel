@@ -6,7 +6,37 @@
         <export-excel
           class="submit"
           :fetch="StudentGetData"
-          :fields="json_fields"
+          :fields="json_student_fields"
+          worksheet="My Worksheet"
+          name="filename.xls"
+          @click="getData"
+        >
+          Download Excel (you can customize this with html code!)
+        </export-excel>
+        <export-excel
+          class="submit"
+          :fetch="StaffGetData"
+          :fields="json_staff_fields"
+          worksheet="My Worksheet"
+          name="filename.xls"
+          @click="getData"
+        >
+          Download Excel (you can customize this with html code!)
+        </export-excel>
+        <export-excel
+          class="submit"
+          :fetch="BookingGetData"
+          :fields="json_booking_fields"
+          worksheet="My Worksheet"
+          name="filename.xls"
+          @click="getData"
+        >
+          Download Excel (you can customize this with html code!)
+        </export-excel>
+        <export-excel
+          class="submit"
+          :fetch="RoomsGetData"
+          :fields="json_rooms_field"
           worksheet="My Worksheet"
           name="filename.xls"
           @click="getData"
@@ -108,6 +138,18 @@ export default {
   methods: {
     async StudentGetData() {
       const { data } = await exportDetails.StudentData();
+      return data.data;
+    },
+    async StaffGetData() {
+      const { data } = await exportDetails.StaffData();
+      return data.data;
+    },
+    async BookingGetData() {
+      const { data } = await exportDetails.BookingData();
+      return data.data;
+    },
+    async RoomsGetData() {
+      const { data } = await exportDetails.RoomsData();
       return data.data;
     },
   },
