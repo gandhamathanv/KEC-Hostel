@@ -83,10 +83,10 @@
                     >
                       Select your Responsibility
                     </option>
-                    <option value="CSE">Associate Warden</option>
-                    <option value="ECE">Deputy Warden</option>
-                    <option value="CIVIL">Warden</option>
-                    <option value="MECH">Staff</option>
+                    <option value="ASSOCIATE WARDEN">Associate Warden</option>
+                    <option value="DEPUTY WARDEN">Deputy Warden</option>
+                    <option value="WARDEN">Warden</option>
+                    <option value="STAFF">Staff</option>
                   </select>
                 </div>
 

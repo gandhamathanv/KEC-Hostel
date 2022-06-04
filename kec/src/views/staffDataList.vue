@@ -152,7 +152,7 @@ export default {
       });
     },
   },
-  async created() {
+  async mounted() {
     const { data } = await getDetails.getStaffList();
     this.data.options.hostelName = [
       ...new Set(

@@ -123,7 +123,7 @@ export default {
       });
     },
   },
-  async created() {
+  async mounted() {
     const noti = await HostelService.getNoti();
     this.notification = noti.data.data;
   },

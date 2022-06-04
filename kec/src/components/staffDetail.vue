@@ -230,7 +230,7 @@ export default {
       },
     };
   },
-  async created() {
+  async mounted() {
     console.log("get Data");
     const { data } = await getDetails.getStaff({
       staffID: this.$route.params.staffID,

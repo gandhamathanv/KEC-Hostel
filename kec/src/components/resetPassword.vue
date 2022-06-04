@@ -125,7 +125,7 @@ export default {
       }
     },
   },
-  created() {
+  mounted() {
     this.viewer = this.$store.state.viewer;
     if (this.viewer === "STAFF") {
       this.id = this.$store.state.user.collegeMailID;

@@ -95,7 +95,7 @@ export default {
       todaysMenu: null,
     };
   },
-  async created() {
+  async mounted() {
     const menu = await HostelService.getMenu({
       day,
     });

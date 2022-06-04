@@ -140,7 +140,7 @@ export default {
       console.log(this.hostelName);
     },
   },
-  async created() {
+  async mounted() {
     const { data } = await getDetails.getHostel();
     this.data.options.hostelName = [
       ...new Set(
