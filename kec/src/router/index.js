@@ -22,6 +22,8 @@ import staffDetail from "../components/staffDetail.vue";
 import hostelDetail from "../components/dashboard/hostelDetail.vue";
 import bookingDetail from "../components/dashboard/bookingDetail.vue";
 import exportData from "../components/dashboard/exportData.vue";
+import errorStatus from "../components/dashboard/errorStatus.vue";
+import loadingPage from "../components/dashboard/loadingPage.vue";
 
 const routes = [
   {
@@ -136,6 +138,16 @@ const routes = [
     path: "/exportData",
     name: "exportData",
     component: exportData,
+  },
+  {
+    path: "/errorStatus",
+    name: "errorStatus",
+    component: errorStatus,
+  },
+  {
+    path: "/loadingPage",
+    name: "loadingPage",
+    component: loadingPage,
   },
 ];
 
