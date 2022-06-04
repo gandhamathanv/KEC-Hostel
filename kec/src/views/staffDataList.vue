@@ -85,7 +85,7 @@
       </div>
     </div>
     <div class="dash">
-      <figure v-for="el in data" :key="el" class="box">
+      <figure v-for="el in listData" :key="el" class="box">
         <div class="box-title">
           <h2 class="box-rollno">{{ el.name }}</h2>
         </div>
@@ -145,7 +145,7 @@ export default {
     },
     showDetails(staffID) {
       this.$router.push({
-        name: "staffdetail",
+        name: "staffDetail",
         params: {
           staffID,
         },
@@ -153,7 +153,7 @@ export default {
     },
   },
   async created() {
-    const { data } = await getDetails.getStaff();
+    const { data } = await getDetails.getStaffList();
     this.data.options.hostelName = [
       ...new Set(
         data.data.map((el) => {

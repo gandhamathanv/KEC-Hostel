@@ -231,6 +231,7 @@ export default {
     };
   },
   async created() {
+    console.log("get Data");
     const { data } = await getDetails.getStaff({
       staffID: this.$route.params.staffID,
     });
