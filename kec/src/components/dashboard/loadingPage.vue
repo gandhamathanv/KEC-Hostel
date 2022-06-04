@@ -38,7 +38,7 @@ export default {
   animation: loading 2s infinite;
 }
 .loading:before {
-  font-family: "Lobster", cursive;
+  /* font-family: "Lobster"; */
   font-size: 20px;
   letter-spacing: 1px;
   color: white;
