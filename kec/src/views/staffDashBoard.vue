@@ -154,7 +154,7 @@
                 <span class="card-button">view notification</span>
 
                 <h3 class="h3">No of Notification</h3>
-                <p>{{ NoOfNotification }}</p>
+                <p>{{ NumberOfNotification }}</p>
               </div>
             </div>
           </div>
@@ -164,7 +164,9 @@
             <div class="notification-box">
               <div class="card">
                 <h1 class="card-title">Export</h1>
-                <span class="card-button">view export</span>
+                <span @click="navigateTo('exportData')" class="card-button"
+                  >view export</span
+                >
 
                 <!-- <h3 class="h3">No of staff</h3> -->
                 <!-- <p>{{ NumberOfStaffs }}</p> -->
@@ -203,8 +205,8 @@ export default {
     this.NumberOfStaffs = data.data.staffCount;
     this.NumberOfHostels = data.data.hostelCount;
     this.NumberOfBookings = data.data.bookingCount;
-    this.notification = data.data.noti;
-    console.log(this.notification);
+    this.NumberOfNotification = data.data.notification.length;
+    this.notification = data.data.notification;
   },
   methods: {
     navigateTo(route) {
@@ -223,6 +225,10 @@ export default {
       } else if (route == "hostelList") {
         this.$router.push({
           name: "hostelDataList",
+        });
+      } else if (route == "exportData") {
+        this.$router.push({
+          name: "exportData",
         });
       }
     },

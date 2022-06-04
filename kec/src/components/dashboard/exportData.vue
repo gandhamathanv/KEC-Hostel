@@ -11,7 +11,7 @@
           name="studentData.xls"
           @click="getData"
         >
-          Download Excel (you can customize this with html code!)
+          student Data
         </export-excel>
         <export-excel
           class="submit"
@@ -21,7 +21,7 @@
           name="staffData.xls"
           @click="getData"
         >
-          Download Excel (you can customize this with html code!)
+          staff data
         </export-excel>
         <export-excel
           class="submit"
@@ -31,7 +31,7 @@
           name="bookingData.xls"
           @click="getData"
         >
-          Download Excel (you can customize this with html code!)
+          booking data
         </export-excel>
         <export-excel
           class="submit"
@@ -41,7 +41,7 @@
           name="roomsData.xls"
           @click="getData"
         >
-          Download Excel (you can customize this with html code!)
+          rooms data
         </export-excel>
       </div>
     </div>

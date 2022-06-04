@@ -47,6 +47,7 @@ module.exports = (app) => {
   app.get("/getHostelList", DetailsController.getHostelList);
   app.get("/getRoomsList", DetailsController.getRoomsList);
   app.get("/getStudentInfo/:rollnumber", DetailsController.getStudentInfo);
+  app.get("/getStaffInfo/:staffID", DetailsController.getStaffInfo);
 
   //conformation mail
   app.get("/confirmation/:jwt", AuthenticationController.confirmation);
