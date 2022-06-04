@@ -42,7 +42,7 @@ export default {
       this.$router.push(route);
     },
   },
-  created: function () {
+  mounted: function () {
     window.addEventListener("scroll", function () {
       // var header = document.querySelector("header");
       // header.classList.toggle("sticky", window.scrollY > 0);

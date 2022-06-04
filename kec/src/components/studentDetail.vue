@@ -212,7 +212,7 @@ export default {
       user: {},
     };
   },
-  async created() {
+  async mounted() {
     const { data } = await getDetails.getStudent({
       rollnumber: this.$route.params.rollnumber,
     });

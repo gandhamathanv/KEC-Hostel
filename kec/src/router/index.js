@@ -140,15 +140,15 @@ const routes = [
     component: exportData,
   },
   {
-    path: "/errorStatus",
-    name: "errorStatus",
-    component: errorStatus,
-  },
-  {
     path: "/loadingPage",
     name: "loadingPage",
     component: loadingPage,
   },
+  {
+    path: "/:catchAll(.*)",
+    name: "errorStatus",
+    component: errorStatus,
+  }
 ];
 
 const router = createRouter({

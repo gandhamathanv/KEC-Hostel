@@ -167,7 +167,7 @@ export default {
       });
     },
   },
-  async created() {
+  async mounted() {
     const { data } = await getDetails.getStudentList();
     this.data.options.hostelName = [
       ...new Set(

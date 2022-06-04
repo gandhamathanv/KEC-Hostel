@@ -127,7 +127,7 @@ export default {
       }
     },
   },
-  async created() {
+  async mounted() {
     if (this.$store.state.level != null) {
       const res = await hostelServices.getPermissions({
         level: this.$store.state.level,

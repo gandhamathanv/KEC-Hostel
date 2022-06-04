@@ -1,13 +1,17 @@
 <template>
   <div>
-    <HeaderNav v-if="!this.$store.state.isUserLoggedIn"></HeaderNav>
-    <DashboardNav v-if="this.$store.state.isUserLoggedIn" />
+    <LoadingPage v-if="this.$store.state.isLoading"></LoadingPage>
+    <div v-else>
+      <HeaderNav v-if="!this.$store.state.isUserLoggedIn"></HeaderNav>
+      <DashboardNav v-if="this.$store.state.isUserLoggedIn" />
+    </div>
 
     <router-view />
   </div>
 </template>
 <script>
 import HeaderNav from "@/components/HeaderNav.vue";
+import LoadingPage from "@/components/dashboard/loadingPage.vue";
 import DashboardNav from "@/components/dashboard/dashboardNav.vue";
 import AuthenticationService from "@/services/AuthenticationServices";
 
@@ -17,8 +21,9 @@ export default {
   components: {
     HeaderNav,
     DashboardNav,
+    LoadingPage,
   },
-  // async created() {
+  // async mounted() {
   //   try {
   //     const res = await AuthenticationService.getData(this.$store.state.token);
   //     console.log(res);
@@ -39,11 +44,12 @@ export default {
   // },
 
   // un comment
-  async created() {
+  async mounted() {
     try {
       console.log(localStorage.getItem("jwt"));
       const token = localStorage.getItem("jwt");
       if (token) {
+        this.$store.dispatch("setLoading", true);
         const res = await AuthenticationService.getData(token);
         console.log(res);
         if (res.data.status == "success") {
@@ -58,6 +64,7 @@ export default {
           this.$store.dispatch("setLevel", null);
           localStorage.removeItem("jwt");
         }
+        this.$store.dispatch("setLoading", false);
       }
     } catch (error) {
       alert(error);

@@ -115,7 +115,7 @@ export default {
       notification: null,
     };
   },
-  async created() {
+  async mounted() {
     const { data } = await staffServices.getDash(this.$store.state.token);
     this.NumberOfStudents = data.data.studentCount;
     this.NumberOfRooms = data.data.roomCount;
