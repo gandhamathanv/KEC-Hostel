@@ -36,7 +36,7 @@ module.exports = {
         to: `${mailId}`,
         subject: "Authentication mail",
         text: "your file is aunthecated",
-        html: `<p>your login is Authentication code is <h1> click here to authorize->http://localhost:8881/confirmation/${jwt}</h1></p>`,
+        html: `<p>your login is Authentication code is <h1> click here to authorize-> <a href="http://localhost:8881/confirmation/${jwt}">confirm</a></h1></p>`,
       };
       console.log("access");
       const result = await transport.sendMail(mailOptions);

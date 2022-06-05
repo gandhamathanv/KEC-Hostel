@@ -114,7 +114,6 @@ module.exports = {
   },
   async studentLogin(req, res) {
     try {
-      console.log(req);
       const { rollnumber, password } = req.body;
 
       const user = await studentLogin.findOne({
@@ -148,9 +147,12 @@ module.exports = {
         const tim = 3 * 24 * 60 * 60 * 1000;
         res.cookie("jwt", token, {
           maxAge: tim,
-          httpOnly: true,
+          // httpOnly: true,
         });
-
+        console.log("cooie set");
+        res.cookie(`Cookie token name`, `encrypted cookie string Value`);
+        console.log("res. cookie", res.cookie);
+        console.log("res. cookie", res.cookies);
         res.status(200).send({
           status: "success",
           data,

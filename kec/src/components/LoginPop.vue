@@ -95,7 +95,7 @@ export default {
           rollnumber: this.student.rollnumber,
           password: this.student.password,
         });
-        console.log(response.cookie);
+        console.log(response.cookies);
         if (response.error) {
           console.log("error");
         }
