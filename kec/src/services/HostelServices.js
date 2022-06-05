@@ -4,20 +4,18 @@ const token = localStorage.getItem("jwt");
 export default {
   getHostels(credentials) {
     console.log(credentials);
-    return Api().post("getHostels", {
+    return Api().post("getHostels", Credentials, {
       headers: {
         Authorization: "Bearer " + token,
       },
-      Credentials,
     });
   },
   getRooms(credentials) {
     console.log(credentials);
-    return Api().post("getRooms", {
+    return Api().post("getRooms", Credentials, {
       headers: {
         Authorization: "Bearer " + token,
       },
-      Credentials,
     });
   },
   getMenu(credentials) {
@@ -26,7 +24,6 @@ export default {
       headers: {
         Authorization: "Bearer " + token,
       },
-      Credentials,
     });
   },
   getNoti() {
@@ -37,27 +34,24 @@ export default {
     });
   },
   getPermissions(credentials) {
-    return Api().post("getPermissions", {
+    return Api().post("getPermissions", Credentials, {
       headers: {
         Authorization: "Bearer " + token,
       },
-      Credentials,
     });
   },
   setPermissions(credentials) {
-    return Api().patch("setPermissions", {
+    return Api().patch("setPermissions", Credentials, {
       headers: {
         Authorization: "Bearer " + token,
       },
-      Credentials,
     });
   },
   closePermissions(credentials) {
-    return Api().patch("closePermissions", {
+    return Api().patch("closePermissions", Credentials, {
       headers: {
         Authorization: "Bearer " + token,
       },
-      Credentials,
     });
   },
 };

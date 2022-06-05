@@ -3,11 +3,11 @@ import Api from "@/services/api";
 const token = localStorage.getItem("jwt");
 export default {
   getStudentList() {
-    return Api().get("getStudentsList", {
+    return Api().get("getStudentsList", Credentials, {
       headers: {
         Authorization: "Bearer " + token,
       },
-      Credentials,
+     
     });
   },
   getStaffList(credentials) {

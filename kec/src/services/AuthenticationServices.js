@@ -3,44 +3,44 @@ import Api from "@/services/api";
 const token = localStorage.getItem("jwt");
 export default {
   StudentRegister(Credentials) {
-    return Api().post("StudentDataRegister", {
+    return Api().post("StudentDataRegister",Credentials, {
       headers: {
         Authorization: "Bearer " + token,
       },
-      Credentials,
+      
     });
   },
   StaffRegister(Credentials) {
-    return Api().post("StaffDataRegister", {
+    return Api().post("StaffDataRegister",  Credentials, {
       headers: {
         Authorization: "Bearer " + token,
       },
-      Credentials,
+    
     });
   },
 
   studentLogin(Credentials) {
-    return Api().post("studentLogin", {
+    return Api().post("studentLogin", Credentials, {
       headers: {
         Authorization: "Bearer " + token,
       },
-      Credentials,
+     
     });
   },
   staffLogin(Credentials) {
-    return Api().post("staffLogin", {
+    return Api().post("staffLogin",  Credentials, {
       headers: {
         Authorization: "Bearer " + token,
       },
-      Credentials,
+    
     });
   },
   changePassword(Credentials) {
-    return Api().post("changePassword", {
+    return Api().post("changePassword", Credentials, {
       headers: {
         Authorization: "Bearer " + token,
       },
-      Credentials,
+     
     });
   },
   getData(token) {
