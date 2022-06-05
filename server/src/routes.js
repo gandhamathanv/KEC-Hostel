@@ -13,22 +13,67 @@ module.exports = (app) => {
   ),
     app.post(
       "/studentDataRegister",
+      basicTokenPolicies.getToken,
       AuthenticationController.studentDataRegister
     ),
-    app.post("/staffDataRegister", AuthenticationController.staffDataRegister),
-    app.post("/getPermissions", HostelController.getPermission),
-    app.patch("/setPermissions", HostelController.setPermission),
-    app.patch("/closePermissions", HostelController.closePermission),
-    app.post("/studentLogin", AuthenticationController.studentLogin),
-    app.post("/staffLogin", AuthenticationController.staffLogin),
-    app.post("/changePassword", AuthenticationController.changePassword),
-    app.post("/getRooms", HostelController.getRooms); //get
-  app.post("/getHostels", HostelController.getHostels); //get
-  app.post("/getMenu", HostelController.getMenu); //get
+    app.post(
+      "/staffDataRegister",
+      basicTokenPolicies.getToken,
+      AuthenticationController.staffDataRegister
+    ),
+    app.post(
+      "/getPermissions",
+      basicTokenPolicies.getToken,
+      HostelController.getPermission
+    ),
+    app.patch(
+      "/setPermissions",
+      basicTokenPolicies.getToken,
+      HostelController.setPermission
+    ),
+    app.patch(
+      "/closePermissions",
+      basicTokenPolicies.getToken,
+      HostelController.closePermission
+    ),
+    app.post(
+      "/studentLogin",
+      basicTokenPolicies.getToken,
+      AuthenticationController.studentLogin
+    ),
+    app.post(
+      "/staffLogin",
+      basicTokenPolicies.getToken,
+      AuthenticationController.staffLogin
+    ),
+    app.post(
+      "/changePassword",
+      basicTokenPolicies.getToken,
+      AuthenticationController.changePassword
+    ),
+    app.post(
+      "/getRooms",
+      basicTokenPolicies.getToken,
+      HostelController.getRooms
+    ); //get
+  app.post(
+    "/getHostels",
+    basicTokenPolicies.getToken,
+    HostelController.getHostels
+  ); //get
+  app.post("/getMenu", basicTokenPolicies.getToken, HostelController.getMenu); //get
 
   //notifiaction
-  app.get("/getNotification", HostelController.getNoti); //get
-  app.post("/createNotification", HostelController.createNoti); //get
+  app.get(
+    "/getNotification",
+    basicTokenPolicies.getToken,
+    HostelController.getNoti
+  ); //get
+  app.post(
+    "/createNotification",
+    basicTokenPolicies.getToken,
+    HostelController.createNoti
+  ); //get
 
   app.get(
     "/getStaffDash",
@@ -38,23 +83,71 @@ module.exports = (app) => {
 
   //check
   app.get("/check", basicTokenPolicies.getToken, HostelController.check); //get
-  app.get("/logout", AuthenticationController.logout); //get
+  app.get(
+    "/logout",
+    basicTokenPolicies.getToken,
+    AuthenticationController.logout
+  ); //get
 
   //
-  app.get("/getStudentsList", DetailsController.getStudentList);
-  app.get("/getStaffList", DetailsController.getStaffList);
-  app.get("/getBookingList", DetailsController.getBookingList);
-  app.get("/getHostelList", DetailsController.getHostelList);
-  app.get("/getRoomsList", DetailsController.getRoomsList);
-  app.get("/getStudentInfo/:rollnumber", DetailsController.getStudentInfo);
-  app.get("/getStaffInfo/:staffID", DetailsController.getStaffInfo);
+  app.get(
+    "/getStudentsList",
+    basicTokenPolicies.getToken,
+    DetailsController.getStudentList
+  );
+  app.get(
+    "/getStaffList",
+    basicTokenPolicies.getToken,
+    DetailsController.getStaffList
+  );
+  app.get(
+    "/getBookingList",
+    basicTokenPolicies.getToken,
+    DetailsController.getBookingList
+  );
+  app.get(
+    "/getHostelList",
+    basicTokenPolicies.getToken,
+    DetailsController.getHostelList
+  );
+  app.get(
+    "/getRoomsList",
+    basicTokenPolicies.getToken,
+    DetailsController.getRoomsList
+  );
+  app.get(
+    "/getStudentInfo/:rollnumber",
+    basicTokenPolicies.getToken,
+    DetailsController.getStudentInfo
+  );
+  app.get(
+    "/getStaffInfo/:staffID",
+    basicTokenPolicies.getToken,
+    DetailsController.getStaffInfo
+  );
 
   //conformation mail
   app.get("/confirmation/:jwt", AuthenticationController.confirmation);
 
   //export data
-  app.get("/export/StudentData", ExportController.StudentData);
-  app.get("/export/StaffData", ExportController.StaffData);
-  app.get("/export/BookingData", ExportController.BookingData);
-  app.get("/export/RoomsData", ExportController.RoomsData);
+  app.get(
+    "/export/StudentData",
+    basicTokenPolicies.getToken,
+    ExportController.StudentData
+  );
+  app.get(
+    "/export/StaffData",
+    basicTokenPolicies.getToken,
+    ExportController.StaffData
+  );
+  app.get(
+    "/export/BookingData",
+    basicTokenPolicies.getToken,
+    ExportController.BookingData
+  );
+  app.get(
+    "/export/RoomsData",
+    basicTokenPolicies.getToken,
+    ExportController.RoomsData
+  );
 };
