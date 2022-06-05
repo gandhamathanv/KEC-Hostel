@@ -41,7 +41,6 @@ module.exports = {
         status: "success",
       });
     } catch (err) {
-      console.log(err);
       res.send({
         status: "error",
       });
@@ -198,7 +197,13 @@ module.exports = {
           },
           attributes: ["level"],
         });
-        token = jwtSignUser({ mailId });
+        console.log(userInfo);
+        token = jwtSignUser({
+          mailId,
+          viewer: "STAFF",
+          level,
+          hostelName: userInfo.hostelName,
+        });
         const userJson = userInfo.toJSON();
         const data = {
           user: userJson,
