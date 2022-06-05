@@ -23,172 +23,216 @@
                       </div>
                       <div class="card-body pt-0">
                         <table class="table table-bordered" border="0">
-                          <tr v-if="user.name">
+                          <tr>
                             <th width="20%">Name</th>
                             <td width="2%">:</td>
-                            <td>{{ user.name }}</td>
+                            <td v-if="user.name">{{ user.name }}</td>
                           </tr>
-                          <tr v-if="user.rollnumber">
+                          <tr>
                             <th width="20%">Roll Number</th>
                             <td width="2%">:</td>
-                            <td>{{ user.rollnumber }}</td>
+                            <td v-if="user.rollnumber">
+                              {{ user.rollnumber }}
+                            </td>
                           </tr>
-                          <tr v-if="user.class">
+                          <tr>
                             <th width="20%">class</th>
                             <td width="2%">:</td>
-                            <td>{{ user.class }}</td>
+                            <td v-if="user.class">{{ user.class }}</td>
                           </tr>
-                          <tr v-if="user.year">
+                          <tr>
                             <th width="20%">year</th>
                             <td width="2%">:</td>
-                            <td>{{ user.year }}</td>
+                            <td v-if="user.year">{{ user.year }}</td>
                           </tr>
-                          <tr v-if="user.department">
+                          <tr>
                             <th width="20%">department</th>
                             <td width="2%">:</td>
-                            <td>{{ user.department }}</td>
+                            <td v-if="user.department">
+                              {{ user.department }}
+                            </td>
                           </tr>
-                          <tr v-if="user.DOB">
+                          <tr>
                             <th width="20%">DOB</th>
                             <td width="2%">:</td>
-                            <td>{{ user.DOB }}</td>
+                            <td v-if="user.DOB">{{ user.DOB }}</td>
                           </tr>
-                          <tr v-if="user.bloodGroup">
+                          <tr>
                             <th width="20%">bloodGroup</th>
                             <td width="2%">:</td>
-                            <td>{{ user.bloodGroup }}</td>
+                            <td v-if="user.bloodGroup">
+                              {{ user.bloodGroup }}
+                            </td>
                           </tr>
-                          <tr v-if="user.roomNumber">
+                          <tr>
                             <th width="20%">roomNumber</th>
                             <td width="2%">:</td>
-                            <td>{{ user.roomNumber }}</td>
+                            <td v-if="user.roomNumber">
+                              {{ user.roomNumber }}
+                            </td>
                           </tr>
-                          <tr v-if="user.hostelName">
+                          <tr>
                             <th width="20%">hostelName</th>
                             <td width="2%">:</td>
-                            <td>{{ user.hostelName }}</td>
+                            <td v-if="user.hostelName">
+                              {{ user.hostelName }}
+                            </td>
                           </tr>
-                          <tr v-if="user.gender">
+                          <tr>
                             <th width="20%">gender</th>
                             <td width="2%">:</td>
-                            <td>{{ user.gender }}</td>
+                            <td v-if="user.gender">{{ user.gender }}</td>
                           </tr>
-                          <tr v-if="user.phoneNumber">
+                          <tr>
                             <th width="20%">phoneNumber</th>
                             <td width="2%">:</td>
-                            <td>{{ user.phoneNumber }}</td>
+                            <td v-if="user.phoneNumber">
+                              {{ user.phoneNumber }}
+                            </td>
                           </tr>
-                          <tr v-if="user.whatsappNumber">
+                          <tr>
                             <th width="20%">whatsappNumber</th>
                             <td width="2%">:</td>
-                            <td>{{ user.whatsappNumber }}</td>
+                            <td v-if="user.whatsappNumber">
+                              {{ user.whatsappNumber }}
+                            </td>
                           </tr>
-                          <tr v-if="user.telegramNumber">
+                          <tr>
                             <th width="20%">telegramNumber</th>
                             <td width="2%">:</td>
-                            <td>{{ user.telegramNumber }}</td>
+                            <td v-if="user.telegramNumber">
+                              {{ user.telegramNumber }}
+                            </td>
                           </tr>
-                          <tr v-if="user.collegeMailID">
+                          <tr>
                             <th width="20%">collegeMailID</th>
                             <td width="2%">:</td>
-                            <td>{{ user.collegeMailID }}</td>
+                            <td v-if="user.collegeMailID">
+                              {{ user.collegeMailID }}
+                            </td>
                           </tr>
-                          <tr v-if="user.personalMailID">
+                          <tr>
                             <th width="20%">personalMailID</th>
                             <td width="2%">:</td>
-                            <td>{{ user.personalMailID }}</td>
+                            <td v-if="user.personalMailID">
+                              {{ user.personalMailID }}
+                            </td>
                           </tr>
-                          <tr v-if="user.aadharNumber">
+                          <tr>
                             <th width="20%">aadharNumber</th>
                             <td width="2%">:</td>
-                            <td>{{ user.aadharNumber }}</td>
+                            <td v-if="user.aadharNumber">
+                              {{ user.aadharNumber }}
+                            </td>
                           </tr>
-                          <tr v-if="user.fatherName">
+                          <tr>
                             <th width="20%">fatherName</th>
                             <td width="2%">:</td>
-                            <td>{{ user.fatherName }}</td>
+                            <td v-if="user.fatherName">
+                              {{ user.fatherName }}
+                            </td>
                           </tr>
-                          <tr v-if="user.fatherMobileNumber">
+                          <tr>
                             <th width="20%">fatherMobileNumber</th>
                             <td width="2%">:</td>
-                            <td>{{ user.fatherMobileNumber }}</td>
+                            <td v-if="user.fatherMobileNumber">
+                              {{ user.fatherMobileNumber }}
+                            </td>
                           </tr>
-                          <tr v-if="user.fatherOccupation">
+                          <tr>
                             <th width="20%">fatherOccupation</th>
                             <td width="2%">:</td>
-                            <td>{{ user.fatherOccupation }}</td>
+                            <td v-if="user.fatherOccupation">
+                              {{ user.fatherOccupation }}
+                            </td>
                           </tr>
-                          <tr v-if="user.motherName">
+                          <tr>
                             <th width="20%">motherName</th>
                             <td width="2%">:</td>
-                            <td>{{ user.motherName }}</td>
+                            <td v-if="user.motherName">
+                              {{ user.motherName }}
+                            </td>
                           </tr>
-                          <tr v-if="user.motherMobileNumber">
+                          <tr>
                             <th width="20%">motherMobileNumber</th>
                             <td width="2%">:</td>
-                            <td>{{ user.motherMobileNumber }}</td>
+                            <td v-if="user.motherMobileNumber">
+                              {{ user.motherMobileNumber }}
+                            </td>
                           </tr>
-                          <tr v-if="user.MotherOccupation">
+                          <tr>
                             <th width="20%">MotherOccupation</th>
                             <td width="2%">:</td>
-                            <td>{{ user.MotherOccupation }}</td>
+                            <td v-if="user.MotherOccupation">
+                              {{ user.MotherOccupation }}
+                            </td>
                           </tr>
-                          <tr v-if="user.address">
+                          <tr>
                             <th width="20%">address</th>
                             <td width="2%">:</td>
-                            <td>
+                            <td v-if="user.address">
                               {{ user.address }}
                             </td>
                           </tr>
-                          <tr v-if="user.district">
+                          <tr>
                             <th width="20%">district</th>
                             <td width="2%">:</td>
-                            <td>{{ user.district }}</td>
+                            <td v-if="user.district">{{ user.district }}</td>
                           </tr>
-                          <tr v-if="user.state">
+                          <tr>
                             <th width="20%">state</th>
                             <td width="2%">:</td>
-                            <td>{{ user.state }}</td>
+                            <td v-if="user.state">{{ user.state }}</td>
                           </tr>
-                          <tr v-if="user.localGuardian">
+                          <tr>
                             <th width="20%">localGuardian</th>
                             <td width="2%">:</td>
-                            <td>{{ user.localGuardian }}</td>
+                            <td v-if="user.localGuardian">
+                              {{ user.localGuardian }}
+                            </td>
                           </tr>
-                          <tr v-if="user.localGuardianPhoneNumber">
+                          <tr>
                             <th width="20%">localGuardianPhoneNumber</th>
                             <td width="2%">:</td>
-                            <td>{{ user.localGuardianPhoneNumber }}</td>
+                            <td v-if="user.localGuardianPhoneNumber">
+                              {{ user.localGuardianPhoneNumber }}
+                            </td>
                           </tr>
-                          <tr v-if="user.accountNumber">
+                          <tr>
                             <th width="20%">accountNumber</th>
                             <td width="2%">:</td>
-                            <td>{{ user.accountNumber }}</td>
+                            <td v-if="user.accountNumber">
+                              {{ user.accountNumber }}
+                            </td>
                           </tr>
-                          <tr v-if="user.bankName">
+                          <tr>
                             <th width="20%">bankName</th>
                             <td width="2%">:</td>
-                            <td>{{ user.bankName }}</td>
+                            <td v-if="user.bankName">{{ user.bankName }}</td>
                           </tr>
-                          <tr v-if="user.branch">
+                          <tr>
                             <th width="20%">branch</th>
                             <td width="2%">:</td>
-                            <td>{{ user.branch }}</td>
+                            <td v-if="user.branch">{{ user.branch }}</td>
                           </tr>
-                          <tr v-if="user.IFSCcode">
+                          <tr>
                             <th width="20%">IFSCcode</th>
                             <td width="2%">:</td>
-                            <td>{{ user.IFSCcode }}</td>
+                            <td v-if="user.IFSCcode">{{ user.IFSCcode }}</td>
                           </tr>
-                          <tr v-if="user.dateOfEntry">
+                          <tr>
                             <th width="20%">dateOfEntry</th>
                             <td width="2%">:</td>
-                            <td>{{ user.dateOfEntry }}</td>
+                            <td v-if="user.dateOfEntry">
+                              {{ user.dateOfEntry }}
+                            </td>
                           </tr>
-                          <tr v-if="user.dateOfVacation">
+                          <tr>
                             <th width="20%">dateOfVacation</th>
                             <td width="2%">:</td>
-                            <td>{{ user.dateOfVacation }}</td>
+                            <td v-if="user.dateOfVacation">
+                              {{ user.dateOfVacation }}
+                            </td>
                           </tr>
                         </table>
                       </div>
