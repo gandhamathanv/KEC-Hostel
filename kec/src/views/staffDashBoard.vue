@@ -49,8 +49,8 @@
 
     <!-- next rown -->
     <div class="container1">
-      <div class="container-box">
-        <!-- <div class="notification">
+      <!-- <div class="container-box"> -->
+      <!-- <div class="notification">
           <div class="notification-box">
             <div class="menu">
               <table>
@@ -144,7 +144,7 @@
             </div>
           </div>
         </div> -->
-      </div>
+      <!-- </div> -->
       <div class="sideBar">
         <div class="container-box">
           <div class="notification1">
@@ -448,10 +448,24 @@ body {
 /* notification */
 
 /******************responsive****************** */
-/* @media screen (max-width: 790px) {
-  .container {
+@media (min-device-width: 250px) and (max-device-width: 790px) {
+  .card {
+    width: 0px;
+    height: 40px;
+  }
+  .main {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
+
+    width: 100%;
+    height: 100%;
   }
-} */
+  .main-title {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+}
 </style>
