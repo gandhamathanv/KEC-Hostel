@@ -97,7 +97,7 @@
             <h6 class="box-name">{{ el.availability }}</h6>
           </div>
 
-          <a @click="showDetails(el.rollnumber)" class="box-details" href="#">
+          <a @click="showDetails(el.hostelName)" class="box-details" href="#">
             <span>Detail -></span>
           </a>
         </div>
@@ -138,6 +138,14 @@ export default {
     },
     filter_rows() {
       console.log(this.hostelName);
+    },
+    showDetails(hostelName) {
+      this.$router.push({
+        name: "hostelDetail",
+        params: {
+          hostelName,
+        },
+      });
     },
   },
   async mounted() {

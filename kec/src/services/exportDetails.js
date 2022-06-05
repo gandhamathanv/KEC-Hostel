@@ -1,5 +1,6 @@
 /* eslint-disable */
 import Api from "@/services/api";
+const token = localStorage.getItem("jwt");
 export default {
   StudentData() {
     return Api().get("/export/StudentData", {
