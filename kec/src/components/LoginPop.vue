@@ -106,12 +106,12 @@ export default {
         this.$router.push({
           name: "homeview",
         });
-        this.$store.dispatch("setLoading", false);
       } catch (error) {
         // console.log(error);
         // this.error = error.response.data.error;
         alert(error.response.data.error);
       }
+      this.$store.dispatch("setLoading", false);
     },
     async staffLogin() {
       try {
