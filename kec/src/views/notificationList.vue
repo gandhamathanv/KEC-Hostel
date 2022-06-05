@@ -1,345 +1,215 @@
 <template>
   <div>
-    <div class="container">
-      <div class="search-box">
-        <input
-          type="text"
-          v-model="search"
-          class="search-input"
-          placeholder="Search.."
-        />
-        <button class="search-button"></button>
-      </div>
-    </div>
-    <div class="outer-wrapper">
-      <div class="table-wrapper">
-        <table id="emp-table">
-          <thead>
-            <th col-index="1">
-              hostelName
-              <select
-                v-model="data.filter.hostelName"
-                class="table-filter"
-                @change="filter_rows()"
-              >
-                <option
-                  v-for="name in data.options.hostelName"
-                  :key="name"
-                  :value="name"
-                >
-                  {{ name }}
-                </option>
-              </select>
-            </th>
-            <th col-index="2">
-              gender
-              <select
-                v-model="data.filter.gender"
-                class="table-filter"
-                @change="filter_rows()"
-              >
-                <option
-                  v-for="name in data.options.gender"
-                  :key="name"
-                  :value="name"
-                >
-                  {{ name }}
-                </option>
-              </select>
-            </th>
+    <!-- <div class="col-div-4-1">
+      <div class="box-1">
+        <div class="content-box-1 box-14">
+          <p class="head-1">
+            <span><h1>Notification</h1></span>
+          </p>
 
-            <th col-index="3">
-              year
-              <select
-                class="table-filter"
-                v-model="data.filter.year"
-                @change="filter_rows()"
-              >
-                <option
-                  v-for="name in data.options.year"
-                  :key="name"
-                  :value="name"
-                >
-                  {{ name }}
-                </option>
-              </select>
-            </th>
-            <th col-index="4">
-              department
-              <select
-                v-model="data.filter.department"
-                class="table-filter"
-                @change="filter_rows()"
-              >
-                <option
-                  v-for="name in data.options.department"
-                  :key="name"
-                  :value="name"
-                >
-                  {{ name }}
-                </option>
-              </select>
-            </th>
-          </thead>
-        </table>
+          <br />
+          <div class="left">
+            <p class="number1">Add Notifications:</p>
+            <a class="btn" href="#"></a>
+          </div>
+          <div class="noof">
+            <p class="number1">Number of Notifications:</p>
+            <div class="buttons-query">
+              <button class="info2">5</button>
+            </div>
+          </div>
+        </div>
       </div>
+    </div> -->
+
+    <div class="container">
+      <p class="user"><b>Dr.K.Kannan </b></p>
+      <br />
+      <p class="msg">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus
+        aliquid facilis officia dolores incidunt laudantium similique hic
+        eligendi.
+      </p>
+      <span class="time-right">Just now</span>
     </div>
-    <div class="container1">
-      <NotiCards v-bind:data="listData"></NotiCards>
+    <div class="container">
+      <p class="user"><b>K.Kanimozhili</b></p>
+      <br />
+      <p class="msg">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus
+        aliquid facilis officia dolores incidunt laudantium similique hic
+        eligendi.
+      </p>
+      <span class="time-right">11:00am</span>
+    </div>
+    <div class="container">
+      <p class="user"><b>Dr.K.Kannan</b></p>
+      <br />
+      <p class="msg">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus
+        aliquid facilis officia dolores incidunt laudantium similique hic
+        eligendi.
+      </p>
+      <span class="time-right">12:00 am</span>
+    </div>
+    <div class="container">
+      <p class="user"><b>Dr.K.Kannan</b></p>
+      <br />
+      <p class="msg">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus
+        aliquid facilis officia dolores incidunt laudantium similique hic
+        eligendi.
+      </p>
+      <span class="time-right">1:00pm</span>
+    </div>
+    <div class="container">
+      <p class="user"><b>S.Jeevitha</b></p>
+      <br />
+      <p class="msg">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus
+        aliquid facilis officia dolores incidunt laudantium similique hic
+        eligendi.
+      </p>
+      <span class="time-right">1:00pm</span>
+    </div>
+    <div class="container">
+      <p class="user"><b>Dr.K.Kannan</b></p>
+      <br />
+      <p class="msg">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus
+        aliquid facilis officia dolores incidunt laudantium similique hic
+        eligendi.
+      </p>
+      <span class="time-right">Just now</span>
     </div>
   </div>
 </template>
 
 <script>
-import NotiCards from "@/components/NotiCards.vue";
-import getDetails from "@/services/getDetails";
 export default {
-  name: "hostelDataList",
+  name: "notificationList",
   data() {
-    return {
-      listName: this.$route.params.route,
-      search: "",
-      data: {
-        filter: {
-          hostelName: null,
-          gender: null,
-          year: null,
-          department: null,
-        },
-        options: {
-          hostelName: null,
-          gender: null,
-          year: null,
-          department: null,
-        },
-      },
-      listData: null,
-    };
+    return {};
   },
-
-  methods: {
-    setList(listName) {
-      this.listName = listName;
-    },
-    filter_rows() {
-      console.log(this.hostelName);
-    },
-  },
-  async mounted() {
-    const { data } = await getDetails.getHostel();
-    this.data.options.hostelName = [
-      ...new Set(
-        data.data.map((el) => {
-          return el.hostelName;
-        })
-      ),
-    ];
-    this.data.options.gender = [
-      ...new Set(
-        data.data.map((el) => {
-          return el.gender;
-        })
-      ),
-    ];
-    this.data.options.year = [
-      ...new Set(
-        data.data.map((el) => {
-          return el.year;
-        })
-      ),
-    ];
-    this.data.options.department = [
-      ...new Set(
-        data.data.map((el) => {
-          return el.department;
-        })
-      ),
-    ];
-    console.log(data.data);
-    this.listData = data.data;
-  },
-
-  components: { NotiCards },
 };
 </script>
 <style scoped>
-body {
-  font-family: sans-serif;
-}
-.search-box {
-  width: 100%;
+.col-div-4-1 {
+  display: flex;
+  flex-direction: column;
+  /* overflow-x: hidden; */
+  content: " ";
   position: relative;
-
-  display: flex;
-}
-.search-input {
-  width: 50%;
-  padding: 10px;
-  border: 4px solid #111d5e;
-  border-radius: 10px 0 0 10px;
-  border-right: none;
-  outline: none;
-  font-size: 15px;
-  color: rgb(15, 15, 15);
-  background: none;
-}
-.search-button {
-  text-align: center;
-  height: 51px;
-  width: 40px;
-  outline: none;
-  cursor: pointer;
-  border: 4px solid #111d5e;
-  border-radius: 0 10px 10px 0;
-  border-left: none;
-  background: none;
-  font-size: 20px;
-  border-left: 4px solid #111d5e;
-}
-.container {
-  width: 45%;
-  position: absolute;
-  left: 69%;
-}
-/* filter */
-
-.heading {
-  display: flex;
-  background-color: #232f3e;
-  box-shadow: 0px 1px 2px #232f3e;
-}
-/* h1 {
-  color: coral;
-  font-weight: bold;
-
-  background: transparent;
-  padding: 7px;
-} */
-
-.outer-wrapper {
-  margin-top: 40px;
-  margin-left: 20px;
-  margin-right: 20px;
-  border: 1px solid black;
-  border-radius: 4px;
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.9);
-  max-width: 39%;
-  margin-bottom: 30px;
-  max-height: fit-content;
-}
-.table-wrapper {
-  height: fit-content;
-  margin-top: 22px;
-  margin: 0 auto;
-}
-
-table {
-  min-width: max-content;
-
-  border-collapse: separate;
-  border-spacing: 0px;
-}
-.table-filter {
-  border-radius: 5px;
-  visibility: visible;
-  opacity: 1;
-
-  box-shadow: 0px 3px 5px -1px #ccc;
-}
-.table-filter:hover {
-  color: rgb(77, 80, 172);
-}
-table th {
-  position: sticky;
-  top: 0px;
-
-  background-color: #133b5c;
-  color: rgb(241, 245, 179);
-
-  text-align: center;
-  font-weight: normal;
-  font-size: 18px;
-  outline: 0.7px solid black;
-  border: 1.5px solid black;
-}
-
-table th,
-table td {
-  padding: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-table td {
-  text-align: left;
-
-  font-size: 15px;
-  border: 1px solid rgb(177, 177, 177);
-  padding-left: 20px;
-}
-/* card */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "poppins", sans-serif;
-}
-.container1 {
-  width: 80%;
-  height: auto;
-
   align-items: center;
-  justify-content: center;
 }
-.profile-box {
-  background: #ff574a;
-  width: 100%;
-  text-align: center;
-  padding: 45px 60px;
-  color: #fff;
+
+.box-1 {
+  width: 480px;
+  height: auto;
+  background-color: white;
+  margin: 10px;
   position: relative;
+  box-shadow: 2px 5px 10px rgb(255, 254, 254);
   border-radius: 20px;
 }
 
-.profile-box button {
-  background: #fff;
-  color: #f1480b;
+.content-box-1 {
+  position: relative;
+  align-items: center;
+}
+
+.head-1 {
+  font-family: system-ui;
+  font-weight: bold;
+  /* padding-top: 10px; */
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  /* background-color: #dff0fc;
+  border-radius: 10px;
+  height:40px;
+   */
+}
+
+.buttons-query {
   border: none;
-  outline: none;
-  box-shadow: 0 5px 10px rgba(8, 19, 237, 0.5);
-  padding: 14px 30px;
-  border-radius: 30px;
-  margin-bottom: -50px;
-  font-weight: 200;
-  font-size: 13px;
+  width: 60px;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+
+  padding: 2px 28px;
   cursor: pointer;
-}
-.profile-box button:hover {
-  background-color: rgb(67, 65, 69);
-}
-.student-name {
-  font-size: 17px;
-  margin-bottom: 20px;
-  color: black;
-}
-.dept {
-  margin-bottom: 5px;
-}
-.hostel {
-  font-size: 17px;
-  margin-bottom: 15px;
+  width: 400px;
 }
 
-@media only screen and (max-width: 1200px) {
-  .container1 {
-    width: 50%;
-    height: auto;
+.info2 {
+  background-color: #c0d9ec;
+  box-shadow: 2px 5px 10px #ddd;
+  border-radius: 20px;
+  border: none;
+  width: 120px;
+  height: 40px;
+  /* position: relative; */
+  right: 150px;
+  bottom: 20px;
+}
+.btn {
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  background-color: white;
+  color: #3c4043;
+  display: inline-flex;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    0 1px 3px 1px rgba(60, 64, 67, 0.149);
+  transition: 0.5s;
 
-    margin-left: auto;
-    margin-right: auto;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-} ;
+  /* position:relative;
+ left:-120px; */
+}
+.btn::before {
+  background-image: url(https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 32px;
+  content: "";
+  min-width: 56px;
+
+  display: block;
+}
+/* messagebox */
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right: 0;
+}
+.time-right {
+  float: right;
+  color: rgb(103, 99, 99);
+}
+.user,
+.msg {
+  float: left;
+}
 </style>

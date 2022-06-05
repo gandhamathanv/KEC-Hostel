@@ -11,14 +11,14 @@
                   <div class="col-lg-8">
                     <div class="card shadow-sm2">
                       <div class="card-header border-0">
-                        <h3 class="mb-0">HOSTEL INFORMATION</h3>
+                        <h3 class="mb-0">ROOM INFORMATION</h3>
                       </div>
                       <div class="buttons">
                         <button class="submit">
                           <span class="submit">Update </span>
                         </button>
                         <button class="submit">
-                          <span class="submit">show rooms </span>
+                          <span class="submit">Delete </span>
                         </button>
                       </div>
                       <div class="card-body pt-0">
@@ -211,8 +211,11 @@ export default {
       user: {
         hostelName: "Amaravathi",
         gender: "Female",
+        roomNumber: "AMR003",
         year: 2,
         department: "CSE",
+        capacity: 4,
+        availability: 4,
       },
     };
   },
