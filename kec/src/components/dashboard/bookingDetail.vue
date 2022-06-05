@@ -13,14 +13,7 @@
                       <div class="card-header border-0">
                         <h3 class="mb-0">BOOKING INFORMATION</h3>
                       </div>
-                      <div class="buttons">
-                        <button class="submit">
-                          <span class="submit">Update </span>
-                        </button>
-                        <button class="submit">
-                          <span class="submit">Delete </span>
-                        </button>
-                      </div>
+
                       <div class="card-body pt-0">
                         <table class="table table-bordered" border="0">
                           <tr>
@@ -158,21 +151,10 @@ tr + tr > th {
   justify-content: center;
   padding: 10px;
 }
-.submit {
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  max-width: 140px;
-  width: 100%;
-  border: none;
 
-  color: #fff;
-  border-radius: 5px;
-  margin: 10px 0px;
-  cursor: pointer;
-  background-color: #4da6e2;
-
-  margin-right: 14px;
+.card-header {
+  text-align: center;
+  padding: 20px;
 }
 
 @media (max-width: 790px) {
