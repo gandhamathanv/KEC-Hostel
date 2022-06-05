@@ -50,7 +50,7 @@
     <!-- next rown -->
     <div class="container1">
       <div class="container-box">
-        <div class="notification">
+        <!-- <div class="notification">
           <div class="notification-box">
             <div class="menu">
               <table>
@@ -143,7 +143,7 @@
               </table>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="sideBar">
         <div class="container-box">
@@ -392,7 +392,7 @@ body {
 .message {
   text-align: center;
 } /************************menu items */
-.menu1 {
+/* .menu1 {
   background-color: #dfc0ba;
   width: 140px;
   padding: 10px;
@@ -444,6 +444,14 @@ body {
   margin: 10px;
   border-radius: 5px;
   height: 45px;
-}
+} */
 /* notification */
+
+/******************responsive****************** */
+/* @media screen (max-width: 790px) {
+  .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+} */
 </style>
