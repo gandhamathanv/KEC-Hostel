@@ -27,6 +27,7 @@ import bookingDetail from "../components/dashboard/bookingDetail.vue";
 import exportData from "../components/dashboard/exportData.vue";
 import errorStatus from "../components/dashboard/errorStatus.vue";
 import loadingPage from "../components/dashboard/loadingPage.vue";
+import loaderPage from "../components/dashboard/loaderPage.vue";
 
 const routes = [
   {
@@ -161,6 +162,11 @@ const routes = [
     path: "/loadingPage",
     name: "loadingPage",
     component: loadingPage,
+  },
+  {
+    path: "/loaderPage",
+    name: "loaderPage",
+    component: loaderPage,
   },
   {
     path: "/:catchAll(.*)",

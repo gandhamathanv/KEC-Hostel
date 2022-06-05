@@ -31,16 +31,6 @@
                       <div class="card-body pt-0">
                         <table class="table table-bordered" border="0">
                           <tr>
-                            <th width="20%">Name</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.name">{{ user.name }}</td>
-                            <td v-if="update">
-                              <span class="material-symbols-outlined">
-                                edit
-                              </span>
-                            </td>
-                          </tr>
-                          <tr>
                             <th width="20%">Roll Number</th>
                             <td width="2%">:</td>
                             <td v-if="user.rollnumber">
@@ -52,16 +42,7 @@
                               </span>
                             </td>
                           </tr>
-                          <tr>
-                            <th width="20%">class</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.class">{{ user.class }}</td>
-                            <td v-if="update">
-                              <span class="material-symbols-outlined">
-                                edit
-                              </span>
-                            </td>
-                          </tr>
+
                           <tr>
                             <th width="20%">year</th>
                             <td width="2%">:</td>
@@ -84,28 +65,7 @@
                               </span>
                             </td>
                           </tr>
-                          <tr>
-                            <th width="20%">DOB</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.DOB">{{ user.DOB }}</td>
-                            <td v-if="update">
-                              <span class="material-symbols-outlined">
-                                edit
-                              </span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">bloodGroup</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.bloodGroup">
-                              {{ user.bloodGroup }}
-                            </td>
-                            <td v-if="update">
-                              <span class="material-symbols-outlined">
-                                edit
-                              </span>
-                            </td>
-                          </tr>
+
                           <tr>
                             <th width="20%">roomNumber</th>
                             <td width="2%">:</td>
@@ -138,157 +98,6 @@
                               <span class="material-symbols-outlined">
                                 edit
                               </span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">phoneNumber</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.phoneNumber">
-                              {{ user.phoneNumber }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">whatsappNumber</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.whatsappNumber">
-                              {{ user.whatsappNumber }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">telegramNumber</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.telegramNumber">
-                              {{ user.telegramNumber }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">collegeMailID</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.collegeMailID">
-                              {{ user.collegeMailID }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">personalMailID</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.personalMailID">
-                              {{ user.personalMailID }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">aadharNumber</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.aadharNumber">
-                              {{ user.aadharNumber }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">fatherName</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.fatherName">
-                              {{ user.fatherName }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">fatherMobileNumber</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.fatherMobileNumber">
-                              {{ user.fatherMobileNumber }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">fatherOccupation</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.fatherOccupation">
-                              {{ user.fatherOccupation }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">motherName</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.motherName">
-                              {{ user.motherName }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">motherMobileNumber</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.motherMobileNumber">
-                              {{ user.motherMobileNumber }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">MotherOccupation</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.MotherOccupation">
-                              {{ user.MotherOccupation }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">address</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.address">
-                              {{ user.address }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">district</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.district">{{ user.district }}</td>
-                          </tr>
-                          <tr>
-                            <th width="20%">state</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.state">{{ user.state }}</td>
-                          </tr>
-                          <tr>
-                            <th width="20%">localGuardian</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.localGuardian">
-                              {{ user.localGuardian }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">localGuardianPhoneNumber</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.localGuardianPhoneNumber">
-                              {{ user.localGuardianPhoneNumber }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">accountNumber</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.accountNumber">
-                              {{ user.accountNumber }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">bankName</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.bankName">{{ user.bankName }}</td>
-                          </tr>
-                          <tr>
-                            <th width="20%">branch</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.branch">{{ user.branch }}</td>
-                          </tr>
-                          <tr>
-                            <th width="20%">IFSCcode</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.IFSCcode">{{ user.IFSCcode }}</td>
-                          </tr>
-                          <tr>
-                            <th width="20%">dateOfEntry</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.dateOfEntry">
-                              {{ user.dateOfEntry }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">dateOfVacation</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.dateOfVacation">
-                              {{ user.dateOfVacation }}
                             </td>
                           </tr>
                         </table>
