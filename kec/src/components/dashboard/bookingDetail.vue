@@ -24,11 +24,6 @@
                       <div class="card-body pt-0">
                         <table class="table table-bordered" border="0">
                           <tr>
-                            <th width="20%">Name</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.name">{{ user.name }}</td>
-                          </tr>
-                          <tr>
                             <th width="20%">Roll Number</th>
                             <td width="2%">:</td>
                             <td v-if="user.rollnumber">
@@ -62,11 +57,6 @@
                             <td v-if="user.hostelName">
                               {{ user.hostelName }}
                             </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">gender</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.gender">{{ user.gender }}</td>
                           </tr>
                         </table>
                       </div>
