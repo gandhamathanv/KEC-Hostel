@@ -18,7 +18,14 @@
                           <span class="submit">Update </span>
                         </button>
                         <button class="submit">
-                          <span class="submit">show rooms </span>
+                          <router-link
+                            class="submit"
+                            :to="{
+                              name: 'roomDataList',
+                              params: { hostelName: user.hostelName },
+                            }"
+                            >show rooms</router-link
+                          >
                         </button>
                       </div>
                       <div class="card-body pt-0">
@@ -299,17 +306,21 @@
   </div>
 </template>
 <script>
+import getDetails from "@/services/getDetails";
+
 export default {
   data() {
     return {
       update: true,
-      user: {
-        hostelName: "Amaravathi",
-        gender: "Female",
-        year: 2,
-        department: "CSE",
-      },
+      user: {},
     };
+  },
+  async mounted() {
+    console.log("get Data");
+    const { data } = await getDetails.getHostel({
+      hostelName: this.$route.params.hostelName,
+    });
+    this.user = data.data;
   },
 };
 </script>

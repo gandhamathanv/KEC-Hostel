@@ -123,7 +123,7 @@ const routes = [
     component: bookingDataList,
   },
   {
-    path: "/roomDataList",
+    path: "/roomDataList/:hostelName",
     name: "roomDataList",
     component: roomDataList,
   },
@@ -143,12 +143,12 @@ const routes = [
     component: hostelDetail,
   },
   {
-    path: "/roomDataList/:roomNumber",
+    path: "/roomDataList/:hostelName/:roomNumber",
     name: "roomDetail",
     component: roomDetail,
   },
   {
-    path: "/bookingDataList/:hostelName",
+    path: "/bookingDataList/:rollnumber",
     name: "bookingDetail",
     component: bookingDetail,
   },

@@ -7,7 +7,7 @@ const {
   permission,
   booking,
   hostelinfo,
-  hostelRooms,
+  hostelrooms,
 } = require("../models");
 module.exports = {
   async getStudentList(req, res) {
@@ -95,7 +95,45 @@ module.exports = {
   },
   async getBookingList(req, res) {
     try {
-      const data = await booking.findAll();
+      const data = await booking.findAll({});
+      res.status(200).send({
+        status: "success",
+        data: data,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(404).send({
+        status: "failure",
+        error: "cannot get data",
+      });
+    }
+  },
+  async getBookingInfo(req, res) {
+    try {
+      const data = await booking.findOne({
+        where: {
+          rollnumber: req.params.rollnumber,
+        },
+      });
+      res.status(200).send({
+        status: "success",
+        data: data,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(404).send({
+        status: "failure",
+        error: "cannot get data",
+      });
+    }
+  },
+  async getHostelInfo(req, res) {
+    try {
+      const data = await hostelinfo.findOne({
+        where: {
+          hostelName: req.params.hostelName,
+        },
+      });
       res.status(200).send({
         status: "success",
         data: data,
@@ -110,7 +148,11 @@ module.exports = {
   },
   async getRoomsList(req, res) {
     try {
-      const data = await hostelRooms.findAll();
+      const data = await hostelrooms.findAll({
+        where: {
+          hostelName: req.params.hostelName,
+        },
+      });
       res.status(200).send({
         status: "success",
         data: data,

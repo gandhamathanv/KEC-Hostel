@@ -111,7 +111,7 @@ module.exports = (app) => {
     DetailsController.getHostelList
   );
   app.get(
-    "/getRoomsList",
+    "/getRoomsList/:hostelName",
     basicTokenPolicies.getToken,
     DetailsController.getRoomsList
   );
@@ -124,6 +124,16 @@ module.exports = (app) => {
     "/getStaffInfo/:staffID",
     basicTokenPolicies.getToken,
     DetailsController.getStaffInfo
+  );
+  app.get(
+    "/getBookingInfo/:rollnumber",
+    basicTokenPolicies.getToken,
+    DetailsController.getBookingInfo
+  );
+  app.get(
+    "/getHostelInfo/:hostelName",
+    basicTokenPolicies.getToken,
+    DetailsController.getHostelInfo
   );
 
   //conformation mail

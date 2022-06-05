@@ -97,7 +97,7 @@
             <h6 class="box-name">{{ el.availability }}</h6>
           </div>
 
-          <a @click="showDetails(el.rollnumber)" class="box-details" href="#">
+          <a @click="showDetails(el.roomNumber)" class="box-details" href="#">
             <span>Detail -></span>
           </a>
         </div>
@@ -139,9 +139,20 @@ export default {
     filter_rows() {
       console.log(this.hostelName);
     },
+    showDetails(roomNumber) {
+      this.$router.push({
+        name: "roomDetail",
+        params: {
+          hostelName: this.$route.params.hostelName,
+          roomNumber,
+        },
+      });
+    },
   },
   async created() {
-    const { data } = await getDetails.getHostel();
+    const { data } = await getDetails.getRoomsList({
+      hostelName: this.$route.params.hostelName,
+    });
     this.data.options.hostelName = [
       ...new Set(
         data.data.map((el) => {

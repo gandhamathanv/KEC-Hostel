@@ -149,7 +149,7 @@ export default {
     },
   },
   async mounted() {
-    const { data } = await getDetails.getHostel();
+    const { data } = await getDetails.getHostelList();
     this.data.options.hostelName = [
       ...new Set(
         data.data.map((el) => {

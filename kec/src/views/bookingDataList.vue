@@ -85,7 +85,7 @@
       </div>
     </div>
     <div class="dash">
-      <figure v-for="el in data" :key="el" class="box">
+      <figure v-for="el in listData" :key="el" class="box">
         <div class="box-title">
           <h2 class="box-rollno">{{ el.rollnumber }}</h2>
         </div>
@@ -145,9 +145,17 @@ export default {
     filter_rows() {
       console.log(this.hostelName);
     },
+    showDetails(rollnumber) {
+      this.$router.push({
+        name: "bookingDetail",
+        params: {
+          rollnumber,
+        },
+      });
+    },
   },
   async mounted() {
-    const { data } = await getDetails.getBooking();
+    const { data } = await getDetails.getBookingList();
     this.data.options.hostelName = [
       ...new Set(
         data.data.map((el) => {

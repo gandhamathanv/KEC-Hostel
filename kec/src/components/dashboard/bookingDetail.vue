@@ -249,16 +249,18 @@
   </div>
 </template>
 <script>
+import getDetails from "@/services/getDetails";
 export default {
   data() {
     return {
-      user: {
-        hostelName: "Amaravathi",
-        gender: "Female",
-        year: 1,
-        department: "CSE",
-      },
+      user: {},
     };
+  },
+  async mounted() {
+    const { data } = await getDetails.getBooking({
+      rollnumber: this.$route.params.rollnumber,
+    });
+    this.user = data.data;
   },
 };
 </script>

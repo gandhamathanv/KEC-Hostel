@@ -16,14 +16,14 @@ export default {
       },
     });
   },
-  getBooking() {
+  getBookingList() {
     return Api().get("getBookingList", {
       headers: {
         Authorization: "Bearer " + token,
       },
     });
   },
-  getHostel() {
+  getHostelList() {
     return Api().get("getHostelList", {
       headers: {
         Authorization: "Bearer " + token,
@@ -31,8 +31,8 @@ export default {
     });
   },
 
-  getRooms() {
-    return Api().get("getRoomsList", {
+  getRoomsList(credentials) {
+    return Api().get("getRoomsList/" + credentials.hostelName, {
       headers: {
         Authorization: "Bearer " + token,
       },
@@ -47,6 +47,30 @@ export default {
   },
   getStaff(credentials) {
     return Api().get("getStaffInfo/" + credentials.staffID, {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+  },
+  getBooking(credentials) {
+    return Api().get("getBookingInfo/" + credentials.rollnumber, {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+  },
+  getRooms(credentials) {
+    return Api().get(
+      "getRoomInfo/" + credentials.hostelName + "/" + credentials.roomNumber,
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
+  },
+  getHostel(credentials) {
+    return Api().get("getHostelInfo/" + credentials.hostelName, {
       headers: {
         Authorization: "Bearer " + token,
       },
