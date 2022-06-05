@@ -3,28 +3,27 @@ import Api from "@/services/api";
 const token = localStorage.getItem("jwt");
 export default {
   getStudentList() {
-    return Api().get("getStudentsList", Credentials, {
+    return Api().get("getStudentsList", {
       headers: {
         Authorization: "Bearer " + token,
       },
-     
     });
   },
-  getStaffList(credentials) {
+  getStaffList() {
     return Api().get("getStaffList", {
       headers: {
         Authorization: "Bearer " + token,
       },
     });
   },
-  getBooking(credentials) {
+  getBooking() {
     return Api().get("getBookingList", {
       headers: {
         Authorization: "Bearer " + token,
       },
     });
   },
-  getHostel(credentials) {
+  getHostel() {
     return Api().get("getHostelList", {
       headers: {
         Authorization: "Bearer " + token,
@@ -32,7 +31,7 @@ export default {
     });
   },
 
-  getRooms(credentials) {
+  getRooms() {
     return Api().get("getRoomsList", {
       headers: {
         Authorization: "Bearer " + token,
@@ -40,7 +39,6 @@ export default {
     });
   },
   getStudent(credentials) {
-    console.log(credentials);
     return Api().get("getStudentInfo/" + credentials.rollnumber, {
       headers: {
         Authorization: "Bearer " + token,
@@ -48,7 +46,6 @@ export default {
     });
   },
   getStaff(credentials) {
-    console.log(credentials);
     return Api().get("getStaffInfo/" + credentials.staffID, {
       headers: {
         Authorization: "Bearer " + token,
