@@ -17,6 +17,7 @@ import studentDataList from "../views/studentDataList.vue";
 import staffDataList from "../views/staffDataList.vue";
 import bookingDataList from "../views/bookingDataList.vue";
 import hostelDataList from "../views/hostelDataList.vue";
+import notificationList from "../views/notificationList.vue";
 import roomDataList from "../views/roomDataList.vue";
 import studentDetail from "../components/studentDetail.vue";
 import staffDetail from "../components/staffDetail.vue";
@@ -132,6 +133,11 @@ const routes = [
     component: hostelDataList,
   },
   {
+    path: "/notificationList",
+    name: "notificationList",
+    component: notificationList,
+  },
+  {
     path: "/hostelDataList/:hostelName",
     name: "hostelDetail",
     component: hostelDetail,
@@ -160,7 +166,7 @@ const routes = [
     path: "/:catchAll(.*)",
     name: "errorStatus",
     component: errorStatus,
-  }
+  },
 ];
 
 const router = createRouter({
