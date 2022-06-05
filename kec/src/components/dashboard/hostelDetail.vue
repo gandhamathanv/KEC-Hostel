@@ -139,12 +139,22 @@
                             <td v-if="user.phoneNumber">
                               {{ user.phoneNumber }}
                             </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
                           </tr>
                           <tr>
                             <th width="20%">whatsappNumber</th>
                             <td width="2%">:</td>
                             <td v-if="user.whatsappNumber">
                               {{ user.whatsappNumber }}
+                            </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
                             </td>
                           </tr>
                           <tr>
@@ -153,12 +163,22 @@
                             <td v-if="user.telegramNumber">
                               {{ user.telegramNumber }}
                             </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
                           </tr>
                           <tr>
                             <th width="20%">collegeMailID</th>
                             <td width="2%">:</td>
                             <td v-if="user.collegeMailID">
                               {{ user.collegeMailID }}
+                            </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
                             </td>
                           </tr>
                           <tr>
@@ -167,12 +187,22 @@
                             <td v-if="user.personalMailID">
                               {{ user.personalMailID }}
                             </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
                           </tr>
                           <tr>
                             <th width="20%">aadharNumber</th>
                             <td width="2%">:</td>
                             <td v-if="user.aadharNumber">
                               {{ user.aadharNumber }}
+                            </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
                             </td>
                           </tr>
                           <tr>
@@ -181,12 +211,22 @@
                             <td v-if="user.fatherName">
                               {{ user.fatherName }}
                             </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
                           </tr>
                           <tr>
                             <th width="20%">fatherMobileNumber</th>
                             <td width="2%">:</td>
                             <td v-if="user.fatherMobileNumber">
                               {{ user.fatherMobileNumber }}
+                            </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
                             </td>
                           </tr>
                           <tr>
@@ -195,12 +235,22 @@
                             <td v-if="user.fatherOccupation">
                               {{ user.fatherOccupation }}
                             </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
                           </tr>
                           <tr>
                             <th width="20%">motherName</th>
                             <td width="2%">:</td>
                             <td v-if="user.motherName">
                               {{ user.motherName }}
+                            </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
                             </td>
                           </tr>
                           <tr>
@@ -209,12 +259,22 @@
                             <td v-if="user.motherMobileNumber">
                               {{ user.motherMobileNumber }}
                             </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
                           </tr>
                           <tr>
                             <th width="20%">MotherOccupation</th>
                             <td width="2%">:</td>
                             <td v-if="user.MotherOccupation">
                               {{ user.MotherOccupation }}
+                            </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
                             </td>
                           </tr>
                           <tr>
@@ -223,22 +283,42 @@
                             <td v-if="user.address">
                               {{ user.address }}
                             </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
                           </tr>
                           <tr>
                             <th width="20%">district</th>
                             <td width="2%">:</td>
                             <td v-if="user.district">{{ user.district }}</td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
                           </tr>
                           <tr>
                             <th width="20%">state</th>
                             <td width="2%">:</td>
                             <td v-if="user.state">{{ user.state }}</td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
                           </tr>
                           <tr>
                             <th width="20%">localGuardian</th>
                             <td width="2%">:</td>
                             <td v-if="user.localGuardian">
                               {{ user.localGuardian }}
+                            </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
                             </td>
                           </tr>
                           <tr>
@@ -247,6 +327,11 @@
                             <td v-if="user.localGuardianPhoneNumber">
                               {{ user.localGuardianPhoneNumber }}
                             </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
                           </tr>
                           <tr>
                             <th width="20%">accountNumber</th>
@@ -254,21 +339,41 @@
                             <td v-if="user.accountNumber">
                               {{ user.accountNumber }}
                             </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
                           </tr>
                           <tr>
                             <th width="20%">bankName</th>
                             <td width="2%">:</td>
                             <td v-if="user.bankName">{{ user.bankName }}</td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
                           </tr>
                           <tr>
                             <th width="20%">branch</th>
                             <td width="2%">:</td>
                             <td v-if="user.branch">{{ user.branch }}</td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
                           </tr>
                           <tr>
                             <th width="20%">IFSCcode</th>
                             <td width="2%">:</td>
                             <td v-if="user.IFSCcode">{{ user.IFSCcode }}</td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
                           </tr>
                           <tr>
                             <th width="20%">dateOfEntry</th>
@@ -276,12 +381,22 @@
                             <td v-if="user.dateOfEntry">
                               {{ user.dateOfEntry }}
                             </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
                           </tr>
                           <tr>
                             <th width="20%">dateOfVacation</th>
                             <td width="2%">:</td>
                             <td v-if="user.dateOfVacation">
                               {{ user.dateOfVacation }}
+                            </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
                             </td>
                           </tr>
                         </table>
