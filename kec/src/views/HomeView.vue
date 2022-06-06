@@ -643,7 +643,7 @@ nav img {
 nav .fa {
   display: none;
 }
-@media (max: width 700px) {
+@media (max-width: 700px) {
   .text-box h1 {
     font-size: 20px;
   }
