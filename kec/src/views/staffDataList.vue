@@ -141,7 +141,28 @@ export default {
       this.listName = listName;
     },
     filter_rows() {
-      console.log(this.hostelName);
+      this.listData = this.realData
+        .filter((el) => {
+          return this.data.filter.gender
+            ? el.gender === this.data.filter.gender
+            : true;
+        })
+        .filter((el) =>
+          this.data.filter.hostelName
+            ? el.hostelName === this.data.filter.hostelName
+            : true
+        )
+        .filter((el) =>
+          this.data.filter.responsiblity
+            ? el.hostelResponsibility === this.data.filter.responsiblity
+            : true
+        )
+        .filter((el) =>
+          this.data.filter.department
+            ? el.department === this.data.filter.department
+            : true
+        );
+      console.log(this.listData);
     },
     showDetails(staffID) {
       this.$router.push({
@@ -171,7 +192,7 @@ export default {
     this.data.options.responsiblity = [
       ...new Set(
         data.data.map((el) => {
-          return el.responsiblity;
+          return el.hostelResponsibility;
         })
       ),
     ];
@@ -183,6 +204,7 @@ export default {
       ),
     ];
     this.listData = data.data;
+    this.realData = data.data;
   },
 };
 </script>

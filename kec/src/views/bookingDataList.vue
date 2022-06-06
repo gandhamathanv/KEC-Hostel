@@ -143,7 +143,26 @@ export default {
       this.listName = listName;
     },
     filter_rows() {
-      console.log(this.hostelName);
+      this.listData = this.realData
+        .filter((el) => {
+          return this.data.filter.gender
+            ? el.gender === this.data.filter.gender
+            : true;
+        })
+        .filter((el) =>
+          this.data.filter.hostelName
+            ? el.hostelName === this.data.filter.hostelName
+            : true
+        )
+        .filter((el) =>
+          this.data.filter.year ? el.year === this.data.filter.year : true
+        )
+        .filter((el) =>
+          this.data.filter.department
+            ? el.department === this.data.filter.department
+            : true
+        );
+      console.log(this.listData);
     },
     showDetails(rollnumber) {
       this.$router.push({
@@ -185,6 +204,7 @@ export default {
       ),
     ];
     this.listData = data.data;
+    this.realData = data.data;
   },
 };
 </script>

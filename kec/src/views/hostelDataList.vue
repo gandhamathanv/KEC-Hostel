@@ -11,7 +11,7 @@
         <button class="search-button"></button>
       </div>
     </div>
-    <div class="outer-wrapper">
+    <!-- <div class="outer-wrapper">
       <div class="table-wrapper">
         <table id="emp-table">
           <thead>
@@ -83,7 +83,7 @@
           </thead>
         </table>
       </div>
-    </div>
+    </div> -->
     <div class="dash">
       <figure v-for="el in listData" :key="el" class="box">
         <div class="box-title">
@@ -216,7 +216,8 @@ body {
 }
 .container {
   width: 45%;
-  position: absolute;
+  /* position: absolute; */
+  margin-bottom: 2rem;
   left: 69%;
 }
 /* filter */

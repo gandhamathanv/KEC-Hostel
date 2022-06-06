@@ -16,14 +16,14 @@
         <table id="emp-table">
           <thead>
             <th col-index="1">
-              hostelName
+              attachedBathroom
               <select
-                v-model="data.filter.hostelName"
+                v-model="data.filter.attachedBathroom"
                 class="table-filter"
                 @change="filter_rows()"
               >
                 <option
-                  v-for="name in data.options.hostelName"
+                  v-for="name in data.options.attachedBathroom"
                   :key="name"
                   :value="name"
                 >
@@ -32,14 +32,14 @@
               </select>
             </th>
             <th col-index="2">
-              gender
+              capacity
               <select
-                v-model="data.filter.gender"
+                v-model="data.filter.capacity"
                 class="table-filter"
                 @change="filter_rows()"
               >
                 <option
-                  v-for="name in data.options.gender"
+                  v-for="name in data.options.capacity"
                   :key="name"
                   :value="name"
                 >
@@ -49,30 +49,14 @@
             </th>
 
             <th col-index="3">
-              year
+              availability
               <select
                 class="table-filter"
-                v-model="data.filter.year"
+                v-model="data.filter.availability"
                 @change="filter_rows()"
               >
                 <option
-                  v-for="name in data.options.year"
-                  :key="name"
-                  :value="name"
-                >
-                  {{ name }}
-                </option>
-              </select>
-            </th>
-            <th col-index="4">
-              department
-              <select
-                v-model="data.filter.department"
-                class="table-filter"
-                @change="filter_rows()"
-              >
-                <option
-                  v-for="name in data.options.department"
+                  v-for="name in data.options.availability"
                   :key="name"
                   :value="name"
                 >
@@ -116,16 +100,14 @@ export default {
       search: "",
       data: {
         filter: {
-          hostelName: null,
-          gender: null,
-          year: null,
-          department: null,
+          availability: null,
+          capacity: null,
+          attachedBathroom: null,
         },
         options: {
-          hostelName: null,
-          gender: null,
-          year: null,
-          department: null,
+          availability: null,
+          capacity: null,
+          attachedBathroom: null,
         },
       },
       listData: null,
@@ -137,7 +119,31 @@ export default {
       this.listName = listName;
     },
     filter_rows() {
-      console.log(this.hostelName);
+      this.listData = this.realData
+        .filter((el) => {
+          return this.data.filter.availability
+            ? el.availability === this.data.filter.availability
+            : true;
+        })
+        .filter((el) =>
+          this.data.filter.capacity
+            ? el.capacity === this.data.filter.capacity
+            : true
+        )
+        .filter((el) =>
+          this.data.filter.attachedBathroom
+            ? el.attachedBathroom === this.data.filter.attachedBathroom
+            : true
+        );
+      // .filter((el) => {
+      //   return (
+      //     this.search !== "" &&
+      //     Object.values(el)
+      //       .join(" ")
+      //       .toLowerCase.includes(this.search.toLowerCase)
+      //   );
+
+      console.log(this.listData);
     },
     showDetails(roomNumber) {
       this.$router.push({
@@ -153,31 +159,24 @@ export default {
     const { data } = await getDetails.getRoomsList({
       hostelName: this.$route.params.hostelName,
     });
-    this.data.options.hostelName = [
+    this.data.options.availability = [
       ...new Set(
         data.data.map((el) => {
-          return el.hostelName;
+          return el.availability;
         })
       ),
     ];
-    this.data.options.gender = [
+    this.data.options.attachedBathroom = [
       ...new Set(
         data.data.map((el) => {
-          return el.gender;
+          return el.attachedBathroom;
         })
       ),
     ];
-    this.data.options.year = [
+    this.data.options.capacity = [
       ...new Set(
         data.data.map((el) => {
-          return el.year;
-        })
-      ),
-    ];
-    this.data.options.department = [
-      ...new Set(
-        data.data.map((el) => {
-          return el.department;
+          return el.capacity;
         })
       ),
     ];

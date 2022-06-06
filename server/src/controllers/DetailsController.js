@@ -63,7 +63,7 @@ module.exports = {
           "name",
           "hostelName",
           "gender",
-          "responsibility",
+          "hostelResponsibility",
         ],
       });
       res.status(200).send({
