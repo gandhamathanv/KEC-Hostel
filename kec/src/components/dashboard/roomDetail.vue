@@ -24,16 +24,6 @@
                       <div class="card-body pt-0">
                         <table class="table table-bordered" border="0">
                           <tr>
-                            <th width="20%">Name</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.name">{{ user.name }}</td>
-                            <td v-if="update">
-                              <span class="material-symbols-outlined">
-                                edit
-                              </span>
-                            </td>
-                          </tr>
-                          <tr>
                             <th width="20%">Roll Number</th>
                             <td width="2%">:</td>
                             <td v-if="user.rollnumber">
@@ -45,16 +35,7 @@
                               </span>
                             </td>
                           </tr>
-                          <tr>
-                            <th width="20%">class</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.class">{{ user.class }}</td>
-                            <td v-if="update">
-                              <span class="material-symbols-outlined">
-                                edit
-                              </span>
-                            </td>
-                          </tr>
+
                           <tr>
                             <th width="20%">year</th>
                             <td width="2%">:</td>
@@ -77,28 +58,7 @@
                               </span>
                             </td>
                           </tr>
-                          <tr>
-                            <th width="20%">DOB</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.DOB">{{ user.DOB }}</td>
-                            <td v-if="update">
-                              <span class="material-symbols-outlined">
-                                edit
-                              </span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th width="20%">bloodGroup</th>
-                            <td width="2%">:</td>
-                            <td v-if="user.bloodGroup">
-                              {{ user.bloodGroup }}
-                            </td>
-                            <td v-if="update">
-                              <span class="material-symbols-outlined">
-                                edit
-                              </span>
-                            </td>
-                          </tr>
+
                           <tr>
                             <th width="20%">roomNumber</th>
                             <td width="2%">:</td>
