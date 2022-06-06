@@ -135,6 +135,11 @@ module.exports = (app) => {
     basicTokenPolicies.getToken,
     DetailsController.getHostelInfo
   );
+  app.get(
+    "/getRoomInfo/:roomNumber",
+    basicTokenPolicies.getToken,
+    DetailsController.getRoomInfo
+  );
 
   //conformation mail
   app.get("/confirmation/:jwt", AuthenticationController.confirmation);

@@ -165,6 +165,25 @@ module.exports = {
       });
     }
   },
+  async getRoomInfo(req, res) {
+    try {
+      const data = await hostelrooms.findOne({
+        where: {
+          roomNumber: req.params.roomNumber,
+        },
+      });
+      res.status(200).send({
+        status: "success",
+        data: data,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(404).send({
+        status: "failure",
+        error: "cannot get data",
+      });
+    }
+  },
   async getHostelList(req, res) {
     try {
       const data = await hostelinfo.findAll();

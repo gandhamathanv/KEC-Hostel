@@ -60,14 +60,11 @@ export default {
     });
   },
   getRooms(credentials) {
-    return Api().get(
-      "getRoomInfo/" + credentials.hostelName + "/" + credentials.roomNumber,
-      {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      }
-    );
+    return Api().get("getRoomInfo/" + credentials.roomNumber, {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
   },
   getHostel(credentials) {
     return Api().get("getHostelInfo/" + credentials.hostelName, {

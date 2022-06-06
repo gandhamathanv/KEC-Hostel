@@ -414,20 +414,20 @@
   </div>
 </template>
 <script>
+import getDetails from "@/services/getDetails";
+
 export default {
   data() {
     return {
       update: true,
-      user: {
-        hostelName: "Amaravathi",
-        gender: "Female",
-        roomNumber: "AMR003",
-        year: 2,
-        department: "CSE",
-        capacity: 4,
-        availability: 4,
-      },
+      user: {},
     };
+  },
+  async mounted() {
+    const { data } = await getDetails.getRooms({
+      roomNumber: this.$route.params.roomNumber,
+    });
+    this.user = data.data;
   },
 };
 </script>

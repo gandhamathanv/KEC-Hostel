@@ -145,9 +145,10 @@ export default {
   methods: {
     filter_rows() {
       const option = this.data.options;
-      this.listData = this.realData.filter((el) =>
-        option.gender ? el.gender === option.gender : true
-      );
+      this.listData = this.realData.filter((el) => {
+        return option.gender ? el.gender === option.gender : true;
+      });
+      console.log(this.listData);
       // .filter((el) =>
       //   option.hostelName ? el.hostelName === option.hostelName : true
       // );

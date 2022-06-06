@@ -97,9 +97,14 @@
             <h6 class="box-name">{{ el.availability }}</h6>
           </div>
 
-          <a @click="showDetails(el.hostelName)" class="box-details" href="#">
-            <span>Detail -></span>
-          </a>
+          <router-link
+            class="box-details"
+            :to="{
+              name: 'roomDataList',
+              params: { hostelName: el.hostelName },
+            }"
+            >Detail -></router-link
+          >
         </div>
       </figure>
     </div>
@@ -138,14 +143,6 @@ export default {
     },
     filter_rows() {
       console.log(this.hostelName);
-    },
-    showDetails(hostelName) {
-      this.$router.push({
-        name: "hostelDetail",
-        params: {
-          hostelName,
-        },
-      });
     },
   },
   async mounted() {
