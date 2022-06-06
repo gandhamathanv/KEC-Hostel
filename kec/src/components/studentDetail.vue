@@ -47,7 +47,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">class</th>
+                            <th width="20%">Class</th>
                             <td width="2%">:</td>
                             <td v-if="user.class">{{ user.class }}</td>
                             <td v-if="update">
@@ -57,7 +57,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">year</th>
+                            <th width="20%">Year</th>
                             <td width="2%">:</td>
                             <td v-if="user.year">{{ user.year }}</td>
                             <td v-if="update">
@@ -67,7 +67,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">department</th>
+                            <th width="20%">Department</th>
                             <td width="2%">:</td>
                             <td v-if="user.department">
                               {{ user.department }}
@@ -89,7 +89,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">bloodGroup</th>
+                            <th width="20%">Blood Group</th>
                             <td width="2%">:</td>
                             <td v-if="!update">
                               {{ user.bloodGroup }}
@@ -104,7 +104,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">roomNumber</th>
+                            <th width="20%">Room Number</th>
                             <td width="2%">:</td>
                             <td v-if="user.roomNumber">
                               {{ user.roomNumber }}
@@ -116,7 +116,7 @@
                             </td>
                           </tr>
                           <tr v-if="user.hostelName">
-                            <th width="20%">hostelName</th>
+                            <th width="20%">Hostel Name</th>
                             <td width="2%">:</td>
                             <td v-if="user.hostelName">
                               {{ user.hostelName }}
@@ -128,7 +128,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">gender</th>
+                            <th width="20%">Gender</th>
                             <td width="2%">:</td>
                             <td v-if="user.gender">{{ user.gender }}</td>
                             <td v-if="update">
@@ -138,7 +138,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">phoneNumber</th>
+                            <th width="20%">Phone Number</th>
                             <td width="2%">:</td>
                             <td v-if="user.phoneNumber">
                               {{ user.phoneNumber }}
@@ -150,7 +150,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">whatsappNumber</th>
+                            <th width="20%">Whatsapp Number</th>
                             <td width="2%">:</td>
                             <td v-if="user.whatsappNumber">
                               {{ user.whatsappNumber }}
@@ -162,7 +162,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">telegramNumber</th>
+                            <th width="20%">Telegram Number</th>
                             <td width="2%">:</td>
                             <td v-if="user.telegramNumber">
                               {{ user.telegramNumber }}
@@ -174,7 +174,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">collegeMailID</th>
+                            <th width="20%">College MailID</th>
                             <td width="2%">:</td>
                             <td v-if="user.collegeMailID">
                               {{ user.collegeMailID }}
@@ -186,7 +186,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">personalMailID</th>
+                            <th width="20%">Personal MailID</th>
                             <td width="2%">:</td>
                             <td v-if="user.personalMailID">
                               {{ user.personalMailID }}
@@ -198,7 +198,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">aadharNumber</th>
+                            <th width="20%">Aadhar Number</th>
                             <td width="2%">:</td>
                             <td v-if="user.aadharNumber">
                               {{ user.aadharNumber }}
@@ -210,7 +210,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">fatherName</th>
+                            <th width="20%">Father Name</th>
                             <td width="2%">:</td>
                             <td v-if="user.fatherName">
                               {{ user.fatherName }}
@@ -222,7 +222,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">fatherMobileNumber</th>
+                            <th width="20%">Father's Mobile Number</th>
                             <td width="2%">:</td>
                             <td v-if="user.fatherMobileNumber">
                               {{ user.fatherMobileNumber }}
@@ -234,7 +234,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">fatherOccupation</th>
+                            <th width="20%">Father Occupation</th>
                             <td width="2%">:</td>
                             <td v-if="user.fatherOccupation">
                               {{ user.fatherOccupation }}
@@ -246,7 +246,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">motherName</th>
+                            <th width="20%">Mother's Name</th>
                             <td width="2%">:</td>
                             <td v-if="user.motherName">
                               {{ user.motherName }}
@@ -258,7 +258,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">motherMobileNumber</th>
+                            <th width="20%">Mother's Mobile Number</th>
                             <td width="2%">:</td>
                             <td v-if="user.motherMobileNumber">
                               {{ user.motherMobileNumber }}
@@ -270,7 +270,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">MotherOccupation</th>
+                            <th width="20%">Mother Occupation</th>
                             <td width="2%">:</td>
                             <td v-if="user.MotherOccupation">
                               {{ user.MotherOccupation }}
@@ -282,7 +282,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">address</th>
+                            <th width="20%">Address</th>
                             <td width="2%">:</td>
                             <td v-if="user.address">
                               {{ user.address }}
@@ -294,7 +294,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">district</th>
+                            <th width="20%">District</th>
                             <td width="2%">:</td>
                             <td v-if="user.district">{{ user.district }}</td>
                             <td v-if="update">
@@ -304,7 +304,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">state</th>
+                            <th width="20%">State</th>
                             <td width="2%">:</td>
                             <td v-if="user.state">{{ user.state }}</td>
                             <td v-if="update">
@@ -314,7 +314,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">localGuardian</th>
+                            <th width="20%">Local Guardian</th>
                             <td width="2%">:</td>
                             <td v-if="user.localGuardian">
                               {{ user.localGuardian }}
@@ -326,7 +326,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">localGuardianPhoneNumber</th>
+                            <th width="20%">Local Guardian PhoneNumber</th>
                             <td width="2%">:</td>
                             <td v-if="user.localGuardianPhoneNumber">
                               {{ user.localGuardianPhoneNumber }}
@@ -338,7 +338,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">accountNumber</th>
+                            <th width="20%">Account Number</th>
                             <td width="2%">:</td>
                             <td v-if="user.accountNumber">
                               {{ user.accountNumber }}
@@ -350,7 +350,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">bankName</th>
+                            <th width="20%">Bank Name</th>
                             <td width="2%">:</td>
                             <td v-if="user.bankName">{{ user.bankName }}</td>
                             <td v-if="update">
@@ -360,7 +360,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">branch</th>
+                            <th width="20%">Branch</th>
                             <td width="2%">:</td>
                             <td v-if="user.branch">{{ user.branch }}</td>
                             <td v-if="update">
@@ -370,7 +370,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">IFSCcode</th>
+                            <th width="20%">IFSC Code</th>
                             <td width="2%">:</td>
                             <td v-if="user.IFSCcode">{{ user.IFSCcode }}</td>
                             <td v-if="update">
@@ -380,7 +380,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">dateOfEntry</th>
+                            <th width="20%">Date Of Entry</th>
                             <td width="2%">:</td>
                             <td v-if="user.dateOfEntry">
                               {{ user.dateOfEntry }}
@@ -392,7 +392,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">dateOfVacation</th>
+                            <th width="20%">Date Of Vacation</th>
                             <td width="2%">:</td>
                             <td v-if="user.dateOfVacation">
                               {{ user.dateOfVacation }}
