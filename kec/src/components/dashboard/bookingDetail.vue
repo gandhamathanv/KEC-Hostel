@@ -23,6 +23,13 @@
                               {{ user.rollnumber }}
                             </td>
                           </tr>
+                          <tr>
+                            <th width="20%">Student Name</th>
+                            <td width="2%">:</td>
+                            <td v-if="user.studentName">
+                              {{ user.studentName }}
+                            </td>
+                          </tr>
 
                           <tr>
                             <th width="20%">year</th>
@@ -49,6 +56,20 @@
                             <td width="2%">:</td>
                             <td v-if="user.hostelName">
                               {{ user.hostelName }}
+                            </td>
+                          </tr>
+                          <tr>
+                            <th width="20%">Amount Paid</th>
+                            <td width="2%">:</td>
+                            <td v-if="user.amountpaid">
+                              {{ user.amountpaid }}
+                            </td>
+                          </tr>
+                          <tr>
+                            <th width="20%">Booked Date</th>
+                            <td width="2%">:</td>
+                            <td v-if="user.bookedDate">
+                              {{ user.bookedDate }}
                             </td>
                           </tr>
                         </table>
