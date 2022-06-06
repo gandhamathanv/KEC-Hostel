@@ -49,14 +49,14 @@
             </th>
 
             <th col-index="3">
-              year
+              responsiblity
               <select
                 class="table-filter"
-                v-model="data.filter.year"
+                v-model="data.filter.responsiblity"
                 @change="filter_rows()"
               >
                 <option
-                  v-for="name in data.options.year"
+                  v-for="name in data.options.responsiblity"
                   :key="name"
                   :value="name"
                 >
@@ -122,13 +122,13 @@ export default {
         filter: {
           hostelName: null,
           gender: null,
-          year: null,
+          responsiblity: null,
           department: null,
         },
         options: {
           hostelName: null,
           gender: null,
-          year: null,
+          responsiblity: null,
           department: null,
         },
       },
@@ -171,7 +171,7 @@ export default {
     this.data.options.responsiblity = [
       ...new Set(
         data.data.map((el) => {
-          return el.year;
+          return el.responsiblity;
         })
       ),
     ];
