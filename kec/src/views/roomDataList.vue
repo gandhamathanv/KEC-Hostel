@@ -74,11 +74,17 @@
           <h2 class="box-rollno">{{ el.roomNumber }}</h2>
         </div>
         <div class="box-title">
-          <h6 class="box-name">{{ el.capacity }}</h6>
+          <h6 class="box-name">{{ "Filled" }}</h6>
         </div>
         <div class="box-dept">
           <div class="box-deptname">
+            <h6 class="box-name">{{ el.capacity }}</h6>
+          </div>
+          <div class="box-deptname">
             <h6 class="box-name">{{ el.availability }}</h6>
+          </div>
+          <div class="box-deptname">
+            <h6 class="box-name">{{ el.attachedBathroom }}</h6>
           </div>
 
           <a @click="showDetails(el.roomNumber)" class="box-details" href="#">
