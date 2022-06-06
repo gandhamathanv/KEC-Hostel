@@ -182,6 +182,7 @@ export default {
     ];
     console.log(data.data);
     this.listData = data.data;
+    this.realData = data.data;
   },
 };
 </script>
