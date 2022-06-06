@@ -144,18 +144,25 @@ export default {
 
   methods: {
     filter_rows() {
-      const option = this.data.options;
-      this.listData = this.realData.filter((el) => {
-        return option.gender ? el.gender === option.gender : true;
-      });
-      console.log(this.listData);
-      // .filter((el) =>
-      //   option.hostelName ? el.hostelName === option.hostelName : true
-      // );
-      // .filter((el) => (option.year ? el.year === option.year : true))
-      // .filter((el) =>
-      //   option.department ? el.department === option.department : true
-      // );
+      this.listData = this.realData
+        .filter((el) => {
+          return this.data.filter.gender
+            ? el.gender === this.data.filter.gender
+            : true;
+        })
+        .filter((el) =>
+          this.data.filter.hostelName
+            ? el.hostelName === this.data.filter.hostelName
+            : true
+        )
+        .filter((el) =>
+          this.data.filter.year ? el.year === this.data.filter.year : true
+        )
+        .filter((el) =>
+          this.data.filter.department
+            ? el.department === this.data.filter.department
+            : true
+        );
       console.log(this.listData);
     },
     showDetails(rollnumber) {
