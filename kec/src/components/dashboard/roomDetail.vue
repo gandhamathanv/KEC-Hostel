@@ -24,7 +24,19 @@
                       <div class="card-body pt-0">
                         <table class="table table-bordered" border="0">
                           <tr>
-                            <th width="20%">roomNumber</th>
+                            <th width="20%">Hostel Name</th>
+                            <td width="2%">:</td>
+                            <td v-if="user.hostelName">
+                              {{ user.hostelName }}
+                            </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th width="20%">Room Number</th>
                             <td width="2%">:</td>
                             <td v-if="user.roomNumber">
                               {{ user.roomNumber }}
@@ -36,10 +48,46 @@
                             </td>
                           </tr>
                           <tr>
-                            <th width="20%">hostelName</th>
+                            <th width="20%">Floor</th>
                             <td width="2%">:</td>
-                            <td v-if="user.hostelName">
-                              {{ user.hostelName }}
+                            <td v-if="user.floor">
+                              {{ user.floor }}
+                            </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th width="20%">Capacity</th>
+                            <td width="2%">:</td>
+                            <td v-if="user.capacity">
+                              {{ user.capacity }}
+                            </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th width="20%">Availability</th>
+                            <td width="2%">:</td>
+                            <td v-if="user.availability">
+                              {{ user.availability }}
+                            </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th width="20%">Attached Bathroom</th>
+                            <td width="2%">:</td>
+                            <td v-if="user.attachedBathroom">
+                              {{ user.attachedBathroom }}
                             </td>
                             <td v-if="update">
                               <span class="material-symbols-outlined">
