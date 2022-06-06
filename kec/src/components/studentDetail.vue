@@ -33,6 +33,7 @@
                               </span>
                             </td>
                           </tr>
+
                           <tr>
                             <th width="20%">Roll Number</th>
                             <td width="2%">:</td>
@@ -90,8 +91,11 @@
                           <tr>
                             <th width="20%">bloodGroup</th>
                             <td width="2%">:</td>
-                            <td v-if="user.bloodGroup">
+                            <td v-if="!update">
                               {{ user.bloodGroup }}
+                            </td>
+                            <td v-if="update">
+                              <input type="text" v-model="user.bloodGroup" />
                             </td>
                             <td v-if="update">
                               <span class="material-symbols-outlined">

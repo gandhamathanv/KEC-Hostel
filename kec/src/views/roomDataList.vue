@@ -87,7 +87,7 @@
     <div class="dash">
       <figure v-for="el in listData" :key="el" class="box">
         <div class="box-title">
-          <h2 class="box-rollno">{{ el.hostelName }}</h2>
+          <h2 class="box-rollno">{{ el.roomNumber }}</h2>
         </div>
         <div class="box-title">
           <h6 class="box-name">{{ el.capacity }}</h6>
