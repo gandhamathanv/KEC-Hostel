@@ -33,6 +33,52 @@
                               </span>
                             </td>
                           </tr>
+                          <tr>
+                            <th width="20%">Staff ID</th>
+                            <td width="2%">:</td>
+                            <td v-if="user.staffID">{{ user.staffID }}</td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th width="20%">Designation</th>
+                            <td width="2%">:</td>
+                            <td v-if="user.designation">
+                              {{ user.designation }}
+                            </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th width="20%">Hostel Responsibility</th>
+                            <td width="2%">:</td>
+                            <td v-if="user.hostelResponsibility">
+                              {{ user.hostelResponsibility }}
+                            </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th width="20%">Department</th>
+                            <td width="2%">:</td>
+                            <td v-if="user.department">
+                              {{ user.hostelResponsibility }}
+                            </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
+                          </tr>
 
                           <tr>
                             <th width="20%">bloodGroup</th>
@@ -85,6 +131,18 @@
                             <td width="2%">:</td>
                             <td v-if="user.phoneNumber">
                               {{ user.phoneNumber }}
+                            </td>
+                            <td v-if="update">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th width="20%">Whatsapp Number</th>
+                            <td width="2%">:</td>
+                            <td v-if="user.whatsappNumber">
+                              {{ user.whatsappNumber }}
                             </td>
                             <td v-if="update">
                               <span class="material-symbols-outlined">
