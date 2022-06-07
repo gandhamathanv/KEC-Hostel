@@ -228,6 +228,7 @@ module.exports = {
   },
   async getHostelList(req, res) {
     try {
+      const decode = jwt.verify(req.token, config.authentication.jwtSecret);
       if (decode.viewer !== "STAFF") {
         res.status(403).send({
           status: "failed",
@@ -250,18 +251,10 @@ module.exports = {
           decode.level === 2 ||
           decode.level === 3
         ) {
-          const data = await studentInfo.findAll({
+          const data = await hostelinfo.findAll({
             where: {
               hostelName: decode.hostelName,
             },
-            attributes: [
-              "name",
-              "rollnumber",
-              "year",
-              "department",
-              "hostelName",
-              "gender",
-            ],
           });
           res.status(200).send({
             status: "success",
@@ -271,11 +264,6 @@ module.exports = {
       }
 
       //FIXME:
-      const data = await hostelinfo.findAll();
-      res.status(200).send({
-        status: "success",
-        data: data,
-      });
     } catch (err) {
       console.log(err);
       res.status(404).send({
