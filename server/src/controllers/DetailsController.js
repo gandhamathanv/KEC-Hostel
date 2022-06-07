@@ -9,23 +9,59 @@ const {
   hostelinfo,
   hostelrooms,
 } = require("../models");
+const jwt = require("jsonwebtoken");
+const config = require("../config/config");
+
 module.exports = {
   async getStudentList(req, res) {
     try {
-      const data = await studentInfo.findAll({
-        attributes: [
-          "name",
-          "rollnumber",
-          "year",
-          "department",
-          "hostelName",
-          "gender",
-        ],
-      });
-      res.status(200).send({
-        status: "success",
-        data: data,
-      });
+      const decode = jwt.verify(req.token, config.authentication.jwtSecret);
+      console.log(decode);
+      if (decode.viewer !== "STAFF") {
+        res.status(403).send({
+          status: "failed",
+          message: "you are not Authorized",
+        });
+      } else if (decode.viewer === "STAFF") {
+        if (decode.level === 0) {
+          const data = await studentInfo.findAll({
+            attributes: [
+              "name",
+              "rollnumber",
+              "year",
+              "department",
+              "hostelName",
+              "gender",
+            ],
+          });
+          res.status(200).send({
+            status: "success",
+            data: data,
+          });
+        } else if (
+          decode.level === 1 ||
+          decode.level === 2 ||
+          decode.level === 3
+        ) {
+          const data = await studentInfo.findAll({
+            where: {
+              hostelName: decode.hostelName,
+            },
+            attributes: [
+              "name",
+              "rollnumber",
+              "year",
+              "department",
+              "hostelName",
+              "gender",
+            ],
+          });
+          res.status(200).send({
+            status: "success",
+            data: data,
+          });
+        }
+      }
     } catch (err) {
       console.log(err);
       res.status(404).send({
@@ -192,6 +228,49 @@ module.exports = {
   },
   async getHostelList(req, res) {
     try {
+      if (decode.viewer !== "STAFF") {
+        res.status(403).send({
+          status: "failed",
+          message: "you are not Authorized",
+        });
+      } else if (decode.viewer === "STAFF") {
+        if (decode.level === 0) {
+          const data = await hostelinfo.findAll();
+          res.status(200).send({
+            status: "success",
+            data: data,
+          });
+
+          res.status(200).send({
+            status: "success",
+            data: data,
+          });
+        } else if (
+          decode.level === 1 ||
+          decode.level === 2 ||
+          decode.level === 3
+        ) {
+          const data = await studentInfo.findAll({
+            where: {
+              hostelName: decode.hostelName,
+            },
+            attributes: [
+              "name",
+              "rollnumber",
+              "year",
+              "department",
+              "hostelName",
+              "gender",
+            ],
+          });
+          res.status(200).send({
+            status: "success",
+            data: data,
+          });
+        }
+      }
+
+      //FIXME:
       const data = await hostelinfo.findAll();
       res.status(200).send({
         status: "success",

@@ -13,12 +13,10 @@ module.exports = (app) => {
   ),
     app.post(
       "/studentDataRegister",
-      basicTokenPolicies.getToken,
       AuthenticationController.studentDataRegister
     ),
     app.post(
       "/staffDataRegister",
-      basicTokenPolicies.getToken,
       AuthenticationController.staffDataRegister
     ),
     app.post(
@@ -38,12 +36,10 @@ module.exports = (app) => {
     ),
     app.post(
       "/studentLogin",
-      basicTokenPolicies.getToken,
       AuthenticationController.studentLogin
     ),
     app.post(
       "/staffLogin",
-      basicTokenPolicies.getToken,
       AuthenticationController.staffLogin
     ),
     app.post(
