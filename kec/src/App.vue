@@ -45,11 +45,11 @@ export default {
 
   // un comment
   async mounted() {
+    this.$store.dispatch("setLoading", true);
     try {
       console.log(localStorage.getItem("jwt"));
       const token = localStorage.getItem("jwt");
       if (token) {
-        this.$store.dispatch("setLoading", true);
         const res = await AuthenticationService.getData(token);
         console.log(res);
         if (res.data.status == "success") {
@@ -64,11 +64,11 @@ export default {
           this.$store.dispatch("setLevel", null);
           localStorage.removeItem("jwt");
         }
-        this.$store.dispatch("setLoading", false);
       }
     } catch (error) {
       alert(error);
     }
+    this.$store.dispatch("setLoading", false);
   },
 };
 </script>

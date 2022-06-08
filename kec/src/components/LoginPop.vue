@@ -114,9 +114,9 @@ export default {
       this.$store.dispatch("setLoading", false);
     },
     async staffLogin() {
+      console.log("Staff Login");
+      this.$store.dispatch("setLoading", true);
       try {
-        console.log("Staff Login");
-        this.$store.dispatch("setLoading", true);
         const response = await AuthenticationService.staffLogin({
           mailId: this.staff.email,
           password: this.staff.password,
@@ -130,11 +130,11 @@ export default {
         this.$router.push({
           name: "staffDashboard",
         });
-        this.$store.dispatch("setLoading", false);
       } catch (error) {
         // this.error = error.response.data.error;
         alert(error.response.data.error);
       }
+      this.$store.dispatch("setLoading", false);
     },
   },
 };

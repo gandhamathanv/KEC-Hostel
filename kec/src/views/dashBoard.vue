@@ -10,7 +10,7 @@
       <div class="col-div-4-1">
         <div class="box-1">
           <div class="content-box-1">
-            <p class="head-1">today's menu</p>
+            <p class="student-name">today's menu</p>
             <div v-if="todaysMenu != null">
               <div class="m-box">
                 <p>
@@ -44,11 +44,10 @@
           </div>
         </div>
       </div>
-      <div class="col-div-4-1">
+      <!-- <div class="col-div-4-1">
         <div class="box-1">
           <div class="profile-box">
             <h3 class="student-name">Students Details</h3>
-            <!-- <p class="dept">CSE</p> -->
             <p class="hostel">No of Students:</p>
             <button type="button">View Students</button>
           </div>
@@ -58,12 +57,12 @@
         <div class="box-1">
           <div class="profile-box">
             <h3 class="student-name">Staff Details</h3>
-            <!-- <p class="dept">CSE</p> -->
+  
             <p class="hostel">No of Staffs:</p>
             <button type="button">View Staffs</button>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="clearfix"></div>
       <br />
@@ -96,6 +95,7 @@ export default {
     };
   },
   async mounted() {
+    console.log(day);
     const menu = await HostelService.getMenu({
       day,
     });
@@ -375,7 +375,7 @@ body {
 
 .box-1 {
   width: 88%;
-  height: 282px;
+  height: fit-content;
   background-color: #ffffff;
   margin-left: 10px;
   padding: 10px;

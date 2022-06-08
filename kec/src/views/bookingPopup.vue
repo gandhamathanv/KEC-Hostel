@@ -5,36 +5,48 @@
       <div class="container-full">
         <h2 class="heading">Room Details</h2>
         <h3 class="heading-details">
-          <span class="heading-title">Name:</span>Amaravathi
+          <span class="heading-title">Name:</span>{{ data.hostelName }}
         </h3>
 
         <h3 class="heading-details">
-          <span class="heading-title">Room Number:</span>AMR230
+          <span class="heading-title">Room Number:</span>{{ data.roomNumber }}
         </h3>
         <h3 class="heading-details">
-          <span class="heading-title">Floor:</span>Second Floor
+          <span class="heading-title">Floor:</span>{{ data.floor }}
         </h3>
 
         <h3 class="heading-details">
-          <span class="heading-title">Capacity:</span>3
+          <span class="heading-title">Capacity:</span>{{ data.capacity }}
         </h3>
         <h3 class="heading-details">
-          <span class="heading-title">Availability:</span>2
+          <span class="heading-title">Availability:</span
+          >{{ data.availability }}
         </h3>
         <h3 class="heading-details">
-          <span class="heading-title">Attached Bathroom:</span>Yes
+          <span class="heading-title">Attached Bathroom:</span
+          >{{ data.attachedBathRoom ? "Yes" : "No" }}
         </h3>
 
-        <a class="button">Book Now</a>
+        <a @click="bookNow" class="button">Book Now</a>
       </div>
     </div>
   </div>
 </template>
 <script>
+import HostelService from "../services/HostelServices";
 export default {
   name: "bookingPopUp",
   data() {
     return {};
+  },
+  methods: {
+    async bookNow() {
+      const res = await HostelService.bookRoom({
+        roomNumber: this.data.roomNumber,
+        rollnumber: this.$store.state.user.rollnumber,
+      });
+      console.log(res);
+    },
   },
   props: { data: Object },
 };

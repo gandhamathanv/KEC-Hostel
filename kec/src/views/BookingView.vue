@@ -1,62 +1,65 @@
 <template>
   <div class="body">
-    <div v-if="hostelName != null">
-      <label> Select a hostel:</label><br />
-      <button
-        class="button"
-        v-for="name in hostelName"
-        :key="name"
-        @click="getData(name.hostelName)"
-      >
-        {{ name.hostelName }}
-      </button>
-    </div>
-    <div v-if="data != null" class="floor">
-      <label> Select a Floor:</label> <br />
+    <div v-if="!pop">
+      <div v-if="hostelName != null">
+        <label> Select a hostel:</label><br />
+        <button
+          class="button"
+          v-for="name in hostelName"
+          :key="name"
+          @click="getData(name.hostelName)"
+        >
+          {{ name.hostelName }}
+        </button>
+      </div>
+      <div v-if="data != null" class="floor">
+        <label> Select a Floor:</label> <br />
 
-      <button class="button" @click="flr(0)">Ground Floor</button>
-      <button class="button" @click="flr(1)">First Floor</button>
-      <button class="button" @click="flr(2)">Second Floor</button>
-      <button class="button" @click="flr(3)">Third Floor</button>
-    </div>
-    <div v-if="rooms != null">
-      <ul class="showcase">
-        <li>
-          <div class="bed"></div>
-          <small>Available</small>
-        </li>
-        <li>
-          <div class="bed selected"></div>
-          <small>Selected</small>
-        </li>
-        <li>
-          <div class="bed sold"></div>
-          <small>Booked</small>
-        </li>
-      </ul>
-      <div class="con1">
-        <div v-for="room in rooms" :key="room">
-          <fieldset class="room" @click="book(room)">
-            <span>{{ room.roomNumber }}</span>
-            <span class="washroom" v-if="room.attachedBathRoom"> AB</span>
-            <div class="row">
-              <div
-                v-for="bed in room.capacity - room.availability"
-                :key="bed"
-                class="bed sold"
-              ></div>
-              <div
-                v-for="bed in room.availability"
-                :key="bed"
-                class="bed"
-              ></div>
-            </div>
-          </fieldset>
+        <button class="button" @click="flr(0)">Ground Floor</button>
+        <button class="button" @click="flr(1)">First Floor</button>
+        <button class="button" @click="flr(2)">Second Floor</button>
+        <button class="button" @click="flr(3)">Third Floor</button>
+      </div>
+      <div v-if="rooms != null">
+        <ul class="showcase">
+          <li>
+            <div class="bed"></div>
+            <small>Available</small>
+          </li>
+          <li>
+            <div class="bed selected"></div>
+            <small>Selected</small>
+          </li>
+          <li>
+            <div class="bed sold"></div>
+            <small>Booked</small>
+          </li>
+        </ul>
+        <div class="con1">
+          <div v-for="room in rooms" :key="room">
+            <fieldset class="room" @click="book(room)">
+              <span>{{ room.roomNumber }}</span>
+              <span class="washroom" v-if="room.attachedBathRoom"> AB</span>
+              <div class="row">
+                <div
+                  v-for="bed in room.capacity - room.availability"
+                  :key="bed"
+                  class="bed sold"
+                ></div>
+                <div
+                  v-for="bed in room.availability"
+                  :key="bed"
+                  class="bed"
+                ></div>
+              </div>
+            </fieldset>
+          </div>
         </div>
       </div>
     </div>
-    <div>
-      <booking-popup v-if="pop"></booking-popup>
+    <div v-if="pop">
+      <button @click="pop = !pop">back</button>
+      <booking-popup :data="bookingData" class="BookingPop"></booking-popup>
     </div>
   </div>
 </template>
@@ -70,11 +73,13 @@ export default {
   name: "bookingView",
   data() {
     return {
+      bookingData: {},
       pop: false,
       rooms: null,
       booked: null,
       data: null,
       hostelName: null,
+      year: this.$store.state.user.year,
     };
   },
 
@@ -84,8 +89,11 @@ export default {
       console.log(this.hostelName);
     },
     book(n) {
-      this.booked = n.roomNumber;
-      alert(`you have booked ${this.booked} `);
+      if (n.availability !== 0) {
+        this.pop = true;
+        this.booked = n.roomNumber;
+        this.bookingData = n;
+      }
     },
     flr(n) {
       this.rooms = this.data.filter((da) => {
@@ -107,19 +115,23 @@ export default {
   },
 
   async mounted() {
-    console.log(this.$store.state.user.year);
-    const hostels = await HostelService.getHostels({
-      year: this.$store.state.user.year,
-      gender: this.$store.state.user.gender,
-    });
-    if (hostels.data.status == "Closed") {
-      alert("booking closed");
-      this.$router.push({
-        name: "homeview",
+    if (this.$store.state.user.hostelName) {
+      alert("you have already booked a room");
+      this.$router.push({ name: "studentDashboard" });
+    } else {
+      const hostels = await HostelService.getHostels({
+        year: this.year,
+        gender: this.$store.state.user.gender,
       });
-    } else if (hostels.data.status == "Success") {
-      console.log(hostels.data.data);
-      this.setHostel(hostels.data.data);
+      if (hostels.data.status == "Closed") {
+        alert("booking closed");
+        this.$router.push({
+          name: "homeview",
+        });
+      } else if (hostels.data.status == "Success") {
+        console.log(hostels.data.data);
+        this.setHostel(hostels.data.data);
+      }
     }
   },
 };
@@ -255,5 +267,8 @@ export default {
 }
 .button:hover {
   box-shadow: 0 0 40px 40px rgb(223, 40, 12) inset;
+}
+.BookingPop {
+  float: center;
 }
 </style>

@@ -5,7 +5,7 @@
         <p
           class="nav"
           v-if="$store.state.viewer == 'STUDENT'"
-          @click="navigateTo({ name: 'homeview' })"
+          @click="navigateTo({ name: 'studentDashboard' })"
         >
           Kec Hostel
         </p>
