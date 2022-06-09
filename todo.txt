@@ -33,3 +33,31 @@ FIXME: filter
 TODO:staff adshboard responsive 2fr 1fr 1fr  
 
 
+
+
+
+
+
+:TODO
+STUDENT registration passport :number
+
+MICR code bank:
+BRANCH CODE
+
+MAIL AUNTHENTECATIO\\\\\
+
+
+
+STUDENT
+year 
+gender
+hostel
+department
+
+booking:
+
+
+
+
+DATABASE://
+MAILID://
