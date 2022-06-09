@@ -41,11 +41,19 @@ export default {
   },
   methods: {
     async bookNow() {
-      const res = await HostelService.bookRoom({
-        roomNumber: this.data.roomNumber,
-        rollnumber: this.$store.state.user.rollnumber,
-      });
-      console.log(res.data);
+      try {
+        const res = await HostelService.bookRoom({
+          roomNumber: this.data.roomNumber,
+          rollnumber: this.$store.state.user.rollnumber,
+        });
+        if (res.data.status == "success") {
+          alert("your room has successfully booked");
+        } else {
+          alert("there is an error in booking");
+        }
+      } catch (err) {
+        alert("there is an error in server");
+      }
     },
   },
   props: { data: Object },

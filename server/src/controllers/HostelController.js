@@ -251,9 +251,9 @@ module.exports = {
     },
     async bookRoom(req, res) {
         // console.log(req);
+        const t = await sequelize.transaction();
         try {
             const { roomNumber, rollnumber } = req.body;
-            const t = await sequelize.transaction();
             await hostelrooms
                 .findOne({
                     where: {
@@ -262,10 +262,6 @@ module.exports = {
                 })
                 .then((room) => {
                     if (room.availability === 0) {
-                        res.send({
-                            status: "failed",
-                            message: "room Filled",
-                        });
                         throw "room filled";
                     } else {
                         return room;
@@ -316,9 +312,7 @@ module.exports = {
                         hostelName: room.hostelName,
                         roomNumber: room.roomNumber,
                     }, { transaction: t });
-                })
-                .then(async() => {
-                    await t.trans.commit();
+                    await t.commit();
                     res.status(200).send({
                         status: "success",
                     });
@@ -326,10 +320,6 @@ module.exports = {
                 .catch(async(err) => {
                     await t.rollback();
                     console.log(err);
-                    res.status(403).send({
-                        status: "failed",
-                        message: "",
-                    });
                     throw err;
                 });
         } catch (err) {
@@ -337,6 +327,7 @@ module.exports = {
             console.log(err);
             res.status(403).send({
                 status: "failed",
+                message: err,
             });
         }
     },
