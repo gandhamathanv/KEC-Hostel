@@ -146,7 +146,7 @@
         </div> -->
       <!-- </div> -->
       <div class="sideBar">
-        <div class="container-box">
+        <div v-if="false" class="container-box">
           <div class="notification1">
             <div class="notification-box">
               <div class="card">
@@ -163,7 +163,7 @@
           <div class="notification1">
             <div class="notification-box">
               <div class="card">
-                <h1 class="card-title">Export</h1>
+                <h1 class="card-title export">Export</h1>
                 <span @click="navigateTo('exportData')" class="card-button"
                   >view export</span
                 >
@@ -300,7 +300,8 @@ body {
 }
 .card-button {
   text-shadow: 2px 2px 15px white;
-  padding: 4%;
+  padding: 3%;
+  margin: 4%;
   color: white;
   background-color: black;
   border-radius: 4px;
@@ -334,7 +335,7 @@ body {
 }
 /*----------------*/
 .container-box {
-  width: 33.3%;
+  width: fit-content;
   height: auto;
   float: left;
 }

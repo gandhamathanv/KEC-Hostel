@@ -22,15 +22,17 @@
         <button @click="navigateTo({ name: 'BookingView' })" class="book-now">
           book now
         </button>
-        <span @click="toggleNoti" class="fa fa-bell noti-icon"></span>
-        <div v-if="notiPop" class="notification-div">
-          <p class="noti-head">
-            Notification <span>{{ notification.length }}</span>
-          </p>
-          <p v-for="no in notification" :key="no.id">
-            {{ no.by }}
-            <span>{{ no.message }}</span>
-          </p>
+        <div v-if="false">
+          <span @click="toggleNoti" class="fa fa-bell noti-icon"></span>
+          <div v-if="notiPop" class="notification-div">
+            <p class="noti-head">
+              Notification <span>{{ notification.length }}</span>
+            </p>
+            <p v-for="no in notification" :key="no.id">
+              {{ no.by }}
+              <span>{{ no.message }}</span>
+            </p>
+          </div>
         </div>
 
         <div class="profile" @click="togglePop">
@@ -53,15 +55,17 @@
         </div>
       </div>
       <div v-if="this.$store.state.viewer == 'STAFF'" class="col-div-6-icon">
-        <span @click="toggleNoti" class="fa fa-bell noti-icon"></span>
-        <div v-if="notiPop" class="notification-div">
-          <p class="noti-head">
-            Notification <span>{{ notification.length }}</span>
-          </p>
-          <p v-for="no in notification" :key="no.id">
-            {{ no.by }}
-            <span>{{ no.message }}</span>
-          </p>
+        <div v-if="false">
+          <span @click="toggleNoti" class="fa fa-bell noti-icon"></span>
+          <div v-if="notiPop" class="notification-div">
+            <p class="noti-head">
+              Notification <span>{{ notification.length }}</span>
+            </p>
+            <p v-for="no in notification" :key="no.id">
+              {{ no.by }}
+              <span>{{ no.message }}</span>
+            </p>
+          </div>
         </div>
 
         <div class="profile" @click="togglePop">

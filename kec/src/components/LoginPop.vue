@@ -1,6 +1,7 @@
 <template>
   <div>
     <div
+      v-if="!this.$store.state.isLoading"
       class="container"
       v-bind:class="{
         'right-panel-active': isActive,
@@ -22,6 +23,7 @@
             placeholder="Password"
             v-model="staff.password"
           />
+          <span class="error-message">{{ staff.error }}</span>
           <span @click="staffLogin" class="button">Login</span>
         </form>
       </div>
@@ -41,6 +43,7 @@
             v-model="student.password"
           />
 
+          <span class="error-message">{{ student.error }}</span>
           <span @click="studentLogin" class="button">Login</span>
         </form>
       </div>
@@ -104,12 +107,10 @@ export default {
         this.$store.dispatch("setViewer", response.data.data.viewer);
 
         this.$router.push({
-          name: "homeview",
+          name: "studentDashboard",
         });
       } catch (error) {
-        // console.log(error);
-        // this.error = error.response.data.error;
-        alert(error.response.data.error);
+        this.student.error = error.response.data.error;
       }
       this.$store.dispatch("setLoading", false);
     },
@@ -131,8 +132,8 @@ export default {
           name: "staffDashboard",
         });
       } catch (error) {
-        // this.error = error.response.data.error;
-        alert(error.response.data.error);
+        this.staff.error = error.response.data.error;
+        // alert(error.response.data.error);
       }
       this.$store.dispatch("setLoading", false);
     },
@@ -176,7 +177,10 @@ body {
 /* h2 {
   text-align: center;
 } */
-
+.error-message {
+  color: #ff4b2b;
+  padding: 1rem;
+}
 .loginp {
   font-size: 14px;
   font-weight: 100;

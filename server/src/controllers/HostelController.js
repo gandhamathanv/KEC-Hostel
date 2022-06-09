@@ -9,6 +9,7 @@ const {
     notification,
     booking,
 } = require("../models");
+const { sequelize } = require("../models");
 const jwt = require("jsonwebtoken");
 const config = require("../config/config");
 
@@ -252,6 +253,7 @@ module.exports = {
         // console.log(req);
         try {
             const { roomNumber, rollnumber } = req.body;
+            const t = await sequelize.transaction();
             await hostelrooms
                 .findOne({
                     where: {
@@ -259,26 +261,24 @@ module.exports = {
                     },
                 })
                 .then((room) => {
-                    try {
-                        if (room.availability === 0) {
-                            res.send({
-                                status: "failed",
-                                message: "room Filled",
-                            });
-                        } else {
-                            return room;
-                        }
-                    } catch (err) {
-                        console.log(err);
-                        res.send({});
+                    if (room.availability === 0) {
+                        res.send({
+                            status: "failed",
+                            message: "room Filled",
+                        });
+                        throw "room filled";
+                    } else {
+                        return room;
                     }
                 })
                 .then(async(room) => {
-                    await hostelrooms.decrement("availability", {
-                        where: {
-                            roomNumber,
-                        },
-                    });
+                    await hostelrooms.decrement(
+                        "availability", {
+                            where: {
+                                roomNumber,
+                            },
+                        }, { transaction: t }
+                    );
                     return room;
                 })
                 .then(async(room) => {
@@ -286,22 +286,52 @@ module.exports = {
                         where: {
                             rollnumber,
                         },
-                    });
-                    console.log(
-                        await studentInfo.findOne({
-                            where: {
-                                rollnumber,
-                            },
-                        })
-                    );
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
+                    }, { transaction: t });
 
-            res.status(200).send({
-                status: "success",
-            });
+                    const data = await studentInfo.findOne({
+                        where: {
+                            rollnumber,
+                        },
+                    });
+                    return { room, data };
+                })
+                .then(async(snap) => {
+                    const today = new Date();
+
+                    const date =
+                        today.getFullYear() +
+                        "-" +
+                        (today.getMonth() + 1) +
+                        "-" +
+                        today.getDate();
+                    const { data, room } = snap;
+                    console.log(data);
+                    await booking.create({
+                        rollnumber,
+                        studentName: data.name,
+                        department: data.department,
+                        year: data.year,
+                        amountpaid: 0,
+                        bookedDate: date,
+                        hostelName: room.hostelName,
+                        roomNumber: room.roomNumber,
+                    }, { transaction: t });
+                })
+                .then(async() => {
+                    await t.trans.commit();
+                    res.status(200).send({
+                        status: "success",
+                    });
+                })
+                .catch(async(err) => {
+                    await t.rollback();
+                    console.log(err);
+                    res.status(403).send({
+                        status: "failed",
+                        message: "",
+                    });
+                    throw err;
+                });
         } catch (err) {
             // console.log(hostelName, change, value);
             console.log(err);

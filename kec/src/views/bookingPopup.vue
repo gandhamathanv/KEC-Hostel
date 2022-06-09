@@ -23,8 +23,8 @@
           >{{ data.availability }}
         </h3>
         <h3 class="heading-details">
-          <span class="heading-title">Attached Bathroom:</span
-          >{{ data.attachedBathRoom ? "Yes" : "No" }}
+          <span class="heading-title">Attached Bathroom:</span>
+          {{ data.attachedBathRoom ? "Yes" : "No" }}
         </h3>
 
         <a @click="bookNow" class="button">Book Now</a>
@@ -45,7 +45,7 @@ export default {
         roomNumber: this.data.roomNumber,
         rollnumber: this.$store.state.user.rollnumber,
       });
-      console.log(res);
+      console.log(res.data);
     },
   },
   props: { data: Object },
