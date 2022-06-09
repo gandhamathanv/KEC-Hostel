@@ -9,7 +9,6 @@
           :fields="json_student_fields"
           worksheet="My Worksheet"
           name="studentData.xls"
-          @click="getData"
         >
           student Data
         </export-excel>
@@ -19,7 +18,6 @@
           :fields="json_staff_fields"
           worksheet="My Worksheet"
           name="staffData.xls"
-          @click="getData"
         >
           staff data
         </export-excel>
@@ -29,17 +27,15 @@
           :fields="json_booking_fields"
           worksheet="My Worksheet"
           name="bookingData.xls"
-          @click="getData"
         >
           booking data
         </export-excel>
         <export-excel
           class="submit"
           :fetch="RoomsGetData"
-          :fields="json_rooms_field"
+          :fields="json_rooms_fields"
           worksheet="My Worksheet"
           name="roomsData.xls"
-          @click="getData"
         >
           rooms data
         </export-excel>
@@ -89,7 +85,7 @@ export default {
         "Date Of Entry": "dateOfEntry",
         "Date Of Vacation": "dateOfVacation",
       },
-      json_staff_field: {
+      json_staff_fields: {
         Name: "name",
         "Staff ID": "staffID",
         Designation: "designation",
@@ -107,7 +103,7 @@ export default {
         "Personal Mail ID": "personalMailID",
         "Aadhar Number": "aadharNumber",
       },
-      json_booking_field: {
+      json_booking_fields: {
         "Roll Number": "rollnumber",
         "Student Name": "studentName",
 
@@ -116,7 +112,7 @@ export default {
         "Amount paid": "amountpaid",
         "Booked Date": "bookedDate",
       },
-      json_rooms_field: {
+      json_rooms_fields: {
         "Room Number": "roomNumber",
 
         Capacity: "capacity",

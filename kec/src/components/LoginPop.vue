@@ -256,7 +256,9 @@ form {
   width: 768px;
   max-width: 100%;
   min-height: 480px;
-  margin: 0 auto;
+  height: 100%;
+  margin: auto;
+  margin-top: 5rem;
 }
 
 .form-container {
