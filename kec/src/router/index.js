@@ -28,6 +28,7 @@ import exportData from "../components/dashboard/exportData.vue";
 import errorStatus from "../components/dashboard/errorStatus.vue";
 import loadingPage from "../components/dashboard/loadingPage.vue";
 import loaderPage from "../components/dashboard/loaderPage.vue";
+import newDash from "../components_Dash/NewDash.vue";
 
 const routes = [{
         path: "/",
@@ -166,6 +167,11 @@ const routes = [{
         path: "/loaderPage",
         name: "loaderPage",
         component: loaderPage,
+    },
+    {
+        path: "/newdash",
+        name: "NewDash",
+        component: newDash,
     },
     {
         path: "/:catchAll(.*)",

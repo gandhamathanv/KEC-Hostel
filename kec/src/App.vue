@@ -1,27 +1,37 @@
 <template>
-  <div>
-    <LoadingPage v-if="this.$store.state.isLoading"></LoadingPage>
+  <!-- <div> -->
+  <!-- <LoadingPage v-if="this.$store.state.isLoading"></LoadingPage>
     <div v-else>
       <HeaderNav v-if="!this.$store.state.isUserLoggedIn"></HeaderNav>
       <DashboardNav v-if="this.$store.state.isUserLoggedIn" />
     </div>
-
-    <router-view />
+ -->
+  <div class="dash-container">
+    <new-dash></new-dash>
+    <div class="app-body">
+      <SideBar></SideBar>
+      <ContainerContent class="container-view"></ContainerContent>
+    </div>
+    <!-- <router-view /> -->
   </div>
+
+  <!-- </div> -->
 </template>
 <script>
-import HeaderNav from "@/components/HeaderNav.vue";
-import LoadingPage from "@/components/dashboard/loadingPage.vue";
-import DashboardNav from "@/components/dashboard/dashboardNav.vue";
+// import HeaderNav from "@/components/HeaderNav.vue";
+// import LoadingPage from "@/components/dashboard/loadingPage.vue";
+// import DashboardNav from "@/components/dashboard/dashboardNav.vue";
 import AuthenticationService from "@/services/AuthenticationServices";
-
+import NewDash from "./components_Dash/NewDash.vue";
+import SideBar from "./components_Dash/SideBar.vue";
+import ContainerContent from "./components_Dash/ContainerContent.vue";
 export default {
   name: "app",
 
   components: {
-    HeaderNav,
-    DashboardNav,
-    LoadingPage,
+    NewDash,
+    SideBar,
+    ContainerContent,
   },
   // async mounted() {
   //   try {
@@ -73,24 +83,37 @@ export default {
 };
 </script>
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import "@/assets/styles/newDash.css";
+
+.dash-container {
+  height: 100%;
+}
+.container-view {
+  max-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
-nav {
-  padding: 30px;
+//before
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+// #app {
+//   font-family: Avenir, Helvetica, Arial, sans-serif;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   // text-align: center;
+//   color: #2c3e50;
+// }
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+// nav {
+//   padding: 30px;
+
+//   a {
+//     font-weight: bold;
+//     color: #2c3e50;
+
+//     &.router-link-exact-active {
+//       color: #42b983;
+//     }
+//   }
+// }
 </style>

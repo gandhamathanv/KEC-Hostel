@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header>
+    <header v-if="false">
       <a href="#000" class="logo">KONGU HOSTEL</a>
       <div class="toggle" @click="togglemenu"></div>
       <ul class="menu">
