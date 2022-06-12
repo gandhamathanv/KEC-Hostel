@@ -33,9 +33,9 @@
           </span>
         </button>
         <div class="app-header-actions-buttons">
-          <button class="icon-button large">
+          <!-- <button class="icon-button large">
             <span class="material-symbols-outlined"> search </span>
-          </button>
+          </button> -->
           <button class="icon-button large">
             <span class="material-symbols-outlined"> notifications </span>
           </button>
