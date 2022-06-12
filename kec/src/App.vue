@@ -10,8 +10,10 @@
     <new-dash></new-dash>
     <div class="app-body">
       <SideBar></SideBar>
-      <ContainerContent v-if="false" class="container-view"></ContainerContent>
-      <password-container></password-container>
+      <ContainerContent v-if="true" class="container-view"></ContainerContent>
+      <password-container v-if="false"></password-container>
+      <permission-container v-if="false"></permission-container>
+      <menu-container v-if="false"></menu-container>
       <food-menu></food-menu>
     </div>
     <!-- <router-view /> -->
@@ -29,6 +31,8 @@ import SideBar from "./components_Dash/SideBar.vue";
 import ContainerContent from "./components_Dash/ContainerContent.vue";
 import FoodMenu from "./components_Dash/FoodMenu.vue";
 import PasswordContainer from "./components_Dash/container/PasswordContainer.vue";
+import PermissionContainer from "./components_Dash/container/PermissionContainer.vue";
+import MenuContainer from "./components_Dash/container/MenuContainer.vue";
 export default {
   name: "app",
 
@@ -38,6 +42,8 @@ export default {
     ContainerContent,
     FoodMenu,
     PasswordContainer,
+    PermissionContainer,
+    MenuContainer,
   },
   // async mounted() {
   //   try {

@@ -1,33 +1,12 @@
 <template>
   <div class="app-body-main-content">
-    <section class="service-section">
-      <h2>DashBoard</h2>
-      <!-- <div class="service-section-header">
-        <div class="search-field">
-          <i class="ph-magnifying-glass"></i>
-          <input type="text" placeholder="Name,Roll" />
-        </div>
-        <button class="flat-button">Search</button>
-      </div> -->
-      <!-- <div class="mobile-only">
-        <button class="flat-button">Toggle search</button>
-      </div> -->
-      <div class="tiles">
-        <tiles-dashboard></tiles-dashboard>
-        <tiles-dashboard></tiles-dashboard>
-        <tiles-dashboard></tiles-dashboard>
-        <tiles-dashboard></tiles-dashboard>
-      </div>
-      <div class="service-section-footer">
-        <p>Your Hostel Information Will Only be visible.</p>
-      </div>
-    </section>
+    <dashboard-container-overview></dashboard-container-overview>
   </div>
 </template>
 <script>
-import TilesDashboard from "../miniComponents/TilesDashboard.vue";
+import DashboardContainerOverview from "./dashboardsubContainer/dashboardContainerOverview.vue";
 export default {
-  components: { TilesDashboard },
+  components: { DashboardContainerOverview },
   name: "ContainerContent",
 };
 </script>

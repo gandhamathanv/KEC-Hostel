@@ -1,10 +1,17 @@
 <template>
-  <div class="app-body-main-content">menu container</div>
+  <div class="app-body-main-content">
+    <section class="service-section">
+      <h2>Change Menu</h2>
+      <input-field></input-field>
+      <input-field></input-field>
+      <input-field></input-field>
+    </section>
+  </div>
 </template>
 <script>
-import TilesDashboard from "../miniComponents/TilesDashboard.vue";
+import inputField from "../miniComponents/inputField.vue";
 export default {
-  components: { TilesDashboard },
+  components: { inputField },
   name: "PasswordContainer",
 };
 </script>
