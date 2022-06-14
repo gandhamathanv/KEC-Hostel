@@ -5,25 +5,25 @@
       <div class="payments">
         <div class="payment">
           <div class="payment-details">
-            <h3>Internet</h3>
+            <h3>Breakfast</h3>
             <div>
-              <span>$ 2,110</span>
+              <span>idly</span>
             </div>
           </div>
         </div>
         <div class="payment">
           <div class="payment-details">
-            <h3>Universal</h3>
+            <h3>Lunch</h3>
             <div>
-              <span>$ 5,621</span>
+              <span>Coconut Rice</span>
             </div>
           </div>
         </div>
         <div class="payment">
           <div class="payment-details">
-            <h3>Gold</h3>
+            <h3>Dinner</h3>
             <div>
-              <span>$ 3,473</span>
+              <span>Dosa</span>
             </div>
           </div>
         </div>

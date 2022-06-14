@@ -130,6 +130,132 @@
             <span class="cell-label">Price:</span>$560
           </div>
         </div>
+        <div class="products-row">
+          <div class="product-cell image">
+            <span>Ocean</span>
+          </div>
+          <div class="product-cell category">
+            <span class="cell-label">Category:</span>Furniture
+          </div>
+          <div class="product-cell status-cell">
+            <span class="cell-label">Status:</span>
+            <span class="status active">Active</span>
+          </div>
+          <div class="product-cell sales">
+            <span class="cell-label">Sales:</span>11
+          </div>
+          <div class="product-cell stock">
+            <span class="cell-label">Stock:</span>36
+          </div>
+          <div class="product-cell price">
+            <span class="cell-label">Price:</span>$560
+          </div>
+        </div>
+        <div class="products-row">
+          <div class="product-cell image">
+            <span>Ocean</span>
+          </div>
+          <div class="product-cell category">
+            <span class="cell-label">Category:</span>Furniture
+          </div>
+          <div class="product-cell status-cell">
+            <span class="cell-label">Status:</span>
+            <span class="status active">Active</span>
+          </div>
+          <div class="product-cell sales">
+            <span class="cell-label">Sales:</span>11
+          </div>
+          <div class="product-cell stock">
+            <span class="cell-label">Stock:</span>36
+          </div>
+          <div class="product-cell price">
+            <span class="cell-label">Price:</span>$560
+          </div>
+        </div>
+        <div class="products-row">
+          <div class="product-cell image">
+            <span>Ocean</span>
+          </div>
+          <div class="product-cell category">
+            <span class="cell-label">Category:</span>Furniture
+          </div>
+          <div class="product-cell status-cell">
+            <span class="cell-label">Status:</span>
+            <span class="status active">Active</span>
+          </div>
+          <div class="product-cell sales">
+            <span class="cell-label">Sales:</span>11
+          </div>
+          <div class="product-cell stock">
+            <span class="cell-label">Stock:</span>36
+          </div>
+          <div class="product-cell price">
+            <span class="cell-label">Price:</span>$560
+          </div>
+        </div>
+        <div class="products-row">
+          <div class="product-cell image">
+            <span>Ocean</span>
+          </div>
+          <div class="product-cell category">
+            <span class="cell-label">Category:</span>Furniture
+          </div>
+          <div class="product-cell status-cell">
+            <span class="cell-label">Status:</span>
+            <span class="status active">Active</span>
+          </div>
+          <div class="product-cell sales">
+            <span class="cell-label">Sales:</span>11
+          </div>
+          <div class="product-cell stock">
+            <span class="cell-label">Stock:</span>36
+          </div>
+          <div class="product-cell price">
+            <span class="cell-label">Price:</span>$560
+          </div>
+        </div>
+        <div class="products-row">
+          <div class="product-cell image">
+            <span>Ocean</span>
+          </div>
+          <div class="product-cell category">
+            <span class="cell-label">Category:</span>Furniture
+          </div>
+          <div class="product-cell status-cell">
+            <span class="cell-label">Status:</span>
+            <span class="status active">Active</span>
+          </div>
+          <div class="product-cell sales">
+            <span class="cell-label">Sales:</span>11
+          </div>
+          <div class="product-cell stock">
+            <span class="cell-label">Stock:</span>36
+          </div>
+          <div class="product-cell price">
+            <span class="cell-label">Price:</span>$560
+          </div>
+        </div>
+        <div class="products-row">
+          <div class="product-cell image">
+            <span>Ocean</span>
+          </div>
+          <div class="product-cell category">
+            <span class="cell-label">Category:</span>Furniture
+          </div>
+          <div class="product-cell status-cell">
+            <span class="cell-label">Status:</span>
+            <span class="status active">Active</span>
+          </div>
+          <div class="product-cell sales">
+            <span class="cell-label">Sales:</span>11
+          </div>
+          <div class="product-cell stock">
+            <span class="cell-label">Stock:</span>36
+          </div>
+          <div class="product-cell price">
+            <span class="cell-label">Price:</span>$560
+          </div>
+        </div>
       </div>
       <!-- </div> -->
     </section>
