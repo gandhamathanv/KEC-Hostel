@@ -103,7 +103,7 @@ export default {
 .container-view {
   max-height: 100%;
   max-width: 100%;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 //before
