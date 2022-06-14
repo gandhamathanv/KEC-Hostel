@@ -24,11 +24,8 @@
       </a>
     </nav>
     <footer class="footer">
-      <h1>Almeria<small>©</small></h1>
-      <div>
-        Almeria © <br />
-        All Rights Reserved 2021
-      </div>
+      <h1>KONGU INSTITUTION<small></small></h1>
+      <div></div>
     </footer>
   </div>
 </template>

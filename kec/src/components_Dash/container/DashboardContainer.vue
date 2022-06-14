@@ -1,8 +1,8 @@
 <template>
   <div class="app-body-main-content">
-    <dashboard-container-overview v-if="false"></dashboard-container-overview>
+    <dashboard-container-overview v-if="true"></dashboard-container-overview>
     <dashboard-container-staff-list
-      v-if="true"
+      v-if="false"
     ></dashboard-container-staff-list>
   </div>
 </template>

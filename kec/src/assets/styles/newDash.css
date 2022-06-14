@@ -72,7 +72,7 @@ a {
 .app-header {
     display: grid;
     grid-template-columns: minmax(-webkit-min-content, 175px) minmax( -webkit-max-content, 1fr) minmax(-webkit-max-content, 400px);
-    grid-template-columns: minmax(min-content, 175px) minmax(max-content, 1fr) minmax( max-content, 400px);
+    grid-template-columns: minmax(min-content, 175px) minmax(max-content, 1fr) minmax( max-content, 300px);
     -moz-column-gap: 4rem;
     column-gap: 4rem;
     align-items: flex-end;
@@ -129,7 +129,7 @@ a {
     height: 100%;
     display: grid;
     grid-template-columns: minmax(-webkit-min-content, 175px) minmax( -webkit-max-content, 1fr) minmax(-webkit-min-content, 400px);
-    grid-template-columns: minmax(min-content, 175px) minmax(max-content, 1fr) minmax( max-content, 400px);
+    grid-template-columns: minmax(min-content, 175px) minmax(max-content, 1fr) minmax( max-content, 300px);
     /* grid-template-columns: minmax(min-content, 175px) 1fr minmax( max-content, 400px);
     -moz-column-gap: 4rem; */
     column-gap: 4rem;

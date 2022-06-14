@@ -1,91 +1,28 @@
 <template>
-  <body>
-    <div id="main">
-      <div class="clearfix"></div>
-      <br />
-
-      <div class="clearfix"></div>
-      <br />
-
-      <div class="col-div-4-1">
-        <div class="box-1">
-          <div class="content-box-1">
-            <p class="student-name">today's menu</p>
-            <div v-if="todaysMenu != null">
-              <div class="m-box">
-                <p>
-                  {{ todaysMenu.breakfast }}<br /><span class="no-1"
-                    >breakfast</span
-                  >
-                </p>
-                <span class="no">7:30</span>
-              </div>
-              <div class="m-box">
-                <p>
-                  {{ todaysMenu.lunch }}<br /><span class="no-1">lunch</span>
-                </p>
-                <span class="no">12:30</span>
-              </div>
-              <div class="m-box">
-                <p>
-                  {{ todaysMenu.eveningSnacks }}<br /><span class="no-1"
-                    >evening Snacks</span
-                  >
-                </p>
-                <span class="no">4:00</span>
-              </div>
-              <div class="m-box">
-                <p>
-                  {{ todaysMenu.dinner }}<br /><span class="no-1">dinner</span>
-                </p>
-                <span class="no">07:00</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- <div class="col-div-4-1">
-        <div class="box-1">
-          <div class="profile-box">
-            <h3 class="student-name">Students Details</h3>
-            <p class="hostel">No of Students:</p>
-            <button type="button">View Students</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-div-4-1">
-        <div class="box-1">
-          <div class="profile-box">
-            <h3 class="student-name">Staff Details</h3>
-  
-            <p class="hostel">No of Staffs:</p>
-            <button type="button">View Staffs</button>
-          </div>
-        </div>
-      </div> -->
-
-      <div class="clearfix"></div>
-      <br />
-
-      <div class="clearfix"></div>
+  <div class="dash-container">
+    <new-dash></new-dash>
+    <div class="app-body">
+      <SideBar></SideBar>
+      <ContainerContent v-if="true" class="container-view"></ContainerContent>
+      <password-container v-if="false"></password-container>
+      <permission-container v-if="false"></permission-container>
+      <menu-container v-if="false"></menu-container>
+      <food-menu></food-menu>
     </div>
-  </body>
+
+    <!-- <router-view /> -->
+  </div>
 </template>
 
 <script>
-import HostelService from "@/services/HostelServices";
-const weekday = [
-  "SUNDAY",
-  "MONDAY",
-  "TUESDAY",
-  "WEDNESDAY",
-  "THURSDAY",
-  "FRIDAY",
-  "SATURDAY",
-];
-
-const date = new Date();
-const day = weekday[date.getDay()];
+// import HostelService from "@/services/HostelServices";
+import NewDash from "../components_Dash/NewDash.vue";
+import SideBar from "../components_Dash/SideBar.vue";
+import ContainerContent from "../components_Dash/ContainerContent.vue";
+import FoodMenu from "../components_Dash/FoodMenu.vue";
+import PasswordContainer from "../components_Dash/container/PasswordContainer.vue";
+import PermissionContainer from "../components_Dash/container/PermissionContainer.vue";
+import MenuContainer from "../components_Dash/container/MenuContainer.vue";
 export default {
   name: "HomeView",
   data() {
@@ -94,14 +31,16 @@ export default {
       todaysMenu: null,
     };
   },
-  async mounted() {
-    console.log(day);
-    const menu = await HostelService.getMenu({
-      day,
-    });
+  async mounted() {},
 
-    this.todaysMenu = menu.data.menu[0];
-    console.log(this.todaysMenu);
+  components: {
+    NewDash,
+    SideBar,
+    ContainerContent,
+    FoodMenu,
+    PasswordContainer,
+    PermissionContainer,
+    MenuContainer,
   },
 };
 </script>

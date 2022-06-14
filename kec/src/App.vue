@@ -6,18 +6,7 @@
       <DashboardNav v-if="this.$store.state.isUserLoggedIn" />
     </div>
  -->
-  <div class="dash-container">
-    <new-dash></new-dash>
-    <div class="app-body">
-      <SideBar></SideBar>
-      <ContainerContent v-if="true" class="container-view"></ContainerContent>
-      <password-container v-if="false"></password-container>
-      <permission-container v-if="false"></permission-container>
-      <menu-container v-if="false"></menu-container>
-      <food-menu></food-menu>
-    </div>
-    <!-- <router-view /> -->
-  </div>
+  <router-view></router-view>
 
   <!-- </div> -->
 </template>
@@ -26,25 +15,9 @@
 // import LoadingPage from "@/components/dashboard/loadingPage.vue";
 // import DashboardNav from "@/components/dashboard/dashboardNav.vue";
 import AuthenticationService from "@/services/AuthenticationServices";
-import NewDash from "./components_Dash/NewDash.vue";
-import SideBar from "./components_Dash/SideBar.vue";
-import ContainerContent from "./components_Dash/ContainerContent.vue";
-import FoodMenu from "./components_Dash/FoodMenu.vue";
-import PasswordContainer from "./components_Dash/container/PasswordContainer.vue";
-import PermissionContainer from "./components_Dash/container/PermissionContainer.vue";
-import MenuContainer from "./components_Dash/container/MenuContainer.vue";
+
 export default {
   name: "app",
-
-  components: {
-    NewDash,
-    SideBar,
-    ContainerContent,
-    FoodMenu,
-    PasswordContainer,
-    PermissionContainer,
-    MenuContainer,
-  },
   // async mounted() {
   //   try {
   //     const res = await AuthenticationService.getData(this.$store.state.token);
@@ -104,9 +77,7 @@ export default {
   max-height: 100%;
   max-width: 100%;
   overflow-y: scroll;
-}
-
-//before
+} //before
 
 // #app {
 //   font-family: Avenir, Helvetica, Arial, sans-serif;

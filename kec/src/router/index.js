@@ -173,6 +173,22 @@ const routes = [{
         name: "NewDash",
         component: newDash,
     },
+
+    //new routes
+    {
+        path: "/dashboard",
+        component: Dashboard,
+        name: "DashboardOverview",
+        children: [{
+                path: "overview",
+                component: Dashboard,
+                name: "DashboardOverview",
+            },
+
+            { path: "changepassword", component: Dashboard, name: "DashboardStaff" },
+        ],
+    },
+
     {
         path: "/:catchAll(.*)",
         name: "errorStatus",
