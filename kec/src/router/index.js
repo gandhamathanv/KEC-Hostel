@@ -206,26 +206,31 @@ const routes = [{
         ],
     },
     {
-        path: "/changepassword",
-        component: changePassword,
-        name: "DashboardChangePassword",
+        path: "/dashboard",
+        component: Dashboard,
+        name: "Dashboard",
+        children: [{
+                path: "changepassword",
+                component: changePassword,
+                name: "DashboardChangePassword",
+            },
+            {
+                path: "permissions",
+                component: permissions,
+                name: "DashboardPermission",
+            },
+            {
+                path: "Menu",
+                name: "todaysMenu",
+                component: todaysMenu,
+            },
+            {
+                path: "export",
+                name: "exportData",
+                component: exportData,
+            },
+        ],
     },
-    {
-        path: "/permissions",
-        component: permissions,
-        name: "DashboardPermission",
-    },
-    {
-        path: "/Menu",
-        name: "todaysMenu",
-        component: todaysMenu,
-    },
-    {
-        path: "/export",
-        name: "exportData",
-        component: exportData,
-    },
-
     {
         path: "/:catchAll(.*)",
         name: "errorStatus",
