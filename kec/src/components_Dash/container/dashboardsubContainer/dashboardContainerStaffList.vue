@@ -1,7 +1,6 @@
 <template>
   <div class="app-body-main-content">
     <TableList></TableList>
-    <TableList></TableList>
   </div>
 </template>
 <script>

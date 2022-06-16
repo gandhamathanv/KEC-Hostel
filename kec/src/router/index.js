@@ -6,8 +6,7 @@ import StudentInfo from "../components/StudentInfo.vue";
 import BookingView from "../views/BookingView.vue";
 import Dashboard from "../views/dashBoard.vue";
 import staffDashboard from "../views/staffDashBoard.vue";
-import changePassword from "../components/resetPassword.vue";
-import permissions from "../components/permissions.vue";
+
 import studentRegistration from "../views/studentRegistration.vue";
 import staffRegistration from "../views/staffRegistration.vue";
 import staffInfo from "../components/staffInfo.vue";
@@ -24,11 +23,20 @@ import staffDetail from "../components/staffDetail.vue";
 import hostelDetail from "../components/dashboard/hostelDetail.vue";
 import roomDetail from "../components/dashboard/roomDetail.vue";
 import bookingDetail from "../components/dashboard/bookingDetail.vue";
-import exportData from "../components/dashboard/exportData.vue";
 import errorStatus from "../components/dashboard/errorStatus.vue";
 import loadingPage from "../components/dashboard/loadingPage.vue";
 import loaderPage from "../components/dashboard/loaderPage.vue";
 import newDash from "../components_Dash/NewDash.vue";
+
+//new routes
+
+import overView from "../components_Dash/container/dashboardsubContainer/dashboardContainerOverview.vue";
+import staffList from "../components_Dash/container/dashboardsubContainer/dashboardContainerStaffList.vue";
+import changePassword from "../components_Dash/container/PasswordContainer.vue";
+import permissions from "../components_Dash/container/PermissionContainer.vue";
+import todaysMenu from "../components_Dash/container/MenuContainer.vue";
+import exportData from "../components_Dash/container/ExportContainer.vue";
+import userInfo from "../components_Dash/container/UserInfo.vue";
 
 const routes = [{
         path: "/",
@@ -177,18 +185,42 @@ const routes = [{
     //new routes
     {
         path: "/dashboard",
-        component: Dashboard,
+        component: overView,
         name: "DashboardOverview",
         children: [{
                 path: "overview",
-                component: Dashboard,
+                component: overView,
                 name: "DashboardOverview",
             },
 
-            { path: "changepassword", component: Dashboard, name: "DashboardStaff" },
+            { path: "stafflist", component: staffList, name: "DashboardStaff" },
         ],
     },
-
+    {
+        path: "/changepassword",
+        component: changePassword,
+        name: "DashboardChangePassword",
+    },
+    {
+        path: "/permissions",
+        component: permissions,
+        name: "DashboardPermission",
+    },
+    {
+        path: "/Menu",
+        name: "todaysMenu",
+        component: todaysMenu,
+    },
+    {
+        path: "/export",
+        name: "exportData",
+        component: exportData,
+    },
+    {
+        path: "/userinfo",
+        name: "UserInfo",
+        component: userInfo,
+    },
     {
         path: "/:catchAll(.*)",
         name: "errorStatus",

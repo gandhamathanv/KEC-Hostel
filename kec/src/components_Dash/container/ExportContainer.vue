@@ -1,5 +1,10 @@
 <template>
-  <div class="app-body-main-content">export container</div>
+  <div class="app-body-main-content">
+    <tiles-dashboard></tiles-dashboard>
+    <tiles-dashboard></tiles-dashboard>
+    <tiles-dashboard></tiles-dashboard>
+    <tiles-dashboard></tiles-dashboard>
+  </div>
 </template>
 <script>
 import TilesDashboard from "../miniComponents/TilesDashboard.vue";

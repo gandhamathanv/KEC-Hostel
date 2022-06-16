@@ -6,7 +6,7 @@
       <DashboardNav v-if="this.$store.state.isUserLoggedIn" />
     </div>
  -->
-  <router-view></router-view>
+  <DashBoard></DashBoard>
 
   <!-- </div> -->
 </template>
@@ -15,6 +15,7 @@
 // import LoadingPage from "@/components/dashboard/loadingPage.vue";
 // import DashboardNav from "@/components/dashboard/dashboardNav.vue";
 import AuthenticationService from "@/services/AuthenticationServices";
+import DashBoard from "./views/dashBoard.vue";
 
 export default {
   name: "app",
@@ -37,7 +38,6 @@ export default {
   //     alert(error);
   //   }
   // },
-
   // un comment
   async mounted() {
     this.$store.dispatch("setLoading", true);
@@ -65,6 +65,7 @@ export default {
     }
     this.$store.dispatch("setLoading", false);
   },
+  components: { DashBoard },
 };
 </script>
 <style lang="scss">

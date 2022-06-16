@@ -3,7 +3,8 @@
     <new-dash></new-dash>
     <div class="app-body">
       <SideBar></SideBar>
-      <ContainerContent v-if="true" class="container-view"></ContainerContent>
+      <router-view></router-view>
+      <ContainerContent v-if="false" class="container-view"></ContainerContent>
       <password-container v-if="false"></password-container>
       <permission-container v-if="false"></permission-container>
       <menu-container v-if="false"></menu-container>
