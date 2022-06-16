@@ -917,3 +917,10 @@ button:focus {
     outline: 0;
     box-shadow: 0 0 0 2px var(--c-gray-800), 0 0 0 4px var(--c-gray-300);
 }
+
+
+/* newly addes */
+
+.app-body-main-content {
+    overflow: auto;
+}

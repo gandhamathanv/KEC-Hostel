@@ -184,15 +184,19 @@ const routes = [{
 
     //new routes
     {
-        path: "/dashboard",
-        component: overView,
-        name: "DashboardOverview",
+        path: "/dashboard/home",
+        component: Dashboard,
+        name: "DashboardHome",
         children: [{
                 path: "overview",
                 component: overView,
                 name: "DashboardOverview",
             },
 
+            { path: "staffist", component: staffList, name: "DashboardStaff" },
+            { path: "studentList", component: staffList, name: "DashboardStaff" },
+            { path: "BookingList", component: staffList, name: "DashboardStaff" },
+            { path: "stafflist", component: staffList, name: "DashboardStaff" },
             { path: "stafflist", component: staffList, name: "DashboardStaff" },
         ],
     },
