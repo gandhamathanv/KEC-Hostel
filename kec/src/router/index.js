@@ -198,6 +198,11 @@ const routes = [{
             { path: "BookingList", component: staffList, name: "DashboardStaff" },
             { path: "stafflist", component: staffList, name: "DashboardStaff" },
             { path: "stafflist", component: staffList, name: "DashboardStaff" },
+            {
+                path: "userinfo",
+                name: "UserInfo",
+                component: userInfo,
+            },
         ],
     },
     {
@@ -220,11 +225,7 @@ const routes = [{
         name: "exportData",
         component: exportData,
     },
-    {
-        path: "/userinfo",
-        name: "UserInfo",
-        component: userInfo,
-    },
+
     {
         path: "/:catchAll(.*)",
         name: "errorStatus",
