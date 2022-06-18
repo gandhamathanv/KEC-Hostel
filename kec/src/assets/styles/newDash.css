@@ -249,7 +249,7 @@ a {
 }
 
 .navigation a:hover,
-.navigation a:focus {
+.focus {
     transform: translateX(4px);
     color: var(--c-text-primary);
 }
@@ -911,7 +911,6 @@ a {
 
 input:focus,
 select:focus,
-a:focus,
 textarea:focus,
 button:focus {
     outline: 0;

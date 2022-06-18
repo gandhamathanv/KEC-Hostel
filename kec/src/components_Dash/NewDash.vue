@@ -14,12 +14,36 @@
       </div>
       <div class="app-header-navigation">
         <div class="tabs">
-          <a href="#" class="active"> Overview </a>
-          <a href="#"> Staff </a>
-          <a href="#"> Student </a>
-          <a href="#"> Booking </a>
-          <a href="#"> Hostel </a>
-          <a href="#"> Rooms </a>
+          <router-link
+            :class="{ active: this.$route.name == 'DashboardOverview' }"
+            :to="{ name: 'DashboardOverview' }"
+          >
+            Overview
+          </router-link>
+          <router-link
+            :class="{ active: this.$route.name == 'DashboardStaff' }"
+            :to="{ name: 'DashboardStaff' }"
+          >
+            Staff
+          </router-link>
+          <router-link
+            :class="{ active: this.$route.name == 'DashboardStudent' }"
+            :to="{ name: 'DashboardStudent' }"
+          >
+            Student
+          </router-link>
+          <router-link
+            :class="{ active: this.$route.name == 'DashboardBooking' }"
+            :to="{ name: 'DashboardBooking' }"
+          >
+            Booking
+          </router-link>
+          <router-link
+            :class="{ active: this.$route.name == 'DashboardHostel' }"
+            :to="{ name: 'DashboardHostel' }"
+          >
+            Hostel
+          </router-link>
         </div>
       </div>
       <div class="app-header-actions">
@@ -49,3 +73,10 @@
     </header>
   </div>
 </template>
+<script>
+export default {
+  mounted() {
+    console.log(this.$route.name == "DashboardBooking" && "Tru");
+  },
+};
+</script>
