@@ -188,16 +188,15 @@ const routes = [{
         component: Dashboard,
         name: "DashboardHome",
         children: [{
-                path: "overview",
+                path: "",
                 component: overView,
                 name: "DashboardOverview",
             },
 
-            { path: "staffist", component: staffList, name: "DashboardStaff" },
-            { path: "studentList", component: staffList, name: "DashboardStaff" },
-            { path: "BookingList", component: staffList, name: "DashboardStaff" },
-            { path: "stafflist", component: staffList, name: "DashboardStaff" },
-            { path: "stafflist", component: staffList, name: "DashboardStaff" },
+            { path: "staffList", component: staffList, name: "DashboardStaff" },
+            { path: "studentList", component: staffList, name: "DashboardStudent" },
+            { path: "BookingList", component: staffList, name: "DashboardBooking" },
+            { path: "hostelList", component: staffList, name: "DashboardHostel" },
             {
                 path: "userinfo",
                 name: "UserInfo",

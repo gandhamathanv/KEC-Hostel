@@ -1,27 +1,37 @@
 <template>
   <div class="app-body-navigation">
     <nav class="navigation">
-      <a href="#">
-        <i class="ph-browsers"></i>
+      <router-link
+        :class="{ focus: this.$route.name == 'DashboardOverview' }"
+        :to="{ name: 'DashboardOverview' }"
+      >
         <span>Dashboard</span>
-      </a>
+      </router-link>
 
-      <a href="#">
-        <i class="ph-clipboard-text"></i>
+      <routerLink
+        :class="{ focus: this.$route.name == 'DashboardChangePassword' }"
+        :to="{ name: 'DashboardChangePassword' }"
+      >
         <span>Change Password</span>
-      </a>
-      <a href="#">
-        <i class="ph-clipboard-text"></i>
+      </routerLink>
+      <routerLink
+        :class="{ focus: this.$route.name == 'DashboardPermission' }"
+        :to="{ name: 'DashboardPermission' }"
+      >
         <span>Permissions</span>
-      </a>
-      <a href="#">
-        <i class="ph-clipboard-text"></i>
+      </routerLink>
+      <routerLink
+        :class="{ focus: this.$route.name == 'todaysMenu' }"
+        :to="{ name: 'todaysMenu' }"
+      >
         <span>Todays Menu</span>
-      </a>
-      <a href="#">
-        <i class="ph-clipboard-text"></i>
+      </routerLink>
+      <routerLink
+        :class="{ focus: this.$route.name == 'exportData' }"
+        :to="{ name: 'exportData' }"
+      >
         <span>Export</span>
-      </a>
+      </routerLink>
     </nav>
     <footer class="footer">
       <h1>KONGU INSTITUTION<small></small></h1>
