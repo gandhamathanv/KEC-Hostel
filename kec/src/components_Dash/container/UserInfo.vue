@@ -1,45 +1,71 @@
 <template>
-  <div>
-    <div class="app-body-main-content">USER INFO</div>
-    <!-- <div class="card-header bg-white border-0">
-      <div class="row align-items-center">
-        <div class="col-8">
-          <h3 class="mb-0">My account</h3>
-        </div>
-        <div class="col-4 text-right">
-          <a href="#!" class="btn btn-sm btn-primary">Settings</a>
-        </div>
-      </div>
-    </div> -->
+  <div class="app-body-main-content">
     <div class="card-body">
       <form>
-        <!-- <h6 class="heading-small text-muted mb-4">User information</h6> -->
+        <div>USER INFO</div>
+        <br />
+
         <div class="pl-lg-4">
           <div class="row">
             <div class="col-lg-6">
               <div class="form-group focused">
-                <label class="form-control-label" for="input-username"
-                  >Username</label
+                <label class="form-control-label" for="input-first-name"
+                  >Name</label
                 >
                 <input
                   type="text"
-                  id="input-username"
+                  id="input-first-name"
                   class="form-control form-control-alternative"
-                  placeholder="Username"
-                  value="lucky.jesse"
+                  placeholder="First name"
+                  value="Lucky"
+                  disabled
                 />
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="form-group">
-                <label class="form-control-label" for="input-email"
-                  >Email address</label
+              <div class="form-group focused">
+                <label class="form-control-label" for="input-last-name"
+                  >Roll Number
+                </label>
+                <input
+                  type="text"
+                  id="input-last-name"
+                  class="form-control form-control-alternative"
+                  placeholder="Last name"
+                  value="Jesse"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group focused">
+                <label class="form-control-label" for="input-first-name"
+                  >Class</label
                 >
                 <input
-                  type="email"
-                  id="input-email"
+                  type="text"
+                  id="input-first-name"
                   class="form-control form-control-alternative"
-                  placeholder="jesse@example.com"
+                  placeholder="First name"
+                  value="Lucky"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group focused">
+                <label class="form-control-label" for="input-last-name"
+                  >Year</label
+                >
+                <input
+                  type="text"
+                  id="input-last-name"
+                  class="form-control form-control-alternative"
+                  placeholder="Last name"
+                  value="Jesse"
+                  disabled
                 />
               </div>
             </div>
@@ -56,6 +82,7 @@
                   class="form-control form-control-alternative"
                   placeholder="First name"
                   value="Lucky"
+                  disabled
                 />
               </div>
             </div>
@@ -70,6 +97,7 @@
                   class="form-control form-control-alternative"
                   placeholder="Last name"
                   value="Jesse"
+                  disabled
                 />
               </div>
             </div>
@@ -86,6 +114,7 @@
                   class="form-control form-control-alternative"
                   placeholder="First name"
                   value="Lucky"
+                  disabled
                 />
               </div>
             </div>
@@ -100,6 +129,7 @@
                   class="form-control form-control-alternative"
                   placeholder="Last name"
                   value="Jesse"
+                  disabled
                 />
               </div>
             </div>
@@ -116,6 +146,7 @@
                   class="form-control form-control-alternative"
                   placeholder="First name"
                   value="Lucky"
+                  disabled
                 />
               </div>
             </div>
@@ -130,32 +161,77 @@
                   class="form-control form-control-alternative"
                   placeholder="Last name"
                   value="Jesse"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group focused">
+                <label class="form-control-label" for="input-first-name"
+                  >First name</label
+                >
+                <input
+                  type="text"
+                  id="input-first-name"
+                  class="form-control form-control-alternative"
+                  placeholder="First name"
+                  value="Lucky"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group focused">
+                <label class="form-control-label" for="input-last-name"
+                  >Last name</label
+                >
+                <input
+                  type="text"
+                  id="input-last-name"
+                  class="form-control form-control-alternative"
+                  placeholder="Last name"
+                  value="Jesse"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group focused">
+                <label class="form-control-label" for="input-first-name"
+                  >First name</label
+                >
+                <input
+                  type="text"
+                  id="input-first-name"
+                  class="form-control form-control-alternative"
+                  placeholder="First name"
+                  value="Lucky"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group focused">
+                <label class="form-control-label" for="input-last-name"
+                  >Last name</label
+                >
+                <input
+                  type="text"
+                  id="input-last-name"
+                  class="form-control form-control-alternative"
+                  placeholder="Last name"
+                  value="Jesse"
+                  disabled
                 />
               </div>
             </div>
           </div>
         </div>
         <hr class="my-4" />
-
-        <!-- <div class="pl-lg-4">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group focused">
-                <label class="form-control-label" for="input-address"
-                  >Address</label
-                >
-                <input
-                  id="input-address"
-                  class="form-control form-control-alternative"
-                  placeholder="Home Address"
-                  value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-                  type="text"
-                />
-              </div>
-            </div>
-          </div>
-     
-        </div> -->
       </form>
     </div>
   </div>
@@ -659,10 +735,10 @@ a > code {
   height: calc(2.75rem + 2px);
   padding: 0.625rem 0.75rem;
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  color: #8898aa;
-  border: 1px solid #cad1d7;
+  color: white;
+  border: 1px solid #5d5e5f;
   border-radius: 0.375rem;
-  background-color: #fff;
+  background-color: rgb(69, 66, 66);
   background-clip: padding-box;
   box-shadow: none;
 }
@@ -704,7 +780,7 @@ a > code {
 .form-control:disabled,
 .form-control[readonly] {
   opacity: 1;
-  background-color: #e9ecef;
+  /* background-color: #e9ecef; */
 }
 
 textarea.form-control {
@@ -1823,7 +1899,7 @@ a.text-white:focus {
 .form-control-label {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #525f7f;
+  color: white;
 }
 
 .form-control {
