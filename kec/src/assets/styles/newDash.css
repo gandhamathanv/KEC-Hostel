@@ -292,21 +292,22 @@ a {
     color: var(--c-text-primary);
 }
 
-.user-profile:hover span:last-child,
-.user-profile:focus span:last-child {
+.user-profile:hover span:first-child,
+.user-profile:focus span:first-child {
     box-shadow: 0 0 0 4px var(--c-gray-800), 0 0 0 5px var(--c-text-tertiary);
 }
 
-.user-profile span:first-child {
+.user-profile span:last-child {
     display: flex;
     font-size: 1.125rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--c-gray-600);
     font-weight: 300;
+    margin-left: 1.5rem;
 }
 
-.user-profile span:last-child {
+.user-profile span:first-child {
     transition: 0.25s ease;
     display: flex;
     justify-content: center;
@@ -315,7 +316,6 @@ a {
     height: 42px;
     border-radius: 50%;
     overflow: hidden;
-    margin-left: 1.5rem;
     flex-shrink: 0;
 }
 
@@ -865,6 +865,7 @@ a {
     background-color: transparent;
     padding: 0.25em 0;
     width: 100%;
+    color: white;
 }
 
 .payment-section-footer {

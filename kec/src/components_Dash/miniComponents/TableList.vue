@@ -1,6 +1,6 @@
 <template>
   <section class="service-section">
-    <h2>Staff List</h2>
+    <h2>{{ tableHeader }}</h2>
     <!-- <div class="app-content"> -->
     <div class="app-content-actions">
       <input class="search-bar" placeholder="Search..." type="text" />
@@ -31,181 +31,43 @@
             </div>
           </div>
         </div>
-        <button class="action-button list active" title="List View">
+        <button
+          class="action-button list"
+          :class="{ active: this.view === 'listView' }"
+          title="List View"
+        >
           <span class="material-symbols-outlined"> list </span>
         </button>
-        <button class="action-button grid" title="Grid View">
+        <button
+          class="action-button grid"
+          :class="{ active: this.view === 'gridView' }"
+          title="Grid View"
+        >
           <span class="material-symbols-outlined"> grid_view </span>
         </button>
       </div>
     </div>
-    <div class="products-area-wrapper tableView">
+    <div
+      class="products-area-wrapper"
+      :class="{
+        tableView: this.view === 'listView',
+        gridView: this.view === 'gridView',
+      }"
+    >
       <div class="products-header">
-        <div class="product-cell image">
-          Items
+        <div v-for="item in header" :key="item" class="product-cell">
+          {{ item }}
           <button class="sort-button"></button>
         </div>
-        <div class="product-cell category">
-          Category<button class="sort-button"></button>
-        </div>
-        <div class="product-cell status-cell">
-          Status<button class="sort-button"></button>
-        </div>
-        <div class="product-cell sales">
-          Sales<button class="sort-button"></button>
-        </div>
-        <div class="product-cell stock">
-          Stock<button class="sort-button"></button>
-        </div>
-        <div class="product-cell price">
-          Price<button class="sort-button"></button>
-        </div>
       </div>
       <div class="products-row">
-        <div class="product-cell image">
-          <span>Ocean</span>
-        </div>
-        <div class="product-cell category">
-          <span class="cell-label">Category:</span>Furniture
+        <div v-for="item in data" :key="item" class="product-cell">
+          <span class="cell-label">{{ item }}</span
+          >{{ item }}
         </div>
         <div class="product-cell status-cell">
           <span class="cell-label">Status:</span>
           <span class="status active">Active</span>
-        </div>
-        <div class="product-cell sales">
-          <span class="cell-label">Sales:</span>11
-        </div>
-        <div class="product-cell stock">
-          <span class="cell-label">Stock:</span>36
-        </div>
-        <div class="product-cell price">
-          <span class="cell-label">Price:</span>$560
-        </div>
-      </div>
-      <div class="products-row">
-        <div class="product-cell image">
-          <span>Ocean</span>
-        </div>
-        <div class="product-cell category">
-          <span class="cell-label">Category:</span>Furniture
-        </div>
-        <div class="product-cell status-cell">
-          <span class="cell-label">Status:</span>
-          <span class="status active">Active</span>
-        </div>
-        <div class="product-cell sales">
-          <span class="cell-label">Sales:</span>11
-        </div>
-        <div class="product-cell stock">
-          <span class="cell-label">Stock:</span>36
-        </div>
-        <div class="product-cell price">
-          <span class="cell-label">Price:</span>$560
-        </div>
-      </div>
-      <div class="products-row">
-        <div class="product-cell image">
-          <span>Ocean</span>
-        </div>
-        <div class="product-cell category">
-          <span class="cell-label">Category:</span>Furniture
-        </div>
-        <div class="product-cell status-cell">
-          <span class="cell-label">Status:</span>
-          <span class="status active">Active</span>
-        </div>
-        <div class="product-cell sales">
-          <span class="cell-label">Sales:</span>11
-        </div>
-        <div class="product-cell stock">
-          <span class="cell-label">Stock:</span>36
-        </div>
-        <div class="product-cell price">
-          <span class="cell-label">Price:</span>$560
-        </div>
-      </div>
-      <div class="products-row">
-        <div class="product-cell image">
-          <span>Ocean</span>
-        </div>
-        <div class="product-cell category">
-          <span class="cell-label">Category:</span>Furniture
-        </div>
-        <div class="product-cell status-cell">
-          <span class="cell-label">Status:</span>
-          <span class="status active">Active</span>
-        </div>
-        <div class="product-cell sales">
-          <span class="cell-label">Sales:</span>11
-        </div>
-        <div class="product-cell stock">
-          <span class="cell-label">Stock:</span>36
-        </div>
-        <div class="product-cell price">
-          <span class="cell-label">Price:</span>$560
-        </div>
-      </div>
-      <div class="products-row">
-        <div class="product-cell image">
-          <span>Ocean</span>
-        </div>
-        <div class="product-cell category">
-          <span class="cell-label">Category:</span>Furniture
-        </div>
-        <div class="product-cell status-cell">
-          <span class="cell-label">Status:</span>
-          <span class="status active">Active</span>
-        </div>
-        <div class="product-cell sales">
-          <span class="cell-label">Sales:</span>11
-        </div>
-        <div class="product-cell stock">
-          <span class="cell-label">Stock:</span>36
-        </div>
-        <div class="product-cell price">
-          <span class="cell-label">Price:</span>$560
-        </div>
-      </div>
-      <div class="products-row">
-        <div class="product-cell image">
-          <span>Ocean</span>
-        </div>
-        <div class="product-cell category">
-          <span class="cell-label">Category:</span>Furniture
-        </div>
-        <div class="product-cell status-cell">
-          <span class="cell-label">Status:</span>
-          <span class="status active">Active</span>
-        </div>
-        <div class="product-cell sales">
-          <span class="cell-label">Sales:</span>11
-        </div>
-        <div class="product-cell stock">
-          <span class="cell-label">Stock:</span>36
-        </div>
-        <div class="product-cell price">
-          <span class="cell-label">Price:</span>$560
-        </div>
-      </div>
-      <div class="products-row">
-        <div class="product-cell image">
-          <span>Ocean</span>
-        </div>
-        <div class="product-cell category">
-          <span class="cell-label">Category:</span>Furniture
-        </div>
-        <div class="product-cell status-cell">
-          <span class="cell-label">Status:</span>
-          <span class="status active">Active</span>
-        </div>
-        <div class="product-cell sales">
-          <span class="cell-label">Sales:</span>11
-        </div>
-        <div class="product-cell stock">
-          <span class="cell-label">Stock:</span>36
-        </div>
-        <div class="product-cell price">
-          <span class="cell-label">Price:</span>$560
         </div>
       </div>
     </div>
@@ -216,6 +78,25 @@
 // import "@/assets/script/script";
 export default {
   name: "TableList",
+  props: ["tableHeader"],
+  data() {
+    return {
+      view: "listView",
+      // header: ["Items", "Category", "Status", "Sales", "Stock", "Price"],
+      data: {
+        name: "Gandhamathan V",
+        rollnumber: "20CSR051",
+        dept: "CSE",
+      },
+    };
+  },
+  computed: {
+    header: {
+      get() {
+        return Object.keys(this.data);
+      },
+    },
+  },
 };
 </script>
 <style scoped>

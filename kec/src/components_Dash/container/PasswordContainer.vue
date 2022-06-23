@@ -3,12 +3,13 @@
     <div class="mainDiv">
       <div class="cardStyle">
         <form action="" method="post" name="signupForm" id="signupForm">
-          <img src="../../assets/logo.png" id="signupLogo" />
+          <img src="../../assets/img/homepage/keclogo.png" id="signupLogo" />
 
-          <h2 class="formTitle">Login to your account</h2>
+          <h2 class="formTitle">change password</h2>
           <div class="inputContainer">
-            <input-field></input-field>
-            <input-field></input-field>
+            <input-field :label="'ID'"></input-field>
+            <input-field :label="'password'"></input-field>
+            <input-field :label="'password'"></input-field>
             <button-field class="save"></button-field>
           </div>
         </form>

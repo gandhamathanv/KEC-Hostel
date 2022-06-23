@@ -1,8 +1,6 @@
 <template>
   <div class="app-body-main-content">
-    <TableList></TableList>
-    <TableList></TableList>
-    <TableList></TableList>
+    <TableList :tableHeader="'staff List'"></TableList>
   </div>
 </template>
 <script>

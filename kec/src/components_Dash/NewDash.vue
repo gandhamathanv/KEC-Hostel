@@ -48,20 +48,21 @@
       </div>
       <div class="app-header-actions">
         <button class="user-profile">
-          <span>Gandhamathan </span>
-          <span>
-            <img
+          <span class="icon-button large">
+            G
+            <!-- <img
               src="https://assets.codepen.io/285131/almeria-avatar.jpeg"
               alt="profile"
-            />
+            /> -->
           </span>
+          <span>Gandhamathan </span>
         </button>
         <div class="app-header-actions-buttons">
           <!-- <button class="icon-button large">
             <span class="material-symbols-outlined"> search </span>
           </button> -->
           <button class="icon-button large">
-            <span class="material-symbols-outlined"> notifications </span>
+            <span class="material-symbols-outlined"> logout </span>
           </button>
         </div>
       </div>

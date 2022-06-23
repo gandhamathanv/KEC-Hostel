@@ -578,7 +578,18 @@ export default {
   margin: 0 auto; */
   display: block;
   margin: -8px;
+  overflow: scroll;
 }
+/* FIXME:scroll lock 
+.body::-webkit-scrollbar {
+  display: none;
+}
+
+.body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+*/
 .header {
   min-height: 100vh;
   width: 100%;

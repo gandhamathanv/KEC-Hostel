@@ -4,10 +4,8 @@
       <h2>Permisions</h2>
 
       <div class="tiles">
-        <permission-tile></permission-tile>
-        <permission-tile></permission-tile>
-        <permission-tile></permission-tile>
-        <permission-tile></permission-tile>
+        <permission-tile :label="'booking'" :count="2"></permission-tile>
+        <permission-tile :label="'Registration'" :count="2"></permission-tile>
       </div>
       <div class="service-section-footer">
         <p>Your Hostel Information Will Only be visible.</p>

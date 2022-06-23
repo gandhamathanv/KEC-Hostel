@@ -3,8 +3,8 @@
     <div class="tile-header">
       <i class="ph-lightning-light"></i>
       <h3>
-        <span>Electricity</span>
-        <span>4</span>
+        <span>{{ hostelName }}</span>
+        <span>{{ capacity }}</span>
       </h3>
     </div>
     <a href="#">
@@ -16,5 +16,6 @@
 <script>
 export default {
   name: "TilesDashboard",
+  props: ["hostelName", "capacity"],
 };
 </script>

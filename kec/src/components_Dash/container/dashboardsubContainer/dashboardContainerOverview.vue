@@ -12,7 +12,11 @@
         <button class="flat-button">Toggle search</button>
       </div> -->
     <div class="tiles">
-      <tiles-dashboard></tiles-dashboard>
+      <tiles-dashboard
+        :hostelName="'Amaravathi'"
+        :capacity="3"
+      ></tiles-dashboard>
+      <tiles-dashboard :hostelName="'Bharathi'" :capacity="3"></tiles-dashboard>
     </div>
     <div class="service-section-footer">
       <p>Your Hostel Information Will Only be visible.</p>

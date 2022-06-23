@@ -7,7 +7,7 @@
           <div class="payment-details">
             <h3>Breakfast</h3>
             <div>
-              <span>idly</span>
+              <span>{{ this.$store.state.menu.breakfast }}</span>
             </div>
           </div>
         </div>
@@ -15,7 +15,7 @@
           <div class="payment-details">
             <h3>Lunch</h3>
             <div>
-              <span>Coconut Rice</span>
+              <span>{{ this.$store.state.menu.lunch }}</span>
             </div>
           </div>
         </div>
@@ -23,7 +23,7 @@
           <div class="payment-details">
             <h3>Dinner</h3>
             <div>
-              <span>Dosa</span>
+              <span>{{ this.$store.state.menu.dinner }}</span>
             </div>
           </div>
         </div>

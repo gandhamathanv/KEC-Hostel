@@ -1,9 +1,15 @@
 <template>
   <div class="app-body-main-content">
-    <tiles-dashboard></tiles-dashboard>
-    <tiles-dashboard></tiles-dashboard>
-    <tiles-dashboard></tiles-dashboard>
-    <tiles-dashboard></tiles-dashboard>
+    <div class="tiles">
+      <tiles-dashboard
+        :hostelName="'amaravathi'"
+        :capacity="4"
+      ></tiles-dashboard>
+      <tiles-dashboard
+        :hostelName="'amaravathi'"
+        :capacity="4"
+      ></tiles-dashboard>
+    </div>
   </div>
 </template>
 <script>
