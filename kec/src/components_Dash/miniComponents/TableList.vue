@@ -5,12 +5,16 @@
     <div class="app-content-actions">
       <input class="search-bar" placeholder="Search..." type="text" />
       <div class="app-content-actions-wrapper">
-        <div class="filter-button-wrapper">
+        <div @click="setActive('filter')" class="filter-button-wrapper active">
           <button class="action-button filter jsFilter">
             <span>Filter</span
             ><span class="material-symbols-outlined"> filter_list </span>
           </button>
-          <div class="filter-menu">
+          <div
+            @mouseleave="setActive(null)"
+            class="filter-menu"
+            :class="{ active: this.active === 'filter' }"
+          >
             <label>Category</label>
             <select>
               <option>All Categories</option>
@@ -33,12 +37,14 @@
         </div>
         <button
           class="action-button list"
+          @click="this.view = 'listView'"
           :class="{ active: this.view === 'listView' }"
           title="List View"
         >
           <span class="material-symbols-outlined"> list </span>
         </button>
         <button
+          @click="this.view = 'gridView'"
           class="action-button grid"
           :class="{ active: this.view === 'gridView' }"
           title="Grid View"
@@ -61,13 +67,15 @@
         </div>
       </div>
       <div class="products-row">
-        <div v-for="item in data" :key="item" class="product-cell">
-          <span class="cell-label">{{ item }}</span
-          >{{ item }}
-        </div>
-        <div class="product-cell status-cell">
-          <span class="cell-label">Status:</span>
-          <span class="status active">Active</span>
+        <div v-for="(keys, value) in data" :key="value" class="product-cell">
+          <div v-if="value == 'status'">
+            <span class="cell-label"> Status:</span>
+            <span class="status active">Active</span>
+          </div>
+          <div v-else>
+            <span class="cell-label">{{ value }}</span
+            >{{ keys }}
+          </div>
         </div>
       </div>
     </div>
@@ -81,12 +89,13 @@ export default {
   props: ["tableHeader"],
   data() {
     return {
-      view: "listView",
-      // header: ["Items", "Category", "Status", "Sales", "Stock", "Price"],
+      view: "gridView",
+      active: null,
       data: {
         name: "Gandhamathan V",
         rollnumber: "20CSR051",
         dept: "CSE",
+        status: "Active",
       },
     };
   },
@@ -95,6 +104,12 @@ export default {
       get() {
         return Object.keys(this.data);
       },
+    },
+  },
+  methods: {
+    setActive(data) {
+      this.active = data;
+      console.log(data);
     },
   },
 };

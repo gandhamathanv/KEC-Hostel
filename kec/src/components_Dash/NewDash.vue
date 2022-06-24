@@ -38,12 +38,6 @@
           >
             Booking
           </router-link>
-          <router-link
-            :class="{ active: this.$route.name == 'DashboardHostel' }"
-            :to="{ name: 'DashboardHostel' }"
-          >
-            Hostel
-          </router-link>
         </div>
       </div>
       <div class="app-header-actions">
