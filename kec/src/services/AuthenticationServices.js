@@ -18,19 +18,10 @@ export default {
     },
 
     studentLogin(Credentials) {
-        return Api().post("studentLogin", Credentials, {
-            headers: {
-                Authorization: "Bearer " + token,
-            },
-        });
+        return Api().post("studentLogin", Credentials);
     },
     staffLogin(Credentials) {
-        return Api().post("staffLogin", Credentials, {
-            withCredentials: true,
-            headers: {
-                Authorization: "Bearer " + token,
-            },
-        });
+        return Api().post("staffLogin", Credentials);
     },
     changePassword(Credentials) {
         return Api().post("changePassword", Credentials, {
@@ -41,7 +32,6 @@ export default {
     },
     getData(token) {
         return Api().get("getData", {
-            //   withCredentials: true,
             headers: {
                 Authorization: "Bearer " + token,
             },
