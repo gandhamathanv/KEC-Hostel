@@ -128,9 +128,9 @@ export default {
         this.$store.dispatch("setViewer", response.data.data.viewer);
         this.$store.dispatch("setLevel", response.data.data.level);
 
-        // this.$router.push({
-        //   name: "staffDashboard",
-        // });
+        this.$router.push({
+          name: "staffDashboard",
+        });
       } catch (error) {
         this.staff.error = error.response.data.error;
         // alert(error.response.data.error);
