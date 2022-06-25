@@ -129,7 +129,7 @@ export default {
         this.$store.dispatch("setLevel", response.data.data.level);
 
         this.$router.push({
-          name: "staffDashboard",
+          name: "DashboardOverview",
         });
       } catch (error) {
         this.staff.error = error.response.data.error;

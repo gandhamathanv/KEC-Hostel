@@ -1,13 +1,9 @@
 <template>
-  <div class="dash-container">
+  <div v-if="this.$store.state.isUserLoggedIn" class="dash-container">
     <new-dash></new-dash>
     <div class="app-body">
       <SideBar></SideBar>
       <router-view></router-view>
-      <ContainerContent v-if="false" class="container-view"></ContainerContent>
-      <password-container v-if="false"></password-container>
-      <permission-container v-if="false"></permission-container>
-      <menu-container v-if="false"></menu-container>
       <food-menu></food-menu>
     </div>
 
@@ -19,11 +15,7 @@
 // import HostelService from "@/services/HostelServices";
 import NewDash from "../components_Dash/NewDash.vue";
 import SideBar from "../components_Dash/SideBar.vue";
-import ContainerContent from "../components_Dash/ContainerContent.vue";
 import FoodMenu from "../components_Dash/FoodMenu.vue";
-import PasswordContainer from "../components_Dash/container/PasswordContainer.vue";
-import PermissionContainer from "../components_Dash/container/PermissionContainer.vue";
-import MenuContainer from "../components_Dash/container/MenuContainer.vue";
 export default {
   name: "HomeView",
   data() {
@@ -37,11 +29,7 @@ export default {
   components: {
     NewDash,
     SideBar,
-    ContainerContent,
     FoodMenu,
-    PasswordContainer,
-    PermissionContainer,
-    MenuContainer,
   },
 };
 </script>

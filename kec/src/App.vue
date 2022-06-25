@@ -1,22 +1,23 @@
 <template>
-  <!-- <div> -->
-  <!-- <LoadingPage v-if="this.$store.state.isLoading"></LoadingPage>
-    <div v-else>
+  <div>
+    <LoadingPage v-if="this.$store.state.isLoading"></LoadingPage>
+    <!--  <div v-else>
       <HeaderNav v-if="!this.$store.state.isUserLoggedIn"></HeaderNav>
       <DashboardNav v-if="this.$store.state.isUserLoggedIn" />
     </div>
  -->
-  <router-view></router-view>
-  <!-- </div> -->
+    <router-view></router-view>
+  </div>
 </template>
 <script>
 // import HeaderNav from "@/components/HeaderNav.vue";
-// import LoadingPage from "@/components/dashboard/loadingPage.vue";
+import LoadingPage from "@/components/dashboard/loadingPage.vue";
 // import DashboardNav from "@/components/dashboard/dashboardNav.vue";
 import AuthenticationService from "@/services/AuthenticationServices";
 
 export default {
   name: "app",
+  components: { LoadingPage },
   // async mounted() {
   //   try {
   //     const res = await AuthenticationService.getData(this.$store.state.token);

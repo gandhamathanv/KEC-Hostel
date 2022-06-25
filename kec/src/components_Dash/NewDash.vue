@@ -43,19 +43,15 @@
       <div class="app-header-actions">
         <button class="user-profile">
           <span class="icon-button large">
-            G
-            <!-- <img
-              src="https://assets.codepen.io/285131/almeria-avatar.jpeg"
-              alt="profile"
-            /> -->
+            {{ this.$store.state.user.name[0] }}
           </span>
-          <span>Gandhamathan </span>
+          <span>{{ this.$store.state.user.name }} </span>
         </button>
         <div class="app-header-actions-buttons">
           <!-- <button class="icon-button large">
             <span class="material-symbols-outlined"> search </span>
           </button> -->
-          <button class="icon-button large">
+          <button @click="logout" class="icon-button large">
             <span class="material-symbols-outlined"> logout </span>
           </button>
         </div>
@@ -70,8 +66,17 @@
 </template>
 <script>
 export default {
-  mounted() {
-    console.log(this.$route.name == "DashboardBooking" && "Tru");
+  methods: {
+    logout() {
+      this.$store.dispatch("setToken", null);
+      this.$store.dispatch("setUser", null);
+      localStorage.clear();
+      console.log("logout");
+      // this.$router.push({
+      //   name: "home",
+      // });
+    },
   },
+  mounted() {},
 };
 </script>
