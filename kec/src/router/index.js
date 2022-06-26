@@ -32,7 +32,9 @@ import newDash from "../components_Dash/NewDash.vue";
 //new routes
 
 import overView from "../components_Dash/container/dashboardsubContainer/dashboardContainerOverview.vue";
-import DashboardList from "../components_Dash/container/dashboardsubContainer/dashboardContainerList.vue";
+import DashboardStaffList from "../components_Dash/container/dashboardsubContainer/dashboardContainerStaffList.vue";
+import DashboardStudentList from "../components_Dash/container/dashboardsubContainer/dashboardContainerStudentList.vue";
+import DashboardBookingList from "../components_Dash/container/dashboardsubContainer/dashboardContainerBookingList.vue";
 import changePassword from "../components_Dash/container/PasswordContainer.vue";
 import permissions from "../components_Dash/container/PermissionContainer.vue";
 import todaysMenu from "../components_Dash/container/MenuContainer.vue";
@@ -185,6 +187,7 @@ const routes = [
     component: newDash,
   },
 
+<<<<<<< HEAD
   //new routes
   {
     path: "/dashboard/home",
@@ -247,6 +250,61 @@ const routes = [
     name: "errorStatus",
     component: errorStatus,
   },
+=======
+            {
+                path: "staffList",
+                component: DashboardStaffList,
+                name: "DashboardStaff",
+            },
+            {
+                path: "studentList",
+                component: DashboardStudentList,
+                name: "DashboardStudent",
+            },
+            {
+                path: "BookingList",
+                component: DashboardBookingList,
+                name: "DashboardBooking",
+            },
+            {
+                path: "userinfo",
+                name: "UserInfo",
+                component: userInfo,
+            },
+        ],
+    },
+    {
+        path: "/dashboard",
+        component: Dashboard,
+        name: "Dashboard",
+        children: [{
+                path: "changepassword",
+                component: changePassword,
+                name: "DashboardChangePassword",
+            },
+            {
+                path: "permissions",
+                component: permissions,
+                name: "DashboardPermission",
+            },
+            {
+                path: "Menu",
+                name: "todaysMenu",
+                component: todaysMenu,
+            },
+            {
+                path: "export",
+                name: "exportData",
+                component: exportData,
+            },
+        ],
+    },
+    {
+        path: "/:catchAll(.*)",
+        name: "errorStatus",
+        component: errorStatus,
+    },
+>>>>>>> 1326a35efda21b2687817401431cd035fcb3fefc
 ];
 
 const router = createRouter({

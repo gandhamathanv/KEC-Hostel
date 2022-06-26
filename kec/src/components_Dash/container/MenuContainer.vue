@@ -28,8 +28,10 @@
 </template>
 <script>
 import inputField from "../miniComponents/inputField.vue";
+import buttonField from "../miniComponents/ButtonField.vue";
+
 export default {
-  components: { inputField },
+  components: { inputField, buttonField },
   name: "PasswordContainer",
   data() {
     return {

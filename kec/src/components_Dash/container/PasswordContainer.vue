@@ -2,7 +2,7 @@
   <div v-if="this.id" class="app-body-main-content">
     <div class="mainDiv">
       <div class="cardStyle">
-        <form action="" method="post" name="signupForm" id="signupForm">
+        <span name="signupForm" id="signupForm">
           <img src="../../assets/img/homepage/keclogo.png" id="signupLogo" />
           <h2 class="formTitle">change password</h2>
           <div class="inputContainer">
@@ -10,6 +10,11 @@
               :fieldInput="id"
               :label="'ID'"
               :disable="true"
+            ></input-field>
+            <input-field
+              :label="'current password'"
+              @changeValue="setValue"
+              :type="'password'"
             ></input-field>
             <input-field
               :label="'password'"
@@ -25,9 +30,13 @@
             <div class="error">
               <p class="error-line">{{ error }}</p>
             </div>
-            <button-field :disable="buttonDisable" class="save"></button-field>
+            <button-field
+              @click="changePassword"
+              :disable="buttonDisable"
+              class="save"
+            ></button-field>
           </div>
-        </form>
+        </span>
       </div>
     </div>
   </div>
@@ -35,12 +44,14 @@
 <script>
 import ButtonField from "../miniComponents/ButtonField.vue";
 import inputField from "../miniComponents/inputField.vue";
+import AuthenticationService from "@/services/AuthenticationServices";
 export default {
   name: "PasswordContainer",
   data() {
     return {
       viewer: null,
       id: null,
+      currentPassword: null,
       password: null,
       confirmPassword: null,
       error: null,
@@ -57,6 +68,8 @@ export default {
         console.log("pasd", this.password);
       } else if (label == "confirmPassword") {
         this.confirmPassword = value;
+      } else if (label == "current password") {
+        this.currentPassword = value;
       }
     },
     checkPassword() {
@@ -64,6 +77,22 @@ export default {
         this.error = "msmatch";
       } else {
         this.error = null;
+      }
+    },
+
+    async changePassword() {
+      try {
+        console.log("change password");
+        const res = await AuthenticationService.changePassword({
+          viewer: this.viewer,
+          id: this.id,
+          currentPassword: this.currentPassword,
+          newPassword: this.newPassword,
+        });
+        console.log("success", res);
+      } catch (error) {
+        this.error = error.response.data.error;
+        alert(error.respsonse.data.error);
       }
     },
   },

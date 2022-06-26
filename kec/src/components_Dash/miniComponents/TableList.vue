@@ -16,22 +16,23 @@
             :class="{ active: this.active === 'filter' }"
           >
             <label>Category</label>
-            <select>
-              <option>All Categories</option>
-              <option>Furniture</option>
-              <option>Decoration</option>
-              <option>Kitchen</option>
-              <option>Bathroom</option>
+            <select v-model="optKey">
+              <option v-for="op in optionKeys" :key="op">
+                {{ op }}
+              </option>
             </select>
             <label>Status</label>
-            <select>
-              <option>All Status</option>
-              <option>Active</option>
-              <option>Disabled</option>
+            <select v-model="optValue">
+              <option v-for="val in optionValues" :key="val">
+                {{ val }}
+              </option>
             </select>
+
             <div class="filter-menu-buttons">
               <button class="filter-button reset">Reset</button>
-              <button class="filter-button apply">Apply</button>
+              <button @change="filter_rows()" class="filter-button apply">
+                Apply
+              </button>
             </div>
           </div>
         </div>
@@ -66,8 +67,8 @@
           <button class="sort-button"></button>
         </div>
       </div>
-      <div class="products-row">
-        <div v-for="(keys, value) in data" :key="value" class="product-cell">
+      <div v-for="item in data" :key="item" class="products-row">
+        <div v-for="(keys, value) in item" :key="value" class="product-cell">
           <div v-if="value == 'status'">
             <span class="cell-label"> Status:</span>
             <span class="status active">Active</span>
@@ -86,23 +87,32 @@
 // import "@/assets/script/script";
 export default {
   name: "TableList",
-  props: ["tableHeader", "listType"],
+  props: ["tableHeader", "data", "options"],
+
   data() {
     return {
-      view: "gridView",
+      view: "listView",
       active: null,
-      data: {
-        name: "Gandhamathan V",
-        rollnumber: "20CSR051",
-        dept: "CSE",
-        status: "Active",
-      },
+      optKey: null,
+      optValue: null,
+      optionValues: [],
     };
   },
   computed: {
+    optionKeys() {
+      return Object.keys(this.options);
+    },
     header: {
       get() {
-        return Object.keys(this.data);
+        return Object.keys(this.data[0]);
+      },
+    },
+  },
+  watch: {
+    optKey: {
+      handle() {
+        console.log("option change");
+        this.optionValues = this.options[this.optKey];
       },
     },
   },
@@ -111,12 +121,18 @@ export default {
       this.active = data;
       console.log(data);
     },
-  },
-  async mounted() {
-    console.log("props", this.listType);
+    filter_rows() {
+      this.listData = this.data.filter((el) => {
+        return el[this.optKey] == this.optValue;
+      });
+      console.log(this.listData);
+    },
   },
 };
 </script>
 <style scoped>
 @import "@/assets/styles/table.css";
+.service-section {
+  max-width: 100%;
+}
 </style>

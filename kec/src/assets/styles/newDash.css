@@ -922,5 +922,5 @@ button:focus {
 /* newly addes */
 
 .app-body-main-content {
-    overflow: auto;
+    overflow: scroll;
 }
