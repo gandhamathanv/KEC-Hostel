@@ -11,12 +11,12 @@ import studentRegistration from "../views/studentRegistration.vue";
 import staffRegistration from "../views/staffRegistration.vue";
 import staffInfo from "../components/staffInfo.vue";
 import updateInfo from "../components/updateInfo.vue";
-import Popup from "../views/bookingPopup.vue";
 import studentDataList from "../views/studentDataList.vue";
 import staffDataList from "../views/staffDataList.vue";
 import bookingDataList from "../views/bookingDataList.vue";
 import hostelDataList from "../views/hostelDataList.vue";
 import notificationList from "../views/notificationList.vue";
+import Popup from "../views/bookingPopup.vue";
 import roomDataList from "../views/roomDataList.vue";
 import studentDetail from "../components/studentDetail.vue";
 import staffDetail from "../components/staffDetail.vue";
@@ -39,6 +39,7 @@ import permissions from "../components_Dash/container/PermissionContainer.vue";
 import todaysMenu from "../components_Dash/container/MenuContainer.vue";
 import exportData from "../components_Dash/container/ExportContainer.vue";
 import userInfo from "../components_Dash/container/UserInfo.vue";
+import DashboardBookNow from "../views/BookingView.vue";
 
 const routes = [{
         path: "/",
@@ -209,6 +210,11 @@ const routes = [{
                 path: "BookingList",
                 component: DashboardBookingList,
                 name: "DashboardBooking",
+            },
+            {
+                path: "BookNow",
+                component: DashboardBookNow,
+                name: "DashboardBookNow",
             },
             {
                 path: "userinfo",

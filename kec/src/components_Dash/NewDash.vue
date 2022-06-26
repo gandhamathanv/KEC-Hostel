@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="app-header-navigation">
-        <div class="tabs">
+        <div v-if="this.$store.state.viewer === 'STAFF'" class="tabs">
           <router-link
             :class="{ active: this.$route.name == 'DashboardOverview' }"
             :to="{ name: 'DashboardOverview' }"
