@@ -128,6 +128,11 @@ module.exports = (app) => {
         basicTokenPolicies.getToken,
         DetailsController.getRoomInfo
     );
+    app.get(
+        "/getPermissionCount/",
+        basicTokenPolicies.getToken,
+        DetailsController.getPermissionCount
+    );
 
     //conformation mail
     app.get("/confirmation/:jwt", AuthenticationController.confirmation);

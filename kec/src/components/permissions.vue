@@ -1,42 +1,40 @@
 <template>
-  <div>
+  <div class="container">
     <div class="button-container">
-      <h1 class="button-title">close all</h1>
-      <div class="button-group">
-        <div v-if="bookingAll != null" class="button-div">
-          <h3 class="button-label">booking</h3>
-          <label class="switch">
-            <input
-              type="checkbox"
-              :checked="bookingAll"
-              @click="closePermission('booking', bookingAll)"
-            />
-            <span class="slider round"></span>
-          </label>
-        </div>
-        <div v-if="registrationAll != null" class="button-div">
-          <h3 class="button-label">registration</h3>
-          <label class="switch">
-            <input
-              type="checkbox"
-              :checked="registrationAll"
-              @click="closePermission('registration', registrationAll)"
-            />
-            <span class="slider round"></span>
-          </label>
-        </div>
+      <h1>{{ permission }}</h1>
+      <span
+        v-if="permission === 'booking' && bookingAll != null"
+        class="button-div"
+        @click="closePermission('booking', bookingAll)"
+      >
+        <span class="switch">
+          <input type="checkbox" :checked="bookingAll" />
+          <span class="slider round"></span>
+        </span>
+      </span>
+      <div
+        v-if="permission === 'registration' && registrationAll != null"
+        class="button-div"
+      >
+        <label class="switch">
+          <input
+            type="checkbox"
+            :checked="registrationAll"
+            @click="closePermission('registration', registrationAll)"
+          />
+          <span class="slider round"></span>
+        </label>
       </div>
     </div>
-    <div class="button-sub">
+    <div class="tiles">
       <div
         v-for="hostel in permissions"
         :key="hostel.hostelName"
         class="button-container"
       >
-        <h1 class="button-title">{{ hostel.hostelName }}</h1>
+        <h1>{{ hostel.hostelName }}</h1>
         <div class="button-group">
-          <div class="button-div">
-            <h3 class="button-label">booking</h3>
+          <div v-if="permission === 'booking'" class="button-div">
             <label class="switch">
               <input
                 @click="changePermission(hostel, 'booking', hostel.booking)"
@@ -46,8 +44,7 @@
               <span class="slider round"></span>
             </label>
           </div>
-          <div class="button-div">
-            <h3 class="button-label">registration</h3>
+          <div v-if="permission === 'registration'" class="button-div">
             <label class="switch">
               <input
                 @click="
@@ -70,6 +67,7 @@
 import hostelServices from "../services/HostelServices";
 export default {
   name: "permissionsPage",
+  props: ["permission"],
   data() {
     return {
       da: "string",
@@ -81,6 +79,7 @@ export default {
   methods: {
     async closePermission(change, value) {
       try {
+        console.log("close");
         const res = await hostelServices.closePermissions({
           change,
           value: !value,
@@ -156,9 +155,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-/* The switch - the box around the slider */
-
+<style scoped lang="scss">
+.container {
+  padding: 6px;
+  margin-top: 8px;
+}
 .switch {
   position: relative;
   display: inline-block;
@@ -166,7 +167,10 @@ export default {
   height: 34px;
 }
 /* Hide default HTML checkbox */
-
+h1 {
+  color: black;
+  text-transform: capitalize;
+}
 .switch input {
   opacity: 0;
   width: 0;
