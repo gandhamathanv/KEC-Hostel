@@ -10,6 +10,9 @@ export default createStore({
         level: null,
         isUserLoggedIn: false,
         isLoading: false,
+        dashboard: {
+            isLoading: false,
+        },
         menu: {
             breakfast: "appalam",
             lunch: "sambar",
@@ -39,6 +42,9 @@ export default createStore({
         setLoading(state, data) {
             state.isLoading = data;
         },
+        setDashboardLoading(state, data) {
+            state.dashboard.isLoading = data;
+        },
     },
     actions: {
         setToken({ commit }, token) {
@@ -55,6 +61,9 @@ export default createStore({
         },
         setLoading({ commit }, data) {
             commit("setLoading", data);
+        },
+        setDashboardLoading({ commit }, data) {
+            commit("setDashboardLoading", data);
         },
     },
     modules: {},

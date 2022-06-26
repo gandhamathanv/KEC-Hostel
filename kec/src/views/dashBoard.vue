@@ -3,7 +3,11 @@
     <new-dash></new-dash>
     <div class="app-body">
       <SideBar></SideBar>
-      <router-view></router-view>
+      <router-view v-if="!this.$store.state.dashboard.isLoading"></router-view>
+      <dashboard-loading
+        v-if="this.$store.state.dashboard.isLoading"
+      ></dashboard-loading>
+
       <food-menu></food-menu>
     </div>
 
@@ -16,6 +20,7 @@
 import NewDash from "../components_Dash/NewDash.vue";
 import SideBar from "../components_Dash/SideBar.vue";
 import FoodMenu from "../components_Dash/FoodMenu.vue";
+import DashboardLoading from "../components_Dash/miniComponents/DashboardLoading.vue";
 export default {
   name: "HomeView",
   data() {
@@ -30,6 +35,7 @@ export default {
     NewDash,
     SideBar,
     FoodMenu,
+    DashboardLoading,
   },
 };
 </script>

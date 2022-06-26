@@ -3,10 +3,12 @@
     <div>
       <label>{{ label }}</label>
       <input
-        type="text"
+        :type="type"
         placeholder="Type here"
-        v-model="value"
-        @change="emitChange(value)"
+        v-model="data"
+        @change="emitChange(data)"
+        :disabled="this.disable"
+        required
       />
     </div>
   </div>
@@ -14,16 +16,19 @@
 <script>
 export default {
   name: "inputField",
-  props: ["label", "fieldInput"],
+  props: ["label", "fieldInput", "disable", "type"],
   data() {
     return {
-      value: this.fieldInput,
+      data: "dtrong",
     };
   },
   methods: {
     emitChange(payload) {
-      this.$emit("changeValue", this.label, payload);
+      this.$emit("changeValue", { label: this.label, value: payload });
     },
+  },
+  mounted() {
+    this.data = this.fieldInput;
   },
 };
 </script>

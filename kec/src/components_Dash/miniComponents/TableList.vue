@@ -86,7 +86,7 @@
 // import "@/assets/script/script";
 export default {
   name: "TableList",
-  props: ["tableHeader"],
+  props: ["tableHeader", "listType"],
   data() {
     return {
       view: "gridView",
@@ -111,6 +111,9 @@ export default {
       this.active = data;
       console.log(data);
     },
+  },
+  async mounted() {
+    console.log("props", this.listType);
   },
 };
 </script>

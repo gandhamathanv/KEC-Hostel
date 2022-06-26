@@ -1,8 +1,9 @@
 <template>
-  <button class="save-button">Save</button>
+  <button :disabled="disable" class="save-button">Save</button>
 </template>
 <script>
 export default {
+  props: ["disable"],
   name: "ButtonField",
 };
 </script>

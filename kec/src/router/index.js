@@ -31,7 +31,7 @@ import newDash from "../components_Dash/NewDash.vue";
 //new routes
 
 import overView from "../components_Dash/container/dashboardsubContainer/dashboardContainerOverview.vue";
-import staffList from "../components_Dash/container/dashboardsubContainer/dashboardContainerStaffList.vue";
+import DashboardList from "../components_Dash/container/dashboardsubContainer/dashboardContainerList.vue";
 import changePassword from "../components_Dash/container/PasswordContainer.vue";
 import permissions from "../components_Dash/container/PermissionContainer.vue";
 import todaysMenu from "../components_Dash/container/MenuContainer.vue";
@@ -193,10 +193,17 @@ const routes = [{
                 name: "DashboardOverview",
             },
 
-            { path: "staffList", component: staffList, name: "DashboardStaff" },
-            { path: "studentList", component: staffList, name: "DashboardStudent" },
-            { path: "BookingList", component: staffList, name: "DashboardBooking" },
-            { path: "hostelList", component: staffList, name: "DashboardHostel" },
+            { path: "staffList", component: DashboardList, name: "DashboardStaff" },
+            {
+                path: "studentList",
+                component: DashboardList,
+                name: "DashboardStudent",
+            },
+            {
+                path: "BookingList",
+                component: DashboardList,
+                name: "DashboardBooking",
+            },
             {
                 path: "userinfo",
                 name: "UserInfo",
