@@ -1,7 +1,7 @@
 <template>
   <div class="app-body-main-content">
     <section class="service-section">
-      <h2>Permisions</h2>
+      <h2>PERMISSION</h2>
 
       <div class="tiles">
         <permission-tile
