@@ -1,9 +1,9 @@
 <template>
-  <div class="app-body-main-content">
-    <section class="service-section">
+  <div class="menu-main-container">
+    <section class="menu-container">
       <form action="" method="post" name="signupForm" id="signupForm">
-        <h2 class="formTitle">Change Menu</h2>
-        <div class="inputContainer">
+        <h2 class="menuTitle">Change Menu</h2>
+        <div class="foodmenu">
           <input-field
             :label="'breakfast'"
             :fieldInput="menu.breakfast"
@@ -46,14 +46,14 @@ export default {
 };
 </script>
 <style scoped>
-.mainDiv {
+/* .mainDiv {
   display: flex;
   min-height: 100%;
   align-items: center;
   justify-content: center;
   font-family: "Open Sans", sans-serif;
-}
-.cardStyle {
+} */
+/* .cardStyle {
   width: 500px;
   border-color: white;
 
@@ -61,20 +61,20 @@ export default {
   border-radius: 4px;
   margin: 30px 0;
   box-shadow: 0px 0 2px 0 white;
-}
-#signupLogo {
+} */
+/* #signupLogo {
   max-height: 100px;
   margin: auto;
   display: flex;
   flex-direction: column;
-}
-.formTitle {
+} */
+.menuTitle {
   font-weight: 600;
   margin-top: 20px;
   color: white;
   text-align: center;
 }
-.inputContainer {
+.foodmenu {
   max-width: 80%;
   margin: 0 auto;
   display: flex;
