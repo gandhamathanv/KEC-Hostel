@@ -12,7 +12,7 @@
           </h1>
         </div>
       </div>
-      <div class="app-header-navigation">
+      <div class="headernavigation">
         <div v-if="this.$store.state.viewer === 'STAFF'" class="tabs">
           <router-link
             :class="{ active: this.$route.name == 'DashboardOverview' }"
@@ -40,14 +40,14 @@
           </router-link>
         </div>
       </div>
-      <div class="app-header-actions">
-        <button class="user-profile">
+      <div class="user-header">
+        <button class="userprofile">
           <span class="icon-button large">
             {{ this.$store.state.user.name[0] }}
           </span>
           <span>{{ this.$store.state.user.name }} </span>
         </button>
-        <div class="app-header-actions-buttons">
+        <div class="user-header-button">
           <!-- <button class="icon-button large">
             <span class="material-symbols-outlined"> search </span>
           </button> -->

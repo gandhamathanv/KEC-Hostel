@@ -254,69 +254,6 @@ const routes = [
     name: "errorStatus",
     component: errorStatus,
   },
-<<<<<<< HEAD
-=======
-=======
-            {
-                path: "staffList",
-                component: DashboardStaffList,
-                name: "DashboardStaff",
-            },
-            {
-                path: "studentList",
-                component: DashboardStudentList,
-                name: "DashboardStudent",
-            },
-            {
-                path: "BookingList",
-                component: DashboardBookingList,
-                name: "DashboardBooking",
-            },
-            {
-                path: "BookNow",
-                component: DashboardBookNow,
-                name: "DashboardBookNow",
-            },
-            {
-                path: "userinfo",
-                name: "UserInfo",
-                component: userInfo,
-            },
-        ],
-    },
-    {
-        path: "/dashboard",
-        component: Dashboard,
-        name: "Dashboard",
-        children: [{
-                path: "changepassword",
-                component: changePassword,
-                name: "DashboardChangePassword",
-            },
-            {
-                path: "permissions",
-                component: permissions,
-                name: "DashboardPermission",
-            },
-            {
-                path: "Menu",
-                name: "todaysMenu",
-                component: todaysMenu,
-            },
-            {
-                path: "export",
-                name: "exportData",
-                component: exportData,
-            },
-        ],
-    },
-    {
-        path: "/:catchAll(.*)",
-        name: "errorStatus",
-        component: errorStatus,
-    },
->>>>>>> 1326a35efda21b2687817401431cd035fcb3fefc
->>>>>>> acb003d5cd7fb3c8da8389f462965d912fdafe9a
 ];
 
 const router = createRouter({
