@@ -12,12 +12,12 @@ import studentRegistration from "../views/studentRegistration.vue";
 import staffRegistration from "../views/staffRegistration.vue";
 import staffInfo from "../components/staffInfo.vue";
 import updateInfo from "../components/updateInfo.vue";
-import Popup from "../views/bookingPopup.vue";
 import studentDataList from "../views/studentDataList.vue";
 import staffDataList from "../views/staffDataList.vue";
 import bookingDataList from "../views/bookingDataList.vue";
 import hostelDataList from "../views/hostelDataList.vue";
 import notificationList from "../views/notificationList.vue";
+import Popup from "../views/bookingPopup.vue";
 import roomDataList from "../views/roomDataList.vue";
 import studentDetail from "../components/studentDetail.vue";
 import staffDetail from "../components/staffDetail.vue";
@@ -40,6 +40,7 @@ import permissions from "../components_Dash/container/PermissionContainer.vue";
 import todaysMenu from "../components_Dash/container/MenuContainer.vue";
 import exportData from "../components_Dash/container/ExportContainer.vue";
 import userInfo from "../components_Dash/container/UserInfo.vue";
+import DashboardBookNow from "../views/BookingView.vue";
 
 const routes = [
   {
@@ -253,6 +254,69 @@ const routes = [
     name: "errorStatus",
     component: errorStatus,
   },
+<<<<<<< HEAD
+=======
+=======
+            {
+                path: "staffList",
+                component: DashboardStaffList,
+                name: "DashboardStaff",
+            },
+            {
+                path: "studentList",
+                component: DashboardStudentList,
+                name: "DashboardStudent",
+            },
+            {
+                path: "BookingList",
+                component: DashboardBookingList,
+                name: "DashboardBooking",
+            },
+            {
+                path: "BookNow",
+                component: DashboardBookNow,
+                name: "DashboardBookNow",
+            },
+            {
+                path: "userinfo",
+                name: "UserInfo",
+                component: userInfo,
+            },
+        ],
+    },
+    {
+        path: "/dashboard",
+        component: Dashboard,
+        name: "Dashboard",
+        children: [{
+                path: "changepassword",
+                component: changePassword,
+                name: "DashboardChangePassword",
+            },
+            {
+                path: "permissions",
+                component: permissions,
+                name: "DashboardPermission",
+            },
+            {
+                path: "Menu",
+                name: "todaysMenu",
+                component: todaysMenu,
+            },
+            {
+                path: "export",
+                name: "exportData",
+                component: exportData,
+            },
+        ],
+    },
+    {
+        path: "/:catchAll(.*)",
+        name: "errorStatus",
+        component: errorStatus,
+    },
+>>>>>>> 1326a35efda21b2687817401431cd035fcb3fefc
+>>>>>>> acb003d5cd7fb3c8da8389f462965d912fdafe9a
 ];
 
 const router = createRouter({

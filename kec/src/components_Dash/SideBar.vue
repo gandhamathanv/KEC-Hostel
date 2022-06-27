@@ -15,18 +15,28 @@
         <span>Change Password</span>
       </routerLink>
       <routerLink
+        v-if="this.$store.state.viewer === 'STAFF'"
         :class="{ focus: this.$route.name == 'DashboardPermission' }"
         :to="{ name: 'DashboardPermission' }"
       >
         <span>Permissions</span>
       </routerLink>
       <routerLink
+        v-if="this.$store.state.viewer === 'STUDENT'"
+        :class="{ focus: this.$route.name == 'DashboardBookNow' }"
+        :to="{ name: 'DashboardBookNow' }"
+      >
+        <span>Booking</span>
+      </routerLink>
+      <routerLink
+        v-if="this.$store.state.viewer === 'STAFF'"
         :class="{ focus: this.$route.name == 'todaysMenu' }"
         :to="{ name: 'todaysMenu' }"
       >
         <span>Todays Menu</span>
       </routerLink>
       <routerLink
+        v-if="this.$store.state.viewer === 'STAFF'"
         :class="{ focus: this.$route.name == 'exportData' }"
         :to="{ name: 'exportData' }"
       >
