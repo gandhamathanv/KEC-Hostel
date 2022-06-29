@@ -87,7 +87,7 @@ export default {
           viewer: this.viewer,
           id: this.id,
           currentPassword: this.currentPassword,
-          newPassword: this.newPassword,
+          newPassword: this.password,
         });
         console.log("success", res);
       } catch (error) {

@@ -1,13 +1,7 @@
 <template>
-  <div>
-    <LoadingPage v-if="this.$store.state.isLoading"></LoadingPage>
-    <!--  <div v-else>
-      <HeaderNav v-if="!this.$store.state.isUserLoggedIn"></HeaderNav>
-      <DashboardNav v-if="this.$store.state.isUserLoggedIn" />
-    </div>
- -->
-    <router-view></router-view>
-  </div>
+  <LoadingPage v-if="this.$store.state.isLoading"></LoadingPage>
+
+  <router-view v-else></router-view>
 </template>
 <script>
 // import HeaderNav from "@/components/HeaderNav.vue";

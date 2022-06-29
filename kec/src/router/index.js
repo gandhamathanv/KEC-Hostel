@@ -244,6 +244,11 @@ const routes = [{
                 name: "exportData",
                 component: exportData,
             },
+            {
+                path: "userinfo",
+                name: "uderinfo",
+                component: userInfo,
+            },
         ],
     },
     {
