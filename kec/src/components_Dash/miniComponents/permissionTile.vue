@@ -3,17 +3,19 @@
     <div @click="toggle" class="tile-header">
       <h3>
         <span>{{ label }}</span>
-        <span>No of hostels {{ count }}</span>
+
+        <span v-if="count">No of hostels {{ count }}</span>
+        <span v-else></span>
       </h3>
       <h4>{{ isOpen ? "OPEN" : "CLOSED" }}</h4>
     </div>
     <div>
       <div>
-        <div class="tile-middle">
+        <div v-if="openCount" class="tile-middle">
           <h4>OPEN :</h4>
           <span> {{ openCount }}</span>
         </div>
-        <div class="tile-middle">
+        <div v-if="closedCount" class="tile-middle">
           <h4>CLOSED :</h4>
           <span> {{ closedCount }}</span>
         </div>

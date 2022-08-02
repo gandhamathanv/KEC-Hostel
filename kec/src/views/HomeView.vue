@@ -585,11 +585,11 @@ export default {
   display: none;
 }
 
-.body {
+  */
+* {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-*/
 .header {
   min-height: 100vh;
   width: 100%;

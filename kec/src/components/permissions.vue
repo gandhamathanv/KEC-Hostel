@@ -77,6 +77,19 @@ export default {
     };
   },
   methods: {
+    async getData() {
+      if (this.$store.state.level != null && this.permission === "booking") {
+        const res = await hostelServices.getPermissions({
+          level: this.$store.state.level,
+          hostelName: this.$store.state.user.hostelName,
+        });
+        this.permissions = res.data.data;
+      } else {
+        this.permissions = {
+          data: false,
+        };
+      }
+    },
     async closePermission(change, value) {
       try {
         console.log("close");
@@ -127,13 +140,7 @@ export default {
     },
   },
   async mounted() {
-    if (this.$store.state.level != null) {
-      const res = await hostelServices.getPermissions({
-        level: this.$store.state.level,
-        hostelName: this.$store.state.user.hostelName,
-      });
-      this.permissions = res.data.data;
-    }
+    this.getData();
   },
   watch: {
     "$store.state.user.hostelName": async function () {
@@ -144,11 +151,14 @@ export default {
       });
       this.permissions = res.data.data;
     },
+    permission: function () {
+      this.getData();
+    },
     permissions: function () {
-      this.bookingAll = this.permissions.every((ele) => ele.booking === true);
-      this.registrationAll = this.permissions.every(
-        (ele) => ele.registration === true
-      );
+      this.permission == "booking" ??
+        (this.bookingAll = this.permissions.every(
+          (ele) => ele.booking === true
+        ));
     },
   },
 };

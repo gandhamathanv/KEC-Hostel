@@ -14,7 +14,6 @@
         ></permission-tile>
         <permission-tile
           :label="'Registration'"
-          :count="2"
           :isOpen="false"
           @click="showPermission('registration')"
         ></permission-tile>

@@ -55,7 +55,7 @@ export default {
       password: null,
       confirmPassword: null,
       error: null,
-      buttonDisable: true,
+      buttonDisable: false,
     };
   },
   components: { inputField, ButtonField },
@@ -89,7 +89,11 @@ export default {
           currentPassword: this.currentPassword,
           newPassword: this.password,
         });
-        console.log("success", res);
+        if (res.data.status == "success") {
+          alert("password changes successfully");
+        } else {
+          alert("err");
+        }
       } catch (error) {
         this.error = error.response.data.error;
         alert(error.respsonse.data.error);
@@ -98,14 +102,14 @@ export default {
   },
   watch: {
     password: function () {
-      if (this.password === this.confirmPassword) {
-        this.buttonDisable = false;
-      }
+      // if (this.password === this.confirmPassword) {
+      //   this.buttonDisable = false;
+      // }
     },
     confirmPassword: function () {
-      if (this.password === this.confirmPassword) {
-        this.buttonDisable = false;
-      }
+      // if (this.password === this.confirmPassword) {
+      //   this.buttonDisable = false;
+      // }
     },
   },
   mounted() {
